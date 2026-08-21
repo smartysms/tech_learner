@@ -25978,44 +25978,6 @@
     "correctIndex": 1
   },
   {
-    "id": "kafka-ch12-s01-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 12 (Interview Prep)",
-    "topic": "What Most People Think Retry Means",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is the primary reason for a request to fail in Kafka's retry mechanism?",
-    "answer": null,
-    "notes": "The request can fail due to various reasons like network timeout, broker not being the leader or follower, or request timed out.",
-    "cloze_answer": null,
-    "options": [
-      "Network timeout",
-      "Broker not being the leader or follower",
-      "Request timed out",
-      "ProducerBatch creation fails"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "id": "kafka-ch12-s01-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 12 (Interview Prep)",
-    "topic": "What Most People Think Retry Means",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What does Kafka do when a request fails in its retry mechanism?",
-    "answer": null,
-    "notes": "Kafka does not create a new ProducerBatch on retry, which is a common misconception.",
-    "cloze_answer": null,
-    "options": [
-      "Create a new ProducerBatch",
-      "Delete the old ProducerBatch",
-      "Create a Copy of the failed ProducerBatch",
-      "Send the request to another broker"
-    ],
-    "correctIndex": 2
-  },
-  {
     "id": "kafka-ch12-s02-mcq1",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 12 (Interview Prep)",
@@ -26033,25 +25995,6 @@
       "The state is removed"
     ],
     "correctIndex": 2
-  },
-  {
-    "id": "kafka-ch12-s02-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 12 (Interview Prep)",
-    "topic": "What Actually Happens",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Why does Kafka prefer changing state over creating new objects?",
-    "answer": null,
-    "notes": "Kafka prefers changing state over creating new objects to reduce memory allocation, garbage collection, and CPU usage, following the 'Change state, not data' design principle.",
-    "cloze_answer": null,
-    "options": [
-      "To reduce memory allocation",
-      "To increase garbage collection",
-      "To reduce CPU usage",
-      "To simplify the producer's logic"
-    ],
-    "correctIndex": 0
   },
   {
     "id": "kafka-ch12-s03-mcq1",
@@ -26187,25 +26130,6 @@
     "correctIndex": 1
   },
   {
-    "id": "kafka-ch12-s08-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 12 (Interview Prep)",
-    "topic": "Temporary vs. Permanent Errors",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is the recommended approach when a record is too large to be processed by a Kafka broker?",
-    "answer": null,
-    "notes": "When a record is too large, it's a permanent error and there's no point in retrying.",
-    "cloze_answer": null,
-    "options": [
-      "Retry after a few seconds",
-      "Don't retry, it's a permanent error",
-      "Wait for a new leader to be elected",
-      "Retry after a network timeout"
-    ],
-    "correctIndex": 2
-  },
-  {
     "id": "kafka-ch12-s09-mcq1",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 12 (Interview Prep)",
@@ -26221,25 +26145,6 @@
       "No, because the message size will not change by retrying",
       "B. Retry #1, #2, #3... the record is still 5 MB every time",
       "Retry indefinitely until the message is processed"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "id": "kafka-ch12-s10-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 12 (Interview Prep)",
-    "topic": "Interview Question #5",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What should Kafka do FIRST when it receives a NOT_LEADER_OR_FOLLOWER error?",
-    "answer": null,
-    "notes": "The correct answer is the first option because it is the correct approach to handle the NOT_LEADER_OR_FOLLOWER error. The other options are incorrect because they do not follow the correct approach.",
-    "cloze_answer": null,
-    "options": [
-      "Refresh metadata to discover the new leader, then build a new ProduceRequest and retry",
-      "Immediately resend the same ProduceRequest to the same broker",
-      "Error handling: log the issue and move on",
-      "Pause the application and investigate the issue"
     ],
     "correctIndex": 1
   },
@@ -26415,44 +26320,6 @@
     "correctIndex": 1
   },
   {
-    "id": "kafka-ch12-s16-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 12 (Interview Prep)",
-    "topic": "Quiz",
-    "label": null,
-    "type": "mcq",
-    "prompt": "When a ProducerBatch is retried, how many ProducerBatch objects are created in total?",
-    "answer": null,
-    "notes": "Correct answer is 5 because ProducerBatch is retried 4 times and only one batch is created, despite multiple requests",
-    "cloze_answer": null,
-    "options": [
-      "1",
-      "4",
-      "5",
-      "Many, as retries are handled independently"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "id": "kafka-ch12-s17-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 12 (Interview Prep)",
-    "topic": "Where This Is Heading",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Why does this series' planned capstone diagram require waiting until every chapter closes?",
-    "answer": null,
-    "notes": "This is because the series is shifting its methodology to focus on a single, evolving pipeline diagram that re-traces a message's full journey. This change requires that all chapters be closed before the capstone diagram can be built.",
-    "cloze_answer": null,
-    "options": [
-      "To ensure consistency among all chapters",
-      "To avoid overwhelming the reader with complex information",
-      "To demonstrate the relevance of individual classes to the overall pipeline",
-      "To illustrate the importance of transactional coordination"
-    ],
-    "correctIndex": 2
-  },
-  {
     "id": "kafka-ch12-s17-mcq2",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 12 (Interview Prep)",
@@ -26489,25 +26356,6 @@
       "It's deleted and recreated with new data"
     ],
     "correctIndex": 1
-  },
-  {
-    "id": "kafka-ch12-s18-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 12 (Interview Prep)",
-    "topic": "Verified Against Kafka's Source",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What type of exceptions in Kafka are permanently non-retriable?",
-    "answer": null,
-    "notes": "The correct option is that RecordTooLargeException, InvalidTopicException, UnknownTopicOrPartitionException, and AuthorizationException are permanently non-retriable failures.",
-    "cloze_answer": null,
-    "options": [
-      "Retriable exceptions",
-      "Permanent exceptions",
-      "Unknown exceptions",
-      "Authorization exceptions"
-    ],
-    "correctIndex": 2
   },
   {
     "id": "kafka-ch13-s01-mcq1",
