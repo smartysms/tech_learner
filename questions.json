@@ -28410,25 +28410,6 @@
     "correctIndex": 1
   },
   {
-    "id": "kafka-ch18-s01-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 18 (Interview Prep)",
-    "topic": "The FetchRequest Carries A Start Offset",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is the most important piece of information a FetchRequest includes so the broker knows where to begin reading?",
-    "answer": null,
-    "notes": "The group name matters for coordination, not for WHERE to read. Producer identity and retention are unrelated to a fetch's starting point. Only the requested offset decides where reading begins.",
-    "cloze_answer": null,
-    "options": [
-      "The consumer group's name",
-      "The next offset the consumer wants to read from",
-      "The producer ID that wrote the records",
-      "The topic retention period"
-    ],
-    "correctIndex": 2
-  },
-  {
     "id": "kafka-ch18-s01-mcq2",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 18 (Interview Prep)",
@@ -28486,25 +28467,6 @@
     "correctIndex": 2
   },
   {
-    "id": "kafka-ch18-s03-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 18 (Interview Prep)",
-    "topic": "Position vs Committed Offset",
-    "label": null,
-    "type": "mcq",
-    "prompt": "After restart, which records does the consumer receive again?",
-    "answer": null,
-    "notes": "Kafka restarts the consumer there and redelivers all three, even though they were already successfully processed.",
-    "cloze_answer": null,
-    "options": [
-      "Only 102",
-      "101 and 102",
-      "100, 101, 102",
-      "None"
-    ],
-    "correctIndex": 3
-  },
-  {
     "id": "kafka-ch18-s04-mcq1",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 18 (Interview Prep)",
@@ -28541,44 +28503,6 @@
       "The consumer restarts from the current position"
     ],
     "correctIndex": 1
-  },
-  {
-    "id": "kafka-ch18-s05-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 18 (Interview Prep)",
-    "topic": "What's Still Pending",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Why would you enable `auto.commit=true` in a Kafka consumer?",
-    "answer": null,
-    "notes": "This setting allows for automatic commits, but does not guarantee exactly-once semantics. Options 1 and 3 are incorrect as they imply the setting has a different purpose.",
-    "cloze_answer": null,
-    "options": [
-      "To ensure exactly-once semantics",
-      "To allow for manual commit control",
-      "To reduce the risk of message duplication",
-      "To increase the commit latency"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "id": "kafka-ch18-s05-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 18 (Interview Prep)",
-    "topic": "What's Still Pending",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What can still be mastered from the previous chapter?",
-    "answer": null,
-    "notes": "The previous chapter focused on mastering position and committed offset, which is now considered closed. Options 2 and 3 are incorrect as they are topics to be covered in the next chapter.",
-    "cloze_answer": null,
-    "options": [
-      "Position and committed offset",
-      "Commit and offset synchronization",
-      "Broker failure and rebalancing",
-      "Consumer groups and partition assignors"
-    ],
-    "correctIndex": 0
   },
   {
     "id": "kafka-ch18-s06-mcq1",
