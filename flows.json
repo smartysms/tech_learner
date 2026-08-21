@@ -58,5 +58,1277 @@
         "detail": "transactional.id. Stable, application-provided identity (unlike the auto-generated PID) used to locate the Transaction Coordinator"
       }
     ]
+  },
+  {
+    "id": "os_for_docker-ch01-docker_deep_dive_chapter_1",
+    "subject": "OS For Docker",
+    "chapter": 1,
+    "name": "Docker Deep Dive Chapter 1",
+    "steps": [
+      {
+        "label": "Pause Docker for kernel-counting MCQs",
+        "detail": "The session paused Docker entirely and traced the real cause: not a Docker gap, an Operating Systems gap. The same 'fundamentals first, then internals, then interview scenarios' approach that worked for Kafka and Vector Search applies here too - build the OS mental model solidly, then return to Docker, where containers and namespaces should feel obvious rather than memorized."
+      },
+      {
+        "label": "Propose 11-module OS track",
+        "detail": "The session first proposed a full 11-module 'Operating Systems for Backend Engineers' track, covering topics such as what is an Operating System, Kernel Deep Dive, Processes, Threads, Memory, CPU Scheduling, File System, Networking, and Linux Isolation."
+      },
+      {
+        "label": "Trim down to 6-module OS track",
+        "detail": "The plan was immediately trimmed to a lean 6-module 'OS for Docker (Only What Matters)' track, focusing on the Kernel, Process, Filesystem, Namespaces, and cgroups, which are the five concepts Docker is directly built on."
+      },
+      {
+        "label": "Determine what got trimmed",
+        "detail": "Dropped from the original 11-module plan were Threads/GIL/race conditions, deep Memory, deep CPU Scheduling internals, and the full Networking stack, as these topics were deemed not load-bearing for Docker specifically."
+      },
+      {
+        "label": "Teaching style change",
+        "detail": "Starting with this track, questions come in three tiers: Level 1 Predict The Flow, Level 2 Why, and Level 3 Interview MCQs, with the goal of building intuition and reasoning skills."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch01-how_an_application_interacts_with_the_operating_system",
+    "subject": "OS For Docker",
+    "chapter": 1,
+    "name": "How an application interacts with the operating system",
+    "steps": [
+      {
+        "label": "Application makes request",
+        "detail": "The application, such as Chrome or Python, makes a request for a file or resource."
+      },
+      {
+        "label": "Kernel receives request",
+        "detail": "The kernel, the operating system's core, receives the request from the application."
+      },
+      {
+        "label": "Kernel talks to hardware",
+        "detail": "The kernel then talks to the hardware, such as the disk or network card, to fulfill the request."
+      },
+      {
+        "label": "Hardware provides data",
+        "detail": "The hardware provides the requested data to the kernel."
+      },
+      {
+        "label": "Kernel provides data to application",
+        "detail": "The kernel then provides the data to the application, which can then process it."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch01-requesting_memory",
+    "subject": "OS For Docker",
+    "chapter": 1,
+    "name": "Requesting Memory",
+    "steps": [
+      {
+        "label": "Python needs RAM",
+        "detail": "Python requires 500 MB of RAM."
+      },
+      {
+        "label": "Kernel requested",
+        "detail": "Python asks the kernel for memory allocation."
+      },
+      {
+        "label": "System Call",
+        "detail": "The request is a System Call, which involves communication between Python and the kernel."
+      },
+      {
+        "label": "Kernel checks RAM",
+        "detail": "The kernel checks if enough RAM is available to fulfill the request."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch01-operating_system_interactions",
+    "subject": "OS For Docker",
+    "chapter": 1,
+    "name": "Operating System Interactions",
+    "steps": [
+      {
+        "label": "CPU executes instructions",
+        "detail": "The CPU directly executes Python code."
+      },
+      {
+        "label": "Kernel allocation",
+        "detail": "The kernel allocates RAM, schedules CPU, and handles I/O operations."
+      },
+      {
+        "label": "Python business logic",
+        "detail": "The Python interpreter runs business logic, including sorting, loops, and conditions."
+      },
+      {
+        "label": "Kernel involvement",
+        "detail": "The kernel is involved when the application needs a hardware or operating system resource."
+      },
+      {
+        "label": "Docker scenario",
+        "detail": "Docker uses the host kernel to enforce isolation and limit resources."
+      },
+      {
+        "label": "Sorting operation",
+        "detail": "The Python interpreter performs sorting operations, with the kernel not involved."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch01-operating_system_process",
+    "subject": "OS For Docker",
+    "chapter": 1,
+    "name": "Operating System Process",
+    "steps": [
+      {
+        "label": "Application Requests",
+        "detail": "The application decides what it wants, such as opening a file or sending a request."
+      },
+      {
+        "label": "Kernel Manages",
+        "detail": "The kernel decides how to make the hardware deliver the application's request, such as reading from disk or running TCP/IP."
+      },
+      {
+        "label": "Hardware Executes",
+        "detail": "The hardware executes the kernel's instructions, such as reading from disk or sending packets."
+      },
+      {
+        "label": "Create a New Process",
+        "detail": "The kernel creates a new process, assigning a PID and setting up memory."
+      },
+      {
+        "label": "Schedule CPU Time",
+        "detail": "The kernel scheduler decides which process runs, for how long, and on which core."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch01-kernel_scheduling",
+    "subject": "OS For Docker",
+    "chapter": 1,
+    "name": "kernel scheduling",
+    "steps": [
+      {
+        "label": "File Operations",
+        "detail": "The code reads data from the 'users.txt' file on disk."
+      },
+      {
+        "label": "Memory Management",
+        "detail": "The code allocates RAM to store the list of numbers."
+      },
+      {
+        "label": "Network Operations",
+        "detail": "The code sends a request to the 'https://api.example.com' API."
+      },
+      {
+        "label": "Process Management",
+        "detail": "The code creates a new process to handle the request."
+      },
+      {
+        "label": "CPU Scheduling",
+        "detail": "The kernel scheduler divides CPU time between all processes, including the Docker container."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch01-system_call_process",
+    "subject": "OS For Docker",
+    "chapter": 1,
+    "name": "System Call Process",
+    "steps": [
+      {
+        "label": "Waiter (System Call)",
+        "detail": "The System Call acts as a waiter, taking the request to the kernel and bringing the response back to the application."
+      },
+      {
+        "label": "Chef (Kernel)",
+        "detail": "The kernel, or chef, receives the request and handles it accordingly, interacting with the hardware to complete the task."
+      },
+      {
+        "label": "Food (Hardware)",
+        "detail": "The kernel interacts with the hardware, such as the SSD or HDD, to read or write data, and the application receives the response."
+      },
+      {
+        "label": "Python Application",
+        "detail": "The Python application initiates the System Call, providing the request and receiving the response, without directly interacting with the kernel or hardware."
+      },
+      {
+        "label": "Mapped onto OS",
+        "detail": "The System Call is mapped onto the operating system, providing a well-defined communication channel between the application and the kernel."
+      },
+      {
+        "label": "System Calls Involved",
+        "detail": "Several System Calls, such as open(), socket(), connect(), send(), recv(), fork(), exec(), and wait(), are used to create, manage, and interact with processes and files."
+      },
+      {
+        "label": "Accuracy Note",
+        "detail": "The actual System Call used can vary depending on the platform and the specific requirements of the application, but the underlying lesson remains the same: process creation always goes through the kernel, never through Python alone."
+      },
+      {
+        "label": "Golden Rule #2",
+        "detail": "The Application decides what to do, and the Kernel decides how to do it, with the System Call acting as the communication channel between the two."
+      },
+      {
+        "label": "Docker Concept",
+        "detail": "The four-layer chain of Application -> System Calls -> Kernel -> Hardware is a fundamental concept in Docker, and understanding this process is crucial for working with containers."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch01-python_creates_a_new_thread",
+    "subject": "OS For Docker",
+    "chapter": 1,
+    "name": "Python creates a new thread",
+    "steps": [
+      {
+        "label": "Python asks the kernel",
+        "detail": "Python requests the kernel to create a new OS thread. The kernel assigns it a thread ID, sets up its stack, and adds it to the scheduler so it can get CPU time."
+      },
+      {
+        "label": "Kernel creates and schedules the OS thread",
+        "detail": "The kernel creates the OS thread and adds it to the scheduler, allowing it to receive CPU time."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch01-how_docker_creates_a_container",
+    "subject": "OS For Docker",
+    "chapter": 1,
+    "name": "How Docker Creates a Container",
+    "steps": [
+      {
+        "label": "Docker creates a brand-new Linux kernel for the container",
+        "detail": "Docker asks the existing Linux kernel to create an isolated process, which results in a brand-new Linux kernel for the container."
+      },
+      {
+        "label": "Docker asks the existing Linux kernel to create an isolated process",
+        "detail": "Docker asks the existing Linux kernel to create an isolated process, which is then managed by the kernel."
+      },
+      {
+        "label": "runc reads the container's OCI runtime spec",
+        "detail": "runc reads the container's OCI runtime spec and calls a single syscall, clone(), with namespace flags to create the new process."
+      },
+      {
+        "label": "runc configures cgroups for resource limits",
+        "detail": "runc configures cgroups for resource limits, mounts the container's filesystem, and finally execs the nginx entrypoint."
+      },
+      {
+        "label": "The kernel (via runc) does the work",
+        "detail": "The kernel (via runc) does the work, never Docker itself touching hardware."
+      },
+      {
+        "label": "Docker starts the nginx process",
+        "detail": "Docker starts the nginx process, applying namespaces, configuring cgroups, mounting the filesystem, and adding it to the scheduler."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch01-module_1_kernel_system_calls_complete",
+    "subject": "OS For Docker",
+    "chapter": 1,
+    "name": "MODULE 1 (KERNEL + SYSTEM CALLS) COMPLETE",
+    "steps": [
+      {
+        "label": "Covering the Application -> Kernel -> Hardware chain",
+        "detail": "The chapter covers the application's request for memory through the kernel, the business-logic-vs-kernel boundary, and the distinction across five resource categories (File, Network, Memory, Process, and CPU)."
+      },
+      {
+        "label": "Requesting memory through the kernel",
+        "detail": "The chapter covers the process of requesting memory through the kernel, including the five-way capstone and multi-process scheduling scenario."
+      },
+      {
+        "label": "System Calls as the actual communication mechanism",
+        "detail": "The chapter explains System Calls as the actual communication mechanism, with the kernel correctly scoped as a separate restriction on top of kernel scheduling."
+      },
+      {
+        "label": "Thread creation and scheduling",
+        "detail": "The chapter covers thread creation and scheduling, with the GIL correctly scoped as a separate restriction on top of kernel scheduling, not a replacement for it."
+      },
+      {
+        "label": "Resolving the docker run nginx question",
+        "detail": "The chapter resolves the question of what a container is, explaining that it is an isolated process the kernel creates and manages, not a mini operating system."
+      },
+      {
+        "label": "Correcting wrong-guess traps",
+        "detail": "The chapter corrects two genuine wrong-guess traps, one from Section 2 and one from Section 9."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch01-understanding_system_calls",
+    "subject": "OS For Docker",
+    "chapter": 1,
+    "name": "Understanding System Calls",
+    "steps": [
+      {
+        "label": "Applications don't access hardware directly",
+        "detail": "In user mode, applications cannot access hardware directly. Instead, they use system calls that switch execution into the kernel."
+      },
+      {
+        "label": "System Calls Mediate Hardware Access",
+        "detail": "System calls mediate hardware access, switching execution into the kernel, which executes on behalf of the application."
+      },
+      {
+        "label": "Kernel's Core Responsibilities",
+        "detail": "The kernel's core responsibilities include CPU scheduling, memory management, process creation, and device drivers, which are distinct from application business logic."
+      },
+      {
+        "label": "CPython's Pymalloc Allocator",
+        "detail": "CPython's pymalloc allocator reuses already-obtained memory for small allocations, but new arenas are always requested from the system allocator via mmap (or malloc) - which routes through the kernel."
+      },
+      {
+        "label": "Docker Containers are Isolated Processes",
+        "detail": "A Docker container is a standard Linux process that the kernel isolates and resource-limits, which is why the kernel scheduler treats a Docker container the same as any other process."
+      },
+      {
+        "label": "Subprocess Module Uses System Calls",
+        "detail": "Python's subprocess module classically maps to fork()+exec(), but modern CPython often uses vfork() or os.posix_spawn() instead, for speed and safety - the kernel-mediation lesson holds regardless of which exact syscall runs."
+      },
+      {
+        "label": "docker run's Real Path",
+        "detail": "docker run's real path is Daemon -> containerd -> runc -> a single clone() syscall with namespace flags (creating the process already isolated), then cgroups configuration and a filesystem mount."
+      },
+      {
+        "label": "Linux Kernel Scheduler Schedules Threads",
+        "detail": "The Linux kernel scheduler schedules OS threads, and CPython's GIL is an additional, separate restriction on top of that controlling which thread executes Python bytecode at a given instant, not a replacement for kernel scheduling."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch02-why_namespaces_exist",
+    "subject": "OS For Docker",
+    "chapter": 2,
+    "name": "Why Namespaces Exist",
+    "steps": [
+      {
+        "label": "Introduction to Namespaces",
+        "detail": "The article explains why namespaces exist and how they create the illusion of a private machine. It uses an analogy of an office building to illustrate the concept."
+      },
+      {
+        "label": "The Illusion of a Private Machine",
+        "detail": "Namespaces create the illusion that a process has its own private machine, with its own view of the system, despite sharing the same kernel and hardware."
+      },
+      {
+        "label": "An Analogy: Office Building",
+        "detail": "The article uses an analogy of an office building with 500 employees to illustrate how namespaces work. Room A, Room B, and Room C each see only their own space."
+      },
+      {
+        "label": "One Building - One Kernel",
+        "detail": "The article emphasizes that, despite the illusion of separate spaces, there is only one building and one kernel."
+      },
+      {
+        "label": "Summary: Namespaces",
+        "detail": "The article concludes by highlighting the concept of namespaces and how they create the illusion of a private machine."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch02-understanding_pid_namespaces",
+    "subject": "OS For Docker",
+    "chapter": 2,
+    "name": "Understanding PID Namespaces",
+    "steps": [
+      {
+        "label": "PID Namespaces Explained",
+        "detail": "PID namespaces create a different view of the same resources, allowing each container to see only its own processes."
+      },
+      {
+        "label": "Container A and B Examples",
+        "detail": "Container A runs PID 1 -> nginx, PID 7 -> worker, while Container B runs PID 1 -> redis, PID 5 -> helper. Both containers run on the same Linux kernel."
+      },
+      {
+        "label": "Why Container A Can't See Redis",
+        "detail": "Container A can't see Redis running in Container B because Container B has its own PID namespace, giving it its own process view."
+      },
+      {
+        "label": "Host Kernel View",
+        "detail": "The host kernel sees all processes, including PID 101 -> Chrome, PID 205 -> MySQL, and PID 420 -> redis. However, when running ps inside the Nginx container, only PID 1 -> nginx and PID 7 -> worker appear."
+      },
+      {
+        "label": "PID Namespace Illusion",
+        "detail": "The PID namespace creates the illusion that each container has its own processes, with the kernel answering the same question differently depending on who is asking."
+      },
+      {
+        "label": "Container A's Request",
+        "detail": "When Container A asks the kernel to show running processes, the kernel only shows processes that belong to its own PID namespace."
+      },
+      {
+        "label": "Namespace Conclusion",
+        "detail": "Namespaces do not create new resources, but rather a different view of the same resources, applying to PID, Mount, Network, IPC, UTS, and User namespaces."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch02-docker_pid_namespace_mapping",
+    "subject": "OS For Docker",
+    "chapter": 2,
+    "name": "Docker PID namespace mapping",
+    "steps": [
+      {
+        "label": "Host PID namespace",
+        "detail": "The host has a unique PID namespace, which includes processes like Chrome and MySQL, and also shows the PID of a Docker container."
+      },
+      {
+        "label": "Container PID namespace",
+        "detail": "Inside a Docker container, the PID namespace is different from the host's, and shows processes like Python App and Worker as separate PIDs."
+      },
+      {
+        "label": "PID mapping",
+        "detail": "The container's PID namespace maps the host's PID of the Python app as PID 1, even though it has a different host PID."
+      },
+      {
+        "label": "Docker's view",
+        "detail": "Docker changes the Linux kernel's PID numbering, allowing containers to see only their own processes, while the host sees all containers."
+      },
+      {
+        "label": "Host's view",
+        "detail": "The host can see every process, including container processes, because it owns all processes, while a container only sees its own processes."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch02-pid_namespace_creation_and_management",
+    "subject": "OS For Docker",
+    "chapter": 2,
+    "name": "PID namespace creation and management",
+    "steps": [
+      {
+        "label": "Linux kernel creates PID namespace",
+        "detail": "The Linux kernel creates and enforces PID namespaces. Docker asks the kernel to create a new namespace when starting a container."
+      },
+      {
+        "label": "Docker asks Linux kernel to create a new PID namespace",
+        "detail": "When starting a container, Docker requests the Linux kernel to create a new PID namespace."
+      },
+      {
+        "label": "Linux kernel creates a new PID namespace",
+        "detail": "The Linux kernel creates a new PID namespace, which allows for unique PID numbers within that namespace."
+      },
+      {
+        "label": "Docker assigns PID numbers within the namespace",
+        "detail": "Docker assigns PID numbers within the newly created namespace. For example, PID 1 is assigned to nginx and PID 8 is assigned to the worker."
+      },
+      {
+        "label": "PID numbers are unique within the namespace",
+        "detail": "PID numbers are unique within the PID namespace, not globally across the entire system."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch02-kill_9_process",
+    "subject": "OS For Docker",
+    "chapter": 2,
+    "name": "kill -9 process",
+    "steps": [
+      {
+        "label": "Nginx executes kill -9 500",
+        "detail": "Nginx, running as PID 1 in Container A, executes kill -9 500. The kernel checks for a process with PID 500 in Container A's PID namespace and finds nothing."
+      },
+      {
+        "label": "Kernel returns ESRCH",
+        "detail": "The kernel returns 'No such process' (ESRCH) because PID 500 does not exist in Container A's PID namespace, even though it exists in Container B's namespace."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch02-pid_namespace_understanding",
+    "subject": "OS For Docker",
+    "chapter": 2,
+    "name": "PID namespace understanding",
+    "steps": [
+      {
+        "label": "Docker starts a new container",
+        "detail": "Docker starts a new container, and inside it, there is only one process object, presented with a different PID depending on which namespace is asking."
+      },
+      {
+        "label": "PID values are namespace-relative",
+        "detail": "PID values are namespace-relative, meaning that the host PID namespace assigns one PID, while the container's PID namespace presents the same process with a different local PID, often starting from 1."
+      },
+      {
+        "label": "Kernel creates one process object",
+        "detail": "The kernel creates exactly one Linux process; Docker then asks the kernel to place that same process inside a new PID namespace, where it is presented as PID 1."
+      },
+      {
+        "label": "Namespaces provide different views",
+        "detail": "Namespaces never duplicate resources; they only provide different views of the same resources. This applies to PID, Mount, Network, IPC, and UTS namespaces alike."
+      },
+      {
+        "label": "One process, different views",
+        "detail": "A person can have an employee ID of 900 at their company and a member ID of 1 at their gym. Two identifiers, one person - not two people. Similarly, one Linux process can have different PID numbers in different namespaces."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch02-docker_container_setup",
+    "subject": "OS For Docker",
+    "chapter": 2,
+    "name": "Docker Container Setup",
+    "steps": [
+      {
+        "label": "Docker configures container",
+        "detail": "Docker sets up the container by telling the kernel to create a new PID namespace and start the nginx process inside it."
+      },
+      {
+        "label": "Kernel creates and starts the container",
+        "detail": "The kernel now owns the process, and when the process inside the container calls getpid(), the kernel checks which PID namespace made the request and returns the matching PID."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch02-container_creation",
+    "subject": "OS For Docker",
+    "chapter": 2,
+    "name": "container creation",
+    "steps": [
+      {
+        "label": "Send command to Docker Engine",
+        "detail": "The command-line tool sends the request to Docker Engine, which manages images, volumes, and networks."
+      },
+      {
+        "label": "Create container manager",
+        "detail": "Docker Engine (dockerd) creates the container manager, which stores metadata, manages images and snapshots, and calls the runtime when a new container needs to start."
+      },
+      {
+        "label": "Run container runtime",
+        "detail": "The container manager (dockerd) calls the container runtime (runc), which tells the kernel to create the PID/mount/network/UTS/IPC (and optionally user) namespaces plus cgroups, then executes the container's entrypoint."
+      },
+      {
+        "label": "Create container shim",
+        "detail": "The container runtime (runc) exits once the container starts, and the container shim (containerd-shim) becomes the container's parent process, holding its stdin/stdout/stderr, reporting its exit status, and keeping the container running."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch02-understanding_docker_bind_mounts",
+    "subject": "OS For Docker",
+    "chapter": 2,
+    "name": "Understanding Docker Bind Mounts",
+    "steps": [
+      {
+        "label": "Bind-mounted containers can create, modify, and delete files on the host",
+        "detail": "A bind-mounted container can access and modify files on the host's filesystem if it has write access. This is in contrast to a photocopy-like approach where changes are isolated from the host."
+      },
+      {
+        "label": "Bind mounts are like a window",
+        "detail": "Bind mounts provide a shared view of the same file system between the host and the container, allowing changes made in the container to be reflected on the host."
+      },
+      {
+        "label": "Docker automatically copies files to the host",
+        "detail": "When a file is created in a container's own filesystem, Docker automatically copies the file to the host's filesystem, making it accessible from the host."
+      },
+      {
+        "label": "Mount namespace provides isolation",
+        "detail": "The mount namespace provides isolation between the host and the container by changing the process's view of the filesystem, rather than duplicating hardware."
+      },
+      {
+        "label": "Bind mounts expose host directories intentionally",
+        "detail": "Bind mounts intentionally expose host directories to the container, allowing for file sharing and modification between the host and the container."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch02-documenting_chapter_progress",
+    "subject": "OS For Docker",
+    "chapter": 2,
+    "name": "Documenting Chapter Progress",
+    "steps": [
+      {
+        "label": "Confirm MCQs",
+        "detail": "The chapter's Multiple Choice Questions (MCQs) are confirmed, with 14 correct and 4 wrong-guess traps identified."
+      },
+      {
+        "label": "Teach PID and Mount namespaces",
+        "detail": "PID namespaces and Mount namespaces are taught with confirmed interview-check MCQs, covering topics such as process identity and Mount namespace behavior."
+      },
+      {
+        "label": "Complete Network Namespace coverage",
+        "detail": "The Network Namespace's full arc, including port isolation, cross-container port-80 puzzle, veth pairs, and Docker's IPAM, is covered in Chapter 3."
+      },
+      {
+        "label": "Refine Roadmap",
+        "detail": "The session refines its detailed roadmap, confirming the completion of Kernel, System Calls, Processes, PID Namespace, and Mount Namespace, and planning to move on to Network Namespace."
+      },
+      {
+        "label": "Commit to 'why' teaching philosophy",
+        "detail": "The session commits to a 'why, not memorization' teaching philosophy, planning to explain concepts such as the purpose of Network namespaces, volumes, and layer-ordering in Dockerfile builds."
+      },
+      {
+        "label": "Plan Python-backend-specific scenarios",
+        "detail": "The session plans to integrate Python-backend-specific scenarios, such as FastAPI, Django+Gunicorn, Celery, Kafka consumers, Redis, and PostgreSQL, once the fundamentals are solid."
+      },
+      {
+        "label": "Defer advanced aside",
+        "detail": "The --pid=host / --pid=container: shared-namespace behavior mentioned as an advanced aside in Section 5 is deferred for later discussion."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch02-understanding_linux_namespaces",
+    "subject": "OS For Docker",
+    "chapter": 2,
+    "name": "Understanding Linux Namespaces",
+    "steps": [
+      {
+        "label": "Verify against real-world practice",
+        "detail": "The production/technical claims in this chapter were cross-checked against real-world practice before being included."
+      },
+      {
+        "label": "PID namespace visibility",
+        "detail": "A process is visible within its own PID namespace and every ancestor namespace, but the reverse does not hold - a child namespace cannot see its parent's or siblings' processes."
+      },
+      {
+        "label": "Sending a signal to a PID",
+        "detail": "Sending a signal to a PID requires that PID to be resolvable within the sender's own PID namespace, or a descendant; a PID only visible in a different, non-ancestor namespace is invisible to the sender and the call fails with ESRCH."
+      },
+      {
+        "label": "Docker's namespace creation",
+        "detail": "Docker asks the Linux kernel (via runc) to create the namespace and start the process inside it, and runc exits once the container starts."
+      },
+      {
+        "label": "Containerd-shim's role",
+        "detail": "containerd-shim becomes the container's parent process, holding its stdio and exit status so the container survives even if containerd restarts."
+      },
+      {
+        "label": "pivot_root(2) syscall",
+        "detail": "The container root filesystem uses the pivot_root(2) syscall inside the new mount namespace, similar to chroot() but allowing briefly retaining access to the old root before it is unmounted."
+      },
+      {
+        "label": "Bind mounts",
+        "detail": "A bind mount attaches the same underlying filesystem tree at a second path, with no file copying involved; editing the file through either path affects the same physical data."
+      },
+      {
+        "label": "Docker's default storage driver",
+        "detail": "Docker's default storage driver overlays read-only image layers with a single writable layer via Linux OverlayFS, producing a merged view."
+      },
+      {
+        "label": "Namespace illusion",
+        "detail": "A namespace never creates a new resource, only a different view of the same one; PID namespaces proved this first, and mount namespaces applied the same illusion to the filesystem."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch03-port_isolation_puzzle",
+    "subject": "OS For Docker",
+    "chapter": 3,
+    "name": "Port Isolation Puzzle",
+    "steps": [
+      {
+        "label": "Linux machine with interfaces eth0 and lo",
+        "detail": "One Linux machine with IP 192.168.1.10 and interfaces eth0 (physical) and lo (loopback, 127.0.0.1)"
+      },
+      {
+        "label": "Python HTTPServer starts and listens on port 8000",
+        "detail": "A Python HTTPServer starts and listens on port 8000"
+      },
+      {
+        "label": "Second Python program tries to listen on port 8000",
+        "detail": "A second Python program tries to listen on port 8000, but gets an OSError: [Errno 98] Address already in use"
+      },
+      {
+        "label": "Network namespace cannot have two processes listening on same IP + Port + Protocol",
+        "detail": "One network namespace cannot have two processes listening on the same IP + Port + Protocol combination, as the kernel would have no way to know where to deliver the packet"
+      },
+      {
+        "label": "Port owner is determined by kernel",
+        "detail": "The kernel asks 'which process owns port 8000?' when an incoming request is made, and refuses the second claim outright if two different processes both claimed the same address"
+      },
+      {
+        "label": "Docker starts containers",
+        "detail": "Docker starts Container A (nginx, listening on port 80), then Container B (Apache, also port 80), then Container C (Python, also port 80)"
+      },
+      {
+        "label": "Three containers listen on port 80 simultaneously",
+        "detail": "All three containers succeed, despite listening on the same port 80, because each container has its own independent port table and networking stack"
+      },
+      {
+        "label": "Port table is isolated per namespace",
+        "detail": "Each Network Namespace gets its own fully isolated networking stack, including its own network interfaces, IP addresses, routing table, ARP table, and firewall rules"
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch03-docker_networking",
+    "subject": "OS For Docker",
+    "chapter": 3,
+    "name": "docker networking",
+    "steps": [
+      {
+        "label": "Docker listens on port 80",
+        "detail": "Inside the container, nginx listens on port 80."
+      },
+      {
+        "label": "Request reaches the container",
+        "detail": "The request automatically reaches the container because it's listening on port 80."
+      },
+      {
+        "label": "Docker forwards host port",
+        "detail": "Docker automatically forwards host port 80 to the container."
+      },
+      {
+        "label": "Container is not reachable",
+        "detail": "The container is not reachable unless the port is published."
+      },
+      {
+        "label": "Docker publishes host port",
+        "detail": "Docker randomly chooses an available host port."
+      },
+      {
+        "label": "localhost resolves to host's loopback",
+        "detail": "The browser's localhost:80 resolves to the HOST's loopback interface (127.0.0.1), not the container's."
+      },
+      {
+        "label": "Docker creates explicit mapping",
+        "detail": "docker run -p 8080:80 nginx creates an explicit mapping instead:"
+      },
+      {
+        "label": "DNAT rules are inserted",
+        "detail": "Concretely, -p works by inserting DNAT (Destination Network Address Translation) rules into the PREROUTING chain of the host's iptables NAT table"
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch03-docker_container_communication",
+    "subject": "OS For Docker",
+    "chapter": 3,
+    "name": "Docker Container Communication",
+    "steps": [
+      {
+        "label": "Create Network Namespace",
+        "detail": "Docker creates a new network namespace for the container."
+      },
+      {
+        "label": "Create veth pair",
+        "detail": "Docker creates a veth pair, a virtual network cable with two ends, connecting the host namespace to the container's network namespace."
+      },
+      {
+        "label": "Move one end into the container",
+        "detail": "One end of the veth pair is moved into the container's network namespace and appears as eth0."
+      },
+      {
+        "label": "Rename it to eth0",
+        "detail": "The end of the veth pair in the container is renamed to eth0."
+      },
+      {
+        "label": "Attach the host end to the docker0 bridge",
+        "detail": "The host-side end of the veth pair is attached to the docker0 bridge, a Linux bridge acting as a virtual switch."
+      },
+      {
+        "label": "Assign the container an IP",
+        "detail": "The container is assigned an IP address from a private subnet (typically 172.17.0.0/16)."
+      },
+      {
+        "label": "Start nginx",
+        "detail": "The container is started, and nginx begins serving requests."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch03-ipam_and_container_ip_addressing",
+    "subject": "OS For Docker",
+    "chapter": 3,
+    "name": "IPAM and Container IP Addressing",
+    "steps": [
+      {
+        "label": "IP Allocation",
+        "detail": "When a new container is attached to Docker's default bridge network, the Linux kernel automatically picks a random IP address. Docker's networking/IPAM component allocates an available IP from the bridge network's subnet and configures the container's network namespace."
+      },
+      {
+        "label": "Container Requests IP",
+        "detail": "The application inside the container (e.g. nginx) requests an IP."
+      },
+      {
+        "label": "IPAM Allocates IP",
+        "detail": "Docker's IPAM (IP Address Management) component tracks which addresses in the bridge subnet are already used, picks the next free one, and then instructs the kernel to configure that address on the container's interface."
+      },
+      {
+        "label": "veth Pair Generates IP",
+        "detail": "The veth pair generates an IP address automatically."
+      },
+      {
+        "label": "Host Routes Container IP",
+        "detail": "The host routes the container's IP to the Wi-Fi router."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch03-port_publishing_and_nat",
+    "subject": "OS For Docker",
+    "chapter": 3,
+    "name": "Port Publishing And NAT",
+    "steps": [
+      {
+        "label": "Client requests http://192.168.1.25:8080",
+        "detail": "The client sends a request to http://192.168.1.25:8080 from another machine."
+      },
+      {
+        "label": "Host Machine receives packet",
+        "detail": "The packet arrives at the host machine (192.168.1.25:8080) and not the container."
+      },
+      {
+        "label": "NAT Rule rewrites destination",
+        "detail": "The NAT rule installed by Docker at container start rewrites the destination to 172.17.0.2:80, docker0 Bridge, veth Pair, and then Container eth0 -> nginx."
+      },
+      {
+        "label": "Packet reaches container",
+        "detail": "The packet reaches the container's nginx."
+      },
+      {
+        "label": "Reply retraces the same path",
+        "detail": "The reply retraces the same path in reverse, with the kernel rewriting the source back from 172.17.0.2:80 to 192.168.1.25:8080 before it reaches the client."
+      },
+      {
+        "label": "Client never sees internal rewrite",
+        "detail": "The client never sees the internal rewrite in either direction."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch03-docker_daemon_steps_aside",
+    "subject": "OS For Docker",
+    "chapter": 3,
+    "name": "Docker Daemon Steps Aside",
+    "steps": [
+      {
+        "label": "Docker daemon creates container, network namespace, veth pair, and installs NAT rules",
+        "detail": "The Docker daemon creates the container, network namespace, veth pair, connected it to docker0, assigned an IP, and installed the NAT rules."
+      },
+      {
+        "label": "Docker daemon steps aside",
+        "detail": "The Docker daemon's job is setup; the hardware (Linux kernel) does the ongoing forwarding work independently."
+      },
+      {
+        "label": "Packet forwarding happens in kernel space",
+        "detail": "The kernel processes packets directly: NIC -> Linux Kernel -> Bridge -> Container. The user-space Docker daemon does not need to wake up for every packet."
+      },
+      {
+        "label": "Container and NAT rules continue running even if daemon dies",
+        "detail": "Already-running containers generally keep running (though restart policies and further management operations can be temporarily affected until the daemon comes back)."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch03-iptables_chains",
+    "subject": "OS For Docker",
+    "chapter": 3,
+    "name": "iptables Chains",
+    "steps": [
+      {
+        "label": "Packet enters",
+        "detail": "A packet entering a Linux machine does not go straight to an application - it passes through a series of checkpoints first. Those checkpoints are iptables chains."
+      },
+      {
+        "label": "PREROUTING",
+        "detail": "Does this packet's address need to change? (DNAT/rewrites happen here - this is where Docker's port-publishing rule lives)"
+      },
+      {
+        "label": "Routing Decision",
+        "detail": "Is the (possibly rewritten) destination this host itself, or somewhere else?"
+      },
+      {
+        "label": "INPUT",
+        "detail": "Is this packet for me, the host?"
+      },
+      {
+        "label": "FORWARD",
+        "detail": "Does this packet need to go to a different network (e.g. into a container)?"
+      },
+      {
+        "label": "POSTROUTING",
+        "detail": "Is this packet about to leave the machine? (source rewrites/MASQUERADE happen here, e.g. for a container reaching the internet)"
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch03-decoding_docker_run_p_word_by_word",
+    "subject": "OS For Docker",
+    "chapter": 3,
+    "name": "DECODING DOCKER RUN -P, WORD BY WORD",
+    "steps": [
+      {
+        "label": "Reading An Actual iptables Rule",
+        "detail": "Docker run -p 8080:80 nginx command creates an iptables rule that looks intimidating at first. Read the rule left to right, one clause at a time."
+      },
+      {
+        "label": "Understanding the Rule",
+        "detail": "The rule adds a custom chain named DOCKER, keeps it separate from other rules, and only matches packets not already arriving from the docker0 interface."
+      },
+      {
+        "label": "Breaking Down the Rule",
+        "detail": "The rule consists of several clauses: -A DOCKER adds the rule to the custom chain, ! -i docker0 matches packets not arriving from docker0, -p tcp only matches TCP packets, --dport 8080 matches packets with destination port 8080, and --to-destination 172.17.0.2:80 changes the destination to the container's IP and port."
+      },
+      {
+        "label": "How the Rule Works",
+        "detail": "The rule matches packets that did not arrive from docker0, have protocol TCP, and have destination port 8080, then changes the destination to 172.17.0.2:80."
+      },
+      {
+        "label": "Example Scenario",
+        "detail": "A packet arrives with source 192.168.1.50:50000 and destination 192.168.1.25:8080. The Docker rule matches, and after DNAT, the packet's destination becomes 172.17.0.2:80."
+      },
+      {
+        "label": "Conclusion",
+        "detail": "The container now sees source 192.168.1.50, destination 172.17.0.2. The reply's headers are source 172.17.0.2:80, destination 192.168.1.50:50000, and the client never talks to 172.17.0.2."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch03-linux_connection_tracking",
+    "subject": "OS For Docker",
+    "chapter": 3,
+    "name": "Linux Connection Tracking",
+    "steps": [
+      {
+        "label": "Client sends request",
+        "detail": "The client (192.168.1.10:51000) sends a request to 192.168.1.25:8080."
+      },
+      {
+        "label": "Packet hits PREROUTING",
+        "detail": "The packet hits PREROUTING; Docker's DNAT rule rewrites the destination to 172.17.0.2:80."
+      },
+      {
+        "label": "Conntrack creates an entry",
+        "detail": "conntrack creates an entry right here, recording the original pairing (192.168.1.10:51000 <-> 192.168.1.25:8080) alongside the translated one (172.17.0.2:80)."
+      },
+      {
+        "label": "Container replies",
+        "detail": "The container replies: source 172.17.0.2:80, destination 192.168.1.10:51000. The kernel looks this up in the conntrack table and finds the matching entry - 'this is Connection #1.'"
+      },
+      {
+        "label": "Kernel reverse-NATs the reply",
+        "detail": "The kernel automatically reverse-NATs the reply (172.17.0.2:80 back to 192.168.1.25:8080) using that stored entry, and sends it to exactly the right client."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch03-snat_and_masquerade",
+    "subject": "OS For Docker",
+    "chapter": 3,
+    "name": "SNAT and Masquerade",
+    "steps": [
+      {
+        "label": "Rewrite Source",
+        "detail": "Linux rewrites the source IP address from the container's private IP to the host's own IP address."
+      },
+      {
+        "label": "MASQUERADE",
+        "detail": "The rewritten source IP address is used to allow the packet to travel the internet normally, with Google seeing the request as coming from the host machine."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch03-packet_routing",
+    "subject": "OS For Docker",
+    "chapter": 3,
+    "name": "Packet Routing",
+    "steps": [
+      {
+        "label": "Linux makes a basic decision",
+        "detail": "Linux decides whether to handle the packet directly or hand it off to a gateway, using its routing table."
+      },
+      {
+        "label": "Container's routing table used",
+        "detail": "The container's routing table is consulted to determine the destination. If the destination is within the container's own network, the packet is handled directly. If not, the packet is sent to the gateway (172.17.0.1)."
+      },
+      {
+        "label": "Host's routing table used",
+        "detail": "The host's routing table is consulted to determine the destination. If the destination is within the host's own network, the packet is handled directly. If not, the packet is sent to the default gateway (wlan0 interface)."
+      },
+      {
+        "label": "Packet reaches the host's kernel",
+        "detail": "The packet has reached the host's kernel, with source 172.17.0.2 and destination Google. NAT has not happened yet."
+      },
+      {
+        "label": "Linux checks the routing table first",
+        "detail": "The Linux kernel checks the routing table first to determine where the packet should go. The packet is routed to the default gateway (wlan0 interface) because Google's IP does not match the host's own network or the docker0 network."
+      },
+      {
+        "label": "Linux rewrites the source address",
+        "detail": "Linux rewrites the source address to 192.168.1.25 (the host's own IP) before sending the packet out to the internet."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch03-masquerade",
+    "subject": "OS For Docker",
+    "chapter": 3,
+    "name": "MASQUERADE",
+    "steps": [
+      {
+        "label": "Container's packet leaves",
+        "detail": "A container's packet leaves with a source IP and destination IP. Linux applies MASQUERADE."
+      },
+      {
+        "label": "Destination IP changes",
+        "detail": "The destination IP changes, but the destination itself remains the same (Google)."
+      },
+      {
+        "label": "Source IP changes",
+        "detail": "The source IP changes to the host's IP (192.168.1.25)."
+      },
+      {
+        "label": "Conntrack keeps mapping",
+        "detail": "Conntrack keeps a mapping for every translated connection, so when a reply lands, it knows which container it belongs to."
+      },
+      {
+        "label": "Port rewriting",
+        "detail": "When multiple containers share one host IP, the source port is rewritten to keep every connection uniquely identifiable."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch03-masquerade_arc_completion",
+    "subject": "OS For Docker",
+    "chapter": 3,
+    "name": "MASQUERADE Arc Completion",
+    "steps": [
+      {
+        "label": "Confirm Network Namespace and Docker's NAT/iptables/routing/MASQUERADE mechanism",
+        "detail": "The entire mechanism is confirmed end to end, including why the routing table is consulted before any NAT can run, why an unrewritten packet's reply would get stranded, and exactly what MASQUERADE changes."
+      },
+      {
+        "label": "Answer Open Questions",
+        "detail": "Three open questions were answered, including an earlier NAT-packet-flow prediction prompt, two routing-related open questions, and a batch of six MCQs that were retracted before being answered."
+      },
+      {
+        "label": "Move Content to Chapter 4",
+        "detail": "The session immediately opened a new sub-topic, Routing Table versus Conntrack, and a longer roadmap, and moved the content to Chapter 4"
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch03-docker_networking_process",
+    "subject": "OS For Docker",
+    "chapter": 3,
+    "name": "Docker Networking Process",
+    "steps": [
+      {
+        "label": "Allocate container IPs sequentially",
+        "detail": "Docker's built-in IPAM driver allocates container IPs sequentially from the bridge network's subnet, and tracks allocations to prevent conflicts."
+      },
+      {
+        "label": "Install DNAT rule in PREROUTING",
+        "detail": "Docker installs a DNAT rule in the PREROUTING chain of the host's iptables NAT table, rewriting the destination of matching packets from the published host port to the container's internal IP and port."
+      },
+      {
+        "label": "Rewrite source port using MASQUERADE",
+        "detail": "Docker also installs a MASQUERADE rule in the POSTROUTING chain, rewriting the source port of outbound packets from the container subnet to the host's own IP, allowing containers to reach the internet."
+      },
+      {
+        "label": "Use conntrack for NAT",
+        "detail": "NAT relies on conntrack to match return traffic back to its original translation, since NAT is address rewriting plus connection-state memory, not rewriting alone."
+      },
+      {
+        "label": "Implement PAT (NAPT) for port address translation",
+        "detail": "PAT (Port Address Translation) lets many internal hosts share one public IP by translating the full (IP, port) socket, not just the IP, rewriting the source port whenever needed to keep otherwise-identical connections uniquely identifiable."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch04-determining_packet_forwarding",
+    "subject": "OS For Docker",
+    "chapter": 4,
+    "name": "Determining packet forwarding",
+    "steps": [
+      {
+        "label": "Determine interface for packet forwarding",
+        "detail": "The Linux kernel's first decision is to determine which interface to forward the packet through. The Routing Table handles this decision."
+      },
+      {
+        "label": "Identify packet as part of a conversation",
+        "detail": "The packet is recognized as part of an ongoing conversation. Conntrack records the mapping between the packet and the container it belongs to."
+      },
+      {
+        "label": "Reverse the translation",
+        "detail": "When a reply packet arrives, the Conntrack Table is used to reverse the translation and determine the original container."
+      },
+      {
+        "label": "Routing decides the path",
+        "detail": "The Routing Table decides the path for the packet, but does not keep connection history."
+      },
+      {
+        "label": "Conntrack remembers the conversation",
+        "detail": "Conntrack remembers the conversation and holds the mapping needed to reverse the translation."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch04-conntrack_table_flush",
+    "subject": "OS For Docker",
+    "chapter": 4,
+    "name": "Conntrack Table Flush",
+    "steps": [
+      {
+        "label": "Flush Conntrack Table",
+        "detail": "The conntrack -F command erases the conntrack table's notebook, removing all existing connection entries."
+      },
+      {
+        "label": "Impact Existing Connections",
+        "detail": "Existing internet connections' responses become difficult to reverse-NAT, and the existing connection can break as a result, since Linux has no record telling it which container this belongs to."
+      },
+      {
+        "label": "New Connections Recover",
+        "detail": "New connections usually recover quickly, since a fresh conntrack entry gets created the moment a new connection opens."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch04-why_conntrack_cannot_rescue_a_missing_nat_rule",
+    "subject": "OS For Docker",
+    "chapter": 4,
+    "name": "Why Conntrack Cannot Rescue a Missing NAT Rule",
+    "steps": [
+      {
+        "label": "MASQUERADE rule is deleted",
+        "detail": "The host's MASQUERADE rule has been deleted, but the routing table, conntrack, DNS, and docker0 are all otherwise fine."
+      },
+      {
+        "label": "Routing succeeds, but packet is dropped",
+        "detail": "The packet leaves with the private IP 172.17.0.2 still in its source field, which is not a valid return address on the public internet. The packet may be dropped upstream, or reach Google but have no usable path back to the container."
+      },
+      {
+        "label": "Conntrack rewrites the source IP",
+        "detail": "Conntrack rewrites the source IP itself, but this does not perform actual packet rewriting, as the NAT subsystem (SNAT/DNAT/MASQUERADE rules) is responsible for that."
+      },
+      {
+        "label": "NAT is required for reachability",
+        "detail": "NAT is what makes the source address usable once the packet is out there. Losing NAT does not break routing - it breaks reachability."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch04-determining_which_interface_is_most_likely_connected_to_the_",
+    "subject": "OS For Docker",
+    "chapter": 4,
+    "name": "Determining Which Interface is Most Likely Connected to the Home/Office LAN",
+    "steps": [
+      {
+        "label": "Reading IP Addresses",
+        "detail": "The first step is to read the IP addresses listed by the command 'ip addr'."
+      },
+      {
+        "label": "Identifying Loopback Interface",
+        "detail": "The loopback interface (lo) is identified as the interface with the IP address 127.0.0.1/8, which is the interface that traffic never leaves the machine."
+      },
+      {
+        "label": "Identifying Private LAN Interface",
+        "detail": "The private LAN interface (eth0) is identified as the interface with the IP address 192.168.1.25/24, which was almost certainly assigned by a home router's DHCP server."
+      },
+      {
+        "label": "Identifying Docker-created Virtual Bridges",
+        "detail": "The Docker-created virtual bridges (docker0 and br-8a2c...) are identified as Linux switches that only containers plug into."
+      },
+      {
+        "label": "Determining What is Being Pinged",
+        "detail": "When running ping 172.17.0.1 from inside a container, the host's docker0 bridge interface is actually being pinged, and the Docker daemon is not involved."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch04-linux_picks_an_interface",
+    "subject": "OS For Docker",
+    "chapter": 4,
+    "name": "Linux picks an interface",
+    "steps": [
+      {
+        "label": "Host has multiple interfaces",
+        "detail": "The host has multiple interfaces, such as eth0 and docker0, each with its own IP address and subnet mask."
+      },
+      {
+        "label": "Docker daemon intercepts packet",
+        "detail": "The Docker daemon intercepts every packet and chooses the interface to use for transmission."
+      },
+      {
+        "label": "Linux checks routing table",
+        "detail": "Linux checks its routing table to find the route whose network matches the destination address."
+      },
+      {
+        "label": "Application specifies interface",
+        "detail": "The application specifies which interface to use for transmission."
+      },
+      {
+        "label": "Packet is broadcast",
+        "detail": "The packet is broadcast on every interface until the destination responds."
+      },
+      {
+        "label": "Routing table is consulted",
+        "detail": "Linux consults its routing table and sends the packet out the interface that matches the destination address's network range."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch04-longest_prefix_match_lpm_routing",
+    "subject": "OS For Docker",
+    "chapter": 4,
+    "name": "Longest Prefix Match (LPM) Routing",
+    "steps": [
+      {
+        "label": "Step 1: Determine destination IP",
+        "detail": "Linux checks each route in turn to see if the destination IP falls inside the network ID."
+      },
+      {
+        "label": "Step 2: Check specific routes first",
+        "detail": "Linux checks specific routes first, and only uses the default route if nothing else matches."
+      },
+      {
+        "label": "Step 3: Use Longest Prefix Match (LPM)",
+        "detail": "When multiple routes match a destination, Linux always picks the one with the longest (most specific) prefix."
+      },
+      {
+        "label": "Step 4: Choose most specific matching route",
+        "detail": "Linux always chooses the most specific matching route, even if multiple routes match the same destination."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch04-resume_of_chapter_pausing",
+    "subject": "OS For Docker",
+    "chapter": 4,
+    "name": "Resume of Chapter Pausing",
+    "steps": [
+      {
+        "label": "Pause Chapter",
+        "detail": "The session deliberately pauses the current chapter, which includes the networking track, to return to Docker Deep Dive proper."
+      },
+      {
+        "label": "Resume Docker Deep Dive",
+        "detail": "Once Docker Deep Dive's own next stretch reaches a natural stopping point, the chapter's roadmap will be picked up again."
+      },
+      {
+        "label": "Pick Up Roadmap",
+        "detail": "The remaining parts of the chapter's roadmap, including real iptables -t nat -L / conntrack -L output, DNS inside containers, custom bridge networks, host/none network modes, macvlan/ipvlan, overlay networks, Compose networking, Kubernetes networking, and CNI plugins, will be resumed."
+      }
+    ]
+  },
+  {
+    "id": "os_for_docker-ch04-routing_and_conntrack_process",
+    "subject": "OS For Docker",
+    "chapter": 4,
+    "name": "Routing and Conntrack Process",
+    "steps": [
+      {
+        "label": "Introduction",
+        "detail": "The chapter opens by distinguishing between Routing and Conntrack, highlighting how Routing decides the path and Conntrack remembers the conversation."
+      },
+      {
+        "label": "Conntrack Flushing",
+        "detail": "Flushing Conntrack breaks existing connections' reverse NAT, but not the containers or the daemon themselves. New connections recover fine."
+      },
+      {
+        "label": "MASQUERADE Deletion",
+        "detail": "Deleting MASQUERADE breaks reachability, not routing, as Conntrack can remember NAT mappings but never performs the rewrite itself."
+      },
+      {
+        "label": "Real Command Output",
+        "detail": "The chapter grounds the concepts in real command output, including identifying lo/eth0/docker0 in ip addr and confirming a container's ping to docker0 is answered by the kernel not dockerd."
+      },
+      {
+        "label": "CIDR-Based Matching",
+        "detail": "The routing table's CIDR-based matching (/16 and /24) picks an interface based on the longest prefix match (LPM)."
+      },
+      {
+        "label": "Default Gateway and LPM",
+        "detail": "The chapter introduces Default Gateway (last resort, not first choice) and Longest Prefix Match (the most specific matching route always wins)."
+      },
+      {
+        "label": "ARP Introduction",
+        "detail": "The chapter introduces ARP (Address Resolution Protocol) as the next mechanism, with no details provided on its first step."
+      }
+    ]
   }
 ]
