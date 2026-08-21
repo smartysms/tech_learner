@@ -22501,25 +22501,6 @@
     "correctIndex": 2
   },
   {
-    "id": "kafka-ch03-s09-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 3 (Interview Prep)",
-    "topic": "Production Advice, And The Python Reality",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is the recommended approach to custom partitioning in Kafka, according to the text?",
-    "answer": null,
-    "notes": "The text recommends solving most partitioning problems with the default partitioner, only resorting to a custom one when a real business requirement demands it. Options 1 and 3 are incorrect, as they suggest implementing custom partitioning when not necessary. Option 2 is correct, but option 4 is also a viable solution, encoding routing into the message key for the default partitioner to handle.",
-    "cloze_answer": null,
-    "options": [
-      "Implement a custom partitioner using the Python callback provided by confluent-kafka",
-      "Use the default partitioner and only write a custom one when a business requirement demands it",
-      "Use a Java client to implement custom logic",
-      "Encode routing into the message key and let the default partitioner handle it"
-    ],
-    "correctIndex": 1
-  },
-  {
     "id": "kafka-ch03-s09-mcq2",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 3 (Interview Prep)",
