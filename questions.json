@@ -38265,8 +38265,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "http",
+      "fundamentals"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s01-c2",
@@ -38282,8 +38285,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "http",
+      "fundamentals"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s01-c3",
@@ -38299,8 +38305,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "http",
+      "fundamentals"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s02-c1",
@@ -38316,8 +38325,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "architecture"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s02-c2",
@@ -38333,8 +38346,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "architecture"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s02-c3",
@@ -38350,8 +38367,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "architecture"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s02-c4",
@@ -38367,8 +38388,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "architecture"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s02-c5",
@@ -38384,8 +38409,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "architecture"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s03-c1",
@@ -38401,8 +38430,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s03-c2",
@@ -38418,8 +38450,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s03-c3",
@@ -38435,8 +38470,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s03-c4",
@@ -38452,8 +38490,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s04-c1",
@@ -38469,8 +38510,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "asgi",
+      "async"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s04-c2",
@@ -38486,8 +38530,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "asgi",
+      "async"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s04-c3",
@@ -38503,8 +38550,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "asgi",
+      "async"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s05-c1",
@@ -38520,8 +38570,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "architecture"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s05-c2",
@@ -38537,8 +38591,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "architecture"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s05-c3",
@@ -38554,8 +38612,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "architecture"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s06-c1",
@@ -38571,8 +38633,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "concurrency",
+      "parallelism"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s06-c2",
@@ -38588,8 +38653,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "concurrency",
+      "parallelism"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s06-c3",
@@ -38605,8 +38673,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "concurrency",
+      "parallelism"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s06-c4",
@@ -38622,8 +38693,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "concurrency",
+      "parallelism"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s07-c1",
@@ -38639,8 +38713,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "concurrency",
+      "parallelism"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s07-c2",
@@ -38656,8 +38733,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "concurrency",
+      "parallelism"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s07-c3",
@@ -38673,8 +38753,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "concurrency",
+      "parallelism"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s07-c4",
@@ -38690,8 +38773,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "concurrency",
+      "parallelism"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s07-c5",
@@ -38707,8 +38793,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "concurrency",
+      "parallelism"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s08-c1",
@@ -38724,8 +38813,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "concurrency",
+      "servers"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s08-c2",
@@ -38741,8 +38834,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "concurrency",
+      "servers"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s08-c3",
@@ -38758,8 +38855,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "concurrency",
+      "servers"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s08-c4",
@@ -38775,8 +38876,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "concurrency",
+      "servers"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s09-c1",
@@ -38792,8 +38897,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "event-loop"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s09-c2",
@@ -38809,8 +38917,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "event-loop"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s09-c3",
@@ -38826,8 +38937,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "event-loop"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s09-c4",
@@ -38843,8 +38957,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "event-loop"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s10-c1",
@@ -38860,8 +38977,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s10-c2",
@@ -38877,8 +38997,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s10-c3",
@@ -38894,8 +39017,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s11-c1",
@@ -38911,8 +39037,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s11-c2",
@@ -38928,8 +39057,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s11-c3",
@@ -38945,8 +39077,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s12-c1",
@@ -38962,8 +39097,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "io"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s12-c2",
@@ -38979,8 +39117,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "io"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s12-c3",
@@ -38996,8 +39137,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "io"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s12-c4",
@@ -39013,8 +39157,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "io"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s13-c1",
@@ -39030,8 +39177,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch01-s13-c2",
@@ -39047,8 +39197,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch01-s13-c3",
@@ -39064,8 +39217,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch01-s13-c4",
@@ -39081,8 +39237,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch01-s13-c5",
@@ -39098,8 +39257,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch01-s13-c6",
@@ -39115,8 +39277,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch01-s14-c1",
@@ -39132,8 +39297,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async",
+      "threading"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s14-c2",
@@ -39149,8 +39318,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async",
+      "threading"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s14-c3",
@@ -39166,8 +39339,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async",
+      "threading"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s15-c1",
@@ -39183,8 +39360,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async",
+      "threading"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s15-c2",
@@ -39200,8 +39381,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async",
+      "threading"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s15-c3",
@@ -39217,8 +39402,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async",
+      "threading"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s15-c4",
@@ -39234,8 +39423,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async",
+      "threading"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s17-c1",
@@ -39251,8 +39444,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async",
+      "threading"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s17-c2",
@@ -39268,8 +39465,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async",
+      "threading"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s17-c3",
@@ -39285,8 +39486,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async",
+      "threading"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s17-c4",
@@ -39302,8 +39507,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async",
+      "threading"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s18-c1",
@@ -39319,8 +39528,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "gil",
+      "concurrency",
+      "cpython"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch01-s18-c2",
@@ -39336,8 +39549,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "gil",
+      "concurrency",
+      "cpython"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch01-s18-c3",
@@ -39353,8 +39570,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "gil",
+      "concurrency",
+      "cpython"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch01-s19-c1",
@@ -39370,8 +39591,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "scaling"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s19-c2",
@@ -39387,8 +39611,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "scaling"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s19-c3",
@@ -39404,8 +39631,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "scaling"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s19-c4",
@@ -39421,8 +39651,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "scaling"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s20-c1",
@@ -39438,8 +39671,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s20-c2",
@@ -39455,8 +39691,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s20-c3",
@@ -39472,8 +39711,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s20-c4",
@@ -39489,8 +39731,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s20-c5",
@@ -39506,8 +39751,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s21-c1",
@@ -39523,8 +39771,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s21-c2",
@@ -39540,8 +39791,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s21-c3",
@@ -39557,8 +39811,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s21-c4",
@@ -39574,8 +39831,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s21-c1",
@@ -39591,8 +39851,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s21-c2",
@@ -39608,8 +39871,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s21-c3",
@@ -39625,8 +39891,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s01-c1",
@@ -39642,8 +39911,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "fundamentals"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch02-s01-c2",
@@ -39659,8 +39931,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "fundamentals"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch02-s01-c3",
@@ -39676,8 +39951,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "fundamentals"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch02-s02-c1",
@@ -39693,8 +39971,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "fundamentals"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch02-s02-c2",
@@ -39710,8 +39991,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "fundamentals"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch02-s02-c3",
@@ -39727,8 +40011,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "fundamentals"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch02-s03-c1",
@@ -39744,8 +40031,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "routing"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch02-s03-c2",
@@ -39761,8 +40051,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "routing"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch02-s03-c3",
@@ -39778,8 +40071,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "routing"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch02-s03-c4",
@@ -39795,8 +40091,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "routing"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch02-s04-c1",
@@ -39812,8 +40111,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "routing"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch02-s04-c2",
@@ -39829,8 +40131,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "routing"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch02-s04-c3",
@@ -39846,8 +40151,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "routing"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch02-s04-c4",
@@ -39863,8 +40171,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "routing"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch02-s05-c1",
@@ -39880,8 +40191,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s05-c2",
@@ -39897,8 +40211,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s05-c3",
@@ -39914,8 +40231,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s06-c1",
@@ -39931,8 +40251,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s06-c2",
@@ -39948,8 +40271,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s06-c3",
@@ -39965,8 +40291,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s07-c1",
@@ -39982,8 +40311,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s07-c2",
@@ -39999,8 +40331,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s07-c3",
@@ -40016,8 +40351,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s07-c4",
@@ -40033,8 +40371,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s08-c1",
@@ -40050,8 +40391,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s08-c2",
@@ -40067,8 +40411,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s08-c3",
@@ -40084,8 +40431,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s09-c1",
@@ -40101,8 +40451,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s09-c2",
@@ -40118,8 +40471,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s09-c3",
@@ -40135,8 +40491,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s09-c4",
@@ -40152,8 +40511,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s09-c5",
@@ -40169,8 +40531,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s10-c1",
@@ -40186,8 +40551,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s10-c2",
@@ -40203,8 +40571,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s10-c3",
@@ -40220,8 +40591,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s10-c4",
@@ -40237,8 +40611,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s10-c5",
@@ -40254,8 +40631,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s11-c1",
@@ -40271,8 +40651,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s11-c2",
@@ -40288,8 +40672,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s11-c3",
@@ -40305,8 +40693,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s11-c4",
@@ -40322,8 +40714,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s11-c5",
@@ -40339,8 +40735,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s12-c1",
@@ -40356,8 +40756,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s12-c2",
@@ -40373,8 +40777,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s12-c3",
@@ -40390,8 +40798,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s12-c4",
@@ -40407,8 +40819,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s13-c1",
@@ -40424,8 +40840,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s13-c2",
@@ -40441,8 +40861,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s13-c3",
@@ -40458,8 +40882,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s14-c1",
@@ -40475,8 +40903,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s14-c2",
@@ -40492,8 +40924,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s14-c3",
@@ -40509,8 +40945,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s14-c4",
@@ -40526,8 +40966,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s15-c1",
@@ -40543,8 +40987,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s15-c2",
@@ -40560,8 +41008,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s15-c3",
@@ -40577,8 +41029,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s16-c1",
@@ -40594,8 +41050,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s16-c2",
@@ -40611,8 +41071,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s16-c3",
@@ -40628,8 +41092,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s17-c1",
@@ -40645,8 +41113,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s17-c2",
@@ -40662,8 +41134,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s17-c3",
@@ -40679,8 +41155,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s17-c4",
@@ -40696,8 +41176,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-c1",
@@ -40713,8 +41197,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-c2",
@@ -40730,8 +41218,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-c1",
@@ -40747,8 +41239,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-c2",
@@ -40764,8 +41260,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-c3",
@@ -40781,8 +41281,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-c1",
@@ -40798,8 +41302,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-c2",
@@ -40815,8 +41323,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-c3",
@@ -40832,8 +41344,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-c4",
@@ -40849,8 +41365,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-c5",
@@ -40866,8 +41386,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-c1",
@@ -40883,8 +41407,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-c2",
@@ -40900,8 +41428,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-c3",
@@ -40917,8 +41449,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s20-c1",
@@ -40934,8 +41470,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s20-c2",
@@ -40951,8 +41490,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s20-c3",
@@ -40968,8 +41510,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s20-c4",
@@ -40985,8 +41530,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s20-c5",
@@ -41002,8 +41550,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s21-c1",
@@ -41019,8 +41570,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s21-c2",
@@ -41036,8 +41590,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s21-c3",
@@ -41053,8 +41610,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s21-c4",
@@ -41070,8 +41630,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s21-c5",
@@ -41087,8 +41650,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s22-c1",
@@ -41104,8 +41670,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "sessions"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s22-c2",
@@ -41121,8 +41690,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "sessions"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s22-c3",
@@ -41138,8 +41710,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "sessions"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s22-c4",
@@ -41155,8 +41730,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "sessions"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s22-c5",
@@ -41172,8 +41750,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "sessions"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s22-c6",
@@ -41189,8 +41770,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "sessions"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-c1",
@@ -41206,8 +41790,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-c2",
@@ -41223,8 +41811,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-c3",
@@ -41240,8 +41832,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-c4",
@@ -41257,8 +41853,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-c5",
@@ -41274,8 +41874,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-c6",
@@ -41291,8 +41895,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-c1",
@@ -41308,8 +41916,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-c2",
@@ -41325,8 +41937,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-c3",
@@ -41342,8 +41958,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-c4",
@@ -41359,8 +41979,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-c1",
@@ -41376,8 +42000,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-c2",
@@ -41393,8 +42021,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-c3",
@@ -41410,8 +42042,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-c4",
@@ -41427,8 +42063,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-c5",
@@ -41444,8 +42084,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-c1",
@@ -41461,8 +42105,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-c2",
@@ -41478,8 +42126,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-c3",
@@ -41495,8 +42147,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-c4",
@@ -41512,8 +42168,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-c5",
@@ -41529,8 +42189,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch00-s01-c1",
@@ -41546,8 +42210,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "differences"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s01-c2",
@@ -41563,8 +42231,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "differences"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s01-c3",
@@ -41580,8 +42252,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "differences"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s01-c4",
@@ -41597,8 +42273,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "differences"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s01-c5",
@@ -41614,8 +42294,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "differences"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s02-c1",
@@ -41631,8 +42315,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "architecture"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s02-c2",
@@ -41648,8 +42336,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "architecture"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s02-c3",
@@ -41665,8 +42357,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "architecture"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s02-c4",
@@ -41682,8 +42378,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "architecture"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s03-c1",
@@ -41699,8 +42399,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s03-c2",
@@ -41716,8 +42419,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s03-c3",
@@ -41733,8 +42439,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s04-c1",
@@ -41750,8 +42459,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s04-c2",
@@ -41767,8 +42479,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s04-c3",
@@ -41784,8 +42499,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s04-c4",
@@ -41801,8 +42519,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s05-c1",
@@ -41818,8 +42539,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "asgi",
+      "async"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s05-c2",
@@ -41835,8 +42559,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "asgi",
+      "async"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s05-c3",
@@ -41852,8 +42579,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "asgi",
+      "async"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s05-c4",
@@ -41869,8 +42599,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "asgi",
+      "async"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s06-c1",
@@ -41886,8 +42619,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "django"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s06-c2",
@@ -41903,8 +42640,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "django"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s06-c3",
@@ -41920,8 +42661,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "django"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s07-c1",
@@ -41937,8 +42682,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "http",
+      "routing"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s07-c2",
@@ -41954,8 +42702,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "http",
+      "routing"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s07-c3",
@@ -41971,8 +42722,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "http",
+      "routing"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s08-c1",
@@ -41988,8 +42742,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "differences"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s08-c2",
@@ -42005,8 +42763,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "differences"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s08-c3",
@@ -42022,8 +42784,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "differences"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s08-c4",
@@ -42039,8 +42805,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "differences"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s09-c1",
@@ -42056,8 +42826,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "concurrency",
+      "servers"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s09-c2",
@@ -42073,8 +42847,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "concurrency",
+      "servers"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s09-c3",
@@ -42090,8 +42868,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "concurrency",
+      "servers"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s09-c4",
@@ -42107,8 +42889,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "concurrency",
+      "servers"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s10-c1",
@@ -42124,8 +42910,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "concurrency",
+      "servers"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s10-c2",
@@ -42141,8 +42931,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "concurrency",
+      "servers"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s10-c3",
@@ -42158,8 +42952,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "concurrency",
+      "servers"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s10-c4",
@@ -42175,8 +42973,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "concurrency",
+      "servers"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s10-c5",
@@ -42192,8 +42994,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "concurrency",
+      "servers"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s10-c6",
@@ -42209,8 +43015,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "concurrency",
+      "servers"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s11-c1",
@@ -42226,8 +43036,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "concurrency",
+      "parallelism"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s11-c2",
@@ -42243,8 +43056,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "concurrency",
+      "parallelism"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s11-c3",
@@ -42260,8 +43076,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "concurrency",
+      "parallelism"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s12-c1",
@@ -42277,8 +43096,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "event-loop"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s12-c2",
@@ -42294,8 +43116,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "event-loop"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s12-c3",
@@ -42311,8 +43136,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "event-loop"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s12-c4",
@@ -42328,8 +43156,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "event-loop"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s13-c1",
@@ -42345,8 +43176,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "event-loop"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s13-c2",
@@ -42362,8 +43196,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "event-loop"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s13-c3",
@@ -42379,8 +43216,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "event-loop"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s13-c4",
@@ -42396,8 +43236,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "event-loop"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s13-c5",
@@ -42413,8 +43256,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "event-loop"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s14-c1",
@@ -42430,8 +43276,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s14-c2",
@@ -42447,8 +43296,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s14-c3",
@@ -42464,8 +43316,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s14-c4",
@@ -42481,8 +43336,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s14-c5",
@@ -42498,8 +43356,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s15-c1",
@@ -42515,8 +43376,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s15-c2",
@@ -42532,8 +43396,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s15-c3",
@@ -42549,8 +43416,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s15-c4",
@@ -42566,8 +43436,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s15-c5",
@@ -42583,8 +43456,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s17-c1",
@@ -42600,8 +43476,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s17-c2",
@@ -42617,8 +43496,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s17-c3",
@@ -42634,8 +43516,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s17-c4",
@@ -42651,8 +43536,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s17-c5",
@@ -42668,8 +43556,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s18-c1",
@@ -42685,8 +43576,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "scheduling",
+      "concurrency"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch00-s18-c2",
@@ -42702,8 +43596,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "scheduling",
+      "concurrency"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch00-s18-c3",
@@ -42719,8 +43616,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "scheduling",
+      "concurrency"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch00-s18-c4",
@@ -42736,8 +43636,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "scheduling",
+      "concurrency"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch00-s18-c5",
@@ -42753,8 +43656,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "scheduling",
+      "concurrency"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch00-s19-c1",
@@ -42770,8 +43676,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async",
+      "threading"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s19-c2",
@@ -42787,8 +43697,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async",
+      "threading"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s19-c3",
@@ -42804,8 +43718,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async",
+      "threading"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s20-c1",
@@ -42821,8 +43739,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "io"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s20-c2",
@@ -42838,8 +43759,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "io"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s20-c3",
@@ -42855,8 +43779,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "io"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s20-c4",
@@ -42872,8 +43799,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "io"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s21-c1",
@@ -42889,8 +43819,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "http",
+      "sessions"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s21-c2",
@@ -42906,8 +43839,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "http",
+      "sessions"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s21-c3",
@@ -42923,8 +43859,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "http",
+      "sessions"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s21-c4",
@@ -42940,8 +43879,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "http",
+      "sessions"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s21-c5",
@@ -42957,8 +43899,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "http",
+      "sessions"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s23-c1",
@@ -42974,8 +43919,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "trivia"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s23-c2",
@@ -42991,8 +43939,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "trivia"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s23-c3",
@@ -43008,8 +43959,11 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "trivia"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s24-c1",
@@ -43025,8 +43979,13 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "django",
+      "fastapi",
+      "flask"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s24-c2",
@@ -43042,8 +44001,13 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "django",
+      "fastapi",
+      "flask"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s24-c3",
@@ -43059,8 +44023,13 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "django",
+      "fastapi",
+      "flask"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s24-c4",
@@ -43076,8 +44045,13 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "django",
+      "fastapi",
+      "flask"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s25-c1",
@@ -43093,8 +44067,13 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "django",
+      "fastapi",
+      "flask"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s25-c2",
@@ -43110,8 +44089,13 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "django",
+      "fastapi",
+      "flask"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s25-c3",
@@ -43127,8 +44111,13 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "django",
+      "fastapi",
+      "flask"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s25-c4",
@@ -43144,8 +44133,13 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "django",
+      "fastapi",
+      "flask"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s26-c1",
@@ -43161,8 +44155,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "flask",
+      "async"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s26-c2",
@@ -43178,8 +44176,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "flask",
+      "async"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s26-c3",
@@ -43195,8 +44197,12 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "flask",
+      "async"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s27-c1",
@@ -43212,8 +44218,13 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "django",
+      "fastapi",
+      "flask"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s27-c2",
@@ -43229,8 +44240,13 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "django",
+      "fastapi",
+      "flask"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s27-c3",
@@ -43246,8 +44262,13 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "django",
+      "fastapi",
+      "flask"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s27-c4",
@@ -43263,8 +44284,13 @@
     "options": null,
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "django",
+      "fastapi",
+      "flask"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s02-match1",
@@ -43297,8 +44323,12 @@
         "right": "Spawned/managed by the Server (e.g. via --workers N)"
       }
     ],
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "architecture"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s03-match1",
@@ -43331,8 +44361,11 @@
         "right": "type, method, path, query_string, headers"
       }
     ],
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s04-match1",
@@ -43361,8 +44394,11 @@
         "right": "ASGI-only - WSGI has no equivalent (environ handed over whole, upfront)"
       }
     ],
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s05-match1",
@@ -43395,8 +44431,11 @@
         "right": "event types sent via send()"
       }
     ],
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "asgi",
+      "async"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s08-match1",
@@ -43425,8 +44464,12 @@
         "right": "no equivalent"
       }
     ],
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "differences"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s09-match1",
@@ -43455,8 +44498,12 @@
         "right": "abstraction the SERVER uses"
       }
     ],
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "concurrency",
+      "servers"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s10-match1",
@@ -43485,8 +44532,12 @@
         "right": "gunicorn ... -k uvicorn.workers.UvicornWorker"
       }
     ],
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "concurrency",
+      "servers"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s11-match1",
@@ -43519,8 +44570,11 @@
         "right": "genuine multi-core execution"
       }
     ],
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "concurrency",
+      "parallelism"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s12-match1",
@@ -43549,8 +44603,11 @@
         "right": "Real OS threads are comparatively expensive"
       }
     ],
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "event-loop"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s14-match1",
@@ -43579,8 +44636,11 @@
         "right": "Who creates/owns it"
       }
     ],
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s15-match1",
@@ -43613,8 +44673,11 @@
         "right": "async def, with await inside the body signaling intended suspension points"
       }
     ],
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s16-match1",
@@ -43643,8 +44706,11 @@
         "right": "a function containing"
       }
     ],
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s17-match1",
@@ -43673,8 +44739,11 @@
         "right": "automatically schedules it to run SOON"
       }
     ],
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s18-match1",
@@ -43703,8 +44772,11 @@
         "right": "Task voluntarily hands back control"
       }
     ],
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "scheduling",
+      "concurrency"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch00-s19-match1",
@@ -43733,8 +44805,12 @@
         "right": "Fixed/configurable max worker count (ThreadPoolExecutor)"
       }
     ],
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async",
+      "threading"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s21-match1",
@@ -43763,8 +44839,11 @@
         "right": "SESSION_ENGINE is database-backed"
       }
     ],
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "http",
+      "sessions"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s25-match1",
@@ -43805,8 +44884,13 @@
         "right": "Built-in or standard test client"
       }
     ],
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "django",
+      "fastapi",
+      "flask"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s26-match1",
@@ -43835,8 +44919,12 @@
         "right": "ASGI-native behavior"
       }
     ],
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "flask",
+      "async"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s27-match1",
@@ -43865,8 +44953,13 @@
         "right": "small, deliberately minimal, highly custom services, prototypes, teaching, or maintaining large legacy codebases"
       }
     ],
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "django",
+      "fastapi",
+      "flask"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s01-mcq1",
@@ -43887,8 +44980,12 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "differences"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s01-mcq2",
@@ -43909,8 +45006,12 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "differences"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s02-mcq1",
@@ -43931,8 +45032,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "architecture"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s02-mcq2",
@@ -43953,8 +45058,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "architecture"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s02-mcq3",
@@ -43975,8 +45084,12 @@
     ],
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "architecture"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s03-mcq1",
@@ -43997,8 +45110,11 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s03-mcq2",
@@ -44019,8 +45135,11 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s04-mcq1",
@@ -44041,8 +45160,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s04-mcq2",
@@ -44063,8 +45185,11 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s05-mcq1",
@@ -44085,8 +45210,11 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "asgi",
+      "async"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s05-mcq2",
@@ -44107,8 +45235,11 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "asgi",
+      "async"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s06-mcq1",
@@ -44129,8 +45260,12 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "django"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s06-mcq2",
@@ -44151,8 +45286,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "django"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s07-mcq1",
@@ -44173,8 +45312,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "http",
+      "routing"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s07-mcq2",
@@ -44195,8 +45337,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "http",
+      "routing"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s08-mcq1",
@@ -44217,8 +45362,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "differences"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s08-mcq2",
@@ -44239,8 +45388,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "differences"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s09-mcq1",
@@ -44261,8 +45414,12 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "concurrency",
+      "servers"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s09-mcq2",
@@ -44283,8 +45440,12 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "concurrency",
+      "servers"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s10-mcq1",
@@ -44305,8 +45466,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "concurrency",
+      "servers"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s10-mcq2",
@@ -44327,8 +45492,12 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "concurrency",
+      "servers"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s11-mcq1",
@@ -44349,8 +45518,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "concurrency",
+      "parallelism"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s11-mcq2",
@@ -44371,8 +45543,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "concurrency",
+      "parallelism"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s12-mcq1",
@@ -44393,8 +45568,11 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "event-loop"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s12-mcq2",
@@ -44415,8 +45593,11 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "event-loop"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s13-mcq1",
@@ -44437,8 +45618,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "event-loop"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s13-mcq2",
@@ -44459,8 +45643,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "event-loop"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s14-mcq1",
@@ -44481,8 +45668,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s14-mcq2",
@@ -44503,8 +45693,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s15-mcq1",
@@ -44525,8 +45718,11 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s15-mcq2",
@@ -44547,8 +45743,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s16-mcq1",
@@ -44569,8 +45768,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s16-mcq2",
@@ -44591,8 +45793,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s17-mcq1",
@@ -44613,8 +45818,11 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s17-mcq2",
@@ -44635,8 +45843,11 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s17-mcq3",
@@ -44657,8 +45868,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s18-mcq1",
@@ -44679,8 +45893,11 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "scheduling",
+      "concurrency"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch00-s18-mcq2",
@@ -44701,8 +45918,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "scheduling",
+      "concurrency"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch00-s18-mcq3",
@@ -44723,8 +45943,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "scheduling",
+      "concurrency"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch00-s18-mcq4",
@@ -44745,8 +45968,11 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "scheduling",
+      "concurrency"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch00-s19-mcq1",
@@ -44767,8 +45993,12 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async",
+      "threading"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s19-mcq2",
@@ -44789,8 +46019,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async",
+      "threading"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s20-mcq1",
@@ -44811,8 +46045,11 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "io"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s20-mcq2",
@@ -44833,8 +46070,11 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "io"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s21-mcq1",
@@ -44855,8 +46095,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "http",
+      "sessions"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s21-mcq2",
@@ -44877,8 +46120,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "http",
+      "sessions"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s23-mcq1",
@@ -44899,8 +46145,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "trivia"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s23-mcq2",
@@ -44921,8 +46170,11 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "trivia"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s24-mcq1",
@@ -44943,8 +46195,13 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "django",
+      "fastapi",
+      "flask"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s24-mcq2",
@@ -44965,8 +46222,13 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "django",
+      "fastapi",
+      "flask"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s25-mcq1",
@@ -44987,8 +46249,13 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "django",
+      "fastapi",
+      "flask"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s25-mcq2",
@@ -45009,8 +46276,13 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "django",
+      "fastapi",
+      "flask"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s26-mcq1",
@@ -45031,8 +46303,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "flask",
+      "async"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s26-mcq2",
@@ -45053,8 +46329,12 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "flask",
+      "async"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch00-s27-mcq1",
@@ -45075,8 +46355,13 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "django",
+      "fastapi",
+      "flask"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch00-s27-mcq2",
@@ -45097,8 +46382,13 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "differences",
+      "django",
+      "fastapi",
+      "flask"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s01-mcq1",
@@ -45119,8 +46409,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "http",
+      "fundamentals"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s01-mcq2",
@@ -45141,8 +46434,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "http",
+      "fundamentals"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s02-mcq1",
@@ -45163,8 +46459,12 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "architecture"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s02-mcq2",
@@ -45185,8 +46485,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "architecture"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s03-mcq1",
@@ -45207,8 +46511,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s03-mcq2",
@@ -45229,8 +46536,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s04-mcq1",
@@ -45251,8 +46561,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "asgi",
+      "async"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s05-mcq1",
@@ -45273,8 +46586,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "architecture"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s05-mcq2",
@@ -45295,8 +46612,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "asgi",
+      "architecture"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s06-mcq1",
@@ -45317,8 +46638,11 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "concurrency",
+      "parallelism"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s06-mcq2",
@@ -45339,8 +46663,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "concurrency",
+      "parallelism"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s07-mcq1",
@@ -45361,8 +46688,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "concurrency",
+      "parallelism"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch01-s08-mcq1",
@@ -45383,8 +46713,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "concurrency",
+      "servers"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s08-mcq2",
@@ -45405,8 +46739,12 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "wsgi",
+      "concurrency",
+      "servers"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s09-mcq1",
@@ -45427,8 +46765,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "event-loop"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s09-mcq2",
@@ -45449,8 +46790,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "event-loop"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s10-mcq1",
@@ -45471,8 +46815,11 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s10-mcq2",
@@ -45493,8 +46840,11 @@
     ],
     "correctIndex": 3,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s11-mcq1",
@@ -45515,8 +46865,11 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s11-mcq2",
@@ -45537,8 +46890,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s12-mcq1",
@@ -45559,8 +46915,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "io"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s12-mcq2",
@@ -45581,8 +46940,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "io"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s13-mcq1",
@@ -45603,8 +46965,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch01-s13-mcq2",
@@ -45625,8 +46990,11 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch01-s13-mcq3",
@@ -45647,8 +47015,11 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch01-s14-mcq1",
@@ -45669,8 +47040,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async",
+      "threading"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s14-mcq2",
@@ -45691,8 +47066,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async",
+      "threading"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s15-mcq1",
@@ -45713,8 +47092,12 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async",
+      "threading"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s15-mcq2",
@@ -45735,8 +47118,12 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async",
+      "threading"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s16-mcq1",
@@ -45757,8 +47144,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "concurrency",
+      "cpu-bound",
+      "io-bound"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s16-mcq2",
@@ -45779,8 +47170,12 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "concurrency",
+      "cpu-bound",
+      "io-bound"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s16-mcq3",
@@ -45801,8 +47196,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "concurrency",
+      "cpu-bound",
+      "io-bound"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s16-mcq4",
@@ -45823,8 +47222,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "concurrency",
+      "cpu-bound",
+      "io-bound"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s16-mcq5",
@@ -45845,8 +47248,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "concurrency",
+      "cpu-bound",
+      "io-bound"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s17-mcq1",
@@ -45867,8 +47274,12 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async",
+      "threading"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s17-mcq2",
@@ -45889,8 +47300,12 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async",
+      "threading"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s17-mcq3",
@@ -45911,8 +47326,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async",
+      "threading"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s17-mcq4",
@@ -45933,8 +47352,12 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "async",
+      "threading"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s18-mcq1",
@@ -45955,8 +47378,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "gil",
+      "concurrency",
+      "cpython"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch01-s18-mcq2",
@@ -45977,8 +47404,12 @@
     ],
     "correctIndex": 3,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "gil",
+      "concurrency",
+      "cpython"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch01-s19-mcq1",
@@ -45999,8 +47430,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "scaling"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s19-mcq2",
@@ -46021,8 +47455,11 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "fastapi",
+      "scaling"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s20-mcq1",
@@ -46043,8 +47480,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s20-mcq2",
@@ -46065,8 +47505,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s20-mcq3",
@@ -46087,8 +47530,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s21-mcq1",
@@ -46109,8 +47555,11 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s21-mcq2",
@@ -46131,8 +47580,11 @@
     ],
     "correctIndex": 3,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s21-mcq3",
@@ -46153,8 +47605,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch01-s21-mcq4",
@@ -46175,8 +47630,11 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "async",
+      "coroutines"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s01-mcq1",
@@ -46197,8 +47655,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "fundamentals"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch02-s02-mcq1",
@@ -46219,8 +47680,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "fundamentals"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch02-s02-mcq2",
@@ -46241,8 +47705,11 @@
     ],
     "correctIndex": 3,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "fundamentals"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch02-s03-mcq1",
@@ -46263,8 +47730,11 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "routing"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch02-s03-mcq2",
@@ -46285,8 +47755,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "routing"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch02-s04-mcq1",
@@ -46307,8 +47780,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "routing"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch02-s04-mcq2",
@@ -46329,8 +47805,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "routing"
+    ],
+    "difficulty": "easy"
   },
   {
     "id": "django_fastapi_flask-ch02-s05-mcq1",
@@ -46351,8 +47830,11 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s05-mcq2",
@@ -46373,8 +47855,11 @@
     ],
     "correctIndex": 3,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s06-mcq1",
@@ -46395,8 +47880,11 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s06-mcq2",
@@ -46417,8 +47905,11 @@
     ],
     "correctIndex": 3,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s07-mcq1",
@@ -46439,8 +47930,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s07-mcq2",
@@ -46461,8 +47955,11 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s07-mcq3",
@@ -46483,8 +47980,11 @@
     ],
     "correctIndex": null,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s08-mcq1",
@@ -46505,8 +48005,11 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s08-mcq2",
@@ -46527,8 +48030,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s09-mcq1",
@@ -46549,8 +48055,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s09-mcq2",
@@ -46571,8 +48080,11 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s09-mcq3",
@@ -46593,8 +48105,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s10-mcq1",
@@ -46615,8 +48130,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s10-mcq2",
@@ -46637,8 +48155,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s10-mcq3",
@@ -46659,8 +48180,11 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s11-mcq1",
@@ -46681,8 +48205,12 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s11-mcq2",
@@ -46703,8 +48231,12 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s12-mcq1",
@@ -46725,8 +48257,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s13-mcq1",
@@ -46747,8 +48283,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s14-mcq1",
@@ -46769,8 +48309,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s15-mcq1",
@@ -46791,8 +48335,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s16-mcq1",
@@ -46813,8 +48361,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s17-mcq1",
@@ -46835,8 +48387,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-mcq1",
@@ -46857,8 +48413,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-mcq2",
@@ -46879,8 +48439,12 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-mcq3",
@@ -46901,8 +48465,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-mcq4",
@@ -46923,8 +48491,12 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-mcq5",
@@ -46945,8 +48517,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-mcq6",
@@ -46967,8 +48543,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-mcq7",
@@ -46989,8 +48569,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-mcq8",
@@ -47011,8 +48595,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-mcq9",
@@ -47033,8 +48621,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-mcq10",
@@ -47055,8 +48647,12 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-mcq11",
@@ -47077,8 +48673,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-mcq12",
@@ -47099,8 +48699,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-mcq13",
@@ -47121,8 +48725,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s18-mcq14",
@@ -47143,8 +48751,12 @@
     ],
     "correctIndex": 3,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "orm",
+      "async"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s19-mcq1",
@@ -47165,8 +48777,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s20-mcq1",
@@ -47187,8 +48802,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s21-mcq1",
@@ -47209,8 +48827,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "middleware"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s22-mcq1",
@@ -47231,8 +48852,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "sessions"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s22-mcq2",
@@ -47253,8 +48877,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "sessions"
+    ],
+    "difficulty": "medium"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-mcq1",
@@ -47275,8 +48902,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-mcq2",
@@ -47297,8 +48928,12 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-mcq3",
@@ -47319,8 +48954,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-mcq4",
@@ -47341,8 +48980,12 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-mcq5",
@@ -47363,8 +49006,12 @@
     ],
     "correctIndex": 2,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-mcq6",
@@ -47385,8 +49032,12 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-mcq7",
@@ -47407,8 +49058,12 @@
     ],
     "correctIndex": 0,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   },
   {
     "id": "django_fastapi_flask-ch02-s23-mcq8",
@@ -47429,7 +49084,11 @@
     ],
     "correctIndex": 1,
     "pairs": null,
-    "tags": null,
-    "difficulty": null
+    "tags": [
+      "django",
+      "authentication",
+      "sessions"
+    ],
+    "difficulty": "hard"
   }
 ]
