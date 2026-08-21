@@ -24021,25 +24021,6 @@
     "correctIndex": 3
   },
   {
-    "id": "kafka-ch08-s03-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 8 (Interview Prep)",
-    "topic": "Interview Question #1",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is the correct scaling for Kafka's internal complexity?",
-    "answer": null,
-    "notes": "The correct answer is C. O(Number of Records) because Kafka scans every record inside every batch, which scales with the record count, not the partition count.",
-    "cloze_answer": null,
-    "options": [
-      "O(Number of Partitions)",
-      "O(Number of Records)",
-      "O(log n)",
-      "C. O(Number of Records)"
-    ],
-    "correctIndex": 3
-  },
-  {
     "id": "kafka-ch08-s04-mcq1",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 8 (Interview Prep)",
@@ -24188,25 +24169,6 @@
       "To actually keep pulling ready batches out until it has to stop",
       "To remove the head batch and peek the new head",
       "To add unnecessary latency to the sender thread"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "id": "kafka-ch08-s08-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 8 (Interview Prep)",
-    "topic": "Interview Question #3",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What should Kafka do when drain() pulls three batches destined for Broker A?",
-    "answer": null,
-    "notes": "Kafka batches at two separate levels: records into a batch and partitions into one request. This matches the broker-grouping fact established in Chapter 12.",
-    "cloze_answer": null,
-    "options": [
-      "Send one ProduceRequest containing all three partition batches",
-      "Send three separate ProduceRequests - one per partition",
-      "Merge the batches into a single record and send as a single request",
-      " Ignore the batches and do nothing"
     ],
     "correctIndex": 1
   },
@@ -24380,25 +24342,6 @@
       "Partition-0's queue"
     ],
     "correctIndex": 1
-  },
-  {
-    "id": "kafka-ch08-s14-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 8 (Interview Prep)",
-    "topic": "The Three Levels Of Packaging",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Why would you not split a ProducerBatch itself?",
-    "answer": null,
-    "notes": "To prevent batch left out simply stays in the RecordAccumulator for a later request",
-    "cloze_answer": null,
-    "options": [
-      "To maintain FIFO ordering",
-      "To reduce fixed per-request overhead",
-      "To improve partition queue handling",
-      "To prevent batch left out"
-    ],
-    "correctIndex": 2
   },
   {
     "id": "kafka-ch08-s14-mcq2",
@@ -24686,25 +24629,6 @@
     "correctIndex": 3
   },
   {
-    "id": "kafka-ch08-s10-mcq3",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 8 (Interview Prep)",
-    "topic": "Group By Broker, Not By Topic",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Why would you group consumer requests by broker instead of topic in Kafka?",
-    "answer": null,
-    "notes": "Guaranteeing a single destination is crucial when grouping by leader broker",
-    "cloze_answer": null,
-    "options": [
-      "To ensure each request has multiple valid destinations",
-      "To guarantee every request has exactly one destination",
-      "To reduce network latency",
-      "To increase processing speed"
-    ],
-    "correctIndex": 2
-  },
-  {
     "id": "kafka-ch08-s11-mcq3",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 8 (Interview Prep)",
@@ -24722,63 +24646,6 @@
       "GROUP -> DRAIN() -> READY() -> SEND"
     ],
     "correctIndex": 0
-  },
-  {
-    "id": "kafka-ch08-s11-mcq4",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 8 (Interview Prep)",
-    "topic": "The Real Sender Pipeline",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Why would you use the group_by_leader_broker function in the Real Sender Pipeline?",
-    "answer": null,
-    "notes": "The correct answer is to send each request to a specific leader broker, which is a key part of the Real Sender Pipeline.",
-    "cloze_answer": null,
-    "options": [
-      "To handle multiple requests simultaneously",
-      "To send each request to a specific leader broker",
-      "To accumulate all requests before sending",
-      "To reduce network latency"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "id": "kafka-ch08-s12-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 8 (Interview Prep)",
-    "topic": "When A ProduceRequest Exceeds max.request.size",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What should the Sender Thread do when a ProduceRequest exceeds the max.request.size?",
-    "answer": null,
-    "notes": "The correct answer is to drop the last batch because it does not fit within the max.request.size. The other options are incorrect because they do not follow the rules of Kafka's ProduceRequest and ProducerBatch.",
-    "cloze_answer": null,
-    "options": [
-      "Ignore max.request.size and send 1.2 MB anyway",
-      "Split the batches into multiple ProduceRequests, while preserving partition ordering",
-      "Drop the last batch",
-      "Compress the request automatically until it fits under 1 MB"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "id": "kafka-ch08-s12-mcq3",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 8 (Interview Prep)",
-    "topic": "When A ProduceRequest Exceeds max.request.size",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is the correct way for Kafka to handle a ProduceRequest that exceeds the max.request.size?",
-    "answer": null,
-    "notes": "The correct answer is to build a new request with the remaining data, which is the actual behavior described in the text. The other options are incorrect because they do not accurately describe Kafka's handling of a ProduceRequest that exceeds the max.request.size.",
-    "cloze_answer": null,
-    "options": [
-      "Split the request into multiple requests",
-      "Compress the request automatically",
-      "Drop the request",
-      "Build a new request with the remaining data"
-    ],
-    "correctIndex": 3
   },
   {
     "id": "kafka-ch08-s13-mcq3",
