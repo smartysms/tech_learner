@@ -34773,5 +34773,955 @@
       "To prevent the directory contents from being copied"
     ],
     "correctIndex": 0
+  },
+  {
+    "id": "SQL-W1-mcq1",
+    "subject": "SQL",
+    "block": "Basics (Interview Prep)",
+    "topic": "SELECT/LIMIT",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the equivalent syntax to LIMIT in MSSQL?",
+    "answer": null,
+    "notes": "MSSQL uses TOP 10 syntax to limit the number of rows in the result set.",
+    "cloze_answer": null,
+    "options": [
+      "SELECT TOP 10 * FROM employees",
+      "SELECT FROM 10 * employees",
+      "SELECT * FROM employees FROM 10",
+      "SELECT TOP 5 * FROM employees"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "SQL-W2-mcq1",
+    "subject": "SQL",
+    "block": "Basics (Interview Prep)",
+    "topic": "DISTINCT",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why would you use SELECT DISTINCT gender FROM employees?",
+    "answer": null,
+    "notes": "The correct answer is because SELECT DISTINCT gender FROM employees returns only unique gender values, filtering out duplicates.",
+    "cloze_answer": null,
+    "options": [
+      "To return all gender values from the employees table",
+      "To filter out duplicate gender values and return only unique ones",
+      "To group the employees by gender and return the count for each",
+      "To sort the employees by gender in ascending order"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "SQL-W2-mcq2",
+    "subject": "SQL",
+    "block": "Basics (Interview Prep)",
+    "topic": "DISTINCT",
+    "label": null,
+    "type": "cloze",
+    "prompt": "SELECT {{blank}} gender FROM employees;",
+    "answer": null,
+    "notes": "The correct answer is SELECT DISTINCT gender FROM employees, as DISTINCT works identically across Postgres, MySQL, Oracle, MSSQL.",
+    "cloze_answer": "DISTINCT",
+    "options": [
+      "ALL",
+      "DISTINCT",
+      "UNIQUE",
+      "EXCLUSIVE"
+    ],
+    "correctIndex": null
+  },
+  {
+    "id": "SQL-W3-mcq1",
+    "subject": "SQL",
+    "block": "Basics (Interview Prep)",
+    "topic": "WHERE/ORDER BY",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the correct condition to filter employees hired after 2000-01-01?",
+    "answer": null,
+    "notes": "The correct condition is hire_date > '2000-01-01' to filter employees hired after 2000-01-01. The other options are incorrect because they would filter employees hired before, on, or before 2000-01-01.",
+    "cloze_answer": null,
+    "options": [
+      "hire_date <= '2000-01-01'",
+      "hire_date > '2000-01-01'",
+      "hire_date = '2000-01-01'",
+      "hire_date < '2000-01-01'"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "SQL-W3-mcq2",
+    "subject": "SQL",
+    "block": "Basics (Interview Prep)",
+    "topic": "WHERE/ORDER BY",
+    "label": null,
+    "type": "mcq",
+    "prompt": "In what order would you sort the result of the query, considering the existing ORDER BY clause?",
+    "answer": null,
+    "notes": "The correct answer is DESC because the ORDER BY clause already sorts the result in descending order by hire_date. The other options are incorrect because they would sort the result in different or unpredictable orders.",
+    "cloze_answer": null,
+    "options": [
+      "ASC",
+      "DESC",
+      "RANDOM",
+      "UNORDERED"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "SQL-W4-mcq1",
+    "subject": "SQL",
+    "block": "Basics (Interview Prep)",
+    "topic": "BETWEEN",
+    "label": null,
+    "type": "cloze",
+    "prompt": "SELECT * FROM salaries WHERE salary {{blank}} 60000 AND 90000;",
+    "answer": null,
+    "notes": "The correct syntax uses the BETWEEN clause to find all salary rows with a salary between 60000 and 90000.",
+    "cloze_answer": "BETWEEN",
+    "options": [
+      "NOT BETWEEN",
+      "IN",
+      "NOT IN",
+      "BETWEEN"
+    ],
+    "correctIndex": null
+  },
+  {
+    "id": "SQL-W5-mcq1",
+    "subject": "SQL",
+    "block": "Basics (Interview Prep)",
+    "topic": "COUNT + WHERE",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the purpose of the 'WHERE' clause in this SQL query?",
+    "answer": null,
+    "notes": "The 'WHERE' clause is used to filter the rows based on a condition, in this case, to_date = '9999-01-01'.",
+    "cloze_answer": null,
+    "options": [
+      "To specify the columns to be counted",
+      "To filter the rows based on a condition",
+      "To group the results by a specific column",
+      "To sort the results in a specific order"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "SQL-W5-mcq2",
+    "subject": "SQL",
+    "block": "Basics (Interview Prep)",
+    "topic": "COUNT + WHERE",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why would you use 'COUNT(*)' instead of 'COUNT(column_name)' in this query?",
+    "answer": null,
+    "notes": "You would use 'COUNT(*)' to count the number of rows in the titles table, ignoring the column_name.",
+    "cloze_answer": null,
+    "options": [
+      "To count the number of rows in the titles table",
+      "To ignore the column_name and count all rows",
+      "To count the number of unique values in the column_name",
+      "To count the number of null values in the column_name"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "SQL-W1-mcq2",
+    "subject": "SQL",
+    "block": "Basics (Interview Prep)",
+    "topic": "SELECT/LIMIT",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why would you use FETCH FIRST 10 ROWS ONLY in Oracle instead of LIMIT?",
+    "answer": null,
+    "notes": "Oracle uses FETCH FIRST 10 ROWS ONLY to limit the number of rows in the result set (LIMIT is used in Postgres/MySQL). Rewritten distractor: FETCH FIRST N ROWS ONLY limits, it does not skip/offset - that is OFFSET/FETCH together, a different clause.",
+    "cloze_answer": null,
+    "options": [
+      "To select a specific column instead of all columns",
+      "To skip the first 10 rows and return the rest",
+      "To ignore duplicate rows in the result set",
+      "To limit the number of rows to the first 10 rows only"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "id": "SQL-W4-mcq2",
+    "subject": "SQL",
+    "block": "Basics (Interview Prep)",
+    "topic": "BETWEEN",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why is the BETWEEN clause inclusive on both ends?",
+    "answer": null,
+    "notes": "The BETWEEN clause is inclusive on both ends in all 4 dialects because that is how the operator is specified/defined - col BETWEEN a AND b means col >= a AND col <= b by definition, not a derived consequence of some other rule.",
+    "cloze_answer": null,
+    "options": [
+      "To avoid edge cases",
+      "To ensure accurate results",
+      "Because it is a default behavior",
+      "Because it is an exclusive range"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "SQL-W6-mcq1",
+    "subject": "SQL",
+    "block": "Aggregation (Interview Prep)",
+    "topic": "GROUP BY",
+    "label": null,
+    "type": "mcq",
+    "prompt": "When aggregating data with GROUP BY, which of the following is true about the columns included in the SELECT statement?",
+    "answer": null,
+    "notes": "Every non-aggregated column in SELECT must appear in GROUP BY, but aggregate function calls (COUNT(*), AVG(x), ...) over any column are also allowed - this very query selects COUNT(*) alongside dept_no without COUNT(*) itself being a GROUP BY column.",
+    "cloze_answer": null,
+    "options": [
+      "Any column can be included in the SELECT statement, regardless of its presence in the GROUP BY clause.",
+      "Non-aggregated columns must appear in the GROUP BY clause, but aggregate functions like COUNT(*) can reference any column",
+      "Columns can only be included in the SELECT statement if they are being aggregated with an aggregate function.",
+      "The SELECT statement must include all columns present in the GROUP BY clause."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "SQL-W6-mcq2",
+    "subject": "SQL",
+    "block": "Aggregation (Interview Prep)",
+    "topic": "GROUP BY",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the purpose of the GROUP BY clause in the given SQL query?",
+    "answer": null,
+    "notes": "To aggregate the results based on a specific column. The others are incorrect because they do not accurately describe the purpose of the GROUP BY clause in the given query.",
+    "cloze_answer": null,
+    "options": [
+      "To filter the results based on a specific condition.",
+      "To aggregate the results based on a specific column.",
+      "To order the results based on a specific column.",
+      "To count the number of rows in the result set."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "SQL-W7-mcq1",
+    "subject": "SQL",
+    "block": "Aggregation (Interview Prep)",
+    "topic": "JOIN + AVG",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why would you use a GROUP BY clause in this query?",
+    "answer": null,
+    "notes": "GROUP BY is used to group the results by the gender of employees, in order to calculate the average salary for each gender.",
+    "cloze_answer": null,
+    "options": [
+      "to filter rows by date",
+      "to aggregate salaries by gender",
+      "to join employees with salaries",
+      "to specify the average function"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "SQL-W7-mcq2",
+    "subject": "SQL",
+    "block": "Aggregation (Interview Prep)",
+    "topic": "JOIN + AVG",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the purpose of the join in this query?",
+    "answer": null,
+    "notes": "The join is used to combine the employees and salaries tables into a single result set, allowing for the calculation of the average salary for each gender.",
+    "cloze_answer": null,
+    "options": [
+      "to filter employees by their salaries",
+      "to join employees with their corresponding salaries",
+      "to group salaries by employee",
+      "to average salaries by department"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "SQL-W8-mcq1",
+    "subject": "SQL",
+    "block": "Aggregation (Interview Prep)",
+    "topic": "GROUP BY + HAVING",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What would be the correct approach to filter the result of an aggregation in SQL, to avoid errors in every dialect?",
+    "answer": null,
+    "notes": "HAVING syntax is identical across all 4 dialects. Filtering an aggregate in WHERE instead of HAVING errors the same way everywhere - aggregates are not computed yet when WHERE runs.",
+    "cloze_answer": null,
+    "options": [
+      "Apply the condition in the SELECT clause",
+      "Use the HAVING clause to filter the result",
+      "Try to filter in the WHERE clause",
+      "Use the LIMIT clause to limit the number of rows"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "SQL-X2-mcq1",
+    "subject": "SQL",
+    "block": "Aggregation (Interview Prep)",
+    "topic": "Conditional aggregation (CASE WHEN)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the purpose of using CASE WHEN inside an aggregate function in this query?",
+    "answer": null,
+    "notes": "This is an example of conditional aggregation, which allows you to pivot categories into columns.",
+    "cloze_answer": null,
+    "options": [
+      "To filter rows based on a condition",
+      "To pivot categories into columns",
+      "To perform a self-join",
+      "To create a new table"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "SQL-X2-mcq2",
+    "subject": "SQL",
+    "block": "Aggregation (Interview Prep)",
+    "topic": "Conditional aggregation (CASE WHEN)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why is using CASE WHEN inside an aggregate function the most portable technique for this query?",
+    "answer": null,
+    "notes": "According to the notes, using CASE WHEN inside an aggregate function is the standard way to pivot categories into columns and works identically in all four databases.",
+    "cloze_answer": null,
+    "options": [
+      "It is the only method that works in all four databases",
+      "It allows for more efficient queries",
+      "It is the most common method used",
+      "It is the recommended method by the SQL standard"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "SQL-X3-mcq1",
+    "subject": "SQL",
+    "block": "Aggregation (Interview Prep)",
+    "topic": "GROUP BY + ORDER BY aggregate + LIMIT",
+    "label": null,
+    "type": "mcq",
+    "prompt": "To order the grouped results by the count of employees, which column should be used?",
+    "answer": null,
+    "notes": "We want to order by the count of employees, not the department number, the date, or the table name.",
+    "cloze_answer": null,
+    "options": [
+      "dept_no",
+      "c",
+      "to_date",
+      "dept_emp"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "SQL-X3-mcq2",
+    "subject": "SQL",
+    "block": "Aggregation (Interview Prep)",
+    "topic": "GROUP BY + ORDER BY aggregate + LIMIT",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the purpose of the 'LIMIT 3' clause in this query?",
+    "answer": null,
+    "notes": "The purpose of the 'LIMIT 3' clause is to return the top 3 departments, not to perform the group operation, filter the data, or specify the sort order.",
+    "cloze_answer": null,
+    "options": [
+      "to return the top 3 departments",
+      "to group the results",
+      "to filter the data",
+      "to specify the sort order"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "SQL-X4-mcq1",
+    "subject": "SQL",
+    "block": "Aggregation (Interview Prep)",
+    "topic": "HAVING with AVG + JOIN",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the purpose of the HAVING clause in this query?",
+    "answer": null,
+    "notes": "The HAVING clause is used to filter the result of an aggregation, in this case, the average salary exceeding 70000.",
+    "cloze_answer": null,
+    "options": [
+      "Filtering individual rows",
+      "Calculating the average salary",
+      "Grouping rows by department",
+      "Comparing aggregate values"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "id": "SQL-X4-mcq2",
+    "subject": "SQL",
+    "block": "Aggregation (Interview Prep)",
+    "topic": "HAVING with AVG + JOIN",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why would you use a JOIN operation in this query?",
+    "answer": null,
+    "notes": "The JOIN operation is used to link departments to salaries, allowing the query to retrieve both department and salary data.",
+    "cloze_answer": null,
+    "options": [
+      "To join multiple department tables",
+      "To link departments to salaries",
+      "To separate salary data from department data",
+      "To combine all tables into one"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "SQL-X5-mcq1",
+    "subject": "SQL",
+    "block": "Aggregation (Interview Prep)",
+    "topic": "GROUP BY on derived expression",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why would you use EXTRACT(YEAR FROM hire_date) in the GROUP BY clause?",
+    "answer": null,
+    "notes": "The correct answer is because it is used to group by the YEAR portion of hire_date. The other options are incorrect because they would not achieve the desired grouping.",
+    "cloze_answer": null,
+    "options": [
+      "To get the year part of the hire_date",
+      "To count the number of employees hired in each month",
+      "To group by the month part of the hire_date",
+      "To extract the quarter part of the hire_date"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "SQL-X5-mcq2",
+    "subject": "SQL",
+    "block": "Aggregation (Interview Prep)",
+    "topic": "GROUP BY on derived expression",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the equivalent syntax to use in MSSQL's T-SQL to replace EXTRACT(YEAR FROM col)?",
+    "answer": null,
+    "notes": "YEAR(col) is the idiomatic MSSQL equivalent (DATEPART(year, col) also works but is omitted here to keep one unambiguous answer). GETDATE() returns the current date/time and doesn't take a column argument to extract a year from - not a real substitute.",
+    "cloze_answer": null,
+    "options": [
+      "EXTRACT(YEAR FROM col)",
+      "YEAR(col)",
+      "GETDATE(col)",
+      "MONTH(col)"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "SQL-W9-mcq1",
+    "subject": "SQL",
+    "block": "Aggregation (Interview Prep)",
+    "topic": "MIN/MAX/AVG",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What SQL clause would you use to find the minimum value in a column?",
+    "answer": null,
+    "notes": "The MIN function is used to find the minimum value in a column. WHERE is used for filtering, LIMIT is used to limit the number of rows, and JOIN is used to combine rows from multiple tables.",
+    "cloze_answer": null,
+    "options": [
+      "WHERE",
+      "LIMIT",
+      "MIN",
+      "JOIN"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "SQL-W9-mcq2",
+    "subject": "SQL",
+    "block": "Aggregation (Interview Prep)",
+    "topic": "MIN/MAX/AVG",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why would you use the AVG function in a SQL query?",
+    "answer": null,
+    "notes": "The AVG function is used to calculate the average value in a column. The other options are not accurate uses of the AVG function.",
+    "cloze_answer": null,
+    "options": [
+      "to find the maximum value",
+      "to find the average value",
+      "to count the number of rows",
+      "to sort the results"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "SQL-X1-mcq1",
+    "subject": "SQL",
+    "block": "Aggregation (Interview Prep)",
+    "topic": "Multi-column GROUP BY",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why would you use a multi-column GROUP BY clause?",
+    "answer": null,
+    "notes": "Multi-column GROUP BY groups rows by a unique combination of column values, unlike single-column GROUP BY which groups by a single value.",
+    "cloze_answer": null,
+    "options": [
+      "To filter out duplicate rows",
+      "To count employees per department",
+      "To group by two columns at once",
+      "To sort the result by department"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "SQL-X1-mcq2",
+    "subject": "SQL",
+    "block": "Aggregation (Interview Prep)",
+    "topic": "Multi-column GROUP BY",
+    "label": null,
+    "type": "cloze",
+    "prompt": "A query to count employees per {{blank}} pair — i.e. group by TWO columns at once — would use the following SQL syntax:",
+    "answer": null,
+    "notes": "Multi-column GROUP BY (comma-separated list) is identical syntax in all 4 dialects — it just means 'one bucket per unique combination of these column values'.",
+    "cloze_answer": "GROUP BY",
+    "options": [
+      "JOIN",
+      "FROM",
+      "WHERE",
+      "GROUP BY"
+    ],
+    "correctIndex": null
+  },
+  {
+    "id": "SQL-L1-mcq1",
+    "subject": "SQL",
+    "block": "Joins (Interview Prep)",
+    "topic": "INNER JOIN",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why would you use an INNER JOIN in this scenario?",
+    "answer": null,
+    "notes": "This question requires understanding of the INNER JOIN purpose. The other options are plausible but incorrect.",
+    "cloze_answer": null,
+    "options": [
+      "To combine data from multiple tables",
+      "To filter out employees with no department assignment",
+      "To list all departments, not just those with employee assignments",
+      "To show only the most recent department assignment for each employee"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "SQL-L1-mcq2",
+    "subject": "SQL",
+    "block": "Joins (Interview Prep)",
+    "topic": "INNER JOIN",
+    "label": null,
+    "type": "cloze",
+    "prompt": "The correct query uses the following syntax to join the employees table with the {{blank}} table.",
+    "answer": null,
+    "notes": "The syntax is identical across all 4 dialects, as noted in the text. The other options are real database tables, but not the correct one.",
+    "cloze_answer": "dept_emp",
+    "options": [
+      "dept_info",
+      "dept_manager",
+      "dept_emp",
+      "dept_assignments"
+    ],
+    "correctIndex": null
+  },
+  {
+    "id": "SQL-L2-mcq1",
+    "subject": "SQL",
+    "block": "Joins (Interview Prep)",
+    "topic": "LEFT JOIN + IS NULL",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why would you use a LEFT JOIN with an IS NULL condition in this query?",
+    "answer": null,
+    "notes": "The IS NULL condition ensures that only employees who have never been a manager are returned.",
+    "cloze_answer": null,
+    "options": [
+      "to find all employees",
+      "to find employees who have never been a manager",
+      "to get the count of all departments",
+      "to list all department managers"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "SQL-L2-mcq2",
+    "subject": "SQL",
+    "block": "Joins (Interview Prep)",
+    "topic": "LEFT JOIN + IS NULL",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does the IS NULL condition in this query achieve?",
+    "answer": null,
+    "notes": "The IS NULL condition in the WHERE clause ensures that only employees who have never been managers are returned.",
+    "cloze_answer": null,
+    "options": [
+      "it selects all department managers",
+      "it filters out employees who have been managers",
+      "it joins the employees and department_manager tables",
+      "it returns only the department managers"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "SQL-L4-mcq1",
+    "subject": "SQL",
+    "block": "Joins (Interview Prep)",
+    "topic": "Aggregation JOIN",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What type of JOIN is used in the query to achieve the department-wise top earner?",
+    "answer": null,
+    "notes": "The query uses three explicit JOIN ... ON clauses (dept_emp, employees, salaries) - that is an INNER JOIN, which only matches rows that satisfy the ON condition on both sides. A Cross Join has no ON condition and produces every row-pair combination, which this query does not do.",
+    "cloze_answer": null,
+    "options": [
+      "Inner Join",
+      "Outer Join",
+      "Cross Join",
+      "Distinct Join"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "SQL-L4-mcq2",
+    "subject": "SQL",
+    "block": "Joins (Interview Prep)",
+    "topic": "Aggregation JOIN",
+    "label": null,
+    "type": "mcq",
+    "prompt": "The notes mention a portable (non-Postgres) alternative using ROW_NUMBER() wrapped in a subquery, filtered with WHERE rn = 1. Why is the subquery necessary there?",
+    "answer": null,
+    "notes": "ROW_NUMBER() OVER (...) is computed at the SELECT level and cannot be referenced by WHERE in the same query - similar to why aggregates need HAVING instead of WHERE. The ranking has to be computed in a subquery/CTE first, then an outer WHERE rn = 1 filters on that already-computed value.",
+    "cloze_answer": null,
+    "options": [
+      "To avoid computing the window function",
+      "Because window function results cannot be filtered directly in the same query's WHERE clause",
+      "To improve performance over DISTINCT ON",
+      "Because ROW_NUMBER() requires a GROUP BY clause"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "SQL-L10-mcq1",
+    "subject": "SQL",
+    "block": "Joins (Interview Prep)",
+    "topic": "JOIN + GROUP BY",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the purpose of the GROUP BY clause in this query?",
+    "answer": null,
+    "notes": "The GROUP BY clause is used to group the rows by specified columns, in this case, to show the team size for each department.",
+    "cloze_answer": null,
+    "options": [
+      "To filter rows",
+      "To group rows by specified columns",
+      "To sort rows",
+      "To limit the number of rows"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "SQL-L10-mcq2",
+    "subject": "SQL",
+    "block": "Joins (Interview Prep)",
+    "topic": "JOIN + GROUP BY",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What happens if you omit the GROUP BY clause from this query?",
+    "answer": null,
+    "notes": "Omitting the GROUP BY clause would result in an error, as the query relies on the GROUP BY clause to group the rows by specified columns.",
+    "cloze_answer": null,
+    "options": [
+      "The query returns an error",
+      "The query returns all rows",
+      "The query returns only unique rows",
+      "The query returns a single row"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "SQL-L3-mcq1",
+    "subject": "SQL",
+    "block": "Subqueries (Interview Prep)",
+    "topic": "Correlated EXISTS",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the main difference between using EXISTS and using IN with a correlated subquery in SQL?",
+    "answer": null,
+    "notes": "EXISTS(subquery) just asks \"did this subquery produce at least one row\" - the SELECT list inside it is irrelevant (SELECT 1 is idiomatic). IN evaluates against the actual set of returned values, which is exactly why NOT IN has the NULL footgun (see L5) - EXISTS/NOT EXISTS sidestep it entirely.",
+    "cloze_answer": null,
+    "options": [
+      "EXISTS only checks whether the subquery returns any row at all (the SELECT list inside it is irrelevant); IN evaluates against the actual returned values, which can misbehave if that set contains NULL",
+      "EXISTS requires a JOIN; IN never does",
+      "IN can only be used with correlated subqueries; EXISTS cannot",
+      "EXISTS and IN always require identical syntax and behave identically"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "SQL-L3-mcq2",
+    "subject": "SQL",
+    "block": "Subqueries (Interview Prep)",
+    "topic": "Correlated EXISTS",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why would you use a correlated subquery with EXISTS to find employees who have ever had a salary greater than 100000?",
+    "answer": null,
+    "notes": "An ordinary JOIN ... ON s.emp_no = e.emp_no AND s.salary > 100000 would return one row per QUALIFYING salary row, so an employee with multiple raises above 100000 would appear multiple times, needing an extra DISTINCT. EXISTS just checks whether at least one such row exists and naturally returns each employee once.",
+    "cloze_answer": null,
+    "options": [
+      "To avoid needing a JOIN + DISTINCT, since an employee could have multiple qualifying salary rows and EXISTS only checks for existence, not a row per match",
+      "To use a more readable syntax",
+      "To include employees who have never had a salary greater than 100000",
+      "Because EXISTS is required whenever using a correlated subquery"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "SQL-L5-mcq1",
+    "subject": "SQL",
+    "block": "Subqueries (Interview Prep)",
+    "topic": "NOT IN",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why would you prefer NOT EXISTS over NOT IN when using a subquery?",
+    "answer": null,
+    "notes": "This is because NOT EXISTS doesn't have the trap of returning zero rows when the subquery can return NULL, unlike NOT IN.",
+    "cloze_answer": null,
+    "options": [
+      "NOT EXISTS doesn't have the trap of returning zero rows when the subquery can return NULL",
+      "NOT EXISTS is only applicable to SELECT statements, not to other SQL statements",
+      "NOT EXISTS is only available in MySQL, not in other dialects",
+      "NOT EXISTS is used to find rows where a subquery returns no rows"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "SQL-L5-mcq2",
+    "subject": "SQL",
+    "block": "Subqueries (Interview Prep)",
+    "topic": "NOT IN",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What happens when a subquery in a NOT IN clause can return NULL?",
+    "answer": null,
+    "notes": "NOT IN silently returns zero rows when the subquery can return NULL, not returning any rows.",
+    "cloze_answer": null,
+    "options": [
+      "The query returns the same result as it would without the subquery",
+      "The query returns zero rows",
+      "The query returns a list of all possible values",
+      "The query returns a random subset of values"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "SQL-L6-mcq1",
+    "subject": "SQL",
+    "block": "Window (Interview Prep)",
+    "topic": "ROW_NUMBER/RANK/DENSE_RANK",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why would you add a secondary ORDER BY key when using ROW_NUMBER()?",
+    "answer": null,
+    "notes": "Without a secondary ORDER BY key, rows tied on the primary key get numbered in an arbitrary (dialect/plan-dependent) order. A secondary key (e.g. ORDER BY salary DESC, emp_no) makes that tie-break deterministic and reproducible. ROW_NUMBER() is always unique regardless of ties - a secondary key does not affect uniqueness, only which specific row gets which number among ties.",
+    "cloze_answer": null,
+    "options": [
+      "To make the tie-break order deterministic instead of arbitrary",
+      "To guarantee the row number is always unique",
+      "To handle tie-break order in descending order specifically",
+      "To handle tie-break order in ascending order specifically"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "SQL-L6-mcq2",
+    "subject": "SQL",
+    "block": "Window (Interview Prep)",
+    "topic": "ROW_NUMBER/RANK/DENSE_RANK",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which of the following databases support window functions identically?",
+    "answer": null,
+    "notes": "Postgres, MySQL 8+, Oracle, MSSQL support window functions identically. The other options are incorrect because MySQL 5.7 does not support window functions at all, and the combination of MySQL 5.7 and Oracle is also incorrect.",
+    "cloze_answer": null,
+    "options": [
+      "Postgres, MySQL 5.7, Oracle, MSSQL",
+      "Postgres, MySQL 8+, Oracle, MSSQL",
+      "Postgres, MySQL 5.7, MySQL 8+, Oracle",
+      "Postgres, Oracle, MSSQL"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "SQL-L7-mcq1",
+    "subject": "SQL",
+    "block": "Window (Interview Prep)",
+    "topic": "PARTITION BY + Top-N",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why would you use PARTITION BY in a window function like this?",
+    "answer": null,
+    "notes": "PARTITION BY divides rows into independent groups so the window function restarts (e.g. ROW_NUMBER resets to 1) within each group - here, per department. The actual within-group RANKING comes from ROW_NUMBER()/RANK() itself, not from PARTITION BY, which only groups.",
+    "cloze_answer": null,
+    "options": [
+      "To group rows by a specific column",
+      "To rank rows within a group",
+      "To filter out duplicate rows",
+      "To combine multiple tables"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "SQL-L7-mcq2",
+    "subject": "SQL",
+    "block": "Window (Interview Prep)",
+    "topic": "PARTITION BY + Top-N",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the purpose of the ROW_NUMBER() function in this query?",
+    "answer": null,
+    "notes": "Correct answer: To rank the rows within a group. This is used to find the top 3 CURRENT earners for each department.",
+    "cloze_answer": null,
+    "options": [
+      "To assign a unique identifier to each row",
+      "To partition the data by a specific column",
+      "To rank the rows within a group",
+      "To filter out rows with missing data"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "SQL-L8-mcq1",
+    "subject": "SQL",
+    "block": "Window (Interview Prep)",
+    "topic": "LAG",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the purpose of the LAG() function in the given SQL query?",
+    "answer": null,
+    "notes": "The LAG() function is used to show the previous salary next to the current one, allowing the computation of the raise amount.",
+    "cloze_answer": null,
+    "options": [
+      "To calculate the raise amount for each employee",
+      "To show the previous salary next to the current one",
+      "To partition the data by employee number",
+      "To order the results by from date"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "SQL-L8-mcq2",
+    "subject": "SQL",
+    "block": "Window (Interview Prep)",
+    "topic": "LAG",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the role of the OVER clause in the LAG() function?",
+    "answer": null,
+    "notes": "The OVER clause is used to define the window for the LAG() function, specifying the partitioning and ordering.",
+    "cloze_answer": null,
+    "options": [
+      "To specify the default value for the LAG() function",
+      "To partition the data by employee number",
+      "To define the window for the LAG() function",
+      "To order the results by from date"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "SQL-L9-mcq1",
+    "subject": "SQL",
+    "block": "Window (Interview Prep)",
+    "topic": "Running total",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why would you use RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW instead of ROWS BETWEEN when framing a SUM() OVER (ORDER BY) query?",
+    "answer": null,
+    "notes": "Frame default differs subtly: Postgres/MySQL/Oracle default frame for SUM() OVER (ORDER BY x) is RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW (ties on from_date get summed together). MSSQL matches this too as of 2012+",
+    "cloze_answer": null,
+    "options": [
+      "To ensure ties on from_date get summed together",
+      "To include all rows in the result set",
+      "To prioritize the first row in the result set",
+      "To ignore the first row in the result set"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "SQL-L12-mcq1",
+    "subject": "SQL",
+    "block": "Window (Interview Prep)",
+    "topic": "FIRST_VALUE/LAST_VALUE",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why does the LAST_VALUE function return the current row's value by default?",
+    "answer": null,
+    "notes": "The frame is UNBOUNDED PRECEDING AND CURRENT ROW, so by default it just returns the CURRENT row's value, not the true last row.",
+    "cloze_answer": null,
+    "options": [
+      "It's a design choice to make it simpler",
+      "It's a limitation of the dialect",
+      "The frame is UNBOUNDED PRECEDING AND CURRENT ROW",
+      "It's optimized for performance"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "SQL-L12-mcq2",
+    "subject": "SQL",
+    "block": "Window (Interview Prep)",
+    "topic": "FIRST_VALUE/LAST_VALUE",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the default frame for the LAST_VALUE function if not explicitly widened?",
+    "answer": null,
+    "notes": "The default frame is UNBOUNDED PRECEDING AND CURRENT ROW, so by default it just returns the CURRENT row's value, not the true last row.",
+    "cloze_answer": null,
+    "options": [
+      "UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING",
+      "UNBOUNDED PRECEDING AND CURRENT ROW",
+      "ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING",
+      "None of the above"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "SQL-L11-mcq1",
+    "subject": "SQL",
+    "block": "CTE (Interview Prep)",
+    "topic": "WITH clause",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the purpose of the two CTEs in this query?",
+    "answer": null,
+    "notes": "The two CTEs are used to define two separate tables that are then joined to produce the final result. The first CTE filters high earners, and the second CTE filters current departments.",
+    "cloze_answer": null,
+    "options": [
+      "To filter out low earners and departments",
+      "To group employees by department",
+      "To join high earners and current departments",
+      "To materialize intermediate results"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "SQL-L11-mcq2",
+    "subject": "SQL",
+    "block": "CTE (Interview Prep)",
+    "topic": "WITH clause",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which database dialects support Common Table Expressions (CTEs) in this query?",
+    "answer": null,
+    "notes": "According to the notes, all 4 database dialects support CTEs, but the notes also mention that MySQL only gained CTE support in version 8.0, and Postgres had materialization issues before version 12.",
+    "cloze_answer": null,
+    "options": [
+      "Postgres and MySQL",
+      "Oracle and MSSQL",
+      "All 4: Postgres, MySQL, Oracle, and MSSQL",
+      "Only Oracle and Postgres"
+    ],
+    "correctIndex": 2
   }
 ]
