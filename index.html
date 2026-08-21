@@ -13,13 +13,21 @@
     <div class="header-right">
       <span id="due-count"></span>
       <button id="cram-open-btn" class="header-btn">Cram</button>
+      <button id="flows-open-btn" class="header-btn">Flows</button>
     </div>
   </header>
 
   <main id="cram-picker-screen" hidden>
-    <button id="cram-back-btn" class="header-btn" hidden>&larr; Subjects</button>
+    <button id="cram-back-btn" class="header-btn" hidden>&larr; Back</button>
     <h2 id="cram-picker-title"></h2>
     <div id="cram-list"></div>
+  </main>
+
+  <main id="flows-screen" hidden>
+    <button id="flows-back-btn" class="header-btn" hidden>&larr; Back</button>
+    <h2 id="flows-title"></h2>
+    <div id="flows-list"></div>
+    <div id="flow-detail" hidden></div>
   </main>
 
   <main id="review-screen" hidden>

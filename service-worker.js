@@ -1,4 +1,4 @@
-const CACHE_NAME = "deep-srs-v2";
+const CACHE_NAME = "deep-srs-v3";
 const ASSETS = [
   "./",
   "index.html",
@@ -6,10 +6,12 @@ const ASSETS = [
   "srs.js",
   "style.css",
   "questions.json",
+  "flows.json",
   "manifest.json",
   "icons/icon-192.png",
   "icons/icon-512.png",
 ];
+const NETWORK_FIRST = ["questions.json", "flows.json"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -34,10 +36,11 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
-  // questions.json grows over time as new subjects are added (see notes_ingest/).
-  // Network-first so an online phone always sees new cards without needing a
-  // CACHE_NAME bump on every content update; falls back to cache when offline.
-  if (event.request.url.endsWith("questions.json")) {
+  // questions.json / flows.json grow over time as new subjects are added (see
+  // notes_ingest/). Network-first so an online phone always sees new content
+  // without needing a CACHE_NAME bump on every update; falls back to cache
+  // when offline.
+  if (NETWORK_FIRST.some((f) => event.request.url.endsWith(f))) {
     event.respondWith(
       fetch(event.request)
         .then((resp) => {

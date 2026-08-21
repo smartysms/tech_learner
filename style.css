@@ -118,6 +118,64 @@ header h1 {
   color: #fff;
 }
 
+#flows-picker-title,
+#flows-title {
+  font-size: 1.1rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.flow-step {
+  position: relative;
+  margin-left: 1rem;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+.flow-step:last-child {
+  border-left-color: transparent;
+  padding-bottom: 0;
+}
+
+.flow-step-head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  text-align: left;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--fg);
+  font-size: 0.95rem;
+  min-height: auto;
+  padding: 0.6rem 0.8rem;
+}
+
+.flow-step-num {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -1.9rem;
+}
+
+.flow-step-detail {
+  margin: 0.5rem 0 0;
+  padding: 0.6rem 0.8rem;
+  background: var(--card-bg);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
 main {
   background: var(--card-bg);
   border: 1px solid var(--border);

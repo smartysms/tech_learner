@@ -1,10 +1,13 @@
 const STATE_KEY = "srsState";
 
 let questions = [];
+let flows = [];
 let srsState = {};
 let queue = [];
 let reviewedCount = 0;
 let cramMode = false;
+let cramBackStack = [];
+let flowsBackStack = [];
 
 function loadState() {
   try {
@@ -61,61 +64,91 @@ function renderDueCount() {
   document.getElementById("due-count").textContent = `${dueTotal} due`;
 }
 
-// --- Cram mode: review a whole subject/block on demand, ignoring due dates ---
+// --- Cram mode: review a whole subject/block/topic on demand, ignoring due dates ---
+// Three levels: subject -> block (chapter) -> topic (concept). "All of X" at
+// any level starts a cram covering everything under it.
 
-function subjectBlockCounts() {
-  const bySubject = new Map();
-  for (const q of questions) {
-    if (!bySubject.has(q.subject)) bySubject.set(q.subject, new Map());
-    const blocks = bySubject.get(q.subject);
-    blocks.set(q.block, (blocks.get(q.block) || 0) + 1);
+function groupCounts(items, keyFn) {
+  const counts = new Map();
+  for (const item of items) {
+    const key = keyFn(item);
+    counts.set(key, (counts.get(key) || 0) + 1);
   }
-  return bySubject;
+  return counts;
+}
+
+function renderCramList(title, allLabel, onAll, entries) {
+  const container = document.getElementById("cram-list");
+  container.innerHTML = "";
+
+  if (onAll) {
+    const allBtn = document.createElement("button");
+    allBtn.className = "cram-list-item cram-list-item-all";
+    allBtn.textContent = allLabel;
+    allBtn.addEventListener("click", onAll);
+    container.appendChild(allBtn);
+  }
+
+  for (const { label, count, onClick } of entries) {
+    const btn = document.createElement("button");
+    btn.className = "cram-list-item";
+    btn.textContent = `${label} (${count})`;
+    btn.addEventListener("click", onClick);
+    container.appendChild(btn);
+  }
+
+  document.getElementById("cram-picker-title").textContent = title;
+  document.getElementById("cram-back-btn").hidden = cramBackStack.length === 0;
 }
 
 function renderCramSubjectList() {
-  const bySubject = subjectBlockCounts();
-  const container = document.getElementById("cram-list");
-  container.innerHTML = "";
-  for (const [subject, blocks] of bySubject) {
-    const total = [...blocks.values()].reduce((a, b) => a + b, 0);
-    const btn = document.createElement("button");
-    btn.className = "cram-list-item";
-    btn.textContent = `${subject} (${total})`;
-    btn.addEventListener("click", () => renderCramBlockList(subject));
-    container.appendChild(btn);
-  }
-  document.getElementById("cram-picker-title").textContent = "Cram: choose a subject";
-  document.getElementById("cram-back-btn").hidden = true;
+  cramBackStack = [];
+  const counts = groupCounts(questions, (q) => q.subject);
+  const entries = [...counts].map(([subject, count]) => ({
+    label: subject,
+    count,
+    onClick: () => renderCramBlockList(subject),
+  }));
+  renderCramList("Cram: choose a subject", null, null, entries);
 }
 
 function renderCramBlockList(subject) {
-  const blocks = subjectBlockCounts().get(subject);
-  const container = document.getElementById("cram-list");
-  container.innerHTML = "";
-
-  const total = [...blocks.values()].reduce((a, b) => a + b, 0);
-  const allBtn = document.createElement("button");
-  allBtn.className = "cram-list-item cram-list-item-all";
-  allBtn.textContent = `All of ${subject} (${total})`;
-  allBtn.addEventListener("click", () => startCram(subject, null));
-  container.appendChild(allBtn);
-
-  for (const [block, count] of blocks) {
-    const btn = document.createElement("button");
-    btn.className = "cram-list-item";
-    btn.textContent = `${block} (${count})`;
-    btn.addEventListener("click", () => startCram(subject, block));
-    container.appendChild(btn);
-  }
-
-  document.getElementById("cram-picker-title").textContent = subject;
-  document.getElementById("cram-back-btn").hidden = false;
+  cramBackStack = [renderCramSubjectList];
+  const scoped = questions.filter((q) => q.subject === subject);
+  const counts = groupCounts(scoped, (q) => q.block);
+  const entries = [...counts].map(([block, count]) => ({
+    label: block,
+    count,
+    onClick: () => renderCramTopicList(subject, block),
+  }));
+  renderCramList(subject, `All of ${subject} (${scoped.length})`, () => startCram({ subject }), entries);
 }
 
-function startCram(subject, block) {
+function renderCramTopicList(subject, block) {
+  cramBackStack = [renderCramSubjectList, () => renderCramBlockList(subject)];
+  const scoped = questions.filter((q) => q.subject === subject && q.block === block);
+  const counts = groupCounts(scoped, (q) => q.topic);
+  const entries = [...counts].map(([topic, count]) => ({
+    label: topic,
+    count,
+    onClick: () => startCram({ subject, block, topic }),
+  }));
+  renderCramList(block, `All of ${block} (${scoped.length})`, () => startCram({ subject, block }), entries);
+}
+
+function cramGoBack() {
+  const prev = cramBackStack.pop();
+  if (prev) prev();
+}
+
+function startCram({ subject, block, topic }) {
   queue = shuffle(
-    questions.filter((q) => q.subject === subject && (block === null || q.block === block))
+    questions.filter(
+      (q) =>
+        q.subject === subject &&
+        (block === undefined || q.block === block) &&
+        (topic === undefined || q.topic === topic)
+    )
   );
   cramMode = true;
   reviewedCount = 0;
@@ -127,6 +160,82 @@ function exitCram() {
   queue = buildQueue();
   reviewedCount = 0;
   renderCurrentCard();
+}
+
+// --- Flows: browse a process as a connected chain of steps, tap to deep-dive ---
+
+function renderFlowsSubjectList() {
+  flowsBackStack = [];
+  const counts = groupCounts(flows, (f) => f.subject);
+  const container = document.getElementById("flows-list");
+  container.innerHTML = "";
+  for (const [subject, count] of counts) {
+    const btn = document.createElement("button");
+    btn.className = "cram-list-item";
+    btn.textContent = `${subject} (${count})`;
+    btn.addEventListener("click", () => renderFlowsList(subject));
+    container.appendChild(btn);
+  }
+  document.getElementById("flows-title").textContent = "Flows: choose a subject";
+  document.getElementById("flows-list").hidden = false;
+  document.getElementById("flow-detail").hidden = true;
+  document.getElementById("flows-back-btn").hidden = true;
+}
+
+function renderFlowsList(subject) {
+  flowsBackStack = [renderFlowsSubjectList];
+  const container = document.getElementById("flows-list");
+  container.innerHTML = "";
+  for (const flow of flows.filter((f) => f.subject === subject)) {
+    const btn = document.createElement("button");
+    btn.className = "cram-list-item";
+    btn.textContent = `${flow.name} (${flow.steps.length} steps)`;
+    btn.addEventListener("click", () => renderFlowDetail(flow));
+    container.appendChild(btn);
+  }
+  document.getElementById("flows-title").textContent = subject;
+  document.getElementById("flows-list").hidden = false;
+  document.getElementById("flow-detail").hidden = true;
+  document.getElementById("flows-back-btn").hidden = false;
+}
+
+function renderFlowDetail(flow) {
+  flowsBackStack = [renderFlowsSubjectList, () => renderFlowsList(flow.subject)];
+  document.getElementById("flows-title").textContent = flow.name;
+  document.getElementById("flows-list").hidden = true;
+
+  const detail = document.getElementById("flow-detail");
+  detail.innerHTML = "";
+  detail.hidden = false;
+
+  flow.steps.forEach((step, i) => {
+    const stepEl = document.createElement("div");
+    stepEl.className = "flow-step";
+
+    const head = document.createElement("button");
+    head.className = "flow-step-head";
+    head.innerHTML = `<span class="flow-step-num">${i + 1}</span><span>${step.label}</span>`;
+
+    const body = document.createElement("p");
+    body.className = "flow-step-detail";
+    body.textContent = step.detail || "(no further detail)";
+    body.hidden = true;
+
+    head.addEventListener("click", () => {
+      body.hidden = !body.hidden;
+    });
+
+    stepEl.appendChild(head);
+    stepEl.appendChild(body);
+    detail.appendChild(stepEl);
+  });
+
+  document.getElementById("flows-back-btn").hidden = false;
+}
+
+function flowsGoBack() {
+  const prev = flowsBackStack.pop();
+  if (prev) prev();
 }
 
 function renderCurrentCard() {
@@ -249,6 +358,15 @@ function init() {
       renderCurrentCard();
     });
 
+  fetch("flows.json")
+    .then((r) => r.json())
+    .then((data) => {
+      flows = data;
+    })
+    .catch(() => {
+      flows = [];
+    });
+
   document.getElementById("show-answer-btn").addEventListener("click", handleShowAnswer);
   document.getElementById("check-cloze-btn").addEventListener("click", handleCheckCloze);
   document.getElementById("cloze-answer-input").addEventListener("keydown", (e) => {
@@ -262,9 +380,15 @@ function init() {
     renderCramSubjectList();
     showScreen("cram-picker-screen");
   });
-  document.getElementById("cram-back-btn").addEventListener("click", renderCramSubjectList);
+  document.getElementById("cram-back-btn").addEventListener("click", cramGoBack);
   document.getElementById("cram-exit-btn").addEventListener("click", exitCram);
   document.getElementById("done-cram-exit-btn").addEventListener("click", exitCram);
+
+  document.getElementById("flows-open-btn").addEventListener("click", () => {
+    renderFlowsSubjectList();
+    showScreen("flows-screen");
+  });
+  document.getElementById("flows-back-btn").addEventListener("click", flowsGoBack);
 }
 
 if ("serviceWorker" in navigator) {

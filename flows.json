@@ -1,0 +1,62 @@
+[
+  {
+    "id": "kafka-ch00-producer",
+    "subject": "Kafka Deep Dive",
+    "chapter": 0,
+    "name": "Producer",
+    "steps": [
+      {
+        "label": "Send ProduceRequest",
+        "detail": "The ProduceRequest is sent over the NIO Selector, tagged with a Correlation ID"
+      },
+      {
+        "label": "Broker appends records",
+        "detail": "The broker appends the records to the partition's log"
+      },
+      {
+        "label": "Follower replicas copy and advance High Watermark",
+        "detail": "Follower replicas copy the new records; the High Watermark advances once the ISR has replicated them"
+      },
+      {
+        "label": "Send ProduceResponse",
+        "detail": "The broker sends a ProduceResponse - timing depends on acks (0 = immediate, 1 = after leader append, all = after ISR replication)"
+      },
+      {
+        "label": "Process response and complete record's Future",
+        "detail": "The Sender Thread processes the response and completes the record's Future / invokes its callback - this callback runs ON THE SENDER THREAD, not the application thread"
+      },
+      {
+        "label": "Retry on failure",
+        "detail": "On a retryable failure, the SAME ProducerBatch is reenqueue()'d (its attempts counter increments) rather than discarded - sequence numbers are preserved if idempotence is enabled"
+      },
+      {
+        "label": "Configure Sender Thread",
+        "detail": "Steps 1-5 run on the Application Thread and never touch the network. Steps 6-15 run on the single background Sender Thread. Step 14's retry loop can repeat steps 6-13 multiple times for the SAME batch before step 15 ever completes the Future."
+      },
+      {
+        "label": "Configure component map",
+        "detail": "Every config placed at the exact pipeline stage it acts on - not a flat alphabetical list."
+      },
+      {
+        "label": "Serialization and partitioning",
+        "detail": "key.serializer / value.serializer. Converts the record's key/value into bytes before it ever reaches the RecordAccumulator. partitioner.class. Overrides the default key-hash/sticky partitioning logic"
+      },
+      {
+        "label": "RecordAccumulator and BufferPool",
+        "detail": "buffer.memory. Total memory the BufferPool may allocate across all batches; exhaustion blocks send(). batch.size. One of the 3 READY conditions - triggers Sender pickup once a batch reaches this size. linger.ms. One of the 3 READY conditions - a time-based trigger even if batch.size isn't reached. max.block.ms. How long send() blocks on the Application Thread when the buffer is exhausted, before throwing."
+      },
+      {
+        "label": "Sender Thread and NetworkClient",
+        "detail": "max.request.size. Caps the size of one ProduceRequest - splits the REQUEST, never a single ProducerBatch. max.in.flight.requests.per.connection. Caps concurrent unacknowledged requests per broker; default 5, an engineering trade-off verified via KIP-98/KAFKA-5494, not a protocol limit"
+      },
+      {
+        "label": "Reliability (Broker-side acknowledgement)",
+        "detail": "acks. 0 = fire-and-forget, 1 = leader-only, all = waits for the ISR. retries. Defaults to Integer.MAX_VALUE (2147483647), verified real per KAFKA-5033. enable.idempotence. Requires acks=all and retries enabled; a ConfigException fires at construction on an explicit conflict"
+      },
+      {
+        "label": "Transactions (EOS)",
+        "detail": "transactional.id. Stable, application-provided identity (unlike the auto-generated PID) used to locate the Transaction Coordinator"
+      }
+    ]
+  }
+]
