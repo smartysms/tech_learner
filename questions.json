@@ -22919,25 +22919,6 @@
     "correctIndex": 2
   },
   {
-    "id": "kafka-ch05-s04-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 5 (Interview Prep)",
-    "topic": "Why Cross-Partition Order Was Never Promised",
-    "label": null,
-    "type": "mcq",
-    "prompt": "According to the section on why cross-partition order was never promised, is it valid for certain records to be processed in the order: Order-2, Order-4, Order-1, Order-3?",
-    "answer": null,
-    "notes": "The text explains that Kafka always delivers records in the order they were produced, regardless of partition.",
-    "cloze_answer": null,
-    "options": [
-      "Yes",
-      "No",
-      "Yes, but only because the producer used acks=0",
-      "No - Kafka never guaranteed any ordering relationship between messages on different partitions"
-    ],
-    "correctIndex": 2
-  },
-  {
     "id": "kafka-ch05-s04-mcq2",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 5 (Interview Prep)",
