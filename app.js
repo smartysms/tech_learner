@@ -4,6 +4,7 @@ let questions = [];
 let srsState = {};
 let queue = [];
 let reviewedCount = 0;
+let cramMode = false;
 
 function loadState() {
   try {
@@ -51,9 +52,81 @@ function showScreen(id) {
 }
 
 function renderDueCount() {
+  if (cramMode) {
+    document.getElementById("due-count").textContent = `${queue.length} left (cram)`;
+    return;
+  }
   const today = todayISO();
   const dueTotal = questions.filter((q) => ensureCardState(q.id).dueDate <= today).length;
   document.getElementById("due-count").textContent = `${dueTotal} due`;
+}
+
+// --- Cram mode: review a whole subject/block on demand, ignoring due dates ---
+
+function subjectBlockCounts() {
+  const bySubject = new Map();
+  for (const q of questions) {
+    if (!bySubject.has(q.subject)) bySubject.set(q.subject, new Map());
+    const blocks = bySubject.get(q.subject);
+    blocks.set(q.block, (blocks.get(q.block) || 0) + 1);
+  }
+  return bySubject;
+}
+
+function renderCramSubjectList() {
+  const bySubject = subjectBlockCounts();
+  const container = document.getElementById("cram-list");
+  container.innerHTML = "";
+  for (const [subject, blocks] of bySubject) {
+    const total = [...blocks.values()].reduce((a, b) => a + b, 0);
+    const btn = document.createElement("button");
+    btn.className = "cram-list-item";
+    btn.textContent = `${subject} (${total})`;
+    btn.addEventListener("click", () => renderCramBlockList(subject));
+    container.appendChild(btn);
+  }
+  document.getElementById("cram-picker-title").textContent = "Cram: choose a subject";
+  document.getElementById("cram-back-btn").hidden = true;
+}
+
+function renderCramBlockList(subject) {
+  const blocks = subjectBlockCounts().get(subject);
+  const container = document.getElementById("cram-list");
+  container.innerHTML = "";
+
+  const total = [...blocks.values()].reduce((a, b) => a + b, 0);
+  const allBtn = document.createElement("button");
+  allBtn.className = "cram-list-item cram-list-item-all";
+  allBtn.textContent = `All of ${subject} (${total})`;
+  allBtn.addEventListener("click", () => startCram(subject, null));
+  container.appendChild(allBtn);
+
+  for (const [block, count] of blocks) {
+    const btn = document.createElement("button");
+    btn.className = "cram-list-item";
+    btn.textContent = `${block} (${count})`;
+    btn.addEventListener("click", () => startCram(subject, block));
+    container.appendChild(btn);
+  }
+
+  document.getElementById("cram-picker-title").textContent = subject;
+  document.getElementById("cram-back-btn").hidden = false;
+}
+
+function startCram(subject, block) {
+  queue = shuffle(
+    questions.filter((q) => q.subject === subject && (block === null || q.block === block))
+  );
+  cramMode = true;
+  reviewedCount = 0;
+  renderCurrentCard();
+}
+
+function exitCram() {
+  cramMode = false;
+  queue = buildQueue();
+  reviewedCount = 0;
+  renderCurrentCard();
 }
 
 function renderCurrentCard() {
@@ -95,11 +168,23 @@ function renderCurrentCard() {
     document.getElementById("cloze-input-block").hidden = true;
   }
 
+  document.getElementById("cram-exit-btn").hidden = !cramMode;
+
   showScreen("review-screen");
   renderDueCount();
 }
 
 function renderDone() {
+  if (cramMode) {
+    document.getElementById("done-summary").textContent =
+      `Cram session complete. Reviewed ${reviewedCount} card${reviewedCount === 1 ? "" : "s"}.`;
+    document.getElementById("done-cram-exit-btn").hidden = false;
+    showScreen("done-screen");
+    renderDueCount();
+    return;
+  }
+
+  document.getElementById("done-cram-exit-btn").hidden = true;
   const today = todayISO();
   const upcoming = questions
     .map((q) => srsState[q.id].dueDate)
@@ -172,6 +257,14 @@ function init() {
   document.querySelectorAll(".rate").forEach((btn) => {
     btn.addEventListener("click", () => handleRate(btn.dataset.rating));
   });
+
+  document.getElementById("cram-open-btn").addEventListener("click", () => {
+    renderCramSubjectList();
+    showScreen("cram-picker-screen");
+  });
+  document.getElementById("cram-back-btn").addEventListener("click", renderCramSubjectList);
+  document.getElementById("cram-exit-btn").addEventListener("click", exitCram);
+  document.getElementById("done-cram-exit-btn").addEventListener("click", exitCram);
 }
 
 if ("serviceWorker" in navigator) {

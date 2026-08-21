@@ -10,11 +10,21 @@
 <div id="app">
   <header>
     <h1>Deep Dive SRS</h1>
-    <span id="due-count"></span>
+    <div class="header-right">
+      <span id="due-count"></span>
+      <button id="cram-open-btn" class="header-btn">Cram</button>
+    </div>
   </header>
+
+  <main id="cram-picker-screen" hidden>
+    <button id="cram-back-btn" class="header-btn" hidden>&larr; Subjects</button>
+    <h2 id="cram-picker-title"></h2>
+    <div id="cram-list"></div>
+  </main>
 
   <main id="review-screen" hidden>
     <div class="tags">
+      <span id="cram-exit-btn" class="tag tag-cram" hidden>Exit Cram</span>
       <span id="card-subject" class="tag tag-subject"></span>
       <span id="card-block" class="tag"></span>
       <span id="card-topic" class="tag"></span>
@@ -45,6 +55,7 @@
 
   <main id="done-screen" hidden>
     <p id="done-summary"></p>
+    <button id="done-cram-exit-btn" hidden>Back to Daily Review</button>
   </main>
 
   <main id="empty-screen" hidden>
