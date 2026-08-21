@@ -24762,25 +24762,6 @@
     "correctIndex": 1
   },
   {
-    "id": "kafka-ch09-s03-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 9 (Interview Prep)",
-    "topic": "The Real Question",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Why does the sequential approach to ordering food lead to wasted time?",
-    "answer": null,
-    "notes": "The sequential approach leads to wasted time because it adds up to 105 seconds of pure waiting, as each order is handled in a specific order. The other options are incorrect because they do not accurately describe the issue with the sequential approach.",
-    "cloze_answer": null,
-    "options": [
-      "Because it takes too long to handle each order",
-      "Because it prioritizes one restaurant over the others",
-      "Because it adds up to 105 seconds of pure waiting",
-      "Because it involves too many people"
-    ],
-    "correctIndex": 3
-  },
-  {
     "id": "kafka-ch09-s04-mcq1",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 9 (Interview Prep)",
@@ -25199,25 +25180,6 @@
     "correctIndex": 1
   },
   {
-    "id": "kafka-ch09-s17-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 9 (Interview Prep)",
-    "topic": "Why Not One Thread Per Broker?",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Why is one thread's stack sufficient, regardless of the connection count?",
-    "answer": null,
-    "notes": "One thread's stack is sufficient regardless of connection count because the selector handles all connections, and each thread doesn't require its own stack",
-    "cloze_answer": null,
-    "options": [
-      "Because each connection uses its own thread",
-      "Because the selector handles all connections",
-      "Because the sender thread handles all connections",
-      "Because one thread's stack is sufficient regardless of connection count"
-    ],
-    "correctIndex": 3
-  },
-  {
     "id": "kafka-ch09-s18-mcq1",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 9 (Interview Prep)",
@@ -25370,25 +25332,6 @@
     "correctIndex": 0
   },
   {
-    "id": "kafka-ch09-s22-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 9 (Interview Prep)",
-    "topic": "One Complete Sender Iteration",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Why does the Sender's event loop run continuously from the moment the producer is created until producer.close()?",
-    "answer": null,
-    "notes": "The event loop runs continuously to match Kafka's real source and handle events continuously.",
-    "cloze_answer": null,
-    "options": [
-      "to process all batches at once",
-      "to ensure producer threads are properly handled",
-      "to handle events from multiple sources",
-      "to prevent long-running tasks from blocking the event loop"
-    ],
-    "correctIndex": 0
-  },
-  {
     "id": "kafka-ch09-s23-mcq1",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 9 (Interview Prep)",
@@ -25406,25 +25349,6 @@
       "Producer Callbacks"
     ],
     "correctIndex": 2
-  },
-  {
-    "id": "kafka-ch09-s23-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 9 (Interview Prep)",
-    "topic": "What's Coming Next",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What guarantees does the 'Ordering &' topic provide?",
-    "answer": null,
-    "notes": "The 'Ordering &' topic provides Exactly-once semantics, which ensures that all events are processed in the correct order.",
-    "cloze_answer": null,
-    "options": [
-      "Exactly-once semantics",
-      "At-most-once semantics",
-      "At-least-once semantics",
-      "In-flight limits"
-    ],
-    "correctIndex": 0
   },
   {
     "id": "kafka-ch09-s24-mcq1",
