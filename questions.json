@@ -43265,5 +43265,4171 @@
     "pairs": null,
     "tags": null,
     "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s02-match1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Module 0: Distinctions Reference",
+    "topic": "Server / Interface / Framework / Application / Worker / Process",
+    "label": null,
+    "type": "match",
+    "prompt": "Match each layer to how it's started/created.",
+    "answer": null,
+    "notes": "",
+    "cloze_answer": null,
+    "options": null,
+    "correctIndex": null,
+    "pairs": [
+      {
+        "left": "Server",
+        "right": "Started via CLI command (gunicorn ..., uvicorn ...)"
+      },
+      {
+        "left": "Interface",
+        "right": "Never instantiated - a fixed spec/contract"
+      },
+      {
+        "left": "Application",
+        "right": "Provides routing/ORM/DI/validation tooling"
+      },
+      {
+        "left": "Worker",
+        "right": "Spawned/managed by the Server (e.g. via --workers N)"
+      }
+    ],
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s03-match1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Module 0: Distinctions Reference",
+    "topic": "environ vs scope",
+    "label": null,
+    "type": "match",
+    "prompt": "Match each X to its Y.",
+    "answer": null,
+    "notes": "brief explanation tying the pairs together",
+    "cloze_answer": null,
+    "options": null,
+    "correctIndex": null,
+    "pairs": [
+      {
+        "left": "environ",
+        "right": "WSGI's request dict, built once per request"
+      },
+      {
+        "left": "scope",
+        "right": "ASGI's connection dict, can span a whole connection"
+      },
+      {
+        "left": "environ's typical keys",
+        "right": "REQUEST_METHOD, PATH_INFO, QUERY_STRING, SERVER_NAME"
+      },
+      {
+        "left": "scope's typical keys",
+        "right": "type, method, path, query_string, headers"
+      }
+    ],
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s04-match1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Module 0: Distinctions Reference",
+    "topic": "start_response vs send",
+    "label": null,
+    "type": "match",
+    "prompt": "Match each X to its Y.",
+    "answer": null,
+    "notes": "",
+    "cloze_answer": null,
+    "options": null,
+    "correctIndex": null,
+    "pairs": [
+      {
+        "left": "start_response",
+        "right": "WSGI: sets status+headers only, body returned separately"
+      },
+      {
+        "left": "send",
+        "right": "ASGI: also carries the body itself, via events"
+      },
+      {
+        "left": "receive",
+        "right": "ASGI-only - WSGI has no equivalent (environ handed over whole, upfront)"
+      }
+    ],
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s05-match1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Module 0: Distinctions Reference",
+    "topic": "receive vs send",
+    "label": null,
+    "type": "match",
+    "prompt": "Match each to its counterpart.",
+    "answer": null,
+    "notes": "brief explanation tying the pairs together",
+    "cloze_answer": null,
+    "options": null,
+    "correctIndex": null,
+    "pairs": [
+      {
+        "left": "receive",
+        "right": "Incoming events (client -> app)"
+      },
+      {
+        "left": "send",
+        "right": "Outgoing events (app -> client)"
+      },
+      {
+        "left": "http.request",
+        "right": "an event type received via receive()"
+      },
+      {
+        "left": "http.response.start / http.response.body",
+        "right": "event types sent via send()"
+      }
+    ],
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s08-match1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Module 0: Distinctions Reference",
+    "topic": "WSGI vs ASGI Callable - Parameter Mapping",
+    "label": null,
+    "type": "match",
+    "prompt": "Match each X to its Y.",
+    "answer": null,
+    "notes": "brief explanation tying the pairs together",
+    "cloze_answer": null,
+    "options": null,
+    "correctIndex": null,
+    "pairs": [
+      {
+        "left": "environ",
+        "right": "scope"
+      },
+      {
+        "left": "start_response",
+        "right": "send"
+      },
+      {
+        "left": "receive",
+        "right": "no equivalent"
+      }
+    ],
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s09-match1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Module 0: Distinctions Reference",
+    "topic": "Worker vs Thread vs Process",
+    "label": null,
+    "type": "match",
+    "prompt": "Match each X to its Y.",
+    "answer": null,
+    "notes": "brief explanation tying the pairs together",
+    "cloze_answer": null,
+    "options": null,
+    "correctIndex": null,
+    "pairs": [
+      {
+        "left": "OS-level isolated execution unit",
+        "right": "Gunicorn Worker Classes"
+      },
+      {
+        "left": "sync worker class",
+        "right": "process-per-worker"
+      },
+      {
+        "left": "Worker",
+        "right": "abstraction the SERVER uses"
+      }
+    ],
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s10-match1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Module 0: Distinctions Reference",
+    "topic": "Uvicorn vs Gunicorn",
+    "label": null,
+    "type": "match",
+    "prompt": "Match each X to its Y.",
+    "answer": null,
+    "notes": "Combined deployment pattern: gunicorn ... -k uvicorn.workers.UvicornWorker",
+    "cloze_answer": null,
+    "options": null,
+    "correctIndex": null,
+    "pairs": [
+      {
+        "left": "Uvicorn",
+        "right": "An ASGI server that cannot run WSGI apps"
+      },
+      {
+        "left": "Gunicorn",
+        "right": "A WSGI-oriented process manager that can run ASGI apps via an appropriate worker class"
+      },
+      {
+        "left": "Combined deployment pattern",
+        "right": "gunicorn ... -k uvicorn.workers.UvicornWorker"
+      }
+    ],
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s11-match1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Module 0: Distinctions Reference",
+    "topic": "Concurrency vs Parallelism",
+    "label": null,
+    "type": "match",
+    "prompt": "Match each X to its Y.",
+    "answer": null,
+    "notes": null,
+    "cloze_answer": null,
+    "options": null,
+    "correctIndex": null,
+    "pairs": [
+      {
+        "left": "Concurrency",
+        "right": "program structure"
+      },
+      {
+        "left": "Parallelism",
+        "right": "genuinely independent execution units"
+      },
+      {
+        "left": "async def/await coroutines",
+        "right": "cooperatively-scheduled tasks"
+      },
+      {
+        "left": "multiprocessing",
+        "right": "genuine multi-core execution"
+      }
+    ],
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s12-match1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Module 0: Distinctions Reference",
+    "topic": "Event Loop vs Thread",
+    "label": null,
+    "type": "match",
+    "prompt": "Match each X to its Y.",
+    "answer": null,
+    "notes": "brief explanation tying the pairs together",
+    "cloze_answer": null,
+    "options": null,
+    "correctIndex": null,
+    "pairs": [
+      {
+        "left": "Cooperative",
+        "right": "Switching mechanism"
+      },
+      {
+        "left": "Event Loop",
+        "right": "Typically ONE event loop per thread"
+      },
+      {
+        "left": "Threads",
+        "right": "Real OS threads are comparatively expensive"
+      }
+    ],
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s14-match1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Module 0: Distinctions Reference",
+    "topic": "Coroutine vs Thread",
+    "label": null,
+    "type": "match",
+    "prompt": "Match each X to its Y.",
+    "answer": null,
+    "notes": "brief explanation tying the pairs together",
+    "cloze_answer": null,
+    "options": null,
+    "correctIndex": null,
+    "pairs": [
+      {
+        "left": "Coroutine",
+        "right": "A suspendable Python function call - an object wrapping a paused/resumable interpreter frame"
+      },
+      {
+        "left": "Thread",
+        "right": "A real, OS-allocated stack per thread (platform/OS-default size; overridable via threading.stack_size(), min 32 KiB)"
+      },
+      {
+        "left": "The Python interpreter + asyncio event loop machinery",
+        "right": "Who creates/owns it"
+      }
+    ],
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s15-match1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Module 0: Distinctions Reference",
+    "topic": "Coroutine vs Normal Function",
+    "label": null,
+    "type": "match",
+    "prompt": "Match each X to its Y.",
+    "answer": null,
+    "notes": null,
+    "cloze_answer": null,
+    "options": null,
+    "correctIndex": null,
+    "pairs": [
+      {
+        "left": "Coroutine",
+        "right": "async def"
+      },
+      {
+        "left": "Call semantics",
+        "right": "Calling it runs the body immediately; returns when the body finishes or hits return"
+      },
+      {
+        "left": "Resume later",
+        "right": "Yes - at each await, execution suspends exactly there (local state intact) and later resumes from that point"
+      },
+      {
+        "left": "Defining a coroutine",
+        "right": "async def, with await inside the body signaling intended suspension points"
+      }
+    ],
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s16-match1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Module 0: Distinctions Reference",
+    "topic": "Coroutine vs Generator",
+    "label": null,
+    "type": "match",
+    "prompt": "Match each X to its Y.",
+    "answer": null,
+    "notes": "brief explanation tying the pairs together",
+    "cloze_answer": null,
+    "options": null,
+    "correctIndex": null,
+    "pairs": [
+      {
+        "left": "Generator",
+        "right": "produces a SEQUENCE of values, one at a time"
+      },
+      {
+        "left": "Native Coroutine (async def/await)",
+        "right": "represents ONE eventual result, not a sequence"
+      },
+      {
+        "left": "yield",
+        "right": "a function containing"
+      }
+    ],
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s17-match1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Module 0: Distinctions Reference",
+    "topic": "Coroutine vs Task",
+    "label": null,
+    "type": "match",
+    "prompt": "Match each X to its Y.",
+    "answer": null,
+    "notes": "brief explanation tying the pairs together",
+    "cloze_answer": null,
+    "options": null,
+    "correctIndex": null,
+    "pairs": [
+      {
+        "left": "Coroutine",
+        "right": "INERT until driven"
+      },
+      {
+        "left": "Task",
+        "right": "SELF-SCHEDULING and stateful"
+      },
+      {
+        "left": "asyncio.create_task()",
+        "right": "automatically schedules it to run SOON"
+      }
+    ],
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s18-match1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Module 0: Distinctions Reference",
+    "topic": "Cooperative vs Preemptive Scheduling",
+    "label": null,
+    "type": "match",
+    "prompt": "Match each X to its Y.",
+    "answer": null,
+    "notes": "",
+    "cloze_answer": null,
+    "options": null,
+    "correctIndex": null,
+    "pairs": [
+      {
+        "left": "Cooperative",
+        "right": "explicit yield at await - avoids lock overhead for code between await points"
+      },
+      {
+        "left": "Preemptive",
+        "right": "OS-level scheduler (timer-interrupt-driven) - the universal fairness baseline"
+      },
+      {
+        "left": "Mechanism to reclaim control",
+        "right": "Task voluntarily hands back control"
+      }
+    ],
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s19-match1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Module 0: Distinctions Reference",
+    "topic": "Thread Pool vs Event Loop",
+    "label": null,
+    "type": "match",
+    "prompt": "Match each concept to what it actually is.",
+    "answer": null,
+    "notes": "brief explanation tying the pairs together",
+    "cloze_answer": null,
+    "options": null,
+    "correctIndex": null,
+    "pairs": [
+      {
+        "left": "Thread Pool",
+        "right": "A bounded collection of reusable OS threads managed by an executor, used to run blocking calls off the main thread"
+      },
+      {
+        "left": "Event Loop",
+        "right": "A single cooperative scheduler running many coroutines on ONE thread"
+      },
+      {
+        "left": "Capacity",
+        "right": "Fixed/configurable max worker count (ThreadPoolExecutor)"
+      }
+    ],
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s21-match1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Module 0: Distinctions Reference",
+    "topic": "Cookie vs Session",
+    "label": null,
+    "type": "match",
+    "prompt": "Match each X to its Y.",
+    "answer": null,
+    "notes": "brief explanation tying the pairs together",
+    "cloze_answer": null,
+    "options": null,
+    "correctIndex": null,
+    "pairs": [
+      {
+        "left": "Cookie",
+        "right": "TRANSPORT MECHANISM"
+      },
+      {
+        "left": "Session",
+        "right": "STATEFUL CONCEPT"
+      },
+      {
+        "left": "Server-side",
+        "right": "SESSION_ENGINE is database-backed"
+      }
+    ],
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s25-match1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Module 0: Distinctions Reference",
+    "topic": "Similarities (What's Architecturally Shared)",
+    "label": null,
+    "type": "match",
+    "prompt": "Match each X to its Y.",
+    "answer": null,
+    "notes": "similarities and differences between Django, FastAPI, and Flask",
+    "cloze_answer": null,
+    "options": null,
+    "correctIndex": null,
+    "pairs": [
+      {
+        "left": "Pure Python, WSGI-origin-compatible",
+        "right": "Django/Flask"
+      },
+      {
+        "left": "FastAPI is ASGI-native but bridgeable both directions via adapters",
+        "right": "asgiref, a2wsgi"
+      },
+      {
+        "left": "All three support a layer for cross-cutting request/response processing",
+        "right": "Middleware"
+      },
+      {
+        "left": "All three can serve REST APIs",
+        "right": "Commonly deployed this way"
+      },
+      {
+        "left": "Maturity differs hugely - FastAPI native, Django partial (gaps remain), Flask via thread-pool shim or Quart",
+        "right": "Some async story exists in all three"
+      },
+      {
+        "left": "All three let you exercise request/response handling without a real running server",
+        "right": "Built-in or standard test client"
+      }
+    ],
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s26-match1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Module 0: Distinctions Reference",
+    "topic": "Interview Trap: Flask's async def Is Not True Concurrency",
+    "label": null,
+    "type": "match",
+    "prompt": "Match each X to its Y.",
+    "answer": null,
+    "notes": "brief explanation tying the pairs together",
+    "cloze_answer": null,
+    "options": null,
+    "correctIndex": null,
+    "pairs": [
+      {
+        "left": "Flask",
+        "right": "async def"
+      },
+      {
+        "left": "EVENT-LOOP CONCURRENCY",
+        "right": "True Concurrency"
+      },
+      {
+        "left": "Quart",
+        "right": "ASGI-native behavior"
+      }
+    ],
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s27-match1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Module 0: Distinctions Reference",
+    "topic": "When To Use Each (Scenario-Based, Not Marketing)",
+    "label": null,
+    "type": "match",
+    "prompt": "Match each framework to its typical use scenario.",
+    "answer": null,
+    "notes": null,
+    "cloze_answer": null,
+    "options": null,
+    "correctIndex": null,
+    "pairs": [
+      {
+        "left": "DJANGO",
+        "right": "full-stack monoliths, admin-heavy internal tools, relational-data-heavy SaaS"
+      },
+      {
+        "left": "FASTAPI",
+        "right": "new API-only backends, AI/ML model-serving, microservices, high-concurrency I/O-bound integrations"
+      },
+      {
+        "left": "FLASK",
+        "right": "small, deliberately minimal, highly custom services, prototypes, teaching, or maintaining large legacy codebases"
+      }
+    ],
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s01-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "WSGI vs ASGI",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why was ASGI introduced as a successor to WSGI's synchronous request/response model?",
+    "answer": null,
+    "notes": "ASGI was introduced specifically to support WebSockets, long-lived connections, async I/O, and streaming - things WSGI's synchronous request/response model can't naturally handle.",
+    "cloze_answer": null,
+    "options": [
+      "To support WebSockets and long-lived connections",
+      "To handle streaming and async I/O",
+      "To simplify WebSocket handling",
+      "To improve server performance"
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s01-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "WSGI vs ASGI",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the main difference between WSGI and ASGI?",
+    "answer": null,
+    "notes": "ASGI is a fuller event-driven protocol handling multiple connection types, not just an async version of request/response.",
+    "cloze_answer": null,
+    "options": [
+      "WSGI is sync, ASGI is async",
+      "WSGI has 2 params, ASGI has 3",
+      "WSGI is for request/response, ASGI is for event-driven protocols",
+      "ASGI is just async WSGI"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s02-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Server / Interface / Framework / Application / Worker / Process",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Who is responsible for the server's configuration?",
+    "answer": null,
+    "notes": "The Interface layer defines the calling convention between the server and the app, and is responsible for the server's configuration.",
+    "cloze_answer": null,
+    "options": [
+      "Server",
+      "Interface",
+      "Application",
+      "Worker"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s02-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Server / Interface / Framework / Application / Worker / Process",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What determines the execution model of a Worker?",
+    "answer": null,
+    "notes": "The Worker CLASS determines the execution model (sync/thread/async) of the Worker.",
+    "cloze_answer": null,
+    "options": [
+      "The Server",
+      "Worker CLASS",
+      "Application object",
+      "CLI flags"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s02-mcq3",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Server / Interface / Framework / Application / Worker / Process",
+    "label": null,
+    "type": "cloze",
+    "prompt": "WSGI's request info is equivalent to ASGI's {{blank}}.",
+    "answer": null,
+    "notes": "ASGI's connection info is equivalent to WSGI's request info.",
+    "cloze_answer": "connection info",
+    "options": [
+      "connection info",
+      "request info",
+      "path info",
+      "status info"
+    ],
+    "correctIndex": null,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s03-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "environ vs scope",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is a common characteristic of both environ and scope?",
+    "answer": null,
+    "notes": "Both environ and scope are dictionary-like structures carrying request info, but they have different properties and purposes.",
+    "cloze_answer": null,
+    "options": [
+      "They are HTTP-specific",
+      "They are connection-level",
+      "They are dictionary-like structures",
+      "They are only built once per request"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s03-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "environ vs scope",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why is it necessary to have a 'type' field in the scope dictionary?",
+    "answer": null,
+    "notes": "The 'type' field is necessary to distinguish between different connection kinds, such as HTTP and WebSocket, and to indicate the protocol awareness.",
+    "cloze_answer": null,
+    "options": [
+      "To distinguish between different connection kinds",
+      "To specify the request method",
+      "To store query string parameters",
+      "To indicate the protocol awareness"
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s04-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "start_response vs send",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What happens when you call `start_response` in WSGI?",
+    "answer": null,
+    "notes": "Carries the response status and headers only; body goes through the function's return value instead",
+    "cloze_answer": null,
+    "options": [
+      "Sends the HTTP response immediately",
+      "Carries the response status and headers only",
+      "Executes a specific HTTP method (e.g., GET, POST)",
+      "Calls the next middleware in the chain"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s04-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "start_response vs send",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the typical call count per request for `start_response` in WSGI?",
+    "answer": null,
+    "notes": "start_response is called exactly once per request in WSGI - it sets the status and headers; the body is returned separately via the function's own return value.",
+    "cloze_answer": null,
+    "options": [
+      "Exactly once",
+      "At least twice for a typical HTTP response",
+      "Varies depending on the request method",
+      "Always at least three times"
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s05-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "receive vs send",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the direction of the 'receive' event in Django, FastAPI, and Flask?",
+    "answer": null,
+    "notes": "The 'receive' event is used to handle incoming requests.",
+    "cloze_answer": null,
+    "options": [
+      "Incoming (client -> app)",
+      "Outgoing (app -> client)",
+      "Asynchronous",
+      "Synchronous"
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s05-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "receive vs send",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the main difference between 'receive' and 'send' in Django, FastAPI, and Flask?",
+    "answer": null,
+    "notes": "'receive' is used to handle incoming requests, while 'send' is used to send responses to clients.",
+    "cloze_answer": null,
+    "options": [
+      "'receive' is used for requests, while 'send' is used for responses",
+      "'receive' is used for outgoing requests, while 'send' is used for incoming requests",
+      "The frameworks don't have 'receive' and 'send' events",
+      "Both are used for the same purpose"
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s06-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "get_wsgi_application() vs get_asgi_application",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does the 'get_wsgi_application()' and 'get_asgi_application()' functions return?",
+    "answer": null,
+    "notes": "These functions return either a WSGI-compatible callable or an ASGI-compatible callable, depending on which function was called.",
+    "cloze_answer": null,
+    "options": [
+      "A WSGI-compatible callable",
+      "An ASGI-compatible callable",
+      "A Flask application",
+      "A FastAPI route"
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s06-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "get_wsgi_application() vs get_asgi_application",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What type of server consumes a WSGI-compatible callable?",
+    "answer": null,
+    "notes": "WSGI-compatible callable is consumed by a WSGI server, such as Gunicorn, whereas ASGI-compatible callable is consumed by an ASGI server, such as Uvicorn or Hypercorn.",
+    "cloze_answer": null,
+    "options": [
+      "Uvicorn / Hypercorn / any ASGI server",
+      "Gunicorn / any WSGI server",
+      "Apache / Nginx",
+      "IIS"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s07-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Path Parameter vs Query Parameter",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the semantic meaning of a path parameter?",
+    "answer": null,
+    "notes": "Path parameters identify a specific resource, whereas query parameters filter or modify a collection.",
+    "cloze_answer": null,
+    "options": [
+      "Filters/modifies a collection request",
+      "Identifies a specific resource",
+      "Filters/modifies a request",
+      "A collection request"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s07-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Path Parameter vs Query Parameter",
+    "label": null,
+    "type": "mcq",
+    "prompt": "In which part of the URL do you typically find path parameters?",
+    "answer": null,
+    "notes": "Path parameters are typically found inside the path itself, not in the query string or route-definition syntax.",
+    "cloze_answer": null,
+    "options": [
+      "Location in URL",
+      "Inside the path itself",
+      "After ?",
+      "Route-definition syntax"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s08-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "WSGI vs ASGI Callable - Parameter Mapping",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does the 'send' function in ASGI carry, in addition to partially handling start_response?",
+    "answer": null,
+    "notes": "ASGI's send() carries the response body itself (via events like http.response.body) - WSGI hands the body back via the function's own return value instead. environ is a WSGI-only concept and has nothing to do with ASGI's send().",
+    "cloze_answer": null,
+    "options": [
+      "the request method",
+      "the request body",
+      "the entire environ dictionary",
+      "the return value from WSGI"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s08-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "WSGI vs ASGI Callable - Parameter Mapping",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why does ASGI require a 'receive' function, whereas WSGI does not?",
+    "answer": null,
+    "notes": "ASGI needs receive because body/events can arrive in chunks over time, directly tied to the streaming/long-lived-connection motivation for ASGI's existence",
+    "cloze_answer": null,
+    "options": [
+      "because ASGI needs to handle long-lived connections",
+      "to handle streaming requests",
+      "to handle requests with multiple parts",
+      "to handle errors in requests"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s09-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Worker vs Thread vs Process",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the main difference between a worker and a thread in the context of server-side execution?",
+    "answer": null,
+    "notes": "Memory isolation is the key difference, as threads share memory, while workers have their own memory space.",
+    "cloze_answer": null,
+    "options": [
+      "Memory isolation",
+      "Thread safety",
+      "CPU utilization",
+      "Concurrency"
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s09-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Worker vs Thread vs Process",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which of the following is a correct interpretation of Gunicorn's worker classes?",
+    "answer": null,
+    "notes": "Gunicorn's worker classes are OS-level isolated execution units, not the number of requests maximum.",
+    "cloze_answer": null,
+    "options": [
+      "Number of requests maximum",
+      "Concurrency level",
+      "OS-level isolated execution units",
+      "Worker queue capacity"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s10-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Uvicorn vs Gunicorn",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What type of server is Gunicorn?",
+    "answer": null,
+    "notes": "Gunicorn is a WSGI-oriented server/process manager, not an ASGI server.",
+    "cloze_answer": null,
+    "options": [
+      "ASGI server",
+      "WSGI-oriented server/process manager",
+      "Web server",
+      "Application server"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s10-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Uvicorn vs Gunicorn",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Can Uvicorn run WSGI apps?",
+    "answer": null,
+    "notes": "Uvicorn cannot run WSGI apps, it only runs ASGI apps.",
+    "cloze_answer": null,
+    "options": [
+      "Yes, natively",
+      "Yes - via an appropriate worker class",
+      "No",
+      "Its original purpose"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s11-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Concurrency vs Parallelism",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the core definition of concurrency?",
+    "answer": null,
+    "notes": "Concurrency is about program structure - designing for independent, composable tasks.",
+    "cloze_answer": null,
+    "options": [
+      "Structuring a program to deal with multiple tasks simultaneously",
+      "Independent units of work that can be interleaved/composed",
+      "Multiple tasks physically executing at the exact same instant",
+      "Achieving genuinely independent execution units"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s11-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Concurrency vs Parallelism",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the implication of good concurrent design?",
+    "answer": null,
+    "notes": "Good concurrent design makes it possible to exploit parallelism when hardware allows it, not a guarantee that it's happening.",
+    "cloze_answer": null,
+    "options": [
+      "It guarantees parallel execution on multi-core hardware",
+      "It makes parallelism a possible consequence of running a concurrent program on multi-core hardware",
+      "It implies true parallelism for CPU-bound Python code",
+      "It's unnecessary for good performance"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s12-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Event Loop vs Thread",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which type of scheduler is described in the text as running coroutines one at a time, switching only when one yields at await?",
+    "answer": null,
+    "notes": "The correct answer is Cooperative, as the text states that the scheduler is running coroutines one at a time, switching only when one yields at await.",
+    "cloze_answer": null,
+    "options": [
+      "Single-threaded",
+      "Preemptive",
+      "Cooperative",
+      "OS-scheduled"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s12-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Event Loop vs Thread",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the typical number of event loops per thread?",
+    "answer": null,
+    "notes": "The correct answer is One, as the text states that 'Typically ONE event loop per thread (usually the main thread)'.",
+    "cloze_answer": null,
+    "options": [
+      "One",
+      "Many",
+      "None",
+      "Two"
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s13-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Event Loop vs Process",
+    "label": null,
+    "type": "mcq",
+    "prompt": "In the context of memory isolation, what is the memory situation for coroutines on the same event loop?",
+    "answer": null,
+    "notes": "Each coroutine shares the same memory space.",
+    "cloze_answer": null,
+    "options": [
+      "FULL",
+      "NONE",
+      "SHARED",
+      "PARTIAL"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s13-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Event Loop vs Process",
+    "label": null,
+    "type": "mcq",
+    "prompt": "How does the OS handle a process crashing in the context of fault isolation?",
+    "answer": null,
+    "notes": "One process crashing does not crash another.",
+    "cloze_answer": null,
+    "options": [
+      "IT CRASHES ALL PROCESSES",
+      "IT DOES NOT AFFECT OTHER PROCESSES",
+      "IT FREEZES THE EVENT LOOP",
+      "IT RESTARTS THE PROCESS"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s14-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Coroutine vs Thread",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Who creates/owns a coroutine object?",
+    "answer": null,
+    "notes": "The correct answer is the Python interpreter + asyncio event loop machinery, as it creates and owns the coroutine object.",
+    "cloze_answer": null,
+    "options": [
+      "The OS kernel",
+      "The Python interpreter + asyncio event loop machinery",
+      "The developer",
+      "The framework"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s14-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Coroutine vs Thread",
+    "label": null,
+    "type": "mcq",
+    "prompt": "How control transfers in a coroutine",
+    "answer": null,
+    "notes": "The correct answer is Explicit, voluntary - the coroutine's OWN code decides the exact suspension point via await.",
+    "cloze_answer": null,
+    "options": [
+      "Implicit, involuntary - the OS scheduler can preempt at essentially any point",
+      "Explicit, voluntary - the coroutine's OWN code decides the exact suspension point via await",
+      "Both",
+      "Neither"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s15-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Coroutine vs Normal Function",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Calling a coroutine function does NOT run the body - immediately returns a",
+    "answer": null,
+    "notes": "The other options are all incorrect because they don't accurately describe what happens when you call a coroutine function. The correct option is the only one that accurately describes the behavior.",
+    "cloze_answer": null,
+    "options": [
+      "coroutine OBJECT representing not-yet-started work",
+      "the value is available the instant the call returns",
+      "Nothing extra - calling it IS running it",
+      "an un-awaited coroutine never raises anything"
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s15-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Coroutine vs Normal Function",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What's needed to actually execute a coroutine",
+    "answer": null,
+    "notes": "The correct option is that a coroutine needs a driver to be executed. The other options are all incorrect because they don't accurately describe the necessary steps to execute a coroutine.",
+    "cloze_answer": null,
+    "options": [
+      "Nothing extra - calling it IS running it",
+      "Needs a driver: must be awaited inside another coroutine",
+      "Must be called with the async def keyword",
+      "Must be scheduled via asyncio.create_task()/asyncio.run()"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s16-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Coroutine vs Generator",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the primary purpose of a generator?",
+    "answer": null,
+    "notes": "Generators are designed to lazily produce a sequence of values, pausing at each yield until next() is called again.",
+    "cloze_answer": null,
+    "options": [
+      "To lazily produce a single eventual result after suspension",
+      "To represent a sequence of values, pausing at each yield until next() is called again",
+      "To iterate over a sequence of values using a for loop",
+      "To run a long-running operation and represent multiple eventual results"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s16-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Coroutine vs Generator",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Can you iterate over a coroutine using a for loop?",
+    "answer": null,
+    "notes": "Coroutines are not iterable using a for loop. They are meant to produce a single eventual result after suspension.",
+    "cloze_answer": null,
+    "options": [
+      "Yes, that's its entire purpose",
+      "No, a plain coroutine isn't iterable that way",
+      "Yes, but only if it's an async generator",
+      "No, coroutines are only used for one-time execution"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s17-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Coroutine vs Task",
+    "label": null,
+    "type": "mcq",
+    "prompt": "When you create a coroutine, what happens?",
+    "answer": null,
+    "notes": "A coroutine is INERT until driven; calling the async def function just builds the coroutine object; nothing runs until awaited or wrapped.",
+    "cloze_answer": null,
+    "options": [
+      "Nothing runs until awaited or wrapped",
+      "Execution starts immediately",
+      "You can't create a coroutine at all",
+      "You can't await a coroutine"
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s17-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Coroutine vs Task",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why is create_task() wrapping a coroutine different from awaiting it?",
+    "answer": null,
+    "notes": "Wrapping in create_task() hands it to the event loop's scheduling queue immediately - both tasks are already running concurrently by the time you reach the await lines.",
+    "cloze_answer": null,
+    "options": [
+      "Because it's more efficient",
+      "Because it's less efficient",
+      "Because it makes the coroutine run concurrently",
+      "Because it makes the coroutine run sequentially"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s17-mcq3",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Coroutine vs Task",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Can you check the status or result of a bare coroutine without awaiting it?",
+    "answer": null,
+    "notes": "A bare coroutine has no independent inspectable state - No, it has no independent inspectable state.",
+    "cloze_answer": null,
+    "options": [
+      "Yes, via .done(), .result(), .exception(), .cancel(), .cancelled()",
+      "No, it has no independent inspectable state",
+      "Only if it's completed",
+      "Only if it's failed"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s18-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Cooperative vs Preemptive Scheduling",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Who decides when to switch between tasks in cooperative scheduling?",
+    "answer": null,
+    "notes": "The running task itself decides when to yield, allowing the scheduler to reclaim control.",
+    "cloze_answer": null,
+    "options": [
+      "The running task itself, at an explicit yield point",
+      "The scheduler (OS kernel or VM), which can reclaim control without the task's cooperation",
+      "The runtime environment, based on the task's priority",
+      "The developer, based on specific requirements"
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s18-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Cooperative vs Preemptive Scheduling",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the mechanism to reclaim control in preemptive scheduling?",
+    "answer": null,
+    "notes": "Timer interrupt/signal or a VM-enforced budget is the mechanism to reclaim control in preemptive scheduling.",
+    "cloze_answer": null,
+    "options": [
+      "Task voluntarily hands back control",
+      "Timer interrupt/signal (OS-level), or a VM-enforced budget",
+      "The task is terminated and restarted",
+      "The scheduler waits for the task to complete"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s18-mcq3",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Cooperative vs Preemptive Scheduling",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the risk of a task that never yields in cooperative scheduling?",
+    "answer": null,
+    "notes": "A task that never yields can starve every other task on that scheduler indefinitely, making it a fairness risk.",
+    "cloze_answer": null,
+    "options": [
+      "Every task eventually gets CPU time regardless of its own behavior",
+      "A task that never yields can starve every other task on that scheduler indefinitely",
+      "The task will be terminated and restarted",
+      "The scheduler will ignore the task's requests"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s18-mcq4",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Cooperative vs Preemptive Scheduling",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which languages/runtimes use cooperative scheduling, precisely?",
+    "answer": null,
+    "notes": "Python asyncio, Go goroutines pre-1.14, and Rust async/.await (poll-based futures, same fundamental model as Python's asyncio) are all genuinely cooperative. Erlang/Elixir's BEAM VM is explicitly a hybrid in the source material - preemptive at the process level via a reduction-counter budget, not purely cooperative.",
+    "cloze_answer": null,
+    "options": [
+      "Python asyncio (coroutines), Go goroutines (pre-1.14), Rust async/.await",
+      "Python threading (OS threads), JavaScript (browsers & Node.js), Java traditional/platform Thread",
+      "Rust async/.await, Java virtual threads (Project Loom), Erlang/Elixir (BEAM VM)",
+      "All of the above"
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s19-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Thread Pool vs Event Loop",
+    "label": null,
+    "type": "mcq",
+    "prompt": "When is it appropriate to use a thread pool?",
+    "answer": null,
+    "notes": "A thread pool is suitable for synchronous/blocking code that can't be rewritten as async, whereas code written to cooperate via await is better suited for an event loop.",
+    "cloze_answer": null,
+    "options": [
+      "To run synchronous/blocking code that can't be rewritten as async",
+      "To run code written to cooperate via await",
+      "To optimize the performance of coroutines",
+      "To manage the scheduling of tasks in an event loop"
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s19-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Thread Pool vs Event Loop",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the main difference between a thread pool and an event loop?",
+    "answer": null,
+    "notes": "A thread pool is a bounded collection of reusable OS threads, while an event loop is a single cooperative scheduler running many coroutines on one thread.",
+    "cloze_answer": null,
+    "options": [
+      "A thread pool is used for CPU-bound tasks, while an event loop is used for I/O-bound tasks",
+      "A thread pool is a bounded collection of reusable OS threads, while an event loop is a single cooperative scheduler",
+      "A thread pool is used for synchronous/blocking code, while an event loop is used for asynchronous/awaitable code",
+      "A thread pool is used for memory-intensive tasks, while an event loop is used for CPU-intensive tasks"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s20-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Blocking I/O vs Non-blocking I/O",
+    "label": null,
+    "type": "mcq",
+    "prompt": "In a blocking I/O operation, the calling code's thread is",
+    "answer": null,
+    "notes": "The thread is suspended until the OS wakes it with the result.",
+    "cloze_answer": null,
+    "options": [
+      "notified when the I/O operation completes",
+      "immediately continued, checking back when the I/O is ready",
+      "put to sleep by the OS until the data is ready",
+      "not affected, as it's already concurrent"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s20-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Blocking I/O vs Non-blocking I/O",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the key difference between blocking and non-blocking I/O?",
+    "answer": null,
+    "notes": "Blocking I/O operations suspend the thread until the I/O completes, while non-blocking I/O operations return immediately.",
+    "cloze_answer": null,
+    "options": [
+      "Blocking I/O operations are always non-blocking",
+      "Non-blocking I/O operations always complete before the calling code continues",
+      "Blocking I/O operations suspend the thread until the I/O completes, while non-blocking I/O operations return immediately",
+      "Blocking I/O operations only work for certain types of I/O"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s21-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Cookie vs Session",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the primary function of a cookie?",
+    "answer": null,
+    "notes": "A cookie is a transport mechanism, storing and automatically resending data with matching requests.",
+    "cloze_answer": null,
+    "options": [
+      "It stores a session ID on the server-side",
+      "It carries a small piece of data the browser stores and automatically resends with matching requests",
+      "It implements stateful sessions on the client-side",
+      "It verifies the authenticity of the client"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s21-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Cookie vs Session",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which framework's default session mechanism is implemented on the client-side?",
+    "answer": null,
+    "notes": "Flask's default session mechanism is implemented on the client-side, signing the cookies cryptographically.",
+    "cloze_answer": null,
+    "options": [
+      "Django",
+      "Flask",
+      "FastAPI",
+      "Starlette"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s23-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Version Snapshot (Mid-2026, confirmed via official docs/PyPI)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the current status of Django's LTS?",
+    "answer": null,
+    "notes": "The text explicitly states that 5.2 is the current LTS, while the other options are incorrect.",
+    "cloze_answer": null,
+    "options": [
+      "It has reached a stable 1.0 tag",
+      "5.2 is the current LTS",
+      "Async views/ORM/middleware have matured steadily since 4.1",
+      "Still pre-1.0 (~0.139.x as of mid-2026)"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s23-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Version Snapshot (Mid-2026, confirmed via official docs/PyPI)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why is async ORM coverage still explicitly incomplete in Django?",
+    "answer": null,
+    "notes": "The text states that async ORM coverage is still explicitly incomplete due to signals, some transactions, and less-common query methods still needing sync-wrapped access.",
+    "cloze_answer": null,
+    "options": [
+      "Because signals and some transactions still need sync-wrapped access",
+      "Because some query methods are still being developed",
+      "Because it is still pre-1.0 (~0.139.x as of mid-2026)",
+      "Because it has reached a stable 1.0 tag"
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s24-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Comprehensive Differences (21 Dimensions)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which of the following is a characteristic of Django's core philosophy?",
+    "answer": null,
+    "notes": "Django's core philosophy is 'batteries-included, opinionated', which means it includes many features and tools out of the box, but also has strong opinions on how things should be done.",
+    "cloze_answer": null,
+    "options": [
+      "Batteries-included, opinionated",
+      "API-first, type-hint-driven",
+      "Micro-framework, minimal core",
+      "Server Interface: WSGI native + growing ASGI support"
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s24-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Comprehensive Differences (21 Dimensions)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the primary way Django handles request validation?",
+    "answer": null,
+    "notes": "Django validates via Forms / DRF Serializers (manual wiring) - Pydantic v2 automatic-from-type-hints validation is FastAPI's approach, not Django's.",
+    "cloze_answer": null,
+    "options": [
+      "Forms / DRF Serializers (manual wiring)",
+      "Pydantic v2 - automatic from type hints",
+      "Manual, or via extensions (Marshmallow, Flask-RESTful)",
+      "Built-in, automatic OpenAPI/Swagger from the same type hints used for validation"
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s25-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Similarities (What's Architecturally Shared)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which of the following frameworks is ASGI-native but bridgeable to WSGI via adapters?",
+    "answer": null,
+    "notes": "FastAPI is ASGI-native but bridgeable to WSGI via adapters",
+    "cloze_answer": null,
+    "options": [
+      "Django",
+      "FastAPI",
+      "Flask",
+      "None of the above"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s25-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Similarities (What's Architecturally Shared)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is common to the routing concept in all three frameworks?",
+    "answer": null,
+    "notes": "They all map URL + HTTP method to a handler function",
+    "cloze_answer": null,
+    "options": [
+      "They all use a different syntax",
+      "They all map URL + HTTP method to a handler function",
+      "They all support CORS",
+      "They all require a database"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s26-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Interview Trap: Flask's async def Is Not True Concurrency",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the primary mechanism for executing async view functions in Flask?",
+    "answer": null,
+    "notes": "Flask runs async view functions inside a thread pool via asgiref, not a real asyncio event loop.",
+    "cloze_answer": null,
+    "options": [
+      "Native asyncio event loop",
+      "Thread pool via asgiref",
+      "Real-time concurrency",
+      "False concurrency"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s26-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "Interview Trap: Flask's async def Is Not True Concurrency",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the primary reason why writing async def in a Flask view does not provide true concurrent I/O model?",
+    "answer": null,
+    "notes": "Writing async def in a Flask view does not provide true concurrent I/O model because it runs each async view inside a thread pool via asgiref, not a real asyncio event loop.",
+    "cloze_answer": null,
+    "options": [
+      "Lack of native asyncio event loop",
+      "Inadequate thread pool size",
+      "Flask's own limitations",
+      "Flask's async def is inherently concurrent"
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s27-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "When To Use Each (Scenario-Based, Not Marketing)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "When deciding which framework to use, what is the primary consideration for a product that needs admin/auth/ORM/migrations/relational workflows out of the box?",
+    "answer": null,
+    "notes": "This scenario is a classic Django use case, emphasizing the importance of admin/auth/ORM/migrations/relational workflows.",
+    "cloze_answer": null,
+    "options": [
+      "Automatic OpenAPI docs",
+      "One opinionated way to build a full-stack app",
+      "High-concurrency I/O-bound integrations",
+      "Microservices"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch00-s27-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 0 (Interview Prep)",
+    "topic": "When To Use Each (Scenario-Based, Not Marketing)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which framework is the default choice for new API-only backends in 2026, especially for AI/ML model-serving and high-concurrency I/O-bound integrations?",
+    "answer": null,
+    "notes": "FastAPI is the recommended choice for new API-only backends, emphasizing its strengths in AI/ML model-serving and high-concurrency I/O-bound integrations.",
+    "cloze_answer": null,
+    "options": [
+      "Flask",
+      "Django",
+      "FastAPI",
+      "None of the above"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s01-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "THE REQUEST/RESPONSE MODEL",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which statement correctly describes HTTP's core behavior?",
+    "answer": null,
+    "notes": "A confuses HTTP itself with session mechanisms (cookies, tokens) that applications build on top of it - the protocol has no built-in memory. C inverts the one-request/one-response guarantee - even streamed responses are still a single response object with a streamed body, not multiple separate responses to one request. D reverses the direction entirely: the client always initiates, the server never contacts a client first in plain HTTP request-response - only B correctly states both halves of Golden Rule 1 (exactly one response per request, and no retained memory between exchanges).",
+    "cloze_answer": null,
+    "options": [
+      "HTTP maintains a persistent session automatically, remembering previous requests from the same client",
+      "Every HTTP request must be answered with exactly one response, and the protocol itself does not retain memory of past exchanges",
+      "A single HTTP request can receive multiple responses over time as the server processes it",
+      "HTTP requires the server to initiate contact before a client can send a request"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s01-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "THE REQUEST/RESPONSE MODEL",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does user_id represent here? @app.get(\"/users/{user_id}\") async def get_user(user_id: ____): ...",
+    "answer": null,
+    "notes": "A: query parameters come after ? (/users?user_id=42), not inside braces in the path. B: {user_id} sits inside the URL path itself - the router extracts it and passes it to the endpoint function. C: headers are key:value lines like Authorization: Bearer xyz, unrelated to the path. D: body data appears as JSON/form content in POST/PUT/PATCH requests, never embedded in the path.",
+    "cloze_answer": null,
+    "options": [
+      "Query parameter",
+      "Path parameter",
+      "Request header",
+      "Request body"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s02-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "THE SERVER INTERFACE LAYER",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which framework is primarily built around the ASGI ecosystem?",
+    "answer": null,
+    "notes": "FastAPI is built primarily in the ASGI ecosystem",
+    "cloze_answer": null,
+    "options": [
+      "Django",
+      "Flask",
+      "FastAPI",
+      "None of the above"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s02-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "THE SERVER INTERFACE LAYER",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does ASGI provide?",
+    "answer": null,
+    "notes": "ASGI provides an async-CAPABLE interface",
+    "cloze_answer": null,
+    "options": [
+      "An automatic asynchronous interface",
+      "An async-CAPABLE interface",
+      "A synchronous request/response model",
+      "A blocking operation"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s03-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "THE CALLABLE CONTRACT",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the responsibility of the start_response() function in WSGI's actual execution model?",
+    "answer": null,
+    "notes": "Correct answer is 'Communicates status and headers'. Start_response only sets the status and headers, the response body is the return value of the application.",
+    "cloze_answer": null,
+    "options": [
+      "Sets the response body",
+      "Communicates status and headers",
+      "Returns the response body",
+      "Handles the incoming request"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s03-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "THE CALLABLE CONTRACT",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which of the following correctly fills the blanks for the WSGI callable contract?",
+    "answer": null,
+    "notes": "Correct answer is 'environ, start_response'. The WSGI callable contract takes two arguments, environ and start_response.",
+    "cloze_answer": null,
+    "options": [
+      "request, response",
+      "environ, start_response",
+      "scope, receive",
+      "request, start_request"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s04-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "THE EVENT-DRIVEN CONTRACT",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which statement best describes the role of receive?",
+    "answer": null,
+    "notes": "receive is the raw mechanism through which the application receives protocol events; Starlette's convenient Request abstraction is built ON TOP of receive(), not a replacement for the ASGI contract itself.",
+    "cloze_answer": null,
+    "options": [
+      "receive is the HTTP request object containing all headers, path parameters, query parameters, and body",
+      "receive is used to asynchronously obtain incoming ASGI protocol events/messages from the server",
+      "receive sends the HTTP response headers and status code back to the client",
+      "receive performs routing and determines which FastAPI endpoint should execute"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s05-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "NAMING THE LAYERS",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does Gunicorn do when starting/configuring multiple workers?",
+    "answer": null,
+    "notes": "Gunicorn is the server/process manager, and it creates/manages the workers. get_wsgi_application() creates the Django WSGI application callable only, and WSGI is the interface/contract.",
+    "cloze_answer": null,
+    "options": [
+      "Django creates four WSGI interfaces, and Gunicorn acts as the framework for each one",
+      "Gunicorn starts/configures multiple workers that serve the Django WSGI application through the WSGI interface",
+      "get_wsgi_application() creates four worker processes inside Django",
+      "WSGI itself creates four worker processes and distributes requests between them"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s05-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "NAMING THE LAYERS",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which of the following is a characteristic of ASGI?",
+    "answer": null,
+    "notes": "ASGI is an interface/specification, not a server.",
+    "cloze_answer": null,
+    "options": [
+      "It's a server",
+      "It's an interface/specification",
+      "It's a framework",
+      "It's a process manager"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s06-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "MODULE 0.6 BEGINS",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the main difference between Concurrency and Parallelism?",
+    "answer": null,
+    "notes": "Concurrency deals with multiple tasks at overlapping times, while Parallelism is about executing multiple tasks at the same instant. The other options are wrong because they mix up the definitions.",
+    "cloze_answer": null,
+    "options": [
+      "Concurrency involves executing multiple tasks simultaneously, while Parallelism involves managing multiple tasks' progress.",
+      "Concurrency refers to the execution of multiple tasks at the same instant, while Parallelism refers to managing multiple tasks' progress.",
+      "Concurrency is about dealing with multiple tasks at overlapping times, while Parallelism is about executing multiple tasks at the same instant.",
+      "Concurrency is about executing multiple tasks simultaneously, while Parallelism is about managing multiple tasks' progress."
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s06-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "MODULE 0.6 BEGINS",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which of the following is an accurate statement about FastAPI's concurrency mechanism?",
+    "answer": null,
+    "notes": "FastAPI's concurrency mechanism enables concurrent execution of I/O-bound tasks through an event loop, which can run multiple tasks at the same instant. The other options are wrong because they do not accurately describe FastAPI's concurrency mechanism.",
+    "cloze_answer": null,
+    "options": [
+      "FastAPI's concurrency mechanism requires multiple CPU cores to execute tasks in parallel.",
+      "FastAPI's concurrency mechanism enables concurrent execution of I/O-bound tasks through an event loop.",
+      "FastAPI's concurrency mechanism automatically creates multiple CPU execution contexts for concurrent requests.",
+      "FastAPI's concurrency mechanism is only suitable for CPU-intensive workloads."
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s07-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "CONCURRENCY'S OPPOSITE",
+    "label": null,
+    "type": "mcq",
+    "prompt": "In a synchronous worker's context, which statement is most accurate?",
+    "answer": null,
+    "notes": "A synchronous worker never automatically switches to another request. A database wait is I/O waiting, not CPU parallelism. WSGI never auto-converts synchronous applications into coroutines",
+    "cloze_answer": null,
+    "options": [
+      "The worker will automatically execute another request during the database wait",
+      "The worker's current execution context will remain blocked until the database operation completes",
+      "The database wait will create CPU parallelism",
+      "WSGI will automatically convert this request into a coroutine"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s08-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "HOW SYNC SERVERS HANDLE MANY REQUESTS",
+    "label": null,
+    "type": "mcq",
+    "prompt": "How does WSGI provide concurrency for multiple requests?",
+    "answer": null,
+    "notes": "WSGI is synchronous, so how do multiple requests get handled at once? Answer: WSGI itself provides no concurrency mechanism - the SERVER'S process/thread model provides it.",
+    "cloze_answer": null,
+    "options": [
+      "WSGI provides a built-in concurrency mechanism",
+      "WSGI itself provides no concurrency mechanism - the server's process/thread model provides it",
+      "Concurrency is achieved through the use of multiple processes and threads",
+      "Concurrency is not possible in WSGI"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s08-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "HOW SYNC SERVERS HANDLE MANY REQUESTS",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is true about Gunicorn workers?",
+    "answer": null,
+    "notes": "Four workers doesn't automatically mean 'only 4 requests per second' - throughput depends on request duration, I/O, CPU work, threads, database capacity, downstream services, connection pools, and server configuration.",
+    "cloze_answer": null,
+    "options": [
+      "Gunicorn workers are CPU-bound processes that can execute in parallel",
+      "Gunicorn workers are I/O-bound threads that can only handle one request at a time",
+      "Gunicorn workers are independent processes that can execute concurrently",
+      "Gunicorn workers are always one-to-one with available CPU cores"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s09-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "THE HEART OF ASGI/ASYNCIO",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What happens when a task reaches `await` and the awaited I/O isn't ready?",
+    "answer": null,
+    "notes": "await's purpose is not creating a new thread per request - async tasks are managed efficiently on the SAME event-loop thread. The event loop can pause/yield the task and execute another ready async task.",
+    "cloze_answer": null,
+    "options": [
+      "The event loop creates a new thread for the task, and the current thread permanently waits for the database response",
+      "The event loop can pause/yield the task and execute another ready async task",
+      "The event loop moves the task to a parallel CPU core",
+      "The event loop stops the entire application until the database response arrives"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s09-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "THE HEART OF ASGI/ASYNCIO",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the event loop's primary responsibility?",
+    "answer": null,
+    "notes": "The event loop's purpose is not to create CPU parallelism; it's to efficiently coordinate and schedule asynchronous tasks, especially around I/O waits.",
+    "cloze_answer": null,
+    "options": [
+      "To create CPU parallelism",
+      "To efficiently coordinate and schedule asynchronous tasks",
+      "To execute I/O operations",
+      "To manage threads"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s10-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "WHAT ASYNC DEF ACTUALLY CREATES",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does calling an async def function do?",
+    "answer": null,
+    "notes": "Calling an async def function creates a coroutine object. The coroutine must then be awaited or scheduled as a task for its execution to proceed.",
+    "cloze_answer": null,
+    "options": [
+      "executes asynchronously",
+      "executes synchronously",
+      "creates a coroutine object",
+      "schedules a task"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s10-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "WHAT ASYNC DEF ACTUALLY CREATES",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is most accurate about the statement immediately after calling an async def function?",
+    "answer": null,
+    "notes": "coro represents work that can be executed once awaited or scheduled - not a completed result.",
+    "cloze_answer": null,
+    "options": [
+      "A new thread has been created to execute the function",
+      "The event loop has automatically created a new process",
+      "The function has fully executed and the value is 42",
+      "coro is a coroutine object representing the asynchronous computation"
+    ],
+    "correctIndex": 3,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s11-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "ASYNCIO'S MOST IMPORTANT KEYWORD",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the primary purpose of the `await` keyword in asynchronous programming?",
+    "answer": null,
+    "notes": "Await suspends the current coroutine while an operation is pending, allowing the event loop to make progress on other tasks.",
+    "cloze_answer": null,
+    "options": [
+      "It creates a new thread for the current operation",
+      "It makes the operation parallel",
+      "It suspends the current coroutine while an operation is pending",
+      "It blocks the entire event loop"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s11-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "ASYNCIO'S MOST IMPORTANT KEYWORD",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What happens to the `get_data()` coroutine when it reaches the `await` statement?",
+    "answer": null,
+    "notes": "The coroutine is suspended while the event loop makes progress on other ready tasks, then resumes when the HTTP operation is ready.",
+    "cloze_answer": null,
+    "options": [
+      "It is terminated and a new coroutine is created",
+      "It is suspended and later resumes from the exact await point",
+      "It is blocked and the entire event loop is paused",
+      "It continues executing without suspension"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s12-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "WHAT ACTUALLY MAKES I/O NON-BLOCKING",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which statement is most accurate about the blocking behavior of requests.get() in an async def function?",
+    "answer": null,
+    "notes": "await provides the suspension point; the underlying async operation must actually support non-blocking/asynchronous execution - the keyword alone guarantees nothing.",
+    "cloze_answer": null,
+    "options": [
+      "Because the endpoint is async def, requests.get() automatically becomes non-blocking",
+      "requests.get() can block the event-loop thread, reducing the ability of other async tasks to make progress",
+      "requests.get() automatically creates a new coroutine that the event loop manages",
+      "async def converts every synchronous library call inside the function into an async operation"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s12-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "WHAT ACTUALLY MAKES I/O NON-BLOCKING",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the critical distinction between await and non-blocking I/O?",
+    "answer": null,
+    "notes": "Await provides the suspension point; the underlying async operation must actually support non-blocking/asynchronous execution - the keyword alone guarantees nothing.",
+    "cloze_answer": null,
+    "options": [
+      "Await makes I/O non-blocking",
+      "Await itself does NOT make I/O non-blocking, actual non-blocking behavior comes from the I/O LIBRARY plus the underlying async mechanism",
+      "Await can only be used with async libraries",
+      "Await is only necessary for blocking I/O operations"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s13-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "THE HIGHEST-VALUE FASTAPI INTERVIEW TOPIC",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What happens when a blocking I/O operation is performed inside an async def in FastAPI?",
+    "answer": null,
+    "notes": "The event loop is blocked until the operation completes, unlike await asyncio.sleep(2), which gives the event loop an opportunity to run other tasks.",
+    "cloze_answer": null,
+    "options": [
+      "It is executed concurrently with other tasks",
+      "The event loop is blocked until the operation completes",
+      "The operation is automatically awaited and control is yielded to the event loop",
+      "It raises a runtime error"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s13-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "THE HIGHEST-VALUE FASTAPI INTERVIEW TOPIC",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the key to ensuring that an async endpoint remains non-blocking?",
+    "answer": null,
+    "notes": "All operations inside the endpoint must be individually checked to ensure that they do not block the event loop.",
+    "cloze_answer": null,
+    "options": [
+      "Declaring the function with async def",
+      "Using await for I/O operations",
+      "All operations inside the endpoint must be individually checked",
+      "The endpoint must not use any blocking libraries"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s13-mcq3",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "THE HIGHEST-VALUE FASTAPI INTERVIEW TOPIC",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the difference between time.sleep(2) and await asyncio.sleep(2) in FastAPI?",
+    "answer": null,
+    "notes": "time.sleep(2) is synchronous and blocking, while await asyncio.sleep(2) yields control to the event loop, allowing other tasks to run concurrently.",
+    "cloze_answer": null,
+    "options": [
+      "time.sleep(2) is more efficient",
+      "await asyncio.sleep(2) is more efficient",
+      "time.sleep(2) blocks the event loop, while await asyncio.sleep(2) yields control to the event loop",
+      "time.sleep(2) is only used for I/O operations, while await asyncio.sleep(2) is only used for CPU-bound operations"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s14-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "HOW FASTAPI RUNS BOTH",
+    "label": null,
+    "type": "mcq",
+    "prompt": "How does FastAPI execute synchronous endpoints?",
+    "answer": null,
+    "notes": "Synchronous endpoints are executed through FastAPI/Starlette's thread pool, not directly on the event loop",
+    "cloze_answer": null,
+    "options": [
+      "FastAPI executes synchronous endpoints directly on the event loop",
+      "Synchronous endpoints are executed through FastAPI/Starlette's thread pool",
+      "Synchronous endpoints are blocked by the event loop",
+      "Synchronous endpoints are not supported by FastAPI"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s14-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "HOW FASTAPI RUNS BOTH",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the primary difference between async def and def endpoints in FastAPI?",
+    "answer": null,
+    "notes": "Async def participates directly in async event-loop execution, while def endpoints are executed through a thread pool",
+    "cloze_answer": null,
+    "options": [
+      "Async def always executes faster",
+      "Async def participates directly in async event-loop execution, while def endpoints are executed through a thread pool",
+      "Async def only differs syntactically from def endpoints",
+      "Def endpoints are always blocked by the event loop"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s15-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "WHERE DEF ENDPOINTS ACTUALLY RUN",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the primary benefit of using a thread pool in FastAPI/Starlette?",
+    "answer": null,
+    "notes": "The thread pool isolates synchronous/blocking work from the event-loop thread, but the work still consumes a real thread.",
+    "cloze_answer": null,
+    "options": [
+      "it makes blocking code non-blocking",
+      "it reduces the number of threads required",
+      "it isolates synchronous/blocking work from the event-loop thread",
+      "it increases CPU parallelism"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s15-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "WHERE DEF ENDPOINTS ACTUALLY RUN",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which of the following is NOT a mechanism that thread pools exist for?",
+    "answer": null,
+    "notes": "Thread pools exist for sync I/O, async I/O, and sync libraries, but not processes, which are handled by multiple processes.",
+    "cloze_answer": null,
+    "options": [
+      "sync I/O",
+      "async I/O",
+      "processes",
+      "sync libraries"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s16-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "WHICH WORKLOAD NEEDS WHICH TOOL",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which of the following describes CPU-bound work?",
+    "answer": null,
+    "notes": "CPU-bound work is characterized by significant computation time, whereas I/O-bound work is marked by significant waiting time.",
+    "cloze_answer": null,
+    "options": [
+      "I/O-bound: significant time is spent WAITING on an external operation",
+      "CPU-bound: significant time is spent actually COMPUTING",
+      "CPU-bound work is best solved by adding more async I/O concurrency",
+      "CPU-bound work always runs faster when wrapped in async def"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s16-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "WHICH WORKLOAD NEEDS WHICH TOOL",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the primary benefit of async for I/O-bound work?",
+    "answer": null,
+    "notes": "Async is primarily useful for I/O-bound workloads, as it allows for concurrent execution of I/O operations.",
+    "cloze_answer": null,
+    "options": [
+      "async is faster than multiprocessing for CPU-bound work too",
+      "async concurrency requires multiple CPU cores to provide any benefit",
+      "async is primarily a concurrency model useful for I/O-bound workloads: if a request needs 5ms CPU + 95ms waiting, the event loop can switch to another request during that wait",
+      "async guarantees a lower latency for any single I/O-bound operation"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s16-mcq3",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "WHICH WORKLOAD NEEDS WHICH TOOL",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the recommended approach for CPU-bound work?",
+    "answer": null,
+    "notes": "For CPU-bound work, multiprocessing is typically the recommended approach, as it allows for true parallel CPU execution.",
+    "cloze_answer": null,
+    "options": [
+      "async/threads can help",
+      "multiprocessing is usually the relevant tool",
+      "wrapping the function in async def is usually the relevant tool",
+      "adding more await points inside the function speeds up the computation"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s16-mcq4",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "WHICH WORKLOAD NEEDS WHICH TOOL",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which of the following statements is correct?",
+    "answer": null,
+    "notes": "Async is primarily a concurrency model useful for I/O-bound workloads, while multiprocessing provides true parallel CPU execution.",
+    "cloze_answer": null,
+    "options": [
+      "async is faster than multiprocessing",
+      "async is primarily a concurrency model useful for I/O-bound workloads, while multiprocessing provides true parallel CPU execution",
+      "multiprocessing is primarily a concurrency model useful for I/O-bound workloads",
+      "async and multiprocessing are interchangeable for any workload type"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s16-mcq5",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "WHICH WORKLOAD NEEDS WHICH TOOL",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the recommended approach for an endpoint that performs a database query and a CPU-heavy calculation?",
+    "answer": null,
+    "notes": "For an endpoint that performs a database query and a CPU-heavy calculation, it's recommended to perform the database operation asynchronously, but the CPU-heavy calculation should be performed using multiprocessing.",
+    "cloze_answer": null,
+    "options": [
+      "async def makes both the database operation and the CPU calculation non-blocking",
+      "The database operation can benefit from async I/O, but the CPU-heavy calculation can occupy the event-loop thread and hurt concurrency",
+      "Both the database operation and the CPU-heavy calculation should run synchronously for correctness",
+      "The CPU-heavy calculation should be awaited directly, the same as the database operation"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s17-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "WHERE IT ALL CONNECTS",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does the GIL primarily control?",
+    "answer": null,
+    "notes": "The GIL ensures that within one CPython process, only one thread executes Python bytecode at a time. It primarily controls concurrent execution of Python bytecode among threads.",
+    "cloze_answer": null,
+    "options": [
+      "The number of threads that can exist in a process",
+      "The concurrency of CPU-bound Python code",
+      "Concurrent execution of Python bytecode among threads",
+      "The number of processes that can run simultaneously"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s17-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "WHERE IT ALL CONNECTS",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the primary model of asyncio?",
+    "answer": null,
+    "notes": "Asyncio's primary model is cooperative concurrency for I/O-bound work, using coroutines and an event loop.",
+    "cloze_answer": null,
+    "options": [
+      "Cooperative concurrency for CPU-bound work",
+      "Cooperative concurrency for I/O-bound work",
+      "Coroutines and event loop for async I/O",
+      "Threads for concurrent execution"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s17-mcq3",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "WHERE IT ALL CONNECTS",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the main difference between GIL and processes?",
+    "answer": null,
+    "notes": "The GIL is about how CPython coordinates threads, while processes have separate memory/interpreter environments and can provide true CPU parallelism.",
+    "cloze_answer": null,
+    "options": [
+      "GIL is specific to traditional CPython, while processes are not",
+      "GIL is about concurrency, while processes are about parallelism",
+      "GIL is about CPU-bound work, while processes are about I/O-bound work",
+      "GIL is about threads, while processes are about processes"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s17-mcq4",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "WHERE IT ALL CONNECTS",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which statement is most accurate for a traditional CPython-based FastAPI deployment with 1 process and 4 threads?",
+    "answer": null,
+    "notes": "The GIL doesn't prevent threads from existing, but it does control concurrent execution of Python bytecode among those threads. Multiple processes can provide CPU parallelism.",
+    "cloze_answer": null,
+    "options": [
+      "All 4 threads will necessarily execute Python bytecode simultaneously across all 4 CPU cores",
+      "The GIL means the 4 threads cannot exist concurrently inside the process",
+      "The threads can exist concurrently, but the traditional CPython GIL prevents them from simply executing pure Python bytecode simultaneously on multiple cores; multiple processes can provide CPU parallelism",
+      "Because the workload is CPU-bound, converting the functions to async def will automatically make all 4 calculations parallel"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s18-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "CONNECTING EVERYTHING TO PRODUCTION",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which statement is most accurate for a FastAPI application with 4 ASGI worker processes, each receiving I/O-bound requests?",
+    "answer": null,
+    "notes": "A confuses worker COUNT with concurrent async TASK count. C: requests never create CPU cores, and a worker's event loop isn't created per request. D: separate worker processes have separate event loops in the normal multi-worker architecture",
+    "cloze_answer": null,
+    "options": [
+      "The application can process only 4 requests concurrently",
+      "Each worker can manage multiple concurrent async tasks",
+      "Each incoming request creates a new CPU core and a new event loop",
+      "All 4 workers share one event loop"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s18-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "CONNECTING EVERYTHING TO PRODUCTION",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the main limitation of having more ASGI worker processes in an application?",
+    "answer": null,
+    "notes": "C: more workers don't always mean better performance; workers consume resources and can overload DB/downstream systems",
+    "cloze_answer": null,
+    "options": [
+      "It increases CPU utilization",
+      "It provides more independent execution contexts and can use multiple CPU cores",
+      "It always leads to better performance",
+      "It reduces database connection pool usage"
+    ],
+    "correctIndex": 3,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s19-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "WHEN TO ACTUALLY ADD WORKERS",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the incorrect assumption about scaling workers?",
+    "answer": null,
+    "notes": "The assumption is incorrect because scaling workers is based on workload and resource bottlenecks, not simply CPU-core count. More workers don't always mean better performance.",
+    "cloze_answer": null,
+    "options": [
+      "Scaling workers is only dependent on CPU-core count",
+      "Adding workers will always produce linear performance improvement",
+      "The event loop can only handle one request per worker",
+      "Scaling workers is based on workload and resource bottlenecks"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s19-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "WHEN TO ACTUALLY ADD WORKERS",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the best interpretation of the scenario where workers increased from 2 to 8, but latency barely improved while database connection usage and memory increase significantly?",
+    "answer": null,
+    "notes": "The correct interpretation is that the application is likely constrained by something other than worker count, such as database capacity, connection pools, downstream I/O, or other bottlenecks. Adding workers can increase resource usage without improving latency.",
+    "cloze_answer": null,
+    "options": [
+      "The application is likely constrained by something other than worker count - such as database capacity, connection pools, downstream I/O, or other bottlenecks",
+      "The event loop can only handle one request per worker, so the application needs more workers",
+      "FastAPI async is broken because more workers should always produce nearly linear performance improvement",
+      "Eight CPU cores require exactly eight workers, so the database must be incorrectly configured"
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s20-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "CLOSING MODULE 0.6",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What happens when you use a blocking database operation in an async endpoint?",
+    "answer": null,
+    "notes": "The async endpoint remains blocked until the database operation completes, regardless of the CPU cores - this is exactly what makes it a BLOCKING call rather than an async-compatible one. Connection pooling remains important regardless.",
+    "cloze_answer": null,
+    "options": [
+      "The event loop remains free while the database I/O is pending",
+      "The event loop is blocked and cannot make progress on any other tasks until the blocking call completes",
+      "The database call is executed faster because the query uses multiple CPU cores",
+      "There is no need to consider connection pooling"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s20-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "CLOSING MODULE 0.6",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why is it important to use an async-capable database driver in an async FastAPI endpoint?",
+    "answer": null,
+    "notes": "The async database driver allows the coroutine to suspend and allow the event loop to make progress on other tasks, improving concurrency. The database call is not automatically faster just because it's async.",
+    "cloze_answer": null,
+    "options": [
+      "It makes the database call execute faster",
+      "It allows the event loop to remain free while database I/O is pending",
+      "It doesn't matter, as the database call is already async",
+      "It only matters if you're using multiple CPU cores"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s20-mcq3",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "CLOSING MODULE 0.6",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the main benefit of using an async database driver in an async FastAPI endpoint?",
+    "answer": null,
+    "notes": "The async database driver improves concurrency by allowing the event loop to make progress on other tasks while the database I/O is pending. It doesn't remove the need for connection pooling or make the database call faster.",
+    "cloze_answer": null,
+    "options": [
+      "It makes the database call faster",
+      "It improves concurrency by allowing the event loop to make progress on other tasks",
+      "It removes the need for connection pooling",
+      "It allows unlimited concurrent queries"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s21-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "COMPLETE",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the correct approach to improve CPU utilization when dealing with CPU-bound work?",
+    "answer": null,
+    "notes": "Async def and event loops are for I/O-bound work, not CPU-bound work. Using processes or threads is the way to achieve true parallelism.",
+    "cloze_answer": null,
+    "options": [
+      "Use async def and event loops to yield between tasks",
+      "Use threads to parallelize CPU-bound tasks",
+      "Use processes to run CPU-bound tasks in parallel",
+      "Use a thread pool to isolate synchronous/blocking code"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s21-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "COMPLETE",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why can't you just use async def to make synchronous code asynchronous?",
+    "answer": null,
+    "notes": "async def can't make synchronous code asynchronous. It can only be used for operations that can be executed asynchronously.",
+    "cloze_answer": null,
+    "options": [
+      "Because async def doesn't guarantee good async behavior",
+      "Because the async def keyword only works for I/O-bound operations",
+      "Because async def can only be used for database access",
+      "Because the event loop can't execute blocking code"
+    ],
+    "correctIndex": 3,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s21-mcq3",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "COMPLETE",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the primary benefit of async database drivers?",
+    "answer": null,
+    "notes": "Async database drivers improve concurrency, but don't make the database itself faster.",
+    "cloze_answer": null,
+    "options": [
+      "They make the database itself faster.",
+      "They improve concurrency, but don't make the database faster.",
+      "They allow for parallel processing of database queries.",
+      "They eliminate the need for database transactions."
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch01-s21-mcq4",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "COMPLETE",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the main difference between WSGI and ASGI?",
+    "answer": null,
+    "notes": "WSGI is a server interface layer, while ASGI is an application interface layer.",
+    "cloze_answer": null,
+    "options": [
+      "WSGI is synchronous, while ASGI is asynchronous.",
+      "WSGI is for Flask, while ASGI is for FastAPI.",
+      "WSGI is a server interface, while ASGI is an application interface.",
+      "WSGI is for Python 2, while ASGI is for Python 3."
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s01-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "DJANGO KYA HAI?",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which statement best describes the relationship between Django and the application's code?",
+    "answer": null,
+    "notes": "Django controls the web application lifecycle and invokes developer-provided components such as views and middleware — Inversion of Control.",
+    "cloze_answer": null,
+    "options": [
+      "The application's view code always controls the entire execution flow and calls Django whenever needed",
+      "Django controls the web application lifecycle and invokes developer-provided components such as views and middleware",
+      "Django is primarily a collection of database libraries and does not control request processing",
+      "Django only provides an HTML template engine; routing and request handling are external responsibilities"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s02-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "MVT ACTUALLY KYA HAI?",
+    "label": null,
+    "type": "mcq",
+    "prompt": "In Django's MVT architecture, which component coordinates request processing and application logic?",
+    "answer": null,
+    "notes": "The View processes the request and decides the response, whereas the Model represents data and the Template handles presentation.",
+    "cloze_answer": null,
+    "options": [
+      "Model",
+      "View",
+      "Template",
+      "URL Resolver"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s02-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "MVT ACTUALLY KYA HAI?",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the primary responsibility of Django's Template?",
+    "answer": null,
+    "notes": "The Template's primary responsibility is to handle presentation, whereas the View processes the request and the Model represents data.",
+    "cloze_answer": null,
+    "options": [
+      "To receive HTTP requests",
+      "To query the database",
+      "To coordinate request processing",
+      "To produce the presentation layer"
+    ],
+    "correctIndex": 3,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s03-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "REQUEST VIEW TAK KAISE PAHUNCHTI HAI?",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does the URL Resolver identify?",
+    "answer": null,
+    "notes": "The URL Resolver identifies WHO handles the request, not what happens next.",
+    "cloze_answer": null,
+    "options": [
+      "who handles the request",
+      "what happens next",
+      "the URL pattern",
+      "the captured parameters"
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s03-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "REQUEST VIEW TAK KAISE PAHUNCHTI HAI?",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does the URL resolver do with captured URL parameters?",
+    "answer": null,
+    "notes": "The URL resolver captures the parameters and passes them to the view, which can then decide what to do with them.",
+    "cloze_answer": null,
+    "options": [
+      "it queries the database to verify their existence",
+      "it passes the captured values to the view",
+      "it ignores the captured values",
+      "it uses them to decide what to do"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s04-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "HOW A REQUEST ENTERS DJANGO",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the primary benefit of using ASGI over WSGI?",
+    "answer": null,
+    "notes": "ASGI enables asynchronous request handling and I/O concurrency, not automatic CPU-bound code execution or making every operation async.",
+    "cloze_answer": null,
+    "options": [
+      "ASGI allows for faster execution of CPU-bound code",
+      "ASGI enables asynchronous request handling and I/O concurrency",
+      "ASGI only affects URL routing and has no relationship to view execution",
+      "ASGI automatically makes every operation in the request path asynchronous"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s04-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "HOW A REQUEST ENTERS DJANGO",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does ASGI automatically make asynchronous in a Django application?",
+    "answer": null,
+    "notes": "ASGI makes I/O-bound operations, such as database I/O and network operations, suitable for concurrent handling, but does not automatically make CPU-bound code asynchronous.",
+    "cloze_answer": null,
+    "options": [
+      "Every operation inside the view, including CPU-bound Python code",
+      "I/O-bound operations, such as database I/O and network operations",
+      "URL routing and URL resolution",
+      "Template rendering and ORM operations"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s05-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "WRAPPING THE REQUEST/RESPONSE PIPELINE",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why use middleware instead of putting the same logic in every view?",
+    "answer": null,
+    "notes": "Middleware is appropriate for cross-cutting behavior that should apply consistently across many or all requests, such as authentication, security, logging, request/response processing, or common headers. It can inspect/modify the request on the way in, inspect/modify the response on the way out, or short-circuit the chain entirely before the view ever runs.",
+    "cloze_answer": null,
+    "options": [
+      "What would you like to achieve with this design choice?",
+      "Django middleware can be sync or async-capable, and mixed chains are possible",
+      "Middleware is appropriate for cross-cutting behavior that should apply consistently across many or all requests",
+      "Middleware is only for handling security concerns"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s05-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "WRAPPING THE REQUEST/RESPONSE PIPELINE",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Middleware chain: M1 -> M2 -> M3 -> View. A request reaches M2, and M2 determines the request should be rejected immediately. What is the most accurate behavior?",
+    "answer": null,
+    "notes": "A. URL resolution completing never forces the View to execute - middleware can still return a response of its own. C. Django never automatically restarts the request through M1. D. Middleware participates in BOTH the request and response phases, and can short-circuit request processing entirely - it doesn't have to wait until after the View runs.",
+    "cloze_answer": null,
+    "options": [
+      "M2 must still execute the View because URL resolution has already completed",
+      "Django automatically retries the request through M1",
+      "Middleware can only modify responses after the View executes; it cannot stop request processing",
+      "M2 can return a response directly, preventing the View and subsequent middleware from processing the request on the normal forward path"
+    ],
+    "correctIndex": 3,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s06-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "HOW THE CHAIN ACTUALLY GETS BUILT",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is get_response in Django middleware?",
+    "answer": null,
+    "notes": "get_response is the callable representing the next stage in the composed pipeline, never simply 'the view'.",
+    "cloze_answer": null,
+    "options": [
+      "The callable representing the next stage of Django's middleware/request-processing chain.",
+      "The View that the middleware executes.",
+      "The request object that the middleware receives.",
+      "The response object that the middleware returns."
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s06-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "HOW THE CHAIN ACTUALLY GETS BUILT",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What happens when a middleware returns its own response instead of calling get_response()?",
+    "answer": null,
+    "notes": "Short-circuiting still works the same way: if a middleware returns its own response instead of calling get_response(), everything downstream (remaining middleware + View) never executes on the forward path.",
+    "cloze_answer": null,
+    "options": [
+      "The downstream processing (including the View) happens as usual.",
+      "The View is skipped and the response is returned directly.",
+      "The remaining middleware and View are skipped, and the response is returned directly.",
+      "Everything downstream (remaining middleware + View) never executes on the forward path."
+    ],
+    "correctIndex": 3,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s07-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "PRECISELY WHAT HAPPENS WHERE",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which of the following statements about Django middleware is FALSE?",
+    "answer": null,
+    "notes": "Middleware is bidirectional, it can modify requests and responses.",
+    "cloze_answer": null,
+    "options": [
+      "It only runs before the View",
+      "It can modify both requests and responses",
+      "It can short-circuit and prevent the View from executing",
+      "It can handle exceptions raised by the View"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s07-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "PRECISELY WHAT HAPPENS WHERE",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the order of operations in a Django middleware function?",
+    "answer": null,
+    "notes": "Middleware modification, get_response() execution, response processing.",
+    "cloze_answer": null,
+    "options": [
+      "Request modification, View execution, Response processing",
+      "Request modification, Response processing, View execution",
+      "Request modification, get_response(), Response processing",
+      "Response processing, get_response(), Request modification"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s07-mcq3",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "PRECISELY WHAT HAPPENS WHERE",
+    "label": null,
+    "type": "cloze",
+    "prompt": "In Django, the {{blank}} hook is used to process exceptions",
+    "answer": null,
+    "notes": "Django has a dedicated process_exception hook for class-based middleware.",
+    "cloze_answer": "process_exception",
+    "options": [
+      "process_exception",
+      "get_response",
+      "request.start_time",
+      "response.status_code"
+    ],
+    "correctIndex": null,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s08-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "WHY ORDER IS NOT ARBITRARY",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Reordering middleware can cause correctness and performance problems because",
+    "answer": null,
+    "notes": "Explanation: Reordering middleware can cause correctness and performance problems because Django never automatically rearranges application-level dependencies, and middleware are not independent black boxes.",
+    "cloze_answer": null,
+    "options": [
+      "Middleware are not independent black boxes.",
+      "Django automatically resolves their dependencies.",
+      "Expensive middleware should always execute before authentication middleware.",
+      "Request processing still follows the original order."
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s08-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "WHY ORDER IS NOT ARBITRARY",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which statement is most accurate when a developer reorders the middleware chain from A -> B -> C -> View to B -> C -> A -> View?",
+    "answer": null,
+    "notes": "Explanation: Reordering middleware can cause correctness and performance problems because Django never automatically rearranges application-level dependencies, and middleware are not independent black boxes.",
+    "cloze_answer": null,
+    "options": [
+      "The new order is equivalent because middleware always executes independently and Django automatically resolves their dependencies.",
+      "The new order can cause correctness and performance problems: C may run before the state prepared by A, and requests that A would have rejected cheaply may first pay the cost of B.",
+      "The new order is always better because expensive middleware should always execute before authentication middleware.",
+      "The new order only changes response processing; request processing still follows the original order."
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s09-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "__INIT__, __CALL__, GET_RESPONSE",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the purpose of the `__init__` method in Django middleware?",
+    "answer": null,
+    "notes": "During construction time, __init__ receives the downstream get_response callable. It is not re-run per request.",
+    "cloze_answer": null,
+    "options": [
+      "To handle individual requests",
+      "To set up the middleware instance once",
+      "To invoke downstream processing",
+      "To short-circuit the request"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s09-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "__INIT__, __CALL__, GET_RESPONSE",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What happens to the `get_response` callable in the `__call__` method?",
+    "answer": null,
+    "notes": "The `get_response` callable represents downstream processing and is used to continue the request flow.",
+    "cloze_answer": null,
+    "options": [
+      "It is always called",
+      "It is only called if the middleware is async",
+      "It is used to continue downstream processing",
+      "It is used to short-circuit the request"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s09-mcq3",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "__INIT__, __CALL__, GET_RESPONSE",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the implication of using `self.some_state` as a request counter in middleware?",
+    "answer": null,
+    "notes": "The `self.some_state` is shared instance state and can introduce concurrency issues unless request-specific data is stored in a local variable or the request object.",
+    "cloze_answer": null,
+    "options": [
+      "It is automatically request-local",
+      "It is shared instance state and can introduce concurrency issues",
+      "It is only accessible in the `__init__` method",
+      "It is only accessible in the `__call__` method"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s10-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "PROCESS_* HOOKS, CORRECTED",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the primary difference between the legacy process_request() and process_response() methods and the modern __call__() method?",
+    "answer": null,
+    "notes": "Legacy process_request() and process_response() methods are gone; __call__() operates at the middleware request-processing boundary.",
+    "cloze_answer": null,
+    "options": [
+      "Both are legacy methods; __call__() is the new core entry point.",
+      "Legacy methods are gone; __call__() operates at the request-processing boundary.",
+      "Legacy methods are still valid; __call__() only provides the resolved view and its arguments.",
+      "Legacy methods are only for URL resolution; __call__() handles exceptions."
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s10-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "PROCESS_* HOOKS, CORRECTED",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why can a middleware return a response from process_view() before the view runs?",
+    "answer": null,
+    "notes": "process_view() uniquely gets the resolved view and its arguments, allowing short-circuiting before the view runs.",
+    "cloze_answer": null,
+    "options": [
+      "Because process_view() is the new core entry point; all middlewares must use it.",
+      "Because process_view() gets the resolved view and its arguments, allowing short-circuiting.",
+      "Because process_view() is the only method that can reject requests before the view runs.",
+      "Because process_view() is the modern replacement for __call__()."
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s10-mcq3",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "PROCESS_* HOOKS, CORRECTED",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the semantic difference between the process_view() method and the __call__() method?",
+    "answer": null,
+    "notes": "process_view() uniquely provides the resolved view and its arguments, whereas __call__() operates at the request-processing boundary.",
+    "cloze_answer": null,
+    "options": [
+      "None; they are identical APIs with different names.",
+      "process_view() is only for URL resolution; __call__() handles exceptions.",
+      "process_view() provides the resolved view and its arguments; __call__() operates at the request-processing boundary.",
+      "process_view() is the new core entry point; __call__() is the legacy method."
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s11-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "THE 2026 PRODUCTION MENTAL MODEL",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why can a sync middleware reduce the benefit of an async Django stack?",
+    "answer": null,
+    "notes": "Django adapts across the sync/async boundary rather than rejecting the configuration, but adaptation is not free.",
+    "cloze_answer": null,
+    "options": [
+      "Django can adapt between sync and async middleware, so a sync middleware doesn't necessarily break an async request.",
+      "Sync middleware makes async views impossible",
+      "More async code automatically means better performance",
+      "Django always rejects any synchronous middleware in an ASGI deployment"
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s11-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "THE 2026 PRODUCTION MENTAL MODEL",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the correct pattern for awaitable work in Django?",
+    "answer": null,
+    "notes": "Awaitable work requires `await` to avoid blocking the async flow.",
+    "cloze_answer": null,
+    "options": [
+      "data = await async_operation(); response = await self.get_response(request)",
+      "data = await async_operation(); response = self.get_response(request)",
+      "response = await self.get_response(request); data = await async_operation()",
+      "data = async_operation(); response = await self.get_response(request)"
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s12-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "WHAT'S ACTUALLY ASYNC, WHAT ISN'T",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What happens to the ORM call inside an async def view?",
+    "answer": null,
+    "notes": "The ORM call is synchronous and can introduce blocking behavior inside the async execution path.",
+    "cloze_answer": null,
+    "options": [
+      "The ORM call is automatically asynchronous because the view is async def.",
+      "The ORM call is synchronous and can introduce blocking behavior inside the async execution path.",
+      "Django automatically converts every synchronous ORM method into its async equivalent.",
+      "The ORM call becomes asynchronous only because the application is running under ASGI."
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s13-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "SYNC-TO-ASYNC ORM METHOD MAPPING",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does the 'a' prefix in aget() actually provide in Django's async ORM API?",
+    "answer": null,
+    "notes": "aget() provides Django's async-compatible ORM entry point for retrieving the object, allowing the middleware to await the database operation. C: aget() does not guarantee the underlying database driver/server is fully non-blocking - that boundary is covered in a later sub-concept. D: await aget() only makes THAT particular operation async-compatible; a later User.objects.get(id=1) in the view does not automatically become async just because the middleware used await.",
+    "cloze_answer": null,
+    "options": [
+      "Just syntactic sugar for get() and still performs the exact same synchronous call inside the event loop.",
+      "Django's async-compatible ORM entry point for retrieving the object, allowing the middleware to await the database operation.",
+      "Guarantees that the underlying database driver and database server are completely non-blocking.",
+      "Makes every database operation executed later by the view automatically asynchronous."
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s14-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "QUERYSET CONSTRUCTION VS EVALUATION",
+    "label": null,
+    "type": "mcq",
+    "prompt": "In the following async code, what happens when the filter() call is executed?",
+    "answer": null,
+    "notes": "filter() is generally lazy - it does not immediately fetch. async for is not merely cosmetic syntax - it drives Django's actual QuerySet async-iteration path. QuerySet laziness is still relevant in async code - it's not a sync-only behavior.",
+    "cloze_answer": null,
+    "options": [
+      "The filter() call immediately fetches all users from the database at that moment.",
+      "filter() constructs the QuerySet; database evaluation happens later, during async iteration.",
+      "async for is purely Python syntax and keeps the database access synchronous regardless.",
+      "QuerySet lazy evaluation only applies in synchronous Django views; in async code the QuerySet evaluates immediately."
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s15-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "SYNCHRONOUSONLYOPERATION AND SYNC_TO_ASYNC",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which is the best explanation for the code snippet `request.user_data = user`?",
+    "answer": null,
+    "notes": "The issue is the sync ORM call sitting directly inside the async execution path.",
+    "cloze_answer": null,
+    "options": [
+      "This is completely safe because Django automatically converts .get() into an async database operation when __call__ is async.",
+      "This is problematic because .get() is synchronous ORM access being performed directly inside an async execution path; an async ORM method or explicit sync boundary should be used.",
+      "This will always work under ASGI because ASGI automatically converts all synchronous database operations to background threads.",
+      "The only problem is that request.user_data is mutable; the database access itself is unrelated to async execution."
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s16-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "WHAT THE WRAPPER ACTUALLY DOES",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does sync_to_async() convert?",
+    "answer": null,
+    "notes": "The original function stays synchronous, and sync_to_async() only wraps it in an async-compatible interface.",
+    "cloze_answer": null,
+    "options": [
+      "A synchronous function into an async function",
+      "A synchronous function into an async-compatible interface",
+      "An async function into a synchronous function",
+      "A function into a regular Python function"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s17-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "THREAD AFFINITY AND CONNECTION SAFETY",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does `thread_sensitive=False` mean when used with `sync_to_async`?",
+    "answer": null,
+    "notes": "B is correct because thread_sensitive=False means the synchronous function no longer needs to preserve thread-sensitive execution semantics, so it should only be used when that is safe for the function and its resources. A, C, and D are incorrect because they do not accurately describe the meaning of thread_sensitive=False.",
+    "cloze_answer": null,
+    "options": [
+      "It always improves performance by allowing unlimited parallel database connections.",
+      "It means the synchronous function no longer needs to preserve thread-sensitive execution semantics, so it should only be used when that is safe for the function and its resources.",
+      "It converts the Django ORM itself into a native async ORM.",
+      "It guarantees that the function will execute on a brand-new thread for every request."
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s18-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "THE THREE-LAYER MENTAL MODEL (5.7 CLOSING)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Given `async def view(request): user = await User.objects.aget(id=10)`, does calling aget() guarantee the underlying database access is fully non-blocking end-to-end?",
+    "answer": null,
+    "notes": "A: aget() does not turn the database server itself into a guaranteed non-blocking async server. C: it only makes THAT operation async-compatible - a sibling User.objects.get(...) elsewhere does not automatically become async. D: async's primary benefit is the concurrency/waiting model, not a query-latency guarantee.",
+    "cloze_answer": null,
+    "options": [
+      "Because aget() is async, the database server is guaranteed to execute the query in a completely non-blocking async manner.",
+      "aget() provides an async-compatible Django ORM interface, but the behavior and capabilities of the underlying database backend/driver still matter.",
+      "aget() makes every other synchronous ORM operation in the same request automatically asynchronous.",
+      "Using aget() guarantees that the query will execute faster than get()."
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s18-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "THE THREE-LAYER MENTAL MODEL (5.7 CLOSING)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Given `async def view(request): user = await User.objects.aget(id=10)`, what can you conclude about the database access with certainty?",
+    "answer": null,
+    "notes": "Only A is certain from this code: the Python application side uses an async execution path. C is wrong - asyncio is Python's own concurrency model; the database server (PostgreSQL/MySQL/etc.) runs its own internal execution model, not Python's event loop. B is wrong - aget() only establishes Django's async ORM API, not the driver's exact nature. D is wrong - async changes the waiting/concurrency model, not raw query execution time.",
+    "cloze_answer": null,
+    "options": [
+      "The Python application is using an async execution path for this operation.",
+      "Django is definitely using a native async database driver.",
+      "The database server is executing the query using Python's asyncio event loop.",
+      "The database query will execute faster than the equivalent synchronous query."
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s18-mcq3",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "THE THREE-LAYER MENTAL MODEL (5.7 CLOSING)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the most accurate statement about aget()?",
+    "answer": null,
+    "notes": "A: aget() is not simply get() + asyncio - it's Django's own async ORM API, not that simplistic model. C: aget() does not automatically make the driver async - driver/backend support is a separate layer. D: the database server's concurrency behavior depends on multiple layers below the ORM (backend, driver, database) - aget() guarantees none of it.",
+    "cloze_answer": null,
+    "options": [
+      "aget() is simply get() running inside Python's asyncio event loop.",
+      "aget() is Django's async-compatible ORM API for retrieving the object, but it does not by itself tell us exactly how the underlying driver performs database I/O.",
+      "aget() guarantees that the database driver is asynchronous.",
+      "aget() guarantees that the database server will process the query concurrently with every other request."
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s18-mcq4",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "THE THREE-LAYER MENTAL MODEL (5.7 CLOSING)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which component actually provides the Python-level communication mechanism with PostgreSQL?",
+    "answer": null,
+    "notes": "The driver is the low-level bridge between Python and PostgreSQL - it handles connections, queries, parameters, results, and transactions per the database's wire protocol.",
+    "cloze_answer": null,
+    "options": [
+      "Django URL resolver",
+      "Django middleware",
+      "PostgreSQL Python database driver",
+      "asyncio event loop"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s18-mcq5",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "THE THREE-LAYER MENTAL MODEL (5.7 CLOSING)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "An async-capable Python PostgreSQL driver is installed on the system. In the Django application, user = await User.objects.aget(id=10) is called. Which statement is most accurate?",
+    "answer": null,
+    "notes": "Installing an async driver changes nothing about Django's aget() being wrapped in sync_to_async; every async ORM method still runs through the exact sync_to_async bridge from 5.7.5, regardless of which driver is installed.",
+    "cloze_answer": null,
+    "options": [
+      "Django automatically detects the installed async driver and switches its PostgreSQL backend to use it.",
+      "Installing an async driver alone is insufficient; Django's database backend/support and configuration determine whether and how that driver is actually used.",
+      "aget() directly bypasses Django's database backend and calls the installed driver.",
+      "Any Python async PostgreSQL driver can automatically replace Django's configured database driver."
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s18-mcq6",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "THE THREE-LAYER MENTAL MODEL (5.7 CLOSING)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "PostgreSQL itself is NOT running under Python's asyncio event loop. The Django application uses an async-capable database access path. Which statement is most accurate?",
+    "answer": null,
+    "notes": "Python's asyncio and the database server's own concurrency model are two separate worlds, connected only through the database driver/network protocol - the driver bridges them, it does not merge them into one execution model.",
+    "cloze_answer": null,
+    "options": [
+      "This is impossible because an async Python application requires the database server itself to run on asyncio.",
+      "The Python application's async execution model and the database server's internal execution model are separate concerns; an async-capable client/driver can communicate with a database server without the server running Python asyncio.",
+      "PostgreSQL automatically imports Python's asyncio library whenever Django uses aget().",
+      "Django's aget() replaces the database server's concurrency model with Python's event loop."
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s18-mcq7",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "THE THREE-LAYER MENTAL MODEL (5.7 CLOSING)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "While Query A is waiting for database I/O, what is the primary async benefit on the Python side?",
+    "answer": null,
+    "notes": "Async's benefit during a DB wait is letting OTHER runnable async work progress, not parallelizing the query and not speeding it up - the same async != faster point from GR16, and: async != parallelism. A CPU-heavy operation inside the async request still isn't helped by this - only I/O waits are.",
+    "cloze_answer": null,
+    "options": [
+      "PostgreSQL pauses Query A and starts executing Python's asyncio event loop.",
+      "Python's async execution model can use the waiting period to schedule other runnable async work instead of synchronously blocking on that I/O.",
+      "PostgreSQL automatically converts Query A into an asyncio coroutine.",
+      "The database query itself is guaranteed to execute faster."
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s18-mcq8",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "THE THREE-LAYER MENTAL MODEL (5.7 CLOSING)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the best high-level distinction?",
+    "answer": null,
+    "notes": "Path B can provide a more direct async I/O path, while Path A may require synchronous adaptation around the database access.",
+    "cloze_answer": null,
+    "options": [
+      "Path A and B are guaranteed to have identical async behavior because the view is async.",
+      "Path B can provide a more direct async I/O path, while Path A may require synchronous adaptation around the database access.",
+      "Path A will always be faster because synchronous drivers have less overhead.",
+      "Path B means PostgreSQL itself is running inside Python's event loop."
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s18-mcq9",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "THE THREE-LAYER MENTAL MODEL (5.7 CLOSING)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why would you use middleware to access a database?",
+    "answer": null,
+    "notes": "The middleware is using Django's async ORM interface, but whether the database access is truly end-to-end async depends on the supported backend/driver path underneath it.",
+    "cloze_answer": null,
+    "options": [
+      "Because middleware is async, aget() guarantees that every layer below Django is natively asynchronous.",
+      "The middleware is using Django's async ORM interface, but whether the database access is truly end-to-end async depends on the supported backend/driver path underneath it.",
+      "Middleware should never access a database because middleware is only allowed to modify HTTP headers.",
+      "aget() means the database query executes inside the middleware's Python event loop."
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s18-mcq10",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "THE THREE-LAYER MENTAL MODEL (5.7 CLOSING)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the most accurate conclusion?",
+    "answer": null,
+    "notes": "The individual query can still take around the same database execution time; async primarily changes how the application handles waiting and concurrency.",
+    "cloze_answer": null,
+    "options": [
+      "Query execution time is guaranteed to become less than 100ms.",
+      "Async guarantees that the database will use fewer CPU resources.",
+      "The individual query can still take around the same database execution time; async primarily changes how the application handles waiting and concurrency.",
+      "Async causes PostgreSQL to execute the query in parallel with itself."
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s18-mcq11",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "THE THREE-LAYER MENTAL MODEL (5.7 CLOSING)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the best response?",
+    "answer": null,
+    "notes": "Installing a driver changes nothing about Django's backend, configuration, or ORM execution path by itself; a compatible async-capable path is required for end-to-end async DB access.",
+    "cloze_answer": null,
+    "options": [
+      "Correct. Installing an async driver automatically converts Django ORM, backend, and all database operations to async.",
+      "Not necessarily. Django's ORM API, database backend, driver, and configuration/support must form a compatible async-capable path; installing a driver alone doesn't guarantee end-to-end async DB access.",
+      "Incorrect because Django can never use an async database driver.",
+      "Correct only if PostgreSQL itself is running Python's asyncio event loop."
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s18-mcq12",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "THE THREE-LAYER MENTAL MODEL (5.7 CLOSING)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which is the best response?",
+    "answer": null,
+    "notes": "Async-capable I/O improves the application's ability to await database operations concurrently, but DB execution, connection limits, locks, slow queries, network issues, and other bottlenecks can still cause latency/blocking-like effects.",
+    "cloze_answer": null,
+    "options": [
+      "Correct. Once an async driver is used, database operations can never block and database contention is eliminated.",
+      "Incorrect. Async-capable I/O improves the application's ability to await database operations concurrently, but DB execution, connection limits, locks, slow queries, network issues, and other bottlenecks can still cause latency/blocking-like effects.",
+      "Incorrect because async database drivers provide no concurrency benefit at all.",
+      "Correct, because PostgreSQL delegates every query to Python's asyncio event loop."
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s18-mcq13",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "THE THREE-LAYER MENTAL MODEL (5.7 CLOSING)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What real-world bottlenecks does an async-capable DB path NOT remove?",
+    "answer": null,
+    "notes": "An async-capable DB I/O path improves the application's ability to await database work concurrently - it does not eliminate database-side bottlenecks.",
+    "cloze_answer": null,
+    "options": [
+      "Memory leaks",
+      "A slow query (bad plan/index), DB-side locks, a finite connection pool queuing excess requests, DB-side CPU/load, and network latency/failures",
+      "Crashes",
+      "Infinite loops"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s18-mcq14",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "THE THREE-LAYER MENTAL MODEL (5.7 CLOSING)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which of the following boundaries remain distinct throughout the layered chain in Django?",
+    "answer": null,
+    "notes": "This flips the question to have a unique answer: Python async model, Django ORM async API, DB driver async capability, and database server concurrency model are ALL FOUR of the distinct boundaries that stay separate throughout the chain - the browser's rendering engine is the one thing here that isn't part of this chain at all.",
+    "cloze_answer": null,
+    "options": [
+      "Python async model",
+      "Django ORM async API",
+      "DB driver async capability",
+      "The web browser's own rendering engine"
+    ],
+    "correctIndex": 3,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s19-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "WHO ARE YOU VS WHAT CAN YOU DO",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the correct interpretation when a user logs in successfully but lacks the required permission?",
+    "answer": null,
+    "notes": "permission is not an authentication concern - it's authorization. C: authentication succeeded; only authorization failed. D: the two are separate security concerns, checked at different points and for different reasons.",
+    "cloze_answer": null,
+    "options": [
+      "Authentication failed because the user doesn't have permission.",
+      "Authorization failed because authentication was successful but the user isn't allowed to perform the operation.",
+      "Both authentication and authorization failed.",
+      "Authentication and authorization are the same process in Django."
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s20-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "IDENTITY CONTEXT, NOT THE MECHANISM",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the correct value of request.user when a user has not logged in, with Django's standard authentication middleware correctly configured?",
+    "answer": null,
+    "notes": "request.user is not always a User object; it can be an AnonymousUser when the request isn't authenticated. Django deliberately avoids None here - both cases expose the same request.user.is_authenticated interface (True vs False), so application code never needs if request.user is not None checks.",
+    "cloze_answer": null,
+    "options": [
+      "request.user will always be None because no user is logged in.",
+      "request.user will contain an AnonymousUser, whose is_authenticated evaluates to False.",
+      "Accessing request.user will automatically authenticate the user.",
+      "request.user will contain the last authenticated user stored globally by Django."
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s21-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "DISSECTING THE MIDDLEWARE, 5.3 ORDERING APPLIED",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the primary architectural problem with the given MIDDLEWARE order?",
+    "answer": null,
+    "notes": "Explanation: The issue is that SessionMiddleware sets up request.session, which AuthenticationMiddleware relies on to resolve request.user.",
+    "cloze_answer": null,
+    "options": [
+      "AuthenticationMiddleware must always be the first middleware in Django.",
+      "AuthenticationMiddleware depends on session information, so SessionMiddleware should run before it.",
+      "SessionMiddleware must run after AuthenticationMiddleware because authentication creates the session.",
+      "Middleware ordering doesn't matter because Django automatically resolves dependencies."
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s22-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "A - REQUEST.SESSION MENTAL MODEL (5.8.3 DEEP-DIVE, PART A)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the primary mechanism for maintaining continuity between requests in Django?",
+    "answer": null,
+    "notes": "SessionMiddleware provides the continuity mechanism, not the cookie or authentication middleware.",
+    "cloze_answer": null,
+    "options": [
+      "Cookie",
+      "SessionMiddleware",
+      "AuthenticationMiddleware",
+      "Request"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s22-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "A - REQUEST.SESSION MENTAL MODEL (5.8.3 DEEP-DIVE, PART A)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the purpose of the session identifier in Django?",
+    "answer": null,
+    "notes": "The session identifier identifies the session, not the user or request.",
+    "cloze_answer": null,
+    "options": [
+      "To identify the user",
+      "To identify the session",
+      "To identify the request",
+      "To identify the response"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s23-mcq1",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "B - AUTHENTICATE() VS LOGIN() VS GET_USER()",
+    "label": null,
+    "type": "mcq",
+    "prompt": "A user logs in Monday. Tuesday, the same user sends a new request with a valid session cookie. Which operation best represents the step where Django determines the User object for that existing authentication state?",
+    "answer": null,
+    "notes": "A: no password re-verification happens on later requests. C: login() runs once, not per-request. D: has_perm() is authorization, unrelated to identity restoration.",
+    "cloze_answer": null,
+    "options": [
+      "authenticate() - because Django must verify the user's original password again.",
+      "get_user() - because Django can resolve the stored user identity into the current User object.",
+      "login() - because Django must create a new login on every request.",
+      "has_perm() - because permissions determine which user is making the request."
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s23-mcq2",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "B - AUTHENTICATE() VS LOGIN() VS GET_USER()",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the core difference between a framework and a library?",
+    "answer": null,
+    "notes": "The framework controls the application's execution flow, whereas a library is simply called by code that stays in control.",
+    "cloze_answer": null,
+    "options": [
+      "The framework controls the application's execution flow",
+      "The library provides more features",
+      "The framework is a library that stays in control",
+      "The library is a framework that executes its own logic"
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s23-mcq3",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "B - AUTHENTICATE() VS LOGIN() VS GET_USER()",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does the URL Resolver perform?",
+    "answer": null,
+    "notes": "The URL Resolver performs the resolution (runtime matching) and identifies the HANDLER.",
+    "cloze_answer": null,
+    "options": [
+      "It executes business logic or fetches database objects",
+      "It identifies the HANDLER and resolves the URL",
+      "It maps the URL to a specific view",
+      "It generates the presentation layer"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s23-mcq4",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "B - AUTHENTICATE() VS LOGIN() VS GET_USER()",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the purpose of middleware?",
+    "answer": null,
+    "notes": "Middleware wraps the request/response lifecycle; it is not simply another view.",
+    "cloze_answer": null,
+    "options": [
+      "It provides an additional view",
+      "It wraps the request/response lifecycle",
+      "It executes business logic or fetches database objects",
+      "It generates the presentation layer"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s23-mcq5",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "B - AUTHENTICATE() VS LOGIN() VS GET_USER()",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the purpose of Django's Middleware Execution Model?",
+    "answer": null,
+    "notes": "Django middleware forms a composable request/response chain, conceptually similar to the Chain of Responsibility pattern.",
+    "cloze_answer": null,
+    "options": [
+      "To handle HTTP requests and responses",
+      "To manage database connections",
+      "To provide a chain of responsibility pattern",
+      "To validate user authentication credentials"
+    ],
+    "correctIndex": 2,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s23-mcq6",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "B - AUTHENTICATE() VS LOGIN() VS GET_USER()",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the main difference between Django's sync_to_async() and async_to_sync() functions?",
+    "answer": null,
+    "notes": "sync_to_async() is used to adapt a synchronous function to be asynchronous, while async_to_sync() is used to adapt an asynchronous function to be synchronous.",
+    "cloze_answer": null,
+    "options": [
+      "sync_to_async() adapts a synchronous function to be callable from async code; async_to_sync() adapts an asynchronous function to be callable from sync code",
+      "They are used for different types of middleware",
+      "They are used for different types of async iteration",
+      "They are used for different types of queryset evaluation"
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s23-mcq7",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "B - AUTHENTICATE() VS LOGIN() VS GET_USER()",
+    "label": null,
+    "type": "mcq",
+    "prompt": "In django.contrib.auth, what does the session dict key SESSION_KEY actually store?",
+    "answer": null,
+    "notes": "request.session[SESSION_KEY] = user._meta.pk.value_to_string(user), from django/contrib/auth/__init__.py - not to be confused with the session framework's own separate session_key (the cookie's opaque session ID) or BACKEND_SESSION_KEY/HASH_SESSION_KEY, the other two things login() stores.",
+    "cloze_answer": null,
+    "options": [
+      "The user's primary key (identity), stored in the session by login()",
+      "The session cookie's own opaque session ID",
+      "A hash derived from the user's password",
+      "The authentication backend's dotted import path"
+    ],
+    "correctIndex": 0,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
+  },
+  {
+    "id": "django_fastapi_flask-ch02-s23-mcq8",
+    "subject": "Django + FastAPI + Flask Deep Dive",
+    "block": "Django + FastAPI + Flask Deep Dive — Chapter 2 (Interview Prep)",
+    "topic": "B - AUTHENTICATE() VS LOGIN() VS GET_USER()",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the difference between 'login()' and 'authenticate()' in Django's authentication process?",
+    "answer": null,
+    "notes": "authenticate() validates credentials (used once, at login) - 'user validation'. login() persists that authentication state into the session - 'session creation'. Confusing the two is a common interview mistake.",
+    "cloze_answer": null,
+    "options": [
+      "login() is used for user authentication, while authenticate() is used for session validation",
+      "login() is used for session creation, while authenticate() is used for user validation",
+      "login() is used to store the session ID, while authenticate() is used to retrieve the user object",
+      "login() is used for user validation, while authenticate() is used for session creation"
+    ],
+    "correctIndex": 1,
+    "pairs": null,
+    "tags": null,
+    "difficulty": null
   }
 ]
