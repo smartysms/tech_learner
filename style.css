@@ -382,3 +382,79 @@ pre#card-sql {
   min-width: 2em;
   text-align: right;
 }
+
+.xp-level-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+}
+
+.xp-level-badge {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
+.xp-level-xp {
+  color: var(--muted);
+}
+
+.xp-track {
+  height: 12px;
+}
+
+.xp-goal-fill {
+  background: var(--easy);
+}
+
+.xp-note {
+  margin: 0.6rem 0 0;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.6rem;
+}
+
+.achievement {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  opacity: 0.5;
+}
+
+.achievement.earned {
+  opacity: 1;
+  border-color: var(--easy);
+}
+
+.achievement-icon {
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.achievement.earned .achievement-icon {
+  color: var(--easy);
+}
+
+.achievement-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.achievement-desc {
+  font-size: 0.72rem;
+  color: var(--muted);
+}

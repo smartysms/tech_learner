@@ -301,6 +301,55 @@ function statsTotals() {
   return { total, today: todayCount, streak };
 }
 
+// --- Gamification: XP/levels/achievements/daily goal, adapted from
+// mind_map_project's GAMIFICATION_PSYCHOLOGY_GUIDE.md (same formulas, scoped
+// down for a flashcard app - no quiz minigames/tips-system/color-psychology,
+// those are mind-map-specific). Ethical-gamification principles from that
+// doc followed here: transparent math (shown below, not hidden), no
+// dark-pattern guilt copy, fully computed from data already logged for
+// Stats - no separate persisted "unlocked" state to get out of sync.
+
+const RATING_XP = { again: 2, hard: 5, good: 10, easy: 15 };
+const DAILY_XP_GOAL = 50;
+
+function totalXP() {
+  return reviewLog.reduce((sum, r) => sum + (RATING_XP[r.rating] || 0), 0);
+}
+
+function todayXP() {
+  const today = todayISO();
+  return reviewLog
+    .filter((r) => localDateStr(r.ts) === today)
+    .reduce((sum, r) => sum + (RATING_XP[r.rating] || 0), 0);
+}
+
+function xpLevel(xp) {
+  return Math.floor(Math.sqrt(xp / 100)) + 1;
+}
+
+function xpForLevel(level) {
+  return Math.pow(level - 1, 2) * 100;
+}
+
+const ACHIEVEMENTS = [
+  { name: "First Review", desc: "Complete your first review", check: (c) => c.total >= 1 },
+  { name: "Getting Started", desc: "25 reviews completed", check: (c) => c.total >= 25 },
+  { name: "Century", desc: "100 reviews completed", check: (c) => c.total >= 100 },
+  { name: "Marathon", desc: "500 reviews completed", check: (c) => c.total >= 500 },
+  { name: "3-Day Streak", desc: "Study 3 days in a row", check: (c) => c.streak >= 3 },
+  { name: "7-Day Streak", desc: "Study 7 days in a row", check: (c) => c.streak >= 7 },
+  { name: "30-Day Streak", desc: "Study 30 days in a row", check: (c) => c.streak >= 30 },
+  { name: "Well-Rounded", desc: "Review 3+ different subjects", check: (c) => c.subjectCount >= 3 },
+  { name: "Perfectionist", desc: "80%+ Good/Easy rate over 20+ reviews", check: (c) => c.total >= 20 && c.accuracy >= 0.8 },
+];
+
+function achievementContext(totals) {
+  const subjectCount = new Set(reviewLog.map((r) => r.subject)).size;
+  const goodEasy = reviewLog.filter((r) => r.rating === "good" || r.rating === "easy").length;
+  const accuracy = totals.total > 0 ? goodEasy / totals.total : 0;
+  return { total: totals.total, streak: totals.streak, subjectCount, accuracy };
+}
+
 const HOUR_BANDS = [
   { label: "Night (12am-6am)", test: (h) => h >= 0 && h < 6 },
   { label: "Morning (6am-12pm)", test: (h) => h >= 6 && h < 12 },
@@ -383,7 +432,45 @@ function renderStats() {
   const weakTopics = statsWeakTopics();
   const weekly = statsWeeklyAccuracy();
 
+  const xp = totalXP();
+  const level = xpLevel(xp);
+  const levelStart = xpForLevel(level);
+  const levelEnd = xpForLevel(level + 1);
+  const levelPct = Math.round(((xp - levelStart) / (levelEnd - levelStart)) * 100);
+  const goalXp = todayXP();
+  const goalPct = Math.min(100, Math.round((goalXp / DAILY_XP_GOAL) * 100));
+
+  const achContext = achievementContext(totals);
+  const achEarned = ACHIEVEMENTS.filter((a) => a.check(achContext));
+
   const sections = [];
+
+  sections.push(`<div class="stat-section">
+    <div class="xp-level-row">
+      <span class="xp-level-badge">Level ${level}</span>
+      <span class="xp-level-xp">${xp - levelStart}/${levelEnd - levelStart} XP to next level</span>
+    </div>
+    <div class="stat-bar-track xp-track"><div class="stat-bar-fill" style="width:${levelPct}%"></div></div>
+    <div class="xp-level-row" style="margin-top:0.75rem">
+      <span>Daily goal</span>
+      <span>${goalXp}/${DAILY_XP_GOAL} XP</span>
+    </div>
+    <div class="stat-bar-track xp-track"><div class="stat-bar-fill xp-goal-fill" style="width:${goalPct}%"></div></div>
+    <p class="xp-note">XP: Again +2, Hard +5, Good +10, Easy +15 - rewards real recall, not just clicking through.</p>
+  </div>`);
+
+  sections.push(`<div class="stat-section"><h3>Achievements (${achEarned.length}/${ACHIEVEMENTS.length})</h3>
+    <div class="achievements-grid">
+      ${ACHIEVEMENTS.map((a) => {
+        const earned = a.check(achContext);
+        return `<div class="achievement ${earned ? "earned" : ""}">
+          <span class="achievement-icon">${earned ? "✓" : "–"}</span>
+          <span class="achievement-name">${a.name}</span>
+          <span class="achievement-desc">${a.desc}</span>
+        </div>`;
+      }).join("")}
+    </div>
+  </div>`);
 
   sections.push(`<div class="stat-section">
     <div class="stat-totals">
