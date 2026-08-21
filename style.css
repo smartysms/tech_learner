@@ -84,6 +84,49 @@ main {
   padding: 0.15rem 0.6rem;
 }
 
+.tag-subject {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+#cloze-input-block {
+  margin-bottom: 1rem;
+}
+
+#cloze-answer-input {
+  width: 100%;
+  font: inherit;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--fg);
+  margin-bottom: 0.5rem;
+}
+
+#check-cloze-btn {
+  width: 100%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1rem;
+}
+
+#cloze-feedback {
+  margin-top: 0.75rem;
+  font-weight: 600;
+}
+
+#cloze-feedback.correct {
+  color: var(--easy);
+}
+
+#cloze-feedback.incorrect {
+  color: var(--again);
+}
+
 #card-prompt {
   font-size: 1.1rem;
   line-height: 1.5;

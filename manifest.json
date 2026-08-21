@@ -1,6 +1,6 @@
 {
-  "name": "SQL Spaced Repetition",
-  "short_name": "SQL SRS",
+  "name": "Deep Dive SRS",
+  "short_name": "Deep SRS",
   "start_url": ".",
   "scope": ".",
   "display": "standalone",

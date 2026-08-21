@@ -25,11 +25,23 @@ function ensureCardState(id) {
   return srsState[id];
 }
 
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
 function buildQueue() {
   const today = todayISO();
-  return questions
-    .filter((q) => ensureCardState(q.id).dueDate <= today)
-    .sort((a, b) => srsState[a.id].dueDate.localeCompare(srsState[b.id].dueDate));
+  const due = questions.filter((q) => ensureCardState(q.id).dueDate <= today);
+  // Shuffle first, then a stable sort by dueDate - genuinely overdue cards
+  // still come first, but cards sharing the same due date (the common case:
+  // most cards are freshly due "today") interleave across subjects instead
+  // of grinding through one subject's block before ever reaching another.
+  shuffle(due);
+  return due.sort((a, b) => srsState[a.id].dueDate.localeCompare(srsState[b.id].dueDate));
 }
 
 function showScreen(id) {
@@ -51,6 +63,7 @@ function renderCurrentCard() {
   }
 
   const card = queue[0];
+  document.getElementById("card-subject").textContent = card.subject || "";
   document.getElementById("card-block").textContent = card.block;
   document.getElementById("card-topic").textContent = card.topic;
   const labelEl = document.getElementById("card-label");
@@ -60,12 +73,27 @@ function renderCurrentCard() {
   } else {
     labelEl.hidden = true;
   }
-  document.getElementById("card-prompt").textContent = card.prompt;
-  document.querySelector("#card-sql code").textContent = card.solution_sql;
-  document.getElementById("card-notes").textContent = card.dialect_notes || "";
+
+  document.getElementById("card-sql").hidden = !card.answer;
+  document.querySelector("#card-sql code").textContent = card.answer || "";
+  document.getElementById("card-notes").textContent = card.notes || "";
 
   document.getElementById("answer").hidden = true;
-  document.getElementById("show-answer-btn").hidden = false;
+  document.getElementById("cloze-feedback").hidden = true;
+  document.getElementById("cloze-answer-input").value = "";
+  document.getElementById("cloze-answer-input").disabled = false;
+  document.getElementById("check-cloze-btn").disabled = false;
+
+  if (card.type === "cloze") {
+    document.getElementById("card-prompt").textContent = card.prompt.replace("{{blank}}", "_____");
+    document.getElementById("show-answer-btn").hidden = true;
+    document.getElementById("cloze-input-block").hidden = false;
+    document.getElementById("cloze-answer-input").focus();
+  } else {
+    document.getElementById("card-prompt").textContent = card.prompt;
+    document.getElementById("show-answer-btn").hidden = false;
+    document.getElementById("cloze-input-block").hidden = true;
+  }
 
   showScreen("review-screen");
   renderDueCount();
@@ -91,6 +119,24 @@ function renderDone() {
 function handleShowAnswer() {
   document.getElementById("answer").hidden = false;
   document.getElementById("show-answer-btn").hidden = true;
+}
+
+function handleCheckCloze() {
+  const card = queue[0];
+  const typed = document.getElementById("cloze-answer-input").value.trim().toLowerCase();
+  const correct = (card.cloze_answer || "").trim().toLowerCase();
+  const isCorrect = typed.length > 0 && typed === correct;
+
+  const feedback = document.getElementById("cloze-feedback");
+  feedback.textContent = isCorrect
+    ? "Correct!"
+    : `Correct answer: ${card.cloze_answer}`;
+  feedback.className = isCorrect ? "correct" : "incorrect";
+  feedback.hidden = false;
+
+  document.getElementById("cloze-input-block").querySelector("input").disabled = true;
+  document.getElementById("check-cloze-btn").disabled = true;
+  document.getElementById("answer").hidden = false;
 }
 
 function handleRate(rating) {
@@ -119,6 +165,10 @@ function init() {
     });
 
   document.getElementById("show-answer-btn").addEventListener("click", handleShowAnswer);
+  document.getElementById("check-cloze-btn").addEventListener("click", handleCheckCloze);
+  document.getElementById("cloze-answer-input").addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && !e.target.disabled) handleCheckCloze();
+  });
   document.querySelectorAll(".rate").forEach((btn) => {
     btn.addEventListener("click", () => handleRate(btn.dataset.rating));
   });

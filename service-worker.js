@@ -1,4 +1,4 @@
-const CACHE_NAME = "sql-srs-v1";
+const CACHE_NAME = "deep-srs-v2";
 const ASSETS = [
   "./",
   "index.html",
@@ -13,7 +13,13 @@ const ASSETS = [
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS))
+    caches.open(CACHE_NAME).then((cache) =>
+      Promise.all(
+        ASSETS.map((url) =>
+          fetch(url, { cache: "reload" }).then((resp) => cache.put(url, resp))
+        )
+      )
+    )
   );
   self.skipWaiting();
 });
@@ -28,6 +34,22 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
+  // questions.json grows over time as new subjects are added (see notes_ingest/).
+  // Network-first so an online phone always sees new cards without needing a
+  // CACHE_NAME bump on every content update; falls back to cache when offline.
+  if (event.request.url.endsWith("questions.json")) {
+    event.respondWith(
+      fetch(event.request)
+        .then((resp) => {
+          const copy = resp.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+          return resp;
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then((cached) => cached || fetch(event.request))
   );
