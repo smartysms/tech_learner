@@ -23508,25 +23508,6 @@
     "correctIndex": 1
   },
   {
-    "id": "kafka-ch07-s05-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 7 (Interview Prep)",
-    "topic": "The Race Condition Problem",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What happens in the scenario where two threads both call send() at the same instant?",
-    "answer": null,
-    "notes": "In the scenario where two threads both call send() at the same instant, one thread overwrites the record, and the other thread does not store it, resulting in a lost write.",
-    "cloze_answer": null,
-    "options": [
-      "One thread overwrites the record, and the other thread stores it",
-      "Both threads store the record, and one is overwritten",
-      "One thread reads the next-free-index, and the other thread does not",
-      "Both threads read the next-free-index, but one does not write"
-    ],
-    "correctIndex": 2
-  },
-  {
     "id": "kafka-ch07-s06-mcq1",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 7 (Interview Prep)",
@@ -23580,25 +23561,6 @@
       "No, because they're operating on different partition-specific queues, so they can proceed largely independently",
       "Yes, because they're sending to the same partition",
       "No, because synchronization is at the whole send() method"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "id": "kafka-ch07-s07-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 7 (Interview Prep)",
-    "topic": "The Real Design",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Why does Kafka use fine-grained synchronization around partition-specific data structures?",
-    "answer": null,
-    "notes": "Because it avoids lock contention and reduces throughput",
-    "cloze_answer": null,
-    "options": [
-      "Because it's the most efficient way to handle concurrent writes",
-      "Because it avoids lock contention and reduces throughput",
-      "Because it's the only way to ensure data consistency",
-      "Because it's the default configuration for all Kafka applications"
     ],
     "correctIndex": 1
   },
@@ -23829,25 +23791,6 @@
       "the total ceiling"
     ],
     "correctIndex": 1
-  },
-  {
-    "id": "kafka-ch07-s14-mcq3",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 7 (Interview Prep)",
-    "topic": "When The BufferPool Runs Dry",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Is producer.send() completely non-blocking because Kafka uses a background Sender Thread?",
-    "answer": null,
-    "notes": "producer.send() is asynchronous, but it can still block while waiting for buffer memory or topic metadata, up to max.block.ms.",
-    "cloze_answer": null,
-    "options": [
-      "True",
-      "False",
-      "Maybe",
-      "It depends"
-    ],
-    "correctIndex": 2
   },
   {
     "id": "kafka-ch07-s15-mcq1",
