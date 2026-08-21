@@ -36635,5 +36635,1620 @@
       "The decorator is called before the function definition"
     ],
     "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch01-s01-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 1 (Interview Prep)",
+    "topic": "Why This Prerequisite Track Exists",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the fundamental difference between an Operating System and a Kernel?",
+    "answer": null,
+    "notes": "The Kernel is only the core of the OS - a lot else runs on top of it (glibc, bash, ls/cp/cat, apt/yum, cron/systemd). The rest of this chapter focuses on the Kernel specifically, since it is the part Docker is actually built on.",
+    "cloze_answer": null,
+    "options": [
+      "They are interchangeable terms",
+      "The Kernel is the core, while the Operating System is the kernel plus everything else built on top of it (libraries, shell, utilities, package manager, services)",
+      "An Operating System is a type of Kernel",
+      "A Kernel is a type of Operating System"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch01-s01-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 1 (Interview Prep)",
+    "topic": "Why This Prerequisite Track Exists",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why was the original 11-module plan trimmed for the 'OS for Docker (Only What Matters)' track?",
+    "answer": null,
+    "notes": "Docker isolates processes, not threads, so thread internals are not load-bearing here.",
+    "cloze_answer": null,
+    "options": [
+      "Because Docker is not built on threads",
+      "Because Docker enforces resource limits through manual paging knowledge",
+      "Because Docker isolates processes, not threads",
+      "Because Docker has a dedicated Module 8 - Networking"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "os_for_docker-ch01-s02-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 1 (Interview Prep)",
+    "topic": "Application to Kernel to Hardware",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Where does a file request from an application like Chrome or Python go?",
+    "answer": null,
+    "notes": "This is important because Docker is genuinely hard to understand without it.",
+    "cloze_answer": null,
+    "options": [
+      "Hard Disk directly",
+      "RAM directly",
+      "Windows Kernel",
+      "CPU directly"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "os_for_docker-ch01-s02-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 1 (Interview Prep)",
+    "topic": "Application to Kernel to Hardware",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Who talks to the hardware in the application-to-kernel-to-hardware model?",
+    "answer": null,
+    "notes": "A useful analogy is a restaurant customer does not walk into the kitchen and cook their own food - a waiter sits in between.",
+    "cloze_answer": null,
+    "options": [
+      "Python",
+      "Kernel",
+      "Waiter",
+      "Customer"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch01-s03-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 1 (Interview Prep)",
+    "topic": "Requesting Memory Through The Kernel",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Who does Python ask when requesting 500 MB of RAM?",
+    "answer": null,
+    "notes": "RAM is hardware too, so the request still has to go through the kernel - same rule as the file-read example, applied to a different resource. Python never looks at RAM directly.",
+    "cloze_answer": null,
+    "options": [
+      "SSD",
+      "GPU",
+      "Kernel",
+      "Disk"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "os_for_docker-ch01-s03-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 1 (Interview Prep)",
+    "topic": "Requesting Memory Through The Kernel",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the term for the request-to-the-kernel pattern used by Python?",
+    "answer": null,
+    "notes": "A System Call is a request to the kernel to perform a specific operation.",
+    "cloze_answer": null,
+    "options": [
+      "System Call",
+      "Memory Allocation",
+      "Request Pattern",
+      "Kernel Access"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "os_for_docker-ch01-s04-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 1 (Interview Prep)",
+    "topic": "What The Kernel Does NOT Do",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Who executes the Python code to print a message?",
+    "answer": null,
+    "notes": "The kernel is almost entirely absent here, aside from giving this process CPU time to run. The actual logic of print(\"Hello\") is executed by the Python interpreter, not the kernel.",
+    "cloze_answer": null,
+    "options": [
+      "CPU directly",
+      "Python interpreter",
+      "Operating System",
+      "Memory Allocation"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch01-s04-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 1 (Interview Prep)",
+    "topic": "What The Kernel Does NOT Do",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What performs the sorting when a Python list is sorted?",
+    "answer": null,
+    "notes": "Sorting is business logic - the kernel has no opinion on whether Python used quicksort or Timsort internally. Whenever a question involves sorting, loops, if/else, JSON parsing, regex, string manipulation, math, or business rules, the answer is almost always the application (Python/Java/Node)",
+    "cloze_answer": null,
+    "options": [
+      "SSD",
+      "CPU",
+      "Memory Allocation",
+      "Python interpreter"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "id": "os_for_docker-ch01-s05-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 1 (Interview Prep)",
+    "topic": "Application Decides WHAT, Kernel Decides HOW",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Who actually reads the file from disk?",
+    "answer": null,
+    "notes": "Python has no idea whether the disk is an SSD or HDD, NVMe or SATA, which sector the data sits in, or whether the filesystem is ext4 or NTFS - the kernel handles every one of those details.",
+    "cloze_answer": null,
+    "options": [
+      "The SSD sends data to Python directly",
+      "The kernel reads the file - it handles the filesystem, disk driver, and physical sector details Python has no visibility into",
+      "The operating system's file explorer GUI reads it",
+      "The Python file object reads the bytes itself, with no kernel involvement"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch01-s05-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 1 (Interview Prep)",
+    "topic": "Application Decides WHAT, Kernel Decides HOW",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Who actually sends the network packet?",
+    "answer": null,
+    "notes": "requests.get() builds the request, but it never puts a packet on the wire itself - the kernel creates the socket, runs the TCP/IP stack, and hands packets to the network card.",
+    "cloze_answer": null,
+    "options": [
+      "The Python requests library builds and sends the packet itself",
+      "The kernel creates the socket, runs the TCP/IP stack, and hands packets to the network card",
+      "The Google server initiates the packet",
+      "The network card sends the packet with no kernel involvement"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch01-s05-mcq3",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 1 (Interview Prep)",
+    "topic": "Application Decides WHAT, Kernel Decides HOW",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Who actually allocates the memory from RAM?",
+    "answer": null,
+    "notes": "Python does not know which RAM addresses are free, how much RAM is available, or how memory protection is maintained - the kernel handles all of that. pymalloc (option 2) is a real nuance - it reuses memory Python already obtained for small allocations - but whenever it runs out of reusable space, it still requests fresh memory from the kernel. For Docker intuition, OS-level memory is always kernel-controlled.",
+    "cloze_answer": null,
+    "options": [
+      "RAM gives memory to Python directly",
+      "The kernel searches for free RAM, maps it into the process's virtual address space, and only then does Python get to use it",
+      "CPython's built-in allocator (pymalloc) optimizes small allocations by reusing memory it already obtained",
+      "The CPU allocates RAM directly without kernel involvement"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch01-s05-mcq4",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 1 (Interview Prep)",
+    "topic": "Application Decides WHAT, Kernel Decides HOW",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Who actually creates the new process?",
+    "answer": null,
+    "notes": "Python cannot create a process itself - it does not know the next available PID, where the process table lives, how to maintain the parent-child relationship, or when the new process will get CPU time. All of that is the kernel's job.",
+    "cloze_answer": null,
+    "options": [
+      "The kernel creates the process, assigns it a PID, sets up its memory, and adds it to the scheduler",
+      "Python creates the process directly using its own internal process table",
+      "The parent process forks the child entirely on its own, without kernel involvement",
+      "The shell that launched Python creates the new process"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "os_for_docker-ch01-s05-mcq5",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 1 (Interview Prep)",
+    "topic": "Application Decides WHAT, Kernel Decides HOW",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Who decides when this process actually gets to run on the CPU, and for how long?",
+    "answer": null,
+    "notes": "A common wrong instinct is to think the CPU itself decides which process runs. It does not - the CPU is simple hardware that only executes whatever instruction it is handed. The Kernel Scheduler is what actually decides.",
+    "cloze_answer": null,
+    "options": [
+      "The CPU itself decides which process runs",
+      "The Kernel Scheduler decides which process runs, for how long, and on which core; the CPU just carries that decision out",
+      "The application decides its own CPU time slice",
+      "Whichever process was started first always keeps running until it finishes"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch01-s06-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 1 (Interview Prep)",
+    "topic": "Putting It All Together",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Who divides CPU time between all running processes, including a Docker container?",
+    "answer": null,
+    "notes": "The Kernel Scheduler is responsible for deciding when each process gets CPU time.",
+    "cloze_answer": null,
+    "options": [
+      "The Docker container's own kernel",
+      "The CPU's scheduling algorithm",
+      "The Kernel Scheduler",
+      "The Docker runtime"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "os_for_docker-ch01-s06-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 1 (Interview Prep)",
+    "topic": "Putting It All Together",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the correct answer when asked if a Python application talks to hardware directly?",
+    "answer": null,
+    "notes": "The Python application requests from the kernel, which controls the hardware and returns the result.",
+    "cloze_answer": null,
+    "options": [
+      "Yes, it talks directly",
+      "No, it requests from the kernel",
+      "Maybe, it depends on the scenario",
+      "No, it doesn't request from the kernel"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch01-s07-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 1 (Interview Prep)",
+    "topic": "System Calls",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which of the following is most accurate when reading a file from disk?",
+    "answer": null,
+    "notes": "The application talks to the kernel through system calls, and the kernel handles the file read request.",
+    "cloze_answer": null,
+    "options": [
+      "Python directly talks to the SSD.",
+      "Python uses a system call to request the kernel, and the kernel reads the file.",
+      "Docker reads the file and gives it to Python.",
+      "The CPU reads the file from disk."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch01-s08-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 1 (Interview Prep)",
+    "topic": "Threads And The Kernel Scheduler",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Who schedules Python threads?",
+    "answer": null,
+    "notes": "The Linux kernel scheduler schedules OS threads, not Python. Python runtime requests the kernel to create a new OS thread.",
+    "cloze_answer": null,
+    "options": [
+      "Python",
+      "Linux kernel scheduler",
+      "CPython's Global Interpreter Lock (GIL)",
+      "Python runtime"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch01-s08-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 1 (Interview Prep)",
+    "topic": "Threads And The Kernel Scheduler",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Can a Python application directly allocate RAM without going through the kernel?",
+    "answer": null,
+    "notes": "Python cannot directly allocate RAM without going through the kernel, confirmed in the session.",
+    "cloze_answer": null,
+    "options": [
+      "True",
+      "False",
+      "It depends on the application",
+      "Only if it's a CPython application"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch01-s09-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 1 (Interview Prep)",
+    "topic": "Docker Containers Are Just Kernel-Managed Processes",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does Docker actually do when running `docker run nginx`?",
+    "answer": null,
+    "notes": "Docker does not control hardware directly; only the kernel can. This is the question that fully resolves the docker run nginx question left pending at the end of Section 6.",
+    "cloze_answer": null,
+    "options": [
+      "Docker creates a brand-new Linux kernel for the container.",
+      "Docker asks the existing Linux kernel to create an isolated process.",
+      "Docker boots a complete virtual machine.",
+      "Docker directly controls the CPU and RAM."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch01-s09-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 1 (Interview Prep)",
+    "topic": "Docker Containers Are Just Kernel-Managed Processes",
+    "label": null,
+    "type": "mcq",
+    "prompt": "How many Linux kernels are running on a host machine with native apps and containers?",
+    "answer": null,
+    "notes": "Every native app and every container on this machine shares the exact same single Linux kernel - this is the same kernel-counting rule already locked in during Docker Deep Dive Chapter 1, now confirmed cleanly a second time.",
+    "cloze_answer": null,
+    "options": [
+      "1",
+      "Multiple",
+      "Each container has its own kernel",
+      "Each native app has its own kernel"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "os_for_docker-ch01-s10-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 1 (Interview Prep)",
+    "topic": "What's Still Pending",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the correct conclusion about containers and operating systems?",
+    "answer": null,
+    "notes": "The notes explain why the first option is incorrect and the second option is correct.",
+    "cloze_answer": null,
+    "options": [
+      "A container is a mini operating system",
+      "Containers are isolated processes the kernel creates and manages",
+      "The kernel manages CPU/RAM directly for containers",
+      "Docker controls the CPU/RAM directly for containers"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch01-s10-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 1 (Interview Prep)",
+    "topic": "What's Still Pending",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the missing link in the Application -> Kernel -> Hardware chain?",
+    "answer": null,
+    "notes": "The notes explain why the other options are incorrect and System Calls is the correct answer.",
+    "cloze_answer": null,
+    "options": [
+      "Thread creation and scheduling",
+      "System Calls",
+      "Memory allocation",
+      "Process scheduling"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch01-s11-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 1 (Interview Prep)",
+    "topic": "Verified Against Real-World Practice",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which of the following best describes how applications interact with hardware?",
+    "answer": null,
+    "notes": "Applications never touch hardware directly, they always go Application -> Kernel -> Hardware",
+    "cloze_answer": null,
+    "options": [
+      "Applications directly access hardware",
+      "Applications use system calls to access hardware",
+      "Applications do not interact with hardware",
+      "Applications are executed by the kernel"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch01-s11-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 1 (Interview Prep)",
+    "topic": "Verified Against Real-World Practice",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the role of the kernel in the interaction between applications and hardware?",
+    "answer": null,
+    "notes": "The kernel does NOT execute application business logic - print statements and sorting are the interpreter's job",
+    "cloze_answer": null,
+    "options": [
+      "The kernel executes application business logic",
+      "The kernel is responsible for CPU scheduling, memory management, and process creation",
+      "The kernel does not play a role in the interaction",
+      "The kernel is responsible for executing application-specific code"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch02-s01-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 2 (Interview Prep)",
+    "topic": "Why Namespaces Exist",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why doesn't Nginx see Chrome, MySQL, or Redis after Docker creates a container?",
+    "answer": null,
+    "notes": "The correct answer is that Namespaces create the illusion that a process has its own private machine. The kernel is the same and the hardware is the same, only the view changes.",
+    "cloze_answer": null,
+    "options": [
+      "Namespaces create the illusion that a process has its own private machine.",
+      "Docker creates a new kernel for each container.",
+      "The kernel is the same, but Docker modifies the hardware configuration.",
+      "Nginx runs in a separate process space from the other applications."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "os_for_docker-ch02-s01-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 2 (Interview Prep)",
+    "topic": "Why Namespaces Exist",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the purpose of Linux namespaces?",
+    "answer": null,
+    "notes": "Linux namespaces create the illusion that a process has its own private machine, not by creating a new kernel or modifying the hardware, but by changing the view of the process.",
+    "cloze_answer": null,
+    "options": [
+      "To create a new kernel for each container",
+      "To modify the hardware configuration for each container",
+      "To create the illusion that a process has its own private machine",
+      "To isolate each container's memory space"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "os_for_docker-ch02-s02-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 2 (Interview Prep)",
+    "topic": "PID Namespaces",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why can't Container A see Redis running in Container B when it executes ps?",
+    "answer": null,
+    "notes": "The kernel still knows about every process on the machine, but chooses to show each PID namespace only its own slice of that list.",
+    "cloze_answer": null,
+    "options": [
+      "Because Container B has a different kernel.",
+      "Because Docker creates a separate virtual machine.",
+      "Because the PID namespace gives each container its own process view.",
+      "Because each container has its own CPU."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "os_for_docker-ch02-s02-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 2 (Interview Prep)",
+    "topic": "PID Namespaces",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does the PID namespace create?",
+    "answer": null,
+    "notes": "The PID namespace, like Mount, Network, IPC, UTS, and User namespaces, creates a different view of the same resources, not new resources.",
+    "cloze_answer": null,
+    "options": [
+      "A new resource",
+      "A different view of the same resources",
+      "A separate virtual machine",
+      "A different kernel"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch02-s03-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 2 (Interview Prep)",
+    "topic": "Host PID vs Container PID",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the most likely reality in this scenario?",
+    "answer": null,
+    "notes": "The Python app is shown as PID 1 inside the container, and the host PID is also PID 1, so this is the most likely reality.",
+    "cloze_answer": null,
+    "options": [
+      "It is also PID 1 on the host.",
+      "Docker changes the Linux kernel PID numbering.",
+      "The container has its own Linux kernel.",
+      "Docker did not rename the host PID - it only changed what the process sees."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "os_for_docker-ch02-s03-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 2 (Interview Prep)",
+    "topic": "Host PID vs Container PID",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What can you see if you SSH into the host and run ps -ef?",
+    "answer": null,
+    "notes": "The host can see every process because the kernel owns all processes, and the container only sees the processes in its own PID namespace.",
+    "cloze_answer": null,
+    "options": [
+      "Only the host's own processes",
+      "Only the container's own processes",
+      "Every process, including container processes",
+      "No container processes"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "os_for_docker-ch02-s04-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 2 (Interview Prep)",
+    "topic": "PID Numbers Are Namespace-Local",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Who is responsible for creating and enforcing PID namespaces?",
+    "answer": null,
+    "notes": "Linux kernel creates and enforces PID namespaces; Docker simply asks the kernel to create a new namespace when starting a container.",
+    "cloze_answer": null,
+    "options": [
+      "Linux",
+      "Docker",
+      "The host kernel",
+      "The container's process manager"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "os_for_docker-ch02-s04-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 2 (Interview Prep)",
+    "topic": "PID Numbers Are Namespace-Local",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why can a container have a process with PID 1?",
+    "answer": null,
+    "notes": "PID numbers are local to that namespace; there are two different, namespace-local PID 1s, not two global PID 1s",
+    "cloze_answer": null,
+    "options": [
+      "Linux allows duplicate PIDs globally",
+      "Each container has its own PID namespace",
+      "Docker rewrites the kernel's PID table",
+      "Each container runs its own kernel"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch02-s05-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 2 (Interview Prep)",
+    "topic": "Signals Don't Cross Namespace Boundaries",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What happens when the nginx process in Container A executes kill -9 500?",
+    "answer": null,
+    "notes": "The kernel checks whether a process with PID 500 exists in that PID namespace, finds nothing, and returns 'No such process' (ESRCH).",
+    "cloze_answer": null,
+    "options": [
+      "It kills the Redis process in Container B",
+      "It kills the host process PID 500",
+      "It fails because PID 500 does not exist in Container A's PID namespace",
+      "It crashes the Linux kernel"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "os_for_docker-ch02-s05-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 2 (Interview Prep)",
+    "topic": "Signals Don't Cross Namespace Boundaries",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why can a process in one Docker container not signal processes in another container?",
+    "answer": null,
+    "notes": "Each container is in a separate PID namespace, so processes in one container cannot even see the PIDs of processes in another namespace.",
+    "cloze_answer": null,
+    "options": [
+      "Because Docker blocks it",
+      "Because each container is in a separate PID namespace, so processes in one container cannot even see the PIDs of processes in another namespace",
+      "Because of normal permissions and capabilities",
+      "Because of network isolation"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch02-s06-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 2 (Interview Prep)",
+    "topic": "Same Process, Different Identifiers",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which statement is correct?",
+    "answer": null,
+    "notes": "PID namespaces create an illusion, not a duplicate - there is exactly one Linux process, but it has a different PID number depending on which PID namespace (host vs container) is looking at it.",
+    "cloze_answer": null,
+    "options": [
+      "The Python app has two different processes.",
+      "Docker duplicated the Python app.",
+      "It is the same process, but it has a different PID in the host namespace and the container's PID namespace.",
+      "The container created its own Linux kernel."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "os_for_docker-ch02-s07-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 2 (Interview Prep)",
+    "topic": "Docker Configures, The Kernel Executes",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Who implements namespaces in a Docker setup?",
+    "answer": null,
+    "notes": "Linux implements namespaces, while Docker requests the kernel to create them while setting up the container.",
+    "cloze_answer": null,
+    "options": [
+      "Docker",
+      "Linux",
+      "Python",
+      "Container Runtime"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch02-s07-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 2 (Interview Prep)",
+    "topic": "Docker Configures, The Kernel Executes",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Who decides what PID is returned when a process inside a container calls `os.getpid()`?",
+    "answer": null,
+    "notes": "The Linux Kernel decides what PID is returned, not Docker or any other container-related entity.",
+    "cloze_answer": null,
+    "options": [
+      "Docker Engine",
+      "The Linux Kernel",
+      "Python",
+      "The Container Runtime"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch02-s08-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 2 (Interview Prep)",
+    "topic": "The Container Runtime",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Who actually asks Linux to create a container?",
+    "answer": null,
+    "notes": "Neither the Docker CLI nor Docker Engine (dockerd) creates containers directly - the component that actually asks Linux to create the container is the container runtime (runc), a small program whose only job is to create a container according to the OCI spec.",
+    "cloze_answer": null,
+    "options": [
+      "Docker Engine (dockerd)",
+      "Container Runtime (runc)",
+      "Docker CLI",
+      "The Linux kernel"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch02-s08-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 2 (Interview Prep)",
+    "topic": "The Container Runtime",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the most common runtime today?",
+    "answer": null,
+    "notes": "The most common runtime today is runc - a small program whose only job is to create a container according to the OCI (Open Container Initiative) specification.",
+    "cloze_answer": null,
+    "options": [
+      "dockerd",
+      "runc",
+      "CONTAINERD",
+      "crun"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch02-s09-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 2 (Interview Prep)",
+    "topic": "Mount Namespace",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What happens to the file created in the container's /tmp directory when the container exits?",
+    "answer": null,
+    "notes": "Without a bind mount, the container's /tmp belongs to the container's own filesystem, not the host's - the host genuinely has no idea the file exists, so ls returns 'No such file or directory.'",
+    "cloze_answer": null,
+    "options": [
+      "The file is stored in RAM and disappears immediately after creation.",
+      "The host automatically copies the file to its own /tmp directory.",
+      "The file exists on the host because both share the same kernel.",
+      "The host cannot see the file because it was created in the container's own filesystem."
+    ],
+    "correctIndex": 3
+  },
+  {
+    "id": "os_for_docker-ch02-s09-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 2 (Interview Prep)",
+    "topic": "Mount Namespace",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the purpose of the Mount Namespace?",
+    "answer": null,
+    "notes": "Mount Namespace answers 'what filesystem tree does this process see?'",
+    "cloze_answer": null,
+    "options": [
+      "To isolate processes by changing their PID view",
+      "To provide different views for processes",
+      "To duplicate hardware for different processes",
+      "To expose host directories intentionally"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch02-s10-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 2 (Interview Prep)",
+    "topic": "What's Still Pending",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the main difference between PID namespaces and Mount namespaces?",
+    "answer": null,
+    "notes": "PID namespaces manage process identity/visibility (which PIDs a process can see), while Mount namespaces manage which filesystem tree a process sees.",
+    "cloze_answer": null,
+    "options": [
+      "They handle process identity/visibility and filesystem view respectively",
+      "They are used for network and process isolation respectively",
+      "They are used for file system and process creation respectively",
+      "They are not related to each other"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "os_for_docker-ch02-s10-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 2 (Interview Prep)",
+    "topic": "What's Still Pending",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the implication of assuming a bind-mounted file deleted inside a container survives on the host?",
+    "answer": null,
+    "notes": "The correct assumption is that there is only ever one physical file, which is deleted when the bind-mounted file is deleted inside the container.",
+    "cloze_answer": null,
+    "options": [
+      "There is only ever one physical file",
+      "The file is recreated on the host",
+      "The file is deleted on the host",
+      "The file remains unchanged on the host"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "os_for_docker-ch02-s11-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 2 (Interview Prep)",
+    "topic": "Verified Against Real-World Practice",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why can't a child namespace see its parent's or siblings' processes?",
+    "answer": null,
+    "notes": "A process is visible within its own PID namespace and every ANCESTOR namespace back to the root, but not the reverse - a child namespace only ever sees its own (and further-nested descendant) processes, never its parent's or siblings'. This is the \"host sees all, container sees only its own\" rule.",
+    "cloze_answer": null,
+    "options": [
+      "Because the child namespace has a different PID namespace",
+      "Because the parent namespace has a different PID namespace",
+      "Because the child namespace can only see its own processes",
+      "Because the parent namespace is invisible to the child namespace"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "os_for_docker-ch02-s11-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 2 (Interview Prep)",
+    "topic": "Verified Against Real-World Practice",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What happens when you try to send a signal to a PID that is only visible in a different namespace?",
+    "answer": null,
+    "notes": "A PID only visible in a different, non-ancestor namespace is invisible to the sender and the call fails with ESRCH.",
+    "cloze_answer": null,
+    "options": [
+      "The signal is sent successfully",
+      "The signal is blocked by the namespace",
+      "The signal fails with ESRCH because the PID is invisible",
+      "The signal is redirected to the parent namespace"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "os_for_docker-ch03-s01-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "Why Network Namespaces Exist",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why can't one network namespace have two processes listening on the same IP + Port + Protocol combination?",
+    "answer": null,
+    "notes": "The correct answer explains why the kernel would have no way to know where to deliver the packet if two different processes both claimed the same address.",
+    "cloze_answer": null,
+    "options": [
+      "Because the network stack is not capable of handling multiple processes",
+      "Because the kernel would have no way to know where to deliver the packet",
+      "Because the process with the highest PID would get the port",
+      "Because the port is already in use by another process"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch03-s01-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "Why Network Namespaces Exist",
+    "label": null,
+    "type": "mcq",
+    "prompt": "If Container A and Container B each have their own Network Namespace, which statement is correct?",
+    "answer": null,
+    "notes": "The correct answer explains that each container has its own independent port table, so both can listen on port 80 simultaneously.",
+    "cloze_answer": null,
+    "options": [
+      "Both containers still share the host's port table, so only one can use port 80",
+      "Each container has its own independent port table, so both can listen on port 80 simultaneously",
+      "Docker rewrites one container to use port 8080 automatically",
+      "The Linux kernel randomly assigns different internal ports to containers"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch03-s02-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "Port Publishing And localhost",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What happens when someone opens http://localhost:80 from the host machine, but the container is not published?",
+    "answer": null,
+    "notes": "The request never leaves the host, as the kernel only checks the host's port table and finds nobody listening on 80, returning Connection refused",
+    "cloze_answer": null,
+    "options": [
+      "The request automatically reaches the container",
+      "Docker randomly chooses an available host port",
+      "The request goes only to whatever is listening on host port 80",
+      "The browser's localhost:80 resolves to the HOST's loopback interface"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "os_for_docker-ch03-s02-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "Port Publishing And localhost",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the correct interpretation of 'localhost' inside a container?",
+    "answer": null,
+    "notes": "The kernel asks which network namespace the calling process belongs to and resolves localhost inside that namespace",
+    "cloze_answer": null,
+    "options": [
+      "The host machine's localhost",
+      "The Docker daemon's localhost",
+      "The container's own loopback interface",
+      "Docker randomly decides based on the network mode"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "os_for_docker-ch03-s03-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "Connecting Isolated Namespaces",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why would containers in different network namespaces not be able to communicate with each other?",
+    "answer": null,
+    "notes": "namespaces provide isolation, but Linux can still deliberately connect namespaces together - and that is exactly what Docker's default bridge network does.",
+    "cloze_answer": null,
+    "options": [
+      "It fails because containers are in different network namespaces.",
+      "It succeeds because Docker connects the network namespaces using virtual networking.",
+      "It succeeds only if you publish port 80 using -p.",
+      "It reaches the host instead of Container A."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "os_for_docker-ch03-s03-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "Connecting Isolated Namespaces",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is a veth pair best described as?",
+    "answer": null,
+    "notes": "A veth pair is just a cable - it always has exactly two ends and connects exactly one namespace to another; it has no idea multiple containers even exist.",
+    "cloze_answer": null,
+    "options": [
+      "A virtual firewall that blocks packets between containers.",
+      "A virtual Ethernet cable with two connected endpoints; packets entering one end emerge from the other.",
+      "A virtual switch that connects all containers directly.",
+      "A replacement for the Linux kernel's network stack."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch03-s04-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "IP Allocation",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Who is primarily responsible for assigning an IP address to a container when it's attached to Docker's default bridge network?",
+    "answer": null,
+    "notes": "Docker's networking/IPAM component tracks which addresses in the bridge subnet are already used, picks the next free one, and then instructs the kernel to configure that address on the container's interface.",
+    "cloze_answer": null,
+    "options": [
+      "The Linux kernel",
+      "The application inside the container (e.g. nginx)",
+      "Docker's networking/IPAM component",
+      "The veth pair"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "os_for_docker-ch03-s05-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "Port Publishing And NAT",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the primary role of the Linux kernel in Docker networking?",
+    "answer": null,
+    "notes": "Docker sets up the kernel's environment (namespaces, veth pairs, iptables rules), but the kernel is the one that actually forwards every packet - the daemon does not sit in the path of individual packets.",
+    "cloze_answer": null,
+    "options": [
+      "Orchestrator",
+      "Packet forwarder",
+      "Setup configuration",
+      "Process isolator"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch03-s05-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "Port Publishing And NAT",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why does the client never need to know the container's IP address?",
+    "answer": null,
+    "notes": "The kernel rewrites the destination IP, making the container's IP irrelevant to the client.",
+    "cloze_answer": null,
+    "options": [
+      "The container's IP is used to communicate with the host",
+      "The host acts as a proxy",
+      "The kernel rewrites the destination IP",
+      "The container's IP is not relevant"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "os_for_docker-ch03-s06-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "Docker Daemon Steps Aside",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What happens to the already-installed NAT rules when the Docker daemon is killed?",
+    "answer": null,
+    "notes": "The Docker daemon is not involved in forwarding packets, so when it's killed, the Linux kernel's already-installed NAT rules continue to work.",
+    "cloze_answer": null,
+    "options": [
+      "Every packet fails, because the Docker daemon does the forwarding.",
+      "Traffic can still work, because forwarding is handled by the Linux kernel and its already-installed rules.",
+      "NAT rules are deleted, because the Docker daemon is responsible for managing them.",
+      "NAT rules are not affected, because the Docker daemon is still running."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch03-s06-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "Docker Daemon Steps Aside",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the Docker daemon responsible for in the Docker networking process?",
+    "answer": null,
+    "notes": "The Docker daemon is responsible for setting up the network namespace and creating veth pairs, but it is not involved in forwarding packets.",
+    "cloze_answer": null,
+    "options": [
+      "The Docker daemon is responsible for forwarding packets between containers.",
+      "The Docker daemon is responsible for setting up the network namespace and creating veth pairs.",
+      "The Docker daemon is responsible for managing the NAT rules and forwarding packets.",
+      "The Docker daemon is not involved in the networking process."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "os_for_docker-ch03-s07-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "iptables Chains",
+    "label": null,
+    "type": "mcq",
+    "prompt": "In which chain does the destination address rewrite (192.168.1.25:8080 -> 172.17.0.2:80) happen first?",
+    "answer": null,
+    "notes": "The address rewrite happens in PREROUTING - before any routing decision is made at all. That ordering is exactly why the chain is named PRE + ROUTING: NAT changes the address first, so that when the routing decision actually happens, it is already working with the NEW address (172.17.0.2, not 192.168.1.25) and correctly sends the packet to FORWARD instead of INPUT.",
+    "cloze_answer": null,
+    "options": [
+      "INPUT",
+      "FORWARD",
+      "PREROUTING",
+      "POSTROUTING"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "os_for_docker-ch03-s08-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "Reading An Actual iptables Rule",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the purpose of the '! -i docker0' clause in the iptables rule?",
+    "answer": null,
+    "notes": "The clause only matches packets not already arriving from the docker0 interface, i.e. packets coming from outside the Docker network.",
+    "cloze_answer": null,
+    "options": [
+      "To allow packets arriving from the docker0 interface",
+      "To only match packets not already arriving from the docker0 interface",
+      "To ignore all packets from the docker0 interface",
+      "To prioritize packets from the docker0 interface"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch03-s08-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "Reading An Actual iptables Rule",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the destination rewritten by the DNAT action?",
+    "answer": null,
+    "notes": "DNAT rewrites the destination IP address (and destination port) - it leaves the source IP address and source port completely unchanged.",
+    "cloze_answer": null,
+    "options": [
+      "The source IP address",
+      "The destination IP address",
+      "The source port",
+      "The destination port"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch03-s09-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "Connection Tracking (conntrack)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the essential difference between NAT and DNAT?",
+    "answer": null,
+    "notes": "NAT rewrites IP addresses and ports, while DNAT only rewrites ports.",
+    "cloze_answer": null,
+    "options": [
+      "NAT rewrites IP addresses, while DNAT rewrites ports.",
+      "NAT only rewrites IP addresses, while DNAT rewrites ports and protocols.",
+      "NAT rewrites IP addresses and ports, while DNAT only rewrites ports.",
+      "NAT only rewrites IP addresses, while DNAT rewrites IP addresses and protocols."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "os_for_docker-ch03-s09-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "Connection Tracking (conntrack)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What uniquely identifies each connection in Linux's connection tracking table?",
+    "answer": null,
+    "notes": "Linux tracks source IP, source port, destination IP, destination port, and protocol together to uniquely identify each connection.",
+    "cloze_answer": null,
+    "options": [
+      "Destination IP",
+      "Source IP, source port, destination IP, destination port, and protocol",
+      "Destination port and protocol",
+      "Source IP and destination port"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch03-s10-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "Container To Internet",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What gets rewritten in SNAT (Source NAT) and MASQUERADE to allow a container to access the internet?",
+    "answer": null,
+    "notes": "The source IP address of the container is rewritten to the host's IP address, allowing the packet to travel the internet normally.",
+    "cloze_answer": null,
+    "options": [
+      "Destination IP",
+      "Source IP",
+      "Host IP",
+      "Container IP"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch03-s10-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "Container To Internet",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why is rewriting the source IP address necessary for a container to access the internet?",
+    "answer": null,
+    "notes": "Rewriting the source IP address allows the packet to travel the internet normally, with the destination IP being rewritten later. This is necessary to prevent the container's private IP from being visible outside the host.",
+    "cloze_answer": null,
+    "options": [
+      "To prevent the container's private IP from being visible",
+      "To ensure the destination IP is rewritten",
+      "To handle DNS resolution",
+      "To implement port publishing"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "os_for_docker-ch03-s11-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "Routing",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does the Linux kernel check FIRST when a container packet needs to reach 8.8.8.8?",
+    "answer": null,
+    "notes": "A. Conntrack tracks existing connections and assists reverse NAT - it does not decide where a packet goes, so it can't be the first step. The kernel checks the ROUTING TABLE first: for 8.8.8.8, docker0's 172.17.0.0/16 route does not match, so it falls to the default route via eth0.",
+    "cloze_answer": null,
+    "options": [
+      "Conntrack table",
+      "Routing table",
+      "Docker daemon",
+      "iptables NAT rules"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch03-s11-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "Routing",
+    "label": null,
+    "type": "mcq",
+    "prompt": "If the kernel sent this exact packet onto the internet without modifying it, what would be the biggest problem?",
+    "answer": null,
+    "notes": "A is tempting but wrong - Google does not care what the source address is on a request it receives, it will process it fine. The problem is not the request, it's the REPLY: Google would address its response to 172.17.0.2, and every router on the public internet would look at that address and refuse to route it - it's a private, non-routable range.",
+    "cloze_answer": null,
+    "options": [
+      "Google would not receive the packet at all.",
+      "Google would try to send its response to 172.17.0.2, which is not routable on the internet.",
+      "The Docker daemon would automatically block the packet.",
+      "Conntrack would drop the packet."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch03-s12-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "Inside MASQUERADE",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What actually changes when a container's packet leaves the host with Linux applying MASQUERADE?",
+    "answer": null,
+    "notes": "The destination IP stays as the container set it, but the source IP changes to the host's translated IP. The MAC address only changes at Layer 2 and is not relevant here.",
+    "cloze_answer": null,
+    "options": [
+      "The destination IP changes.",
+      "The source IP changes.",
+      "Both source and destination change.",
+      "Only the MAC address changes."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch03-s12-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "Inside MASQUERADE",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why does Linux rewrite the source port when applying SNAT/MASQUERADE?",
+    "answer": null,
+    "notes": "Rewriting the port keeps every connection uniquely identifiable, even though they now share the exact same source IP.",
+    "cloze_answer": null,
+    "options": [
+      "So multiple containers can share one host IP without their connections colliding.",
+      "Google only accepts port 61000.",
+      "The Docker daemon dislikes the original source port.",
+      "TCP always randomizes the port."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "os_for_docker-ch03-s12-mcq3",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "Inside MASQUERADE",
+    "label": null,
+    "type": "mcq",
+    "prompt": "How many different source IPs does Google actually see when Container A and Container B run curl https://google.com at the same time?",
+    "answer": null,
+    "notes": "Google sees exactly one IP (the host's, e.g. 192.168.1.25) for every container behind it - private container IPs are never exposed to the internet. Multiple containers are distinguished only by source port (61000, 61001, ...), which is why option D (\"0, Google can't see a source IP at all\") is wrong - TCP/IP always carries a source IP or a response could never be addressed.",
+    "cloze_answer": null,
+    "options": [
+      "2 (172.17.0.2 and 172.17.0.3).",
+      "2 (two different host IPs).",
+      "1 - the host's IP; only the source ports may differ.",
+      "0 - Google can't see a source IP at all."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "os_for_docker-ch03-s13-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "What's Still Pending",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why does the routing table get consulted before any NAT can run?",
+    "answer": null,
+    "notes": "NAT cannot run first because it needs to already know which direction/interface the packet is going before it can rewrite it correctly - you cannot rewrite a packet for an interface you have not chosen yet. Sequence is always: Routing Decision -> NAT (DNAT/MASQUERADE) -> Send Packet.",
+    "cloze_answer": null,
+    "options": [
+      "To ensure the packet is delivered to the correct container",
+      "To determine which outbound interface/gateway the packet will use, since NAT needs to know that before it can rewrite the packet accordingly",
+      "To rewrite the packet's source IP address",
+      "To map translated connections back to the right container"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch03-s13-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "What's Still Pending",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the only thing that the internet ever sees for every container behind it?",
+    "answer": null,
+    "notes": "The correct answer is that the internet only ever sees one host IP for every container behind it. The other options are incorrect because they do not accurately describe the way the internet sees the container's IP address.",
+    "cloze_answer": null,
+    "options": [
+      "The container's IP address",
+      "The host's IP address",
+      "The container's port",
+      "One host IP"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "id": "os_for_docker-ch03-s14-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "Verified Against Real-World Practice",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why does Docker's DNAT rule live in the PREROUTING chain?",
+    "answer": null,
+    "notes": "PREROUTING runs before any routing decision is made. DNAT has to rewrite the destination to the private bridge-network address (172.17.0.2) BEFORE routing decides where to send the packet - otherwise routing would see the original host-facing address and send the packet to INPUT instead of FORWARD.",
+    "cloze_answer": null,
+    "options": [
+      "To rewrite the destination address to a non-local bridge-network address",
+      "To inspect the packet's source and destination ports",
+      "To check the packet's routing decision before rewriting the destination",
+      "To rewrite the source address to the host's own IP"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "os_for_docker-ch03-s14-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 3 (Interview Prep)",
+    "topic": "Verified Against Real-World Practice",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the main purpose of Docker's MASQUERADE rule in the POSTROUTING chain?",
+    "answer": null,
+    "notes": "POSTROUTING runs after the routing decision is already made, once the outbound interface is known - which is exactly when MASQUERADE rewrites the source IP to the host's own address, since it needs to know which interface/IP to rewrite to.",
+    "cloze_answer": null,
+    "options": [
+      "To rewrite the destination address to a non-local bridge-network address",
+      "To rewrite the source address to the host's own IP",
+      "To inspect the packet's source and destination ports",
+      "To check the packet's routing decision before rewriting the destination"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch04-s01-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 4 (Interview Prep)",
+    "topic": "Routing Table vs Conntrack",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which component is why Linux always knows which container a given incoming response belongs to?",
+    "answer": null,
+    "notes": "Only conntrack holds the mapping needed to reverse the translation.",
+    "cloze_answer": null,
+    "options": [
+      "Routing Table",
+      "docker0 Bridge",
+      "Conntrack Table",
+      "Docker Daemon"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "os_for_docker-ch04-s01-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 4 (Interview Prep)",
+    "topic": "Routing Table vs Conntrack",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which component handles the decision of which interface a packet should be forwarded through?",
+    "answer": null,
+    "notes": "The Routing Table decides the path.",
+    "cloze_answer": null,
+    "options": [
+      "Routing Table",
+      "Conntrack Table",
+      "Docker Daemon",
+      "MASQUERADE Rule"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "os_for_docker-ch04-s02-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 4 (Interview Prep)",
+    "topic": "A Production Incident",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the FIRST effect of flushing the conntrack table mid-connection?",
+    "answer": null,
+    "notes": "Existing internet connections' responses become difficult to reverse-NAT. The other options are wrong because: A - all containers stop (conntrack tracks connections, not process lifecycles), C - daemon crashes (dockerd has no runtime dependency on the conntrack table), D - routing table deleted (flushing one has no effect on the other).",
+    "cloze_answer": null,
+    "options": [
+      "All containers immediately stop.",
+      "Existing internet connections' responses become difficult to reverse-NAT.",
+      "The Docker daemon crashes.",
+      "The routing table gets deleted."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch04-s03-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 4 (Interview Prep)",
+    "topic": "Losing MASQUERADE, Keeping Everything Else",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the most likely result when a container runs curl https://google.com and the host's MASQUERADE rule has been deleted?",
+    "answer": null,
+    "notes": "The response cannot reliably return because the source stays the private IP 172.17.x.x, which is not a valid return address on the public internet. The packet may be dropped upstream, or reach Google but have no usable path back to the container.",
+    "cloze_answer": null,
+    "options": [
+      "Everything works normally.",
+      "The request can reach Google, but the response cannot reliably return.",
+      "Docker automatically re-adds the MASQUERADE rule for every packet.",
+      "Conntrack rewrites the source IP itself."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch04-s04-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 4 (Interview Prep)",
+    "topic": "Reading Real Interface Output",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which interface is most likely connected to the home/office LAN (Wi-Fi or Ethernet)?",
+    "answer": null,
+    "notes": "lo is the loopback interface, docker0 and br-8a2c... are Docker-created virtual bridges, but eth0 sits in a typical private LAN range",
+    "cloze_answer": null,
+    "options": [
+      "lo",
+      "eth0",
+      "docker0",
+      "br-8a2c..."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch04-s04-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 4 (Interview Prep)",
+    "topic": "Reading Real Interface Output",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is actually being pinged when running ping 172.17.0.1 from inside a container?",
+    "answer": null,
+    "notes": "The ICMP packet travels from the container to the host's docker0 bridge interface, which is answered by the Linux kernel directly, not by the Docker daemon",
+    "cloze_answer": null,
+    "options": [
+      "The home router",
+      "The Docker daemon",
+      "The host's docker0 bridge interface",
+      "Another container"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "os_for_docker-ch04-s05-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 4 (Interview Prep)",
+    "topic": "How Linux Picks An Interface",
+    "label": null,
+    "type": "mcq",
+    "prompt": "How does Linux decide to send a packet to 172.17.0.2?",
+    "answer": null,
+    "notes": "Linux compares the destination address against every route's network range and sends the packet out whichever interface matches.",
+    "cloze_answer": null,
+    "options": [
+      "The Docker daemon intercepts every packet and chooses the interface.",
+      "Linux checks its routing table and picks the route whose network matches the destination address.",
+      "The application specifies which interface to use.",
+      "The packet is broadcast on every interface until the destination responds."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch04-s05-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 4 (Interview Prep)",
+    "topic": "How Linux Picks An Interface",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does the /16 in the IP address mean?",
+    "answer": null,
+    "notes": "The first 16 bits are the NETWORK ID and the remaining 16 bits are the HOST ID.",
+    "cloze_answer": null,
+    "options": [
+      "The first 16 bits identify the host ID and the remaining 16 bits identify the network ID.",
+      "The first 16 bits identify the network ID and the remaining 16 bits identify the host ID.",
+      "The /16 refers to 16 devices that can be connected to the network.",
+      "The /16 indicates the first 16 bits of the IP address are the network ID."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch04-s06-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 4 (Interview Prep)",
+    "topic": "ip route, Default Gateway",
+    "label": null,
+    "type": "mcq",
+    "prompt": "A packet needs to go to 172.17.5.10. What does Linux do?",
+    "answer": null,
+    "notes": "Linux checks each route in turn: does 172.17.5.10 fall inside 172.17.0.0/16? Yes - first 16 bits match (172.17). Does it fall inside 192.168.1.0/24? No. A specific route already matched, so the default route is never consulted.",
+    "cloze_answer": null,
+    "options": [
+      "Use eth0 because that's connected to the internet.",
+      "Use the default route because every packet uses the default gateway.",
+      "Use docker0 because 172.17.5.10 matches the 172.17.0.0/16 route.",
+      "Broadcast the packet on both interfaces."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "os_for_docker-ch04-s06-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 4 (Interview Prep)",
+    "topic": "ip route, Default Gateway",
+    "label": null,
+    "type": "mcq",
+    "prompt": "A packet needs to go to 172.17.5.10 - it matches BOTH 172.17.0.0/16 and 172.17.5.0/24. Which route does Linux choose?",
+    "answer": null,
+    "notes": "This is Longest Prefix Match (LPM): when multiple routes match a destination, Linux always picks the one with the longest (most specific) prefix - here, /24 over /16, since matching 24 bits is a stricter requirement than matching only 16.",
+    "cloze_answer": null,
+    "options": [
+      "Whichever is written first in the routing table.",
+      "A random match.",
+      "The /24 route, because it is more specific than the /16 route.",
+      "The default route."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "os_for_docker-ch04-s07-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 4 (Interview Prep)",
+    "topic": "Layer 2 And The ARP Question",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the FIRST step when a host with IP 192.168.1.25 and MAC AA:AA:AA:AA:AA:AA needs to reach 192.168.1.50, but does not know the destination's MAC address?",
+    "answer": null,
+    "notes": "The correct answer is broadcasting an ARP request asking 'Who has 192.168.1.50?' to find the destination's MAC address.",
+    "cloze_answer": null,
+    "options": [
+      "send the packet directly to the IP address",
+      "broadcast an ARP request asking 'Who has 192.168.1.50?',",
+      "ask the Docker daemon for the MAC address",
+      "send every packet to the default gateway"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch04-s09-mcq1",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 4 (Interview Prep)",
+    "topic": "Verified Against Real-World Practice",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the purpose of the routing table in a Linux system?",
+    "answer": null,
+    "notes": "The routing table only ever decides which interface/next-hop a packet uses based on its destination address - it holds no per-connection or per-container state, and cannot answer 'which container does this response belong to'.",
+    "cloze_answer": null,
+    "options": [
+      "It holds per-connection or per-container state and answers 'which container does this response belong to'.",
+      "It decides which interface/next-hop a packet uses based on its destination address.",
+      "It performs the packet rewrite itself.",
+      "It identifies each flow by its 5-tuple and is precisely the mechanism that lets reverse NAT correctly reassociate a reply with its original, pre-translation connection."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "os_for_docker-ch04-s09-mcq2",
+    "subject": "OS For Docker",
+    "block": "OS For Docker — Chapter 4 (Interview Prep)",
+    "topic": "Verified Against Real-World Practice",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does a /16 or /24 CIDR prefix mean in an IPv4 address?",
+    "answer": null,
+    "notes": "A /16 or /24 CIDR prefix means the first N bits of an IPv4 address form the network portion, with the remaining bits identifying hosts within that network - /16 = mask 255.255.0.0 (65,534 usable hosts), /24 = mask 255.255.255.0 (254 usable hosts)",
+    "cloze_answer": null,
+    "options": [
+      "It is a random IP address prefix.",
+      "It means the first N bits of an IPv4 address form the network portion, with the remaining bits identifying hosts within that network.",
+      "It is a specific IP address used for routing.",
+      "It is a type of DNS resolution."
+    ],
+    "correctIndex": 1
   }
 ]
