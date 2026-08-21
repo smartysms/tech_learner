@@ -2,6 +2,7 @@ const STATE_KEY = "srsState";
 const LOG_KEY = "reviewLog";
 const LOG_CAP = 20000; // defensive cap, realistically never hit
 const UNLOCKED_KEY = "unlockedAchievements";
+const MAX_SEARCH_RESULTS = 150;
 
 let questions = [];
 let flows = [];
@@ -286,6 +287,157 @@ function renderFlowDetail(flow) {
 function flowsGoBack() {
   const prev = flowsBackStack.pop();
   if (prev) prev();
+}
+
+// --- Search: full-text lookup across every card, every subject, every card
+// type (recall/cloze/mcq/match). Unlike the review flow, results show the
+// full prompt + answer/options/pairs + notes immediately (expanded by
+// default) - this is a reference/lookup mode, not a graded review, so there's
+// no reason to hide the answer. Purely client-side substring match over the
+// already-loaded `questions` array (a few thousand cards - trivial to filter
+// on every keystroke, no need for an index or debounce).
+
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+function escapeRegExp(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+// Escapes text and query the same way before matching, so the highlight
+// regex lines up correctly even when the query itself contains HTML-special
+// characters (e.g. searching for `<int:id>`).
+function highlightMatch(text, query) {
+  const escaped = escapeHtml(text);
+  if (!query) return escaped;
+  const re = new RegExp(escapeRegExp(escapeHtml(query)), "ig");
+  return escaped.replace(re, (m) => `<mark>${m}</mark>`);
+}
+
+function cardSearchableFields(card) {
+  const parts = [card.prompt, card.answer, card.notes, card.topic, card.block, card.subject, card.cloze_answer];
+  if (Array.isArray(card.options)) parts.push(...card.options);
+  if (Array.isArray(card.tags)) parts.push(...card.tags);
+  if (Array.isArray(card.pairs)) {
+    for (const p of card.pairs) parts.push(p.left, p.right);
+  }
+  return parts.filter(Boolean);
+}
+
+function cardMatchesQuery(card, q) {
+  return cardSearchableFields(card).some((f) => String(f).toLowerCase().includes(q));
+}
+
+// Cards whose prompt/topic directly contains the query rank above cards that
+// only match somewhere in the answer/notes - keeps the most relevant result
+// on top without needing real search-engine scoring for a few thousand cards.
+function searchScore(card, q) {
+  const primary = `${card.prompt || ""} ${card.topic || ""}`.toLowerCase();
+  return primary.includes(q) ? 2 : 1;
+}
+
+function runSearch(query) {
+  const q = query.toLowerCase();
+  const matches = questions.filter((c) => cardMatchesQuery(c, q));
+  matches.sort((a, b) => searchScore(b, q) - searchScore(a, q));
+  return matches;
+}
+
+// Cloze cards without MCQ-style options have no other place to show the
+// answer in a collapsed-prompt view, so fill {{blank}} in directly.
+function promptForDisplay(card) {
+  if (card.type === "cloze" && (!Array.isArray(card.options) || card.options.length === 0)) {
+    return (card.prompt || "").replace("{{blank}}", `[${card.cloze_answer || "..."}]`);
+  }
+  return card.prompt || "";
+}
+
+function renderSearchResultDetail(card, q) {
+  const parts = [];
+  if (card.type === "match" && Array.isArray(card.pairs)) {
+    parts.push(
+      `<ul class="search-match-pairs">${card.pairs
+        .map((p) => `<li>${highlightMatch(p.left, q)} &rarr; ${highlightMatch(p.right, q)}</li>`)
+        .join("")}</ul>`
+    );
+  } else if (Array.isArray(card.options) && card.options.length > 0) {
+    const correctIdx =
+      card.type === "mcq"
+        ? card.correctIndex
+        : card.options.findIndex((o) => o.trim().toLowerCase() === (card.cloze_answer || "").trim().toLowerCase());
+    parts.push(
+      `<ul class="search-options">${card.options
+        .map((o, i) => `<li class="${i === correctIdx ? "search-option-correct" : ""}">${highlightMatch(o, q)}</li>`)
+        .join("")}</ul>`
+    );
+  } else if (card.answer) {
+    parts.push(`<p class="search-answer">${highlightMatch(card.answer, q)}</p>`);
+  }
+  if (card.notes) parts.push(`<p class="search-notes">${highlightMatch(card.notes, q)}</p>`);
+  return parts.join("");
+}
+
+function renderSearchResultItem(card, q) {
+  const wrap = document.createElement("div");
+  wrap.className = "search-result";
+
+  const head = document.createElement("button");
+  head.type = "button";
+  head.className = "search-result-head";
+  head.innerHTML = `
+    <div class="search-result-tags">
+      <span class="tag tag-subject">${escapeHtml(card.subject || "")}</span>
+      <span class="tag">${escapeHtml(card.topic || "")}</span>
+    </div>
+    <div class="search-result-prompt">${highlightMatch(promptForDisplay(card), q)}</div>
+  `;
+
+  const body = document.createElement("div");
+  body.className = "search-result-body";
+  body.innerHTML = renderSearchResultDetail(card, q);
+
+  head.addEventListener("click", () => {
+    body.hidden = !body.hidden;
+  });
+
+  wrap.appendChild(head);
+  wrap.appendChild(body);
+  return wrap;
+}
+
+function renderSearchResults(query) {
+  const container = document.getElementById("search-results");
+  const emptyEl = document.getElementById("search-empty");
+  const countEl = document.getElementById("search-count");
+  const q = query.trim();
+  container.innerHTML = "";
+
+  if (q.length < 2) {
+    emptyEl.hidden = true;
+    countEl.hidden = true;
+    return;
+  }
+
+  const results = runSearch(q);
+  if (results.length === 0) {
+    emptyEl.hidden = false;
+    countEl.hidden = true;
+    return;
+  }
+  emptyEl.hidden = true;
+
+  const shown = results.slice(0, MAX_SEARCH_RESULTS);
+  countEl.hidden = false;
+  countEl.textContent =
+    results.length > MAX_SEARCH_RESULTS
+      ? `Showing first ${MAX_SEARCH_RESULTS} of ${results.length} matches - refine your search`
+      : `${results.length} match${results.length === 1 ? "" : "es"}`;
+
+  const qLower = q.toLowerCase();
+  for (const card of shown) {
+    container.appendChild(renderSearchResultItem(card, qLower));
+  }
 }
 
 // --- Stats: personal usage analytics, computed entirely from reviewLog ---
@@ -982,6 +1134,13 @@ function init() {
     showScreen("stats-screen");
   });
   document.getElementById("stats-back-btn").addEventListener("click", () => showScreen("review-screen"));
+
+  document.getElementById("search-open-btn").addEventListener("click", () => {
+    showScreen("search-screen");
+    document.getElementById("search-input").focus();
+  });
+  document.getElementById("search-back-btn").addEventListener("click", () => showScreen("review-screen"));
+  document.getElementById("search-input").addEventListener("input", (e) => renderSearchResults(e.target.value));
 }
 
 if ("serviceWorker" in navigator) {

@@ -632,6 +632,125 @@ pre#card-sql {
   font-size: 1rem;
 }
 
+/* --- Search: full-text lookup across all cards --- */
+
+#search-title {
+  font-size: 1.1rem;
+  margin: 0.5rem 0 1rem;
+}
+
+#search-input {
+  width: 100%;
+  font: inherit;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--fg);
+  margin-bottom: 0.75rem;
+}
+
+.search-count {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin: 0 0 0.75rem;
+}
+
+#search-results {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.search-result {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.search-result-head {
+  width: 100%;
+  text-align: left;
+  background: var(--bg);
+  border: none;
+  border-radius: 0;
+  color: var(--fg);
+  padding: 0.7rem 0.9rem;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.search-result-tags {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.search-result-tags .tag {
+  font-size: 0.68rem;
+}
+
+.search-result-prompt {
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.search-result-body {
+  padding: 0.75rem 0.9rem 0.9rem;
+  border-top: 1px solid var(--border);
+  background: var(--card-bg);
+}
+
+.search-answer {
+  margin: 0 0 0.5rem;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.search-notes {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.search-options,
+.search-match-pairs {
+  list-style: none;
+  margin: 0 0 0.5rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.search-options li,
+.search-match-pairs li {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem 0.65rem;
+  font-size: 0.85rem;
+}
+
+.search-option-correct {
+  border-color: var(--easy) !important;
+  background: color-mix(in srgb, var(--easy) 15%, var(--bg));
+}
+
+mark {
+  background: color-mix(in srgb, var(--accent) 35%, transparent);
+  color: inherit;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+#search-empty {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 /* --- Card transition + tap feedback (see conversation: Duolingo research) --- */
 
 @keyframes card-enter {

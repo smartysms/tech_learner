@@ -12,6 +12,7 @@
     <h1>Deep Dive SRS</h1>
     <div class="header-right">
       <span id="due-count"></span>
+      <button id="search-open-btn" class="header-btn">Search</button>
       <button id="cram-open-btn" class="header-btn">Cram</button>
       <button id="flows-open-btn" class="header-btn">Flows</button>
       <button id="stats-open-btn" class="header-btn">Stats</button>
@@ -25,6 +26,15 @@
     <button id="stats-back-btn" class="header-btn">&larr; Back</button>
     <h2 id="stats-title">Stats</h2>
     <div id="stats-content"></div>
+  </main>
+
+  <main id="search-screen" hidden>
+    <button id="search-back-btn" class="header-btn">&larr; Back</button>
+    <h2 id="search-title">Search</h2>
+    <input id="search-input" type="search" autocomplete="off" autocapitalize="off" placeholder="Search any term, e.g. in-flight request..." />
+    <p id="search-count" class="search-count" hidden></p>
+    <div id="search-results"></div>
+    <p id="search-empty" hidden>No matches yet - try a different term.</p>
   </main>
 
   <main id="cram-picker-screen" hidden>
