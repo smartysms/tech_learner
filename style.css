@@ -314,3 +314,71 @@ pre#card-sql {
   font-size: 1.05rem;
   line-height: 1.6;
 }
+
+#stats-title {
+  font-size: 1.1rem;
+  margin: 0.75rem 0 1rem;
+}
+
+.stat-section {
+  margin-bottom: 1.5rem;
+}
+
+.stat-section h3 {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+
+.stat-totals {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.stat-totals strong {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.stat-totals span {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.stat-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.stat-bar-label {
+  flex: 0 0 40%;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.stat-bar-track {
+  flex: 1;
+  background: var(--bg);
+  border-radius: 4px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.stat-bar-fill {
+  background: var(--accent);
+  height: 100%;
+  border-radius: 4px;
+}
+
+.stat-bar-value {
+  flex: 0 0 auto;
+  font-weight: 600;
+  min-width: 2em;
+  text-align: right;
+}

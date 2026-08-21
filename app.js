@@ -1,8 +1,11 @@
 const STATE_KEY = "srsState";
+const LOG_KEY = "reviewLog";
+const LOG_CAP = 20000; // defensive cap, realistically never hit
 
 let questions = [];
 let flows = [];
 let srsState = {};
+let reviewLog = [];
 let queue = [];
 let reviewedCount = 0;
 let cramMode = false;
@@ -20,6 +23,47 @@ function loadState() {
 
 function saveState() {
   localStorage.setItem(STATE_KEY, JSON.stringify(srsState));
+}
+
+function loadReviewLog() {
+  try {
+    const raw = localStorage.getItem(LOG_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch {
+    return [];
+  }
+}
+
+function logReview(card, rating) {
+  reviewLog.push({
+    ts: Date.now(),
+    cardId: card.id,
+    subject: card.subject,
+    block: card.block,
+    topic: card.topic,
+    rating,
+  });
+  if (reviewLog.length > LOG_CAP) reviewLog = reviewLog.slice(-LOG_CAP);
+  localStorage.setItem(LOG_KEY, JSON.stringify(reviewLog));
+}
+
+// Local-calendar-date helpers for a timestamp - same reasoning as srs.js's
+// todayISO()/addDaysISO(): never use toISOString() here, it converts to UTC
+// and shifts dates a day in timezones ahead of UTC (e.g. IST).
+function localDateStr(ts) {
+  const d = new Date(ts);
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
+}
+
+function daysBetween(aStr, bStr) {
+  const [ay, am, ad] = aStr.split("-").map(Number);
+  const [by, bm, bd] = bStr.split("-").map(Number);
+  const a = new Date(ay, am - 1, ad);
+  const b = new Date(by, bm - 1, bd);
+  return Math.round((a - b) / 86400000);
 }
 
 function ensureCardState(id) {
@@ -238,6 +282,147 @@ function flowsGoBack() {
   if (prev) prev();
 }
 
+// --- Stats: personal usage analytics, computed entirely from reviewLog ---
+// Per-device only (localStorage) - no accounts, no backend, no cross-device
+// sync. See LEARNING_TECHNIQUES.md / conversation history for why.
+
+function statsTotals() {
+  const today = todayISO();
+  const total = reviewLog.length;
+  const todayCount = reviewLog.filter((r) => localDateStr(r.ts) === today).length;
+
+  const studiedDates = new Set(reviewLog.map((r) => localDateStr(r.ts)));
+  let streak = 0;
+  let cursor = today;
+  while (studiedDates.has(cursor)) {
+    streak += 1;
+    cursor = addDaysISO(cursor, -1);
+  }
+  return { total, today: todayCount, streak };
+}
+
+const HOUR_BANDS = [
+  { label: "Night (12am-6am)", test: (h) => h >= 0 && h < 6 },
+  { label: "Morning (6am-12pm)", test: (h) => h >= 6 && h < 12 },
+  { label: "Afternoon (12pm-6pm)", test: (h) => h >= 12 && h < 18 },
+  { label: "Evening (6pm-12am)", test: (h) => h >= 18 && h < 24 },
+];
+
+function statsByHourBand() {
+  const counts = HOUR_BANDS.map((b) => ({ label: b.label, count: 0 }));
+  for (const r of reviewLog) {
+    const hour = new Date(r.ts).getHours();
+    const idx = HOUR_BANDS.findIndex((b) => b.test(hour));
+    if (idx !== -1) counts[idx].count += 1;
+  }
+  return counts;
+}
+
+function statsBySubject() {
+  const counts = new Map();
+  for (const r of reviewLog) counts.set(r.subject, (counts.get(r.subject) || 0) + 1);
+  return [...counts.entries()].map(([subject, count]) => ({ subject, count })).sort((a, b) => b.count - a.count);
+}
+
+function statsWeakTopics(minSamples = 3, topN = 8) {
+  const byTopic = new Map();
+  for (const r of reviewLog) {
+    const key = `${r.subject}::${r.topic}`;
+    if (!byTopic.has(key)) byTopic.set(key, { subject: r.subject, topic: r.topic, total: 0, again: 0 });
+    const entry = byTopic.get(key);
+    entry.total += 1;
+    if (r.rating === "again") entry.again += 1;
+  }
+  return [...byTopic.values()]
+    .filter((e) => e.total >= minSamples)
+    .map((e) => ({ ...e, againRate: e.again / e.total }))
+    .sort((a, b) => b.againRate - a.againRate)
+    .slice(0, topN);
+}
+
+function statsWeeklyAccuracy(weeks = 8) {
+  const today = todayISO();
+  const buckets = Array.from({ length: weeks }, (_, i) => ({
+    label: i === 0 ? "This week" : `${i}w ago`,
+    good: 0,
+    total: 0,
+  }));
+
+  for (const r of reviewLog) {
+    const daysAgo = daysBetween(today, localDateStr(r.ts));
+    const weekIdx = Math.floor(daysAgo / 7);
+    if (weekIdx < 0 || weekIdx >= weeks) continue;
+    buckets[weekIdx].total += 1;
+    if (r.rating === "good" || r.rating === "easy") buckets[weekIdx].good += 1;
+  }
+
+  return buckets.reverse().filter((b) => b.total > 0);
+}
+
+function barRow(label, count, max, extra = "") {
+  const pct = max > 0 ? Math.round((count / max) * 100) : 0;
+  return `<div class="stat-bar-row">
+    <span class="stat-bar-label">${label}</span>
+    <div class="stat-bar-track"><div class="stat-bar-fill" style="width:${pct}%"></div></div>
+    <span class="stat-bar-value">${count}${extra}</span>
+  </div>`;
+}
+
+function renderStats() {
+  const container = document.getElementById("stats-content");
+
+  if (reviewLog.length === 0) {
+    container.innerHTML = "<p>No reviews logged yet - stats fill in as you study.</p>";
+    document.getElementById("stats-title").textContent = "Stats";
+    return;
+  }
+
+  const totals = statsTotals();
+  const hourBands = statsByHourBand();
+  const bySubject = statsBySubject();
+  const weakTopics = statsWeakTopics();
+  const weekly = statsWeeklyAccuracy();
+
+  const sections = [];
+
+  sections.push(`<div class="stat-section">
+    <div class="stat-totals">
+      <div><strong>${totals.total}</strong><span>total reviews</span></div>
+      <div><strong>${totals.today}</strong><span>today</span></div>
+      <div><strong>${totals.streak}</strong><span>day streak</span></div>
+    </div>
+  </div>`);
+
+  const maxHour = Math.max(...hourBands.map((b) => b.count), 1);
+  sections.push(`<div class="stat-section"><h3>When you study</h3>
+    ${hourBands.map((b) => barRow(b.label, b.count, maxHour)).join("")}
+  </div>`);
+
+  const maxSubject = Math.max(...bySubject.map((b) => b.count), 1);
+  sections.push(`<div class="stat-section"><h3>Subject breakdown</h3>
+    ${bySubject.map((b) => barRow(b.subject, b.count, maxSubject)).join("")}
+  </div>`);
+
+  if (weakTopics.length > 0) {
+    sections.push(`<div class="stat-section"><h3>Weak spots (highest "Again" rate)</h3>
+      ${weakTopics
+        .map((t) => barRow(`${t.topic} (${t.subject})`, Math.round(t.againRate * 100), 100, "%"))
+        .join("")}
+    </div>`);
+  }
+
+  if (weekly.length > 0) {
+    sections.push(`<div class="stat-section"><h3>Accuracy trend (Good+Easy %, by week)</h3>
+      ${weekly
+        .map((w) => barRow(w.label, Math.round((w.good / w.total) * 100), 100, "%"))
+        .join("")}
+    </div>`);
+  }
+
+  container.innerHTML = sections.join("");
+  document.getElementById("stats-title").textContent = "Stats";
+}
+
 function renderCurrentCard() {
   if (queue.length === 0) {
     renderDone();
@@ -337,11 +522,14 @@ function handleRate(rating) {
   const card = queue.shift();
   srsState[card.id] = updateCard(srsState[card.id], rating);
   saveState();
+  logReview(card, rating);
   reviewedCount += 1;
   renderCurrentCard();
 }
 
 function init() {
+  reviewLog = loadReviewLog();
+
   fetch("questions.json")
     .then((r) => r.json())
     .then((data) => {
@@ -389,6 +577,12 @@ function init() {
     showScreen("flows-screen");
   });
   document.getElementById("flows-back-btn").addEventListener("click", flowsGoBack);
+
+  document.getElementById("stats-open-btn").addEventListener("click", () => {
+    renderStats();
+    showScreen("stats-screen");
+  });
+  document.getElementById("stats-back-btn").addEventListener("click", () => showScreen("review-screen"));
 }
 
 if ("serviceWorker" in navigator) {
