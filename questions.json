@@ -28277,25 +28277,6 @@
     "correctIndex": 2
   },
   {
-    "id": "kafka-ch17-s01-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 17 (Interview Prep)",
-    "topic": "Every Partition Has Exactly One Leader",
-    "label": null,
-    "type": "mcq",
-    "prompt": "In a Kafka cluster, what is the role of a follower broker for a topic's partition?",
-    "answer": null,
-    "notes": "A follower broker replicates the leader's data and can take over in case of failure. Options 1 and 3 are incorrect as they describe the leader's role, while option 2 is also incorrect as a follower is not the primary broker for read requests.",
-    "cloze_answer": null,
-    "options": [
-      "The leader that replicates to other brokers",
-      "The primary broker that processes all read requests",
-      "A replica that can handle read requests in case of leader failure",
-      "The broker that is always responsible for storing the topic's data"
-    ],
-    "correctIndex": 2
-  },
-  {
     "id": "kafka-ch17-s01-mcq2",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 17 (Interview Prep)",
@@ -28372,25 +28353,6 @@
     "correctIndex": 1
   },
   {
-    "id": "kafka-ch17-s03-mcq3",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 17 (Interview Prep)",
-    "topic": "Why Not One FetchRequest Per Partition?",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Which statement is most accurate?",
-    "answer": null,
-    "notes": "The request count tracks LEADER BROKERS involved (one, here), never raw partition count.",
-    "cloze_answer": null,
-    "options": [
-      "Kafka sends 100 separate FetchRequests because there are 100 partitions",
-      "Kafka sends one FetchRequest containing all 100 partitions (subject to fetch limits), reducing network overhead",
-      "Kafka randomly selects a subset of partitions on each fetch",
-      "The broker forwards the request to other brokers before responding"
-    ],
-    "correctIndex": 1
-  },
-  {
     "id": "kafka-ch17-s05-mcq1",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 17 (Interview Prep)",
@@ -28429,25 +28391,6 @@
     "correctIndex": 2
   },
   {
-    "id": "kafka-ch17-s06-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 17 (Interview Prep)",
-    "topic": "What's Still Pending",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Why would you explicitly announce what's still pending in a chapter?",
-    "answer": null,
-    "notes": "The correct answer is 'To show the importance of the next chapter', as it explicitly announces what's still pending in a new chapter.",
-    "cloze_answer": null,
-    "options": [
-      "To give a sense of closure to the chapter",
-      "To leave room for further discussion",
-      "To indicate that no more concepts are being introduced",
-      "To show the importance of the next chapter"
-    ],
-    "correctIndex": 3
-  },
-  {
     "id": "kafka-ch17-s07-mcq1",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 17 (Interview Prep)",
@@ -28465,25 +28408,6 @@
       "All brokers"
     ],
     "correctIndex": 1
-  },
-  {
-    "id": "kafka-ch17-s07-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 17 (Interview Prep)",
-    "topic": "Verified Against Kafka's Source",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is the default behavior of the Fetcher when it needs to fetch data from a broker?",
-    "answer": null,
-    "notes": "The Fetcher sends one request per broker, which contains all the partitions it needs to fetch from that broker.",
-    "cloze_answer": null,
-    "options": [
-      "It sends one request per partition",
-      "It sends one request per broker",
-      "It sends a request for all partitions at once",
-      "It sends no request by default"
-    ],
-    "correctIndex": 2
   },
   {
     "id": "kafka-ch18-s01-mcq1",
