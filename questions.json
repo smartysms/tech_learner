@@ -26567,25 +26567,6 @@
     "correctIndex": 2
   },
   {
-    "id": "kafka-ch13-s06-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 13 (Interview Prep)",
-    "topic": "The Retry Scenario, Walked Through",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Why can't a new producer batch be created on a retry in Kafka?",
-    "answer": null,
-    "notes": "According to Chapter 18, Kafka never creates a new batch on retry, only a new ProduceRequest wrapping the same one.",
-    "cloze_answer": null,
-    "options": [
-      "It would cause a delay in message processing",
-      "It's not necessary for the retry scenario",
-      "It would create a new sequence number",
-      "Kafka never creates a new batch on retry"
-    ],
-    "correctIndex": 3
-  },
-  {
     "id": "kafka-ch13-s07-mcq1",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 13 (Interview Prep)",
@@ -26624,44 +26605,6 @@
     "correctIndex": 1
   },
   {
-    "id": "kafka-ch13-s08-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 13 (Interview Prep)",
-    "topic": "The Kafka 4.x Accuracy Correction",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is the Kafka 4.x accuracy correction's approach to sequence numbers?",
-    "answer": null,
-    "notes": "The sequence number is assigned per partition, which is a key concept in the Kafka 4.x accuracy correction.",
-    "cloze_answer": null,
-    "options": [
-      "Maintains a global sequence number",
-      "Assigns a sequence number per producer",
-      "Assigns a sequence number per partition",
-      "Uses a distributed clock to synchronize sequence numbers"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "id": "kafka-ch13-s08-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 13 (Interview Prep)",
-    "topic": "The Kafka 4.x Accuracy Correction",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Why does the sequence number travel with the batch through every retry?",
-    "answer": null,
-    "notes": "The sequence number travels with the batch to maintain the producer's per-partition state, which tracks and assigns the sequence number.",
-    "cloze_answer": null,
-    "options": [
-      "To ensure the sequence number is updated correctly",
-      "To maintain the producer's per-partition state",
-      "To allow the sequence number to be used across all partitions",
-      "To guarantee the batch's entire lifetime accuracy"
-    ],
-    "correctIndex": 1
-  },
-  {
     "id": "kafka-ch13-s09-mcq1",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 13 (Interview Prep)",
@@ -26679,25 +26622,6 @@
       "order within a topic"
     ],
     "correctIndex": 0
-  },
-  {
-    "id": "kafka-ch13-s09-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 13 (Interview Prep)",
-    "topic": "Why Per Partition, Not One Global Counter",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Why would a broker leading Partition 0 not care what sequence number Partition 1 last saw from this producer?",
-    "answer": null,
-    "notes": "A broker leading Partition 0 doesn't own Partition 1, so it has no reason to care what sequence number Partition 1 last saw from this producer.",
-    "cloze_answer": null,
-    "options": [
-      "because it has no reason to care about Partition 1",
-      "because it only cares about its own partition",
-      "because Partition 1 is not its concern",
-      "because it doesn't know the sequence number"
-    ],
-    "correctIndex": 1
   },
   {
     "id": "kafka-ch13-s10-mcq1",
@@ -26736,25 +26660,6 @@
       "The sequences are synchronized across all partitions"
     ],
     "correctIndex": 1
-  },
-  {
-    "id": "kafka-ch13-s11-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 13 (Interview Prep)",
-    "topic": "Interview Question #2",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What happens when a retry occurs only for Partition 1 in Kafka?",
-    "answer": null,
-    "notes": "The retry only affects Partition 1, so the other partitions continue independently.",
-    "cloze_answer": null,
-    "options": [
-      "All partition sequence numbers are rolled back",
-      "Kafka pauses all partitions until the retry succeeds, to keep a global order",
-      "Only Partition 1 retries using sequence 45 - Partitions 0 and 2 continue independently with their own next sequence numbers",
-      "Only the batch for Partition 1 needs retrying, at sequence 45 - Partition 0 keeps advancing to 121, 122, 123 and Partition 2 to 10, 11, 12 with no coordination required."
-    ],
-    "correctIndex": 2
   },
   {
     "id": "kafka-ch13-s11-mcq2",
@@ -26810,25 +26715,6 @@
       "The broker would be more secure",
       "The broker would lose its state across restarts",
       "The broker would be more scalable"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "id": "kafka-ch13-s13-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 13 (Interview Prep)",
-    "topic": "Why Not Just Write To Disk Every Time?",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is the main reason why writing to disk every time is not a good solution?",
-    "answer": null,
-    "notes": "Meaningfully hurt throughput on the producer's hot path",
-    "cloze_answer": null,
-    "options": [
-      "To avoid extra I/O entirely",
-      "To reduce log write, metadata write, and filesystem sync",
-      "To improve throughput on the producer's hot path",
-      "To simplify the producer's architecture"
     ],
     "correctIndex": 2
   },
@@ -26907,101 +26793,6 @@
       "RecordAccumulator"
     ],
     "correctIndex": 1
-  },
-  {
-    "id": "kafka-ch13-s16-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 13 (Interview Prep)",
-    "topic": "The Full Architecture",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What happens to a duplicate sequence in the Kafka producer architecture?",
-    "answer": null,
-    "notes": "A duplicate sequence is ignored and the Producer State is updated, as stated in the text.",
-    "cloze_answer": null,
-    "options": [
-      "It is appended to the Leader Broker",
-      "It is ignored and the Producer State is updated",
-      "It is replicated to followers",
-      "It is returned as a success"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "id": "kafka-ch13-s17-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 13 (Interview Prep)",
-    "topic": "What's Coming Next",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What would you need to consider when enabling idempotence, acks, retries, and max.in.flight.requests.per.connection in Kafka?",
-    "answer": null,
-    "notes": "The correct answer is Transaction management, as it is the concept that ties together these four configurations.",
-    "cloze_answer": null,
-    "options": [
-      "ProducerBatch",
-      "Broker duplicate detection",
-      "Message sequencing",
-      "Transaction management"
-    ],
-    "correctIndex": 3
-  },
-  {
-    "id": "kafka-ch13-s17-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 13 (Interview Prep)",
-    "topic": "What's Coming Next",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What topic does the session explicitly announce as the next topic?",
-    "answer": null,
-    "notes": "The session explicitly announces the next topic as 'What's Coming Next'.",
-    "cloze_answer": null,
-    "options": [
-      "ProducerBatch",
-      "Message Sequencing",
-      "Broker Duplicate Detection",
-      "Transaction Management"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "id": "kafka-ch13-s18-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 13 (Interview Prep)",
-    "topic": "Verified Against Kafka's Source",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is the unique identifier for every batch in the Kafka sequence number system?",
-    "answer": null,
-    "notes": "The producer ID and per-partition sequence number together uniquely identify a batch.",
-    "cloze_answer": null,
-    "options": [
-      "Producer ID",
-      "TopicPartition",
-      "ProducerBatch",
-      "Sequence Number"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "id": "kafka-ch13-s18-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 13 (Interview Prep)",
-    "topic": "Verified Against Kafka's Source",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Why does the broker reject a request whose sequence isn't exactly one greater than the last committed value for a producer-partition pair?",
-    "answer": null,
-    "notes": "The broker rejects requests to ensure exactly once delivery and prevent ambiguous failures.",
-    "cloze_answer": null,
-    "options": [
-      "Because the broker is running low on disk space",
-      "Because the broker needs to ensure exactly once delivery",
-      "Because the broker is waiting for a new leader to take over",
-      "Because the broker is handling a failure and needs to roll back"
-    ],
-    "correctIndex": 2
   },
   {
     "id": "kafka-ch14-s01-mcq1",
