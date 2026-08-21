@@ -1,0 +1,49 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>SQL SRS</title>
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#0f172a" />
+<link rel="icon" href="icons/icon-192.png" />
+<link rel="apple-touch-icon" href="icons/icon-192.png" />
+<link rel="stylesheet" href="style.css" />
+
+<div id="app">
+  <header>
+    <h1>SQL SRS</h1>
+    <span id="due-count"></span>
+  </header>
+
+  <main id="review-screen" hidden>
+    <div class="tags">
+      <span id="card-block" class="tag"></span>
+      <span id="card-topic" class="tag"></span>
+      <span id="card-label" class="tag"></span>
+    </div>
+    <p id="card-prompt"></p>
+
+    <button id="show-answer-btn">Show Answer</button>
+
+    <div id="answer" hidden>
+      <pre id="card-sql"><code></code></pre>
+      <p id="card-notes"></p>
+
+      <div class="ratings">
+        <button data-rating="again" class="rate rate-again">Again</button>
+        <button data-rating="hard" class="rate rate-hard">Hard</button>
+        <button data-rating="good" class="rate rate-good">Good</button>
+        <button data-rating="easy" class="rate rate-easy">Easy</button>
+      </div>
+    </div>
+  </main>
+
+  <main id="done-screen" hidden>
+    <p id="done-summary"></p>
+  </main>
+
+  <main id="empty-screen" hidden>
+    <p>No cards loaded.</p>
+  </main>
+</div>
+
+<script src="srs.js"></script>
+<script src="app.js"></script>

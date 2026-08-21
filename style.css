@@ -1,0 +1,159 @@
+:root {
+  --bg: #f8fafc;
+  --fg: #0f172a;
+  --card-bg: #ffffff;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --accent: #2563eb;
+  --again: #dc2626;
+  --hard: #d97706;
+  --good: #2563eb;
+  --easy: #16a34a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f172a;
+    --fg: #f1f5f9;
+    --card-bg: #1e293b;
+    --muted: #94a3b8;
+    --border: #334155;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 1rem;
+  padding-bottom: 2rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+header h1 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+#due-count {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+main {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.tags {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+}
+
+#card-prompt {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin: 0 0 1.25rem;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  min-height: 44px;
+  padding: 0.75rem 1rem;
+}
+
+#show-answer-btn {
+  width: 100%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1rem;
+}
+
+pre#card-sql {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 0.9rem;
+}
+
+#card-notes {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.ratings {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.ratings button {
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.rate-again {
+  background: var(--again);
+}
+
+.rate-hard {
+  background: var(--hard);
+}
+
+.rate-good {
+  background: var(--good);
+}
+
+.rate-easy {
+  background: var(--easy);
+}
+
+#done-summary {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}

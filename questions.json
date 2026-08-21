@@ -1,0 +1,236 @@
+[
+  {
+    "id": "W1",
+    "block": "Basics",
+    "topic": "SELECT/LIMIT",
+    "label": null,
+    "prompt": "Select the first 10 rows of employees.",
+    "solution_sql": "SELECT * FROM employees LIMIT 10;",
+    "dialect_notes": "LIMIT is Postgres/MySQL. Oracle uses FETCH FIRST 10 ROWS ONLY (or ROWNUM <= 10 pre-12c). MSSQL uses TOP 10 (goes right after SELECT, no comma before column list: SELECT TOP 10 * FROM employees)."
+  },
+  {
+    "id": "W2",
+    "block": "Basics",
+    "topic": "DISTINCT",
+    "label": null,
+    "prompt": "List the distinct gender values in employees.",
+    "solution_sql": "SELECT DISTINCT gender FROM employees;",
+    "dialect_notes": "DISTINCT works identically across Postgres, MySQL, Oracle, MSSQL."
+  },
+  {
+    "id": "W3",
+    "block": "Basics",
+    "topic": "WHERE/ORDER BY",
+    "label": null,
+    "prompt": "Find employees hired after 2000-01-01: first_name, last_name, hire_date, ordered by hire_date descending.",
+    "solution_sql": "SELECT first_name, last_name, hire_date FROM employees WHERE hire_date > '2000-01-01' ORDER BY hire_date DESC;",
+    "dialect_notes": "Date literal 'YYYY-MM-DD' as a plain string works in Postgres/MySQL. Oracle needs DATE '2000-01-01' or TO_DATE(...) depending on NLS settings. MSSQL accepts the string but behavior depends on DATEFORMAT/language settings — safer to CONVERT/CAST explicitly."
+  },
+  {
+    "id": "W4",
+    "block": "Basics",
+    "topic": "BETWEEN",
+    "label": null,
+    "prompt": "Find all salary rows with salary between 60000 and 90000 (inclusive).",
+    "solution_sql": "SELECT * FROM salaries WHERE salary BETWEEN 60000 AND 90000;",
+    "dialect_notes": "BETWEEN is inclusive on both ends in all 4 dialects — identical behavior."
+  },
+  {
+    "id": "W5",
+    "block": "Basics",
+    "topic": "COUNT + WHERE",
+    "label": null,
+    "prompt": "Count how many rows in titles are currently active (to_date = '9999-01-01').",
+    "solution_sql": "SELECT COUNT(*) FROM titles WHERE to_date = '9999-01-01';",
+    "dialect_notes": "Identical across all dialects."
+  },
+  {
+    "id": "W6",
+    "block": "Aggregation",
+    "topic": "GROUP BY",
+    "label": null,
+    "prompt": "Count current employees (to_date = '9999-01-01') per dept_no in dept_emp.",
+    "solution_sql": "SELECT dept_no, COUNT(*) FROM dept_emp WHERE to_date = '9999-01-01' GROUP BY dept_no;",
+    "dialect_notes": "Identical. Note: MySQL historically allowed selecting non-grouped columns (implementation-defined result) unless ONLY_FULL_GROUP_BY is set; Postgres/Oracle/MSSQL always require it and will error otherwise."
+  },
+  {
+    "id": "W7",
+    "block": "Aggregation",
+    "topic": "JOIN + AVG",
+    "label": null,
+    "prompt": "Average current salary by gender (join employees + salaries, filter salaries.to_date = '9999-01-01').",
+    "solution_sql": "SELECT e.gender, AVG(s.salary) FROM employees e JOIN salaries s ON e.emp_no = s.emp_no WHERE s.to_date = '9999-01-01' GROUP BY e.gender;",
+    "dialect_notes": "AVG on integers: Postgres/Oracle return exact numeric (fractional), MySQL returns decimal too, MSSQL AVG on an INT column truncates to INTEGER (needs explicit CAST to a decimal type to get fractional average)."
+  },
+  {
+    "id": "W8",
+    "block": "Aggregation",
+    "topic": "GROUP BY + HAVING",
+    "label": null,
+    "prompt": "Find departments (dept_no) with MORE THAN 10 employees ever assigned in dept_emp.",
+    "solution_sql": "SELECT dept_no, COUNT(*) AS c FROM dept_emp GROUP BY dept_no HAVING COUNT(*) > 10;",
+    "dialect_notes": "HAVING syntax identical across all 4. Common trap: trying to filter an aggregate in WHERE instead of HAVING errors in every dialect the same way — aggregates aren't computed yet when WHERE runs."
+  },
+  {
+    "id": "X1",
+    "block": "Aggregation",
+    "topic": "Multi-column GROUP BY",
+    "label": null,
+    "prompt": "For CURRENT dept_emp rows, count employees per (gender, dept_no) pair — i.e. group by TWO columns at once (join employees to get gender).",
+    "solution_sql": "SELECT e.gender, de.dept_no, COUNT(*) FROM employees e\nJOIN dept_emp de ON de.emp_no = e.emp_no\nWHERE de.to_date = '9999-01-01'\nGROUP BY e.gender, de.dept_no;",
+    "dialect_notes": "Multi-column GROUP BY (comma-separated list) is identical syntax in all 4 dialects — it just means 'one bucket per unique combination of these column values'."
+  },
+  {
+    "id": "X2",
+    "block": "Aggregation",
+    "topic": "Conditional aggregation (CASE WHEN)",
+    "label": null,
+    "prompt": "For each CURRENT department, show dept_no, count of current MALE employees, and count of current FEMALE employees — as two separate columns in one row per department (use CASE WHEN inside SUM/COUNT, not two queries).",
+    "solution_sql": "SELECT de.dept_no,\n       SUM(CASE WHEN e.gender = 'M' THEN 1 ELSE 0 END) AS male_count,\n       SUM(CASE WHEN e.gender = 'F' THEN 1 ELSE 0 END) AS female_count\nFROM dept_emp de\nJOIN employees e ON e.emp_no = de.emp_no\nWHERE de.to_date = '9999-01-01'\nGROUP BY de.dept_no;",
+    "dialect_notes": "CASE WHEN inside an aggregate ('conditional aggregation') works identically in all 4 — it's the standard way to pivot categories into columns. MSSQL and Oracle also offer a dedicated PIVOT operator; MySQL and Postgres have no native PIVOT (Postgres needs the tablefunc extension's crosstab()) — conditional aggregation is the only portable technique across all four."
+  },
+  {
+    "id": "X3",
+    "block": "Aggregation",
+    "topic": "GROUP BY + ORDER BY aggregate + LIMIT",
+    "label": null,
+    "prompt": "Find the 3 departments with the FEWEST current employees (dept_emp, to_date = '9999-01-01').",
+    "solution_sql": "SELECT dept_no, COUNT(*) AS c FROM dept_emp\nWHERE to_date = '9999-01-01' GROUP BY dept_no ORDER BY c ASC LIMIT 3;",
+    "dialect_notes": "You CAN order by an aggregate alias/expression directly — identical in all 4. For the row-limiting part: LIMIT (Postgres/MySQL) vs FETCH FIRST n ROWS ONLY (Oracle) vs TOP n (MSSQL), same as question W1."
+  },
+  {
+    "id": "X4",
+    "block": "Aggregation",
+    "topic": "HAVING with AVG + JOIN",
+    "label": null,
+    "prompt": "Find department names where the AVERAGE current salary exceeds 70000.",
+    "solution_sql": "SELECT d.dept_name, AVG(s.salary) FROM departments d\nJOIN dept_emp de ON de.dept_no = d.dept_no AND de.to_date = '9999-01-01'\nJOIN salaries s ON s.emp_no = de.emp_no AND s.to_date = '9999-01-01'\nGROUP BY d.dept_name\nHAVING AVG(s.salary) > 70000;",
+    "dialect_notes": "HAVING with an aggregate function directly (not just an alias) works identically in all 4 dialects."
+  },
+  {
+    "id": "X5",
+    "block": "Aggregation",
+    "topic": "GROUP BY on derived expression",
+    "label": null,
+    "prompt": "Count how many employees were hired in each calendar year (group by the YEAR portion of hire_date).",
+    "solution_sql": "SELECT EXTRACT(YEAR FROM hire_date) AS hire_year, COUNT(*)\nFROM employees GROUP BY EXTRACT(YEAR FROM hire_date) ORDER BY hire_year;",
+    "dialect_notes": "EXTRACT(YEAR FROM col) is ANSI SQL — works in Postgres, Oracle, and MySQL. MSSQL's T-SQL does NOT support EXTRACT at all — you must use YEAR(col) or DATEPART(year, col) instead. MySQL also idiomatically prefers YEAR(col) even though EXTRACT works there too."
+  },
+  {
+    "id": "W9",
+    "block": "Aggregation",
+    "topic": "MIN/MAX/AVG",
+    "label": null,
+    "prompt": "Find the min, max, and avg salary across the whole salaries table.",
+    "solution_sql": "SELECT MIN(salary), MAX(salary), AVG(salary) FROM salaries;",
+    "dialect_notes": "Identical everywhere."
+  },
+  {
+    "id": "L1",
+    "block": "Joins",
+    "topic": "INNER JOIN",
+    "label": "Q1",
+    "prompt": "For every CURRENT department assignment, show employee first_name, last_name, and dept_name.",
+    "solution_sql": "SELECT e.first_name, e.last_name, d.dept_name FROM employees e JOIN dept_emp de ON e.emp_no = de.emp_no JOIN departments d ON de.dept_no = d.dept_no WHERE de.to_date = '9999-01-01';",
+    "dialect_notes": "Explicit JOIN...ON syntax is identical across all 4 dialects."
+  },
+  {
+    "id": "L2",
+    "block": "Joins",
+    "topic": "LEFT JOIN + IS NULL",
+    "label": "Q2",
+    "prompt": "Find employees who have NEVER been a manager, using a LEFT JOIN + IS NULL (not a subquery).",
+    "solution_sql": "SELECT e.emp_no, e.first_name, e.last_name FROM employees e LEFT JOIN dept_manager dm ON e.emp_no = dm.emp_no WHERE dm.emp_no IS NULL;",
+    "dialect_notes": "LEFT JOIN identical. Oracle also supports legacy (+) outer join syntax (e.g. WHERE dm.emp_no(+) = e.emp_no) but ANSI JOIN is preferred/portable."
+  },
+  {
+    "id": "L3",
+    "block": "Subqueries",
+    "topic": "Correlated EXISTS",
+    "label": "Q3",
+    "prompt": "Using a correlated subquery with EXISTS, find employees who have EVER had a salary greater than 100000.",
+    "solution_sql": "SELECT e.emp_no, e.first_name, e.last_name FROM employees e WHERE EXISTS (SELECT 1 FROM salaries s WHERE s.emp_no = e.emp_no AND s.salary > 100000);",
+    "dialect_notes": "EXISTS identical across all 4 dialects."
+  },
+  {
+    "id": "L4",
+    "block": "Joins",
+    "topic": "Aggregation JOIN",
+    "label": "Q4",
+    "prompt": "For each department, find the employee with the highest CURRENT salary (dept-wise top earner). Show dept_name, first_name, last_name, salary.",
+    "solution_sql": "SELECT DISTINCT ON (d.dept_no) d.dept_name, e.first_name, e.last_name, s.salary\nFROM departments d\nJOIN dept_emp de ON de.dept_no = d.dept_no AND de.to_date = '9999-01-01'\nJOIN employees e ON e.emp_no = de.emp_no\nJOIN salaries s ON s.emp_no = e.emp_no AND s.to_date = '9999-01-01'\nORDER BY d.dept_no, s.salary DESC;",
+    "dialect_notes": "DISTINCT ON is POSTGRES-ONLY. In MySQL/Oracle/MSSQL you must use a window function instead: ROW_NUMBER() OVER (PARTITION BY dept_no ORDER BY salary DESC) wrapped in a subquery, then WHERE rn = 1. That window-function form is the portable version — worth doing as a follow-up rewrite."
+  },
+  {
+    "id": "L5",
+    "block": "Subqueries",
+    "topic": "NOT IN",
+    "label": "Q5",
+    "prompt": "Using NOT IN, find employees who have never been a manager (same result as L2/Q2, different technique).",
+    "solution_sql": "SELECT emp_no FROM employees WHERE emp_no NOT IN (SELECT emp_no FROM dept_manager);",
+    "dialect_notes": "IDENTICAL FOOTGUN in all 4 dialects: if the subquery can ever return a NULL, NOT IN silently returns ZERO rows (NULL comparisons are UNKNOWN, not TRUE). NOT EXISTS doesn't have this trap in any dialect — prefer it for this reason."
+  },
+  {
+    "id": "L10",
+    "block": "Joins",
+    "topic": "JOIN + GROUP BY",
+    "label": "Q10",
+    "prompt": "For each CURRENT manager, show their name, department name, and how many employees currently work in that department.",
+    "solution_sql": "SELECT m.first_name, m.last_name, d.dept_name, COUNT(de.emp_no) AS team_size\nFROM dept_manager dm\nJOIN employees m ON m.emp_no = dm.emp_no\nJOIN departments d ON d.dept_no = dm.dept_no\nJOIN dept_emp de ON de.dept_no = dm.dept_no AND de.to_date = '9999-01-01'\nWHERE dm.to_date = '9999-01-01'\nGROUP BY m.first_name, m.last_name, d.dept_name;",
+    "dialect_notes": "Identical GROUP BY semantics. Remember MySQL is historically lax about non-aggregated columns in SELECT; Postgres/Oracle/MSSQL demand every non-aggregated column appear in GROUP BY."
+  },
+  {
+    "id": "L6",
+    "block": "Window",
+    "topic": "ROW_NUMBER/RANK/DENSE_RANK",
+    "label": "Q6",
+    "prompt": "For current salaries, compute ROW_NUMBER(), RANK(), and DENSE_RANK() ordered by salary descending.",
+    "solution_sql": "SELECT emp_no, salary,\n       ROW_NUMBER() OVER (ORDER BY salary DESC) AS rn,\n       RANK()       OVER (ORDER BY salary DESC) AS rnk,\n       DENSE_RANK() OVER (ORDER BY salary DESC) AS drnk\nFROM salaries WHERE to_date = '9999-01-01';",
+    "dialect_notes": "All 3 functions exist identically in Postgres, MySQL 8+, Oracle, MSSQL. MySQL 5.7 and earlier has NONE of them (no window function support at all) — a real gotcha if an interviewer asks 'does MySQL support window functions'. ROW_NUMBER's tie-break order is arbitrary unless you add a secondary ORDER BY key."
+  },
+  {
+    "id": "L7",
+    "block": "Window",
+    "topic": "PARTITION BY + Top-N",
+    "label": "Q7",
+    "prompt": "For each department, find the top 3 CURRENT earners using a window function PARTITION BY dept_no.",
+    "solution_sql": "SELECT * FROM (\n    SELECT d.dept_name, e.first_name, e.last_name, s.salary,\n           ROW_NUMBER() OVER (PARTITION BY d.dept_no ORDER BY s.salary DESC) AS rn\n    FROM departments d\n    JOIN dept_emp de ON de.dept_no = d.dept_no AND de.to_date = '9999-01-01'\n    JOIN employees e ON e.emp_no = de.emp_no\n    JOIN salaries s ON s.emp_no = e.emp_no AND s.to_date = '9999-01-01'\n) ranked WHERE rn <= 3;",
+    "dialect_notes": "Portable across all 4 (given MySQL 8+/modern Oracle/modern MSSQL). This PARTITION BY + subquery + rn<=3 pattern IS the portable top-N-per-group idiom — use it instead of DISTINCT ON when portability matters."
+  },
+  {
+    "id": "L8",
+    "block": "Window",
+    "topic": "LAG",
+    "label": "Q8",
+    "prompt": "For each employee, use LAG() to show the previous salary next to the current one, and compute the raise amount.",
+    "solution_sql": "SELECT emp_no, from_date, salary,\n       LAG(salary) OVER (PARTITION BY emp_no ORDER BY from_date) AS prev_salary,\n       salary - LAG(salary) OVER (PARTITION BY emp_no ORDER BY from_date) AS raise_amount\nFROM salaries ORDER BY emp_no, from_date;",
+    "dialect_notes": "LAG/LEAD identical in Postgres, MySQL 8+, Oracle, MSSQL 2012+. MSSQL/Oracle both support an optional offset + default value arg: LAG(salary, 1, 0)."
+  },
+  {
+    "id": "L9",
+    "block": "Window",
+    "topic": "Running total",
+    "label": "Q9",
+    "prompt": "Compute a running total of salary cost per department over time: PARTITION BY dept_no, ORDER BY from_date, using dept_emp joined to salaries.",
+    "solution_sql": "SELECT dept_no, from_date, salary,\n       SUM(salary) OVER (PARTITION BY dept_no ORDER BY from_date) AS running_total\nFROM (SELECT de.dept_no, s.from_date, s.salary FROM dept_emp de\n      JOIN salaries s ON s.emp_no = de.emp_no) x\nORDER BY dept_no, from_date;",
+    "dialect_notes": "Frame default differs subtly: Postgres/MySQL/Oracle default frame for SUM() OVER (ORDER BY x) is RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW (ties on from_date get summed together). MSSQL matches this too as of 2012+. If you need ROW-based instead of RANGE-based framing, say ROWS BETWEEN explicitly — safest to always be explicit."
+  },
+  {
+    "id": "L12",
+    "block": "Window",
+    "topic": "FIRST_VALUE/LAST_VALUE",
+    "label": "Q12",
+    "prompt": "For each employee, compare their first-ever salary to their current/latest salary (total growth since hire) using FIRST_VALUE/LAST_VALUE.",
+    "solution_sql": "SELECT DISTINCT emp_no,\n       FIRST_VALUE(salary) OVER (PARTITION BY emp_no ORDER BY from_date) AS first_salary,\n       LAST_VALUE(salary) OVER (PARTITION BY emp_no ORDER BY from_date\n           ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS latest_salary\nFROM salaries;",
+    "dialect_notes": "BIGGEST universal gotcha, same in all 4 dialects: LAST_VALUE's DEFAULT frame is UNBOUNDED PRECEDING AND CURRENT ROW, so by default it just returns the CURRENT row's value, not the true last row. You must widen the frame explicitly (as above) in Postgres/MySQL/MSSQL. Oracle has the same default-frame trap."
+  },
+  {
+    "id": "L11",
+    "block": "CTE",
+    "topic": "WITH clause",
+    "label": "Q11",
+    "prompt": "Using a WITH clause (one CTE for high earners > 90000 currently, one CTE for current department), join them to show emp_no, salary, dept_no.",
+    "solution_sql": "WITH high_earners AS (\n    SELECT emp_no, salary FROM salaries WHERE to_date = '9999-01-01' AND salary > 90000\n),\ncurrent_dept AS (\n    SELECT emp_no, dept_no FROM dept_emp WHERE to_date = '9999-01-01'\n)\nSELECT h.emp_no, h.salary, d.dept_no FROM high_earners h JOIN current_dept d ON h.emp_no = d.emp_no;",
+    "dialect_notes": "WITH clause supported in all 4. MySQL only gained CTE support in 8.0 (no CTEs in 5.7). Postgres historically materialized every CTE as an optimization fence (pre-12); Postgres 12+ can inline them like the others do. Oracle/MSSQL always treat CTEs as inlined, non-materializing by default."
+  }
+]
