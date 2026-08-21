@@ -21910,5 +21910,290 @@
     "answer": null,
     "notes": "",
     "cloze_answer": "/16"
+  },
+  {
+    "id": "kafka-ch01-s01-mcq1",
+    "subject": "Kafka Deep Dive",
+    "block": "Kafka Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "Why Partitions Exist, and What Skew Means",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why do partitions exist in Kafka?",
+    "answer": null,
+    "notes": "The correct answer is that partitions enable consumers to process data in parallel, which allows for increased throughput. The other options are not accurate descriptions of the purpose of partitions.",
+    "cloze_answer": null,
+    "options": [
+      "To distribute messages across topics",
+      "To enable consumers to process data in parallel",
+      "To improve message ordering",
+      "To reduce message latency"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "kafka-ch01-s01-mcq2",
+    "subject": "Kafka Deep Dive",
+    "block": "Kafka Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "Why Partitions Exist, and What Skew Means",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is partition skew in Kafka?",
+    "answer": null,
+    "notes": "Partition skew occurs when messages are unevenly distributed across Kafka partitions, causing some partitions to receive significantly more traffic than others. The other options are not accurate definitions of partition skew.",
+    "cloze_answer": null,
+    "options": [
+      "A partitioning strategy that evenly distributes messages",
+      "A situation where one partition receives significantly more traffic than others",
+      "A mechanism to prevent message loss",
+      "A type of consumer configuration"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "kafka-ch01-s02-mcq1",
+    "subject": "Kafka Deep Dive",
+    "block": "Kafka Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "Why Partition Skew Hurts Throughput",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the main consequence of partition skew on throughput?",
+    "answer": null,
+    "notes": "Partition skew leads to uneven load distribution, causing some consumers to sit idle while others struggle, negating the benefits of parallel processing.",
+    "cloze_answer": null,
+    "options": [
+      "Increased CPU utilization",
+      "Balanced load across all consumers",
+      "Reduced memory usage",
+      "Loss of parallel processing"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "id": "kafka-ch01-s02-mcq2",
+    "subject": "Kafka Deep Dive",
+    "block": "Kafka Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "Why Partition Skew Hurts Throughput",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why does the consumer assigned to P0 run hot?",
+    "answer": null,
+    "notes": "The consumer assigned to P0 runs hot because it's processing a significantly larger number of messages than the other consumers.",
+    "cloze_answer": null,
+    "options": [
+      "It's the only consumer processing a significant number of messages",
+      "It's the oldest consumer in the topic",
+      "It's the consumer with the highest available memory",
+      "It's the consumer with the lowest available CPU"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "kafka-ch01-s03-mcq1",
+    "subject": "Kafka Deep Dive",
+    "block": "Kafka Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "Real Production Example",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why would you consider P2 a hot partition?",
+    "answer": null,
+    "notes": "P2 is the hot partition because it receives a disproportionate share of all traffic, making it the bottleneck for the entire topic.",
+    "cloze_answer": null,
+    "options": [
+      "Due to uneven order distribution among restaurants",
+      "Because it has the highest number of partitions",
+      "Since it's only used by McDonald's",
+      "As it's the bottleneck for the entire topic"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "id": "kafka-ch01-s03-mcq2",
+    "subject": "Kafka Deep Dive",
+    "block": "Kafka Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "Real Production Example",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is a characteristic of the partition P2?",
+    "answer": null,
+    "notes": "P2 always maps to the same partition, which is a characteristic of the hot partition.",
+    "cloze_answer": null,
+    "options": [
+      "It has the lowest number of partitions",
+      "It's used by most restaurants",
+      "It always maps to the same partition",
+      "It's the most common cause of partition skew"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "kafka-ch01-s04-mcq1",
+    "subject": "Kafka Deep Dive",
+    "block": "Kafka Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "Four Causes of Partition Skew",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the primary reason for hot key partition skew?",
+    "answer": null,
+    "notes": "Hot keys dominate traffic, causing a small number of key values to hash to the same overloaded partition.",
+    "cloze_answer": null,
+    "options": [
+      "Poor Key Choice",
+      "Low-Cardinality Keys",
+      "Custom Partitioner Bugs",
+      "Hot Keys"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "id": "kafka-ch01-s04-mcq2",
+    "subject": "Kafka Deep Dive",
+    "block": "Kafka Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "Four Causes of Partition Skew",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why would a poor key choice lead to partition skew?",
+    "answer": null,
+    "notes": "A poor key choice can lead to partition skew because it skews naturally, causing almost every message to hash to the same partition.",
+    "cloze_answer": null,
+    "options": [
+      "It distributes messages evenly",
+      "It has too many distinct values",
+      "It skews naturally",
+      "It's not used"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "kafka-ch01-s05-mcq1",
+    "subject": "Kafka Deep Dive",
+    "block": "Kafka Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "Five Ways To Prevent Partition Skew",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which of the following methods for preventing partition skew can help when the overall load is high across every partition?",
+    "answer": null,
+    "notes": "Increase Partitions only helps when overall load is high across every partition, by giving more consumers room to work in parallel.",
+    "cloze_answer": null,
+    "options": [
+      "Choose a High-Cardinality Key",
+      "Key Salting",
+      "Increase Partitions",
+      "Revisit Ordering Requirements"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "kafka-ch01-s05-mcq2",
+    "subject": "Kafka Deep Dive",
+    "block": "Kafka Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "Five Ways To Prevent Partition Skew",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the trade-off when using Composite Keys to prevent partition skew?",
+    "answer": null,
+    "notes": "You lose global ordering for that key, since different orders can land on different partitions.",
+    "cloze_answer": null,
+    "options": [
+      "You get strict ordering across all of a restaurant's messages",
+      "You lose global ordering for that key",
+      "You get more unique values",
+      "You don't need to revisit ordering requirements"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "kafka-ch01-s06-mcq1",
+    "subject": "Kafka Deep Dive",
+    "block": "Kafka Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "Interview Question - Spot The Root Cause",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the most likely root cause for the uneven partition message counts?",
+    "answer": null,
+    "notes": "The uneven partition message counts are likely due to a single dominant key value hashing to a single partition, not a replication, rebalance, or broker-count issue.",
+    "cloze_answer": null,
+    "options": [
+      "Kafka replication issue",
+      "Consumer group rebalance",
+      "A hot key (partition skew)",
+      "Too many brokers"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "kafka-ch01-s07-mcq1",
+    "subject": "Kafka Deep Dive",
+    "block": "Kafka Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "Chapter 1 Revision Sheet",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why does partition skew occur in Kafka?",
+    "answer": null,
+    "notes": "Partition skew is uneven message distribution across partitions, not consumers. This wastes parallelism and can be caused by hot keys, low-cardinality keys, or hash quality.",
+    "cloze_answer": null,
+    "options": [
+      "Uneven message distribution across consumers",
+      "Uneven message distribution across partitions",
+      "One consumer processing a topic's messages in parallel",
+      "Throughput scales with partition count"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "kafka-ch01-s07-mcq2",
+    "subject": "Kafka Deep Dive",
+    "block": "Kafka Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "Chapter 1 Revision Sheet",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the main consequence of partition skew in Kafka?",
+    "answer": null,
+    "notes": "Partition skew reduces the effectiveness of parallel processing, effectively running at the throughput of 1 consumer, not 4. Increasing partition count does not fix the issue.",
+    "cloze_answer": null,
+    "options": [
+      "Increasing partition count fixes the issue",
+      "It increases throughput",
+      "It reduces the effectiveness of parallel processing",
+      "It has no impact on throughput"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "kafka-ch01-s08-mcq1",
+    "subject": "Kafka Deep Dive",
+    "block": "Kafka Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "What's Missing, and What Comes Next",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the primary cause of partition skew in Kafka?",
+    "answer": null,
+    "notes": "Deterministic hashing to one partition is the primary cause of partition skew, as it can lead to a hot key deterministically hashing to one partition, leaving the system running at the throughput of one consumer.",
+    "cloze_answer": null,
+    "options": [
+      "Adding partitions",
+      "Using a better key",
+      "Deterministic hashing to one partition",
+      "Round Robin as the default partitioner"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "kafka-ch01-s08-mcq2",
+    "subject": "Kafka Deep Dive",
+    "block": "Kafka Deep Dive — Chapter 1 (Interview Prep)",
+    "topic": "What's Missing, and What Comes Next",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why does adding partitions not fix partition skew?",
+    "answer": null,
+    "notes": "Adding partitions does not fix partition skew because it doesn't address the underlying issue of deterministic hashing to one partition.",
+    "cloze_answer": null,
+    "options": [
+      "Because it's a one-time fix",
+      "Because it's a temporary solution",
+      "Because it doesn't address the underlying issue",
+      "Because it's not a scalable solution"
+    ],
+    "correctIndex": 2
   }
 ]
