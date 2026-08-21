@@ -74,3 +74,53 @@ retrieval skill (sequence/position vs. open recall). Worth doing as its own
 small backlog item if wanted, but should be scoped and described as
 ordered-list-aware card generation — not as "the peg system." Not built yet
 — deferred pending decision.
+
+## Mind mapping — researched 2026-08-21, ADOPT NARROWLY (different verdict from the other two)
+
+**How it works / evidence**: radial/hierarchical visual structure + explicit
+connections between concepts. Evidence is genuinely mixed, not uniformly
+positive: large effect sizes appear when mind mapping is compared to
+*passive* learning (lectures, straight reading — SMD≈1.45 across 52 studies),
+but the more relevant comparison — mind mapping vs. *another active study
+technique* — showed only a modest ~10-15% improvement in 1-week factual
+recall (Farrand et al. 2002). **Key distinction**: mind mapping's evidence
+base is strongest for initial encoding/organizing/seeing relationships
+between concepts, not for recall-under-delay, which is what SM-2 flashcards
+already do. It is a complementary technique to spaced repetition ("see the
+forest"), not a competing recall mechanism ("drill the trees") — unlike Loci
+and Peg systems, it isn't being asked to do the same job our flashcards
+already do, so the deck-scale objection that killed those two doesn't apply
+here in the same way.
+
+**Feasibility finding (bigger than expected)**: the user already has
+`mind_map_project` (`personal_project\mind_map_project\`), a working React
+mind-map editor — and it turns out to be far more built-out than a bare
+diagramming tool:
+- It has its **own independent SM-2-style SRS system** built into individual
+  map nodes (`learningStore.ts`: `easeFactor`, `interval`, `repetitions`,
+  `nextReview`, due-review queries, streaks) — structurally near-identical to
+  our `srs.js`.
+- It has its **own AI quiz generation** via Puter (an in-browser AI SDK,
+  separate from our local-Ollama `notes_ingest` pipeline).
+- It has a **clean, validated JSON import/export format**
+  (`MindMap = {metadata, settings, nodes, edges, viewport}`) that our
+  existing chunk metadata (subject → chapter_title → section_title, already
+  hierarchical) maps onto almost directly, optionally with embedding-
+  similarity cross-links between related sections (we already compute these
+  embeddings for the generation pipeline).
+- It builds and runs (`vite build`/`dev`, has a `dist/`) — not vaporware.
+
+**Decision**: adopt narrowly. Build a new exporter in `notes_ingest` (e.g.
+`notes_ingest/mindmap_export.py`) that generates a starter `MindMap`-shaped
+JSON per chapter/subject from chunk metadata, for the user to open/edit in
+the *existing* `mind_map_project` app — purely for the understanding/
+organizing use case, not routed through its SRS. No changes needed inside
+`mind_map_project` itself (its importer already handles well-formed
+`MindMap` JSON). Not built yet — scoping deferred pending decision on
+priority vs. the subject pipeline backlog.
+
+**Flagged, not decided**: the workspace now has **two independent SRS
+implementations** — this app's `srs.js`/`app.js`, and `mind_map_project`'s
+`learningStore.ts`. This is a separate decision from the mind-mapping
+question (ignore/retire/reconcile) and should be made explicitly rather than
+left as accidental duplication.
