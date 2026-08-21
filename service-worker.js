@@ -1,4 +1,4 @@
-const CACHE_NAME = "deep-srs-v5";
+const CACHE_NAME = "deep-srs-v6";
 const ASSETS = [
   "./",
   "index.html",

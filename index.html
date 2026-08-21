@@ -18,6 +18,9 @@
     </div>
   </header>
 
+  <div id="xp-float-layer"></div>
+  <div id="achievement-toast" hidden></div>
+
   <main id="stats-screen" hidden>
     <button id="stats-back-btn" class="header-btn">&larr; Back</button>
     <h2 id="stats-title">Stats</h2>
@@ -38,32 +41,39 @@
   </main>
 
   <main id="review-screen" hidden>
-    <div class="tags">
-      <span id="cram-exit-btn" class="tag tag-cram" hidden>Exit Cram</span>
-      <span id="card-subject" class="tag tag-subject"></span>
-      <span id="card-block" class="tag"></span>
-      <span id="card-topic" class="tag"></span>
-      <span id="card-label" class="tag"></span>
-    </div>
-    <p id="card-prompt"></p>
+    <div id="review-card-content">
+      <div class="tags">
+        <span id="cram-exit-btn" class="tag tag-cram" hidden>Exit Cram</span>
+        <span id="combo-indicator" class="tag tag-combo" hidden></span>
+        <span id="card-subject" class="tag tag-subject"></span>
+        <span id="card-block" class="tag"></span>
+        <span id="card-topic" class="tag"></span>
+        <span id="card-label" class="tag"></span>
+      </div>
+      <p id="card-prompt"></p>
 
-    <button id="show-answer-btn">Show Answer</button>
+      <button id="show-answer-btn">Show Answer</button>
 
-    <div id="cloze-input-block" hidden>
-      <input id="cloze-answer-input" type="text" autocomplete="off" autocapitalize="off" placeholder="Type the missing part..." />
-      <button id="check-cloze-btn">Check</button>
-      <p id="cloze-feedback" hidden></p>
-    </div>
+      <div id="cloze-input-block" hidden>
+        <input id="cloze-answer-input" type="text" autocomplete="off" autocapitalize="off" placeholder="Type the missing part..." />
+        <button id="check-cloze-btn">Check</button>
+        <p id="cloze-feedback" hidden></p>
+      </div>
 
-    <div id="answer" hidden>
-      <pre id="card-sql"><code></code></pre>
-      <p id="card-notes"></p>
+      <div id="mcq-options-block" hidden>
+        <div id="mcq-options-list"></div>
+      </div>
 
-      <div class="ratings">
-        <button data-rating="again" class="rate rate-again">Again</button>
-        <button data-rating="hard" class="rate rate-hard">Hard</button>
-        <button data-rating="good" class="rate rate-good">Good</button>
-        <button data-rating="easy" class="rate rate-easy">Easy</button>
+      <div id="answer" hidden>
+        <pre id="card-sql"><code></code></pre>
+        <p id="card-notes"></p>
+
+        <div class="ratings">
+          <button data-rating="again" class="rate rate-again">Again</button>
+          <button data-rating="hard" class="rate rate-hard">Hard</button>
+          <button data-rating="good" class="rate rate-good">Good</button>
+          <button data-rating="easy" class="rate rate-easy">Easy</button>
+        </div>
       </div>
     </div>
   </main>

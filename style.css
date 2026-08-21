@@ -458,3 +458,135 @@ pre#card-sql {
   font-size: 0.72rem;
   color: var(--muted);
 }
+
+/* --- MCQ options (straight MCQ cards, and cloze cards with options) --- */
+
+#mcq-options-block {
+  margin-bottom: 1rem;
+}
+
+#mcq-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mcq-option {
+  width: 100%;
+  text-align: left;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--fg);
+  font-size: 0.95rem;
+  padding: 0.75rem;
+}
+
+.mcq-option:disabled {
+  cursor: default;
+}
+
+.mcq-option.mcq-correct {
+  border-color: var(--easy);
+  background: color-mix(in srgb, var(--easy) 15%, var(--bg));
+}
+
+.mcq-option.mcq-incorrect {
+  border-color: var(--again);
+  background: color-mix(in srgb, var(--again) 15%, var(--bg));
+}
+
+/* --- Card transition + tap feedback (see conversation: Duolingo research) --- */
+
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#review-card-content.card-enter {
+  animation: card-enter 180ms ease-out;
+}
+
+/* --- Floating "+XP" on rating tap --- */
+
+#xp-float-layer {
+  position: fixed;
+  top: 4.5rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 20;
+}
+
+@keyframes xp-float-up {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-28px);
+  }
+}
+
+.xp-float {
+  position: absolute;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--easy);
+  animation: xp-float-up 700ms ease-out forwards;
+}
+
+/* --- Session combo indicator --- */
+
+@keyframes combo-pop {
+  0% {
+    transform: scale(0.8);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.tag-combo {
+  color: #fff;
+  background: var(--hard);
+  border-color: var(--hard);
+  font-weight: 600;
+  animation: combo-pop 250ms ease-out;
+}
+
+/* --- Achievement-unlock toast --- */
+
+#achievement-toast {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  z-index: 30;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 200ms ease-out, transform 200ms ease-out;
+}
+
+#achievement-toast.toast-show {
+  opacity: 1;
+  transform: translateY(0);
+}

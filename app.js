@@ -1,6 +1,7 @@
 const STATE_KEY = "srsState";
 const LOG_KEY = "reviewLog";
 const LOG_CAP = 20000; // defensive cap, realistically never hit
+const UNLOCKED_KEY = "unlockedAchievements";
 
 let questions = [];
 let flows = [];
@@ -11,6 +12,9 @@ let reviewedCount = 0;
 let cramMode = false;
 let cramBackStack = [];
 let flowsBackStack = [];
+let sessionCombo = 0;
+let unlockedAchievements = new Set();
+let selectedMcqIndex = null;
 
 function loadState() {
   try {
@@ -373,7 +377,7 @@ function statsBySubject() {
   return [...counts.entries()].map(([subject, count]) => ({ subject, count })).sort((a, b) => b.count - a.count);
 }
 
-function statsWeakTopics(minSamples = 3, topN = 8) {
+function topicAgainRates(minSamples) {
   const byTopic = new Map();
   for (const r of reviewLog) {
     const key = `${r.subject}::${r.topic}`;
@@ -384,9 +388,15 @@ function statsWeakTopics(minSamples = 3, topN = 8) {
   }
   return [...byTopic.values()]
     .filter((e) => e.total >= minSamples)
-    .map((e) => ({ ...e, againRate: e.again / e.total }))
-    .sort((a, b) => b.againRate - a.againRate)
-    .slice(0, topN);
+    .map((e) => ({ ...e, againRate: e.again / e.total }));
+}
+
+function statsWeakTopics(minSamples = 3, topN = 8) {
+  return topicAgainRates(minSamples).sort((a, b) => b.againRate - a.againRate).slice(0, topN);
+}
+
+function statsStrongTopics(minSamples = 3, topN = 8) {
+  return topicAgainRates(minSamples).sort((a, b) => a.againRate - b.againRate).slice(0, topN);
 }
 
 function statsWeeklyAccuracy(weeks = 8) {
@@ -430,6 +440,7 @@ function renderStats() {
   const hourBands = statsByHourBand();
   const bySubject = statsBySubject();
   const weakTopics = statsWeakTopics();
+  const strongTopics = statsStrongTopics();
   const weekly = statsWeeklyAccuracy();
 
   const xp = totalXP();
@@ -498,6 +509,14 @@ function renderStats() {
     </div>`);
   }
 
+  if (strongTopics.length > 0) {
+    sections.push(`<div class="stat-section"><h3>Strong spots (lowest "Again" rate)</h3>
+      ${strongTopics
+        .map((t) => barRow(`${t.topic} (${t.subject})`, Math.round((1 - t.againRate) * 100), 100, "%"))
+        .join("")}
+    </div>`);
+  }
+
   if (weekly.length > 0) {
     sections.push(`<div class="stat-section"><h3>Accuracy trend (Good+Easy %, by week)</h3>
       ${weekly
@@ -537,8 +556,22 @@ function renderCurrentCard() {
   document.getElementById("cloze-answer-input").value = "";
   document.getElementById("cloze-answer-input").disabled = false;
   document.getElementById("check-cloze-btn").disabled = false;
+  document.getElementById("mcq-options-block").hidden = true;
+  selectedMcqIndex = null;
 
-  if (card.type === "cloze") {
+  const hasOptions = Array.isArray(card.options) && card.options.length > 0;
+
+  if (card.type === "mcq") {
+    document.getElementById("card-prompt").textContent = card.prompt;
+    document.getElementById("show-answer-btn").hidden = true;
+    document.getElementById("cloze-input-block").hidden = true;
+    renderMcqOptions(card);
+  } else if (card.type === "cloze" && hasOptions) {
+    document.getElementById("card-prompt").textContent = card.prompt.replace("{{blank}}", "_____");
+    document.getElementById("show-answer-btn").hidden = true;
+    document.getElementById("cloze-input-block").hidden = true;
+    renderMcqOptions(card);
+  } else if (card.type === "cloze") {
     document.getElementById("card-prompt").textContent = card.prompt.replace("{{blank}}", "_____");
     document.getElementById("show-answer-btn").hidden = true;
     document.getElementById("cloze-input-block").hidden = false;
@@ -550,9 +583,19 @@ function renderCurrentCard() {
   }
 
   document.getElementById("cram-exit-btn").hidden = !cramMode;
+  renderComboIndicator();
 
   showScreen("review-screen");
   renderDueCount();
+  playCardEnterAnimation();
+}
+
+function playCardEnterAnimation() {
+  const el = document.getElementById("review-card-content");
+  el.classList.remove("card-enter");
+  // Force reflow so the animation restarts even for consecutive cards.
+  void el.offsetWidth;
+  el.classList.add("card-enter");
 }
 
 function renderDone() {
@@ -587,6 +630,43 @@ function handleShowAnswer() {
   document.getElementById("show-answer-btn").hidden = true;
 }
 
+// --- MCQ / cloze-with-options: tap an option instead of typing/revealing ---
+
+function renderMcqOptions(card) {
+  const block = document.getElementById("mcq-options-block");
+  const list = document.getElementById("mcq-options-list");
+  list.innerHTML = "";
+  block.hidden = false;
+
+  card.options.forEach((opt, i) => {
+    const btn = document.createElement("button");
+    btn.className = "mcq-option";
+    btn.textContent = opt;
+    btn.addEventListener("click", () => handleMcqSelect(card, i));
+    list.appendChild(btn);
+  });
+}
+
+function handleMcqSelect(card, index) {
+  if (selectedMcqIndex !== null) return; // already answered
+  selectedMcqIndex = index;
+
+  const isMcqType = card.type === "mcq";
+  const isCorrect = isMcqType
+    ? index === card.correctIndex
+    : card.options[index].trim().toLowerCase() === (card.cloze_answer || "").trim().toLowerCase();
+
+  [...document.querySelectorAll(".mcq-option")].forEach((btn, i) => {
+    btn.disabled = true;
+    if (isMcqType && i === card.correctIndex) btn.classList.add("mcq-correct");
+    else if (!isMcqType && btn.textContent.trim().toLowerCase() === (card.cloze_answer || "").trim().toLowerCase())
+      btn.classList.add("mcq-correct");
+    if (i === index && !isCorrect) btn.classList.add("mcq-incorrect");
+  });
+
+  document.getElementById("answer").hidden = false;
+}
+
 function handleCheckCloze() {
   const card = queue[0];
   const typed = document.getElementById("cloze-answer-input").value.trim().toLowerCase();
@@ -605,17 +685,88 @@ function handleCheckCloze() {
   document.getElementById("answer").hidden = false;
 }
 
+// --- Lightweight review-flow feedback: XP float, combo, achievement toast ---
+// Scoped from Duolingo's session-level patterns (research this session):
+// instant per-answer feedback + variable small rewards drive engagement more
+// than end-of-session summaries alone. Deliberately excludes anything from
+// their well-documented dark-pattern side (streak-loss guilt copy, urgency
+// countdowns, shame-coded "wrong" animations) - encouragement only, and
+// every mechanic here is the same transparent math already shown in Stats.
+
+function loadUnlockedAchievements() {
+  try {
+    const raw = localStorage.getItem(UNLOCKED_KEY);
+    return new Set(raw ? JSON.parse(raw) : []);
+  } catch {
+    return new Set();
+  }
+}
+
+function saveUnlockedAchievements() {
+  localStorage.setItem(UNLOCKED_KEY, JSON.stringify([...unlockedAchievements]));
+}
+
+function showXpFloat(amount) {
+  const layer = document.getElementById("xp-float-layer");
+  const el = document.createElement("span");
+  el.className = "xp-float";
+  el.textContent = `+${amount} XP`;
+  layer.appendChild(el);
+  setTimeout(() => el.remove(), 700);
+}
+
+function renderComboIndicator() {
+  const el = document.getElementById("combo-indicator");
+  if (sessionCombo >= 3) {
+    el.textContent = `🔥 ${sessionCombo} in a row`;
+    el.hidden = false;
+  } else {
+    el.hidden = true;
+  }
+}
+
+function showAchievementToast(achievement) {
+  const toast = document.getElementById("achievement-toast");
+  toast.textContent = `Achievement unlocked: ${achievement.name}`;
+  toast.hidden = false;
+  toast.classList.remove("toast-show");
+  void toast.offsetWidth;
+  toast.classList.add("toast-show");
+  setTimeout(() => {
+    toast.hidden = true;
+  }, 3000);
+}
+
+function checkNewAchievements() {
+  const totals = statsTotals();
+  const ctx = achievementContext(totals);
+  for (const a of ACHIEVEMENTS) {
+    if (!unlockedAchievements.has(a.name) && a.check(ctx)) {
+      unlockedAchievements.add(a.name);
+      showAchievementToast(a);
+      break; // one toast at a time, avoids a pile-up if several unlock at once
+    }
+  }
+  saveUnlockedAchievements();
+}
+
 function handleRate(rating) {
   const card = queue.shift();
   srsState[card.id] = updateCard(srsState[card.id], rating);
   saveState();
   logReview(card, rating);
   reviewedCount += 1;
+
+  showXpFloat(RATING_XP[rating] || 0);
+  sessionCombo = rating === "good" || rating === "easy" ? sessionCombo + 1 : 0;
+  checkNewAchievements();
+
   renderCurrentCard();
 }
 
 function init() {
   reviewLog = loadReviewLog();
+  unlockedAchievements = loadUnlockedAchievements();
 
   fetch("questions.json")
     .then((r) => r.json())
