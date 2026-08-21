@@ -26814,44 +26814,6 @@
     "correctIndex": 0
   },
   {
-    "id": "kafka-ch14-s01-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 14 (Interview Prep)",
-    "topic": "Four Settings That Look Independent",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Why would developers treat these four settings as independent?",
-    "answer": null,
-    "notes": "Developers treat the four settings as independent because it improves fault tolerance. Options 1, 2, and 3 are incorrect because they do not accurately describe the reason why developers treat the settings as independent.",
-    "cloze_answer": null,
-    "options": [
-      "To optimize performance",
-      "To simplify configuration",
-      "To improve fault tolerance",
-      "To reduce the number of configuration options"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "id": "kafka-ch14-s02-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 14 (Interview Prep)",
-    "topic": "acks",
-    "label": null,
-    "type": "mcq",
-    "prompt": "When is a request considered successful in Kafka?",
-    "answer": null,
-    "notes": "Kafka treats acks as a reliability system that determines when a request is successful.",
-    "cloze_answer": null,
-    "options": [
-      "When the message is sent to the broker",
-      "When the message is acknowledged by the broker",
-      "When the producer considers the produce request successful",
-      "When the message is delivered to the consumer"
-    ],
-    "correctIndex": 2
-  },
-  {
     "id": "kafka-ch14-s02-mcq2",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 14 (Interview Prep)",
@@ -27023,25 +26985,6 @@
     "correctIndex": 3
   },
   {
-    "id": "kafka-ch14-s07-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 14 (Interview Prep)",
-    "topic": "The Reliability Package",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What happens if you remove any one of the three supporting settings from the Reliability Package?",
-    "answer": null,
-    "notes": "idempotence relies on the coordination of all four settings, so removing one weakens the guarantee.",
-    "cloze_answer": null,
-    "options": [
-      "idempotence is guaranteed",
-      "the overall guarantee weakens",
-      "acks remains unchanged",
-      "retries increases to infinity"
-    ],
-    "correctIndex": 2
-  },
-  {
     "id": "kafka-ch14-s07-mcq2",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 14 (Interview Prep)",
@@ -27156,25 +27099,6 @@
     "correctIndex": 1
   },
   {
-    "id": "kafka-ch14-s11-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 14 (Interview Prep)",
-    "topic": "The Full Pipeline, Visualized End To End",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is the primary mechanism by which the broker efficiently recovers producer state?",
-    "answer": null,
-    "notes": "The broker efficiently recovers producer state by using durable writes and log segments, which allows it to recover quickly without having to replay the entire partition history.",
-    "cloze_answer": null,
-    "options": [
-      "It reads the full partition history",
-      "It uses periodic .snapshot files to checkpoint and recover state",
-      "It relies on durable writes and log segments to recover state",
-      "It requires human intervention to recover state"
-    ],
-    "correctIndex": 2
-  },
-  {
     "id": "kafka-ch14-s11-mcq2",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 14 (Interview Prep)",
@@ -27211,25 +27135,6 @@
       "Last Stable Offset"
     ],
     "correctIndex": 2
-  },
-  {
-    "id": "kafka-ch14-s12-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 14 (Interview Prep)",
-    "topic": "What's Coming Next",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Why is idempotence alone not enough for transactions in Kafka?",
-    "answer": null,
-    "notes": "Idempotence alone isn't enough because it doesn't provide exactly-once semantics, which is necessary for transactions.",
-    "cloze_answer": null,
-    "options": [
-      "Because it doesn't provide exactly-once semantics",
-      "Because it doesn't handle transaction markers",
-      "Because it doesn't guarantee the Last Stable Offset",
-      "Because it doesn't support atomic multi-partition writes"
-    ],
-    "correctIndex": 0
   },
   {
     "id": "kafka-ch14-s13-mcq1",
