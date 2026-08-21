@@ -25484,25 +25484,6 @@
     "correctIndex": 2
   },
   {
-    "id": "kafka-ch11-s02-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 11 (Interview Prep)",
-    "topic": "The Danger Of Naive Unlimited Sending",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What information must be tracked per outstanding request in Kafka?",
-    "answer": null,
-    "notes": "The producer must track the broker it was sent to, the producer batch it belongs to, when it was sent, its timeout, whether it can be retried, and the callback to invoke when the response arrives.",
-    "cloze_answer": null,
-    "options": [
-      "The broker it was sent to and its timeout",
-      "The producer batch it belongs to and its callback",
-      "The broker it was sent to and its callback",
-      "The timeout and whether it can be retried"
-    ],
-    "correctIndex": 3
-  },
-  {
     "id": "kafka-ch11-s03-mcq1",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 11 (Interview Prep)",
@@ -25653,25 +25634,6 @@
       "Broker / Connection"
     ],
     "correctIndex": 0
-  },
-  {
-    "id": "kafka-ch11-s07-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 11 (Interview Prep)",
-    "topic": "Design Principle",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is tracked by TopicPartition?",
-    "answer": null,
-    "notes": "TopicPartition tracks who currently leads what, according to the text. The other options are not accurate based on the given information.",
-    "cloze_answer": null,
-    "options": [
-      "RecordAccumulator",
-      "Metadata",
-      "InFlightRequests",
-      "Broker / Connection"
-    ],
-    "correctIndex": 2
   },
   {
     "id": "kafka-ch11-s08-mcq1",
@@ -25845,25 +25807,6 @@
     "correctIndex": 1
   },
   {
-    "id": "kafka-ch11-s13-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 11 (Interview Prep)",
-    "topic": "Why Not 100?",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is the reason for Kafka's engineers not aiming for a technical ceiling of 100 outstanding requests?",
-    "answer": null,
-    "notes": "The correct answer is to reduce memory usage, retry complexity, tail latency during failures, reordering risk, and pressure on the broker. The other options are related but not the primary reason.",
-    "cloze_answer": null,
-    "options": [
-      "To achieve better network utilization",
-      "To reduce memory usage and retry complexity",
-      "To improve tail latency during failures",
-      "To avoid reordering risk and pressure on the broker"
-    ],
-    "correctIndex": 1
-  },
-  {
     "id": "kafka-ch11-s13-mcq2",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 11 (Interview Prep)",
@@ -25959,25 +25902,6 @@
     "correctIndex": 1
   },
   {
-    "id": "kafka-ch11-s16-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 11 (Interview Prep)",
-    "topic": "Interview Follow-Up",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is the result of reordering the Deposit 1000 and Withdraw 1000 operations?",
-    "answer": null,
-    "notes": "The reordered operations produce an overdraft that never should have existed.",
-    "cloze_answer": null,
-    "options": [
-      "Balance 0 -> 1000 -> 0",
-      "Balance 0 -> -1000 -> 0",
-      "Balance 1000 -> 0",
-      "Balance -1000 -> 0"
-    ],
-    "correctIndex": 2
-  },
-  {
     "id": "kafka-ch11-s17-mcq1",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 11 (Interview Prep)",
@@ -25995,25 +25919,6 @@
       "Acks or retries changing the answer"
     ],
     "correctIndex": 2
-  },
-  {
-    "id": "kafka-ch11-s17-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 11 (Interview Prep)",
-    "topic": "Why max.in.flight=1 Prevents This",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What matters in ensuring reordering cannot happen in Kafka when max.in.flight=1?",
-    "answer": null,
-    "notes": "Request 2 structurally cannot be sent until Request 1 has completed, so the broker never has a chance to see them arrive out of order.",
-    "cloze_answer": null,
-    "options": [
-      "Request 1's retry has already succeeded",
-      "Request 2 is never sent until Request 1's retry has already succeeded",
-      "The broker never has a chance to see them arrive out of order",
-      "Acks or retries changing the answer"
-    ],
-    "correctIndex": 3
   },
   {
     "id": "kafka-ch11-s18-mcq1",
@@ -26071,25 +25976,6 @@
       "sequence number"
     ],
     "correctIndex": 1
-  },
-  {
-    "id": "kafka-ch11-s19-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 11 (Interview Prep)",
-    "topic": "Verified Against Kafka's Source",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is the reason for the default value of 5 for max.in.flight.requests.per.connection?",
-    "answer": null,
-    "notes": "The default of 5 is not a protocol limit but an engineering trade-off, worked out through the pipelining math.",
-    "cloze_answer": null,
-    "options": [
-      "to prevent reordering of requests",
-      "to prevent unbounded memory growth",
-      "to keep the network continuously busy",
-      "to match the pipelining default"
-    ],
-    "correctIndex": 2
   },
   {
     "id": "kafka-ch12-s01-mcq1",
