@@ -28220,25 +28220,6 @@
     "correctIndex": 2
   },
   {
-    "id": "kafka-ch16-s04-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 16 (Interview Prep)",
-    "topic": "The Fetcher: Who Actually Sends FetchRequest?",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is the primary reason for prefetched records not being discarded unnecessarily?",
-    "answer": null,
-    "notes": "The primary reason for prefetched records not being discarded unnecessarily is to hide network latency.",
-    "cloze_answer": null,
-    "options": [
-      "To reduce network latency",
-      "To ensure buffer limits are not exceeded",
-      "To prevent application-level errors",
-      "To optimize disk usage"
-    ],
-    "correctIndex": 0
-  },
-  {
     "id": "kafka-ch16-s07-mcq1",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 16 (Interview Prep)",
