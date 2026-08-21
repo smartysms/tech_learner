@@ -28581,25 +28581,6 @@
     "correctIndex": 2
   },
   {
-    "id": "kafka-ch19-s02-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 19 (Interview Prep)",
-    "topic": "What Does Auto-Commit Actually Commit?",
-    "label": null,
-    "type": "mcq",
-    "prompt": "After a crash before processing any records, what will Kafka deliver when the application restarts?",
-    "answer": null,
-    "notes": "Kafka redelivers all four records, including duplicates, since no commit has happened yet.",
-    "cloze_answer": null,
-    "options": [
-      "300 301 302 303",
-      "302 303",
-      "301 302 303",
-      "304"
-    ],
-    "correctIndex": 0
-  },
-  {
     "id": "kafka-ch19-s03-mcq1",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 19 (Interview Prep)",
@@ -28714,25 +28695,6 @@
     "correctIndex": 0
   },
   {
-    "id": "kafka-ch19-s05-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 19 (Interview Prep)",
-    "topic": "The Stale Commit Overwrite Problem",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is the final committed offset in Kafka?",
-    "answer": null,
-    "notes": "Kafka stores the offset of the last OffsetCommitRequest it receives, without considering logical order.",
-    "cloze_answer": null,
-    "options": [
-      "100",
-      "200",
-      "300",
-      "Kafka rejects the older commit automatically"
-    ],
-    "correctIndex": 2
-  },
-  {
     "id": "kafka-ch19-s05-mcq2",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 19 (Interview Prep)",
@@ -28790,25 +28752,6 @@
     "correctIndex": 1
   },
   {
-    "id": "kafka-ch19-s06-mcq3",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 19 (Interview Prep)",
-    "topic": "Production Commit Strategy",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What happens when a client uses commitAsync() and the commit attempt fails?",
-    "answer": null,
-    "notes": "Clients don't auto-retry failed async commits because Kafka treats offset commits as state updates, not ordered events.",
-    "cloze_answer": null,
-    "options": [
-      "The client will auto-retry the failed commit",
-      "The client will block and wait for the broker response",
-      "The client will continue with the next message",
-      "The client will pause and wait for a manual intervention"
-    ],
-    "correctIndex": 3
-  },
-  {
     "id": "kafka-ch19-s07-mcq1",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 19 (Interview Prep)",
@@ -28864,25 +28807,6 @@
       "Kafka 3.x/KRaft-specific Changes"
     ],
     "correctIndex": 0
-  },
-  {
-    "id": "kafka-ch19-s08-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 19 (Interview Prep)",
-    "topic": "What's Still Pending",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is the reason for committing offsets during a rebalance?",
-    "answer": null,
-    "notes": "The notes do not provide a specific reason for committing offsets during a rebalance, but the correct option is a plausible one",
-    "cloze_answer": null,
-    "options": [
-      "To prevent data loss during rebalancing",
-      "To ensure consistent partition assignment",
-      "To improve consumer performance",
-      "To handle broker failures"
-    ],
-    "correctIndex": 1
   },
   {
     "id": "kafka-ch19-s09-mcq1",
