@@ -23223,25 +23223,6 @@
     "correctIndex": 2
   },
   {
-    "id": "kafka-ch06-s04-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 6 (Interview Prep)",
-    "topic": "The High-Level Producer Lifecycle",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is the first step in the high-level producer lifecycle?",
-    "answer": null,
-    "notes": "The producer.send(record) method is the first step, which triggers the producer's send operation.",
-    "cloze_answer": null,
-    "options": [
-      "Application calls consumer.send(record)",
-      "Application calls producer.send(record)",
-      "RecordAccumulator accumulates records",
-      "Broker writes record and returns an ACK"
-    ],
-    "correctIndex": 2
-  },
-  {
     "id": "kafka-ch06-s04-mcq2",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 6 (Interview Prep)",
@@ -23261,25 +23242,6 @@
     "correctIndex": 1
   },
   {
-    "id": "kafka-ch06-s05-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 6 (Interview Prep)",
-    "topic": "Why producer.send() Is Asynchronous",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is the primary function of the producer.send() method?",
-    "answer": null,
-    "notes": "The call mainly determines the target partition, appends the record to the RecordAccumulator, and returns a Future almost immediately",
-    "cloze_answer": null,
-    "options": [
-      "Determines the target partition",
-      "Performs networking",
-      "Returns a Future almost immediately",
-      "Writes the record to disk"
-    ],
-    "correctIndex": 1
-  },
-  {
     "id": "kafka-ch06-s05-mcq2",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 6 (Interview Prep)",
@@ -23295,44 +23257,6 @@
       "It is acknowledged by replicas",
       "It is only ever in memory and is lost",
       "It is accepted and stored in the RecordAccumulator"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "id": "kafka-ch06-s06-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 6 (Interview Prep)",
-    "topic": "Interview Questions",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What happens to the record after producer.send() returns a Future?",
-    "answer": null,
-    "notes": "Only that the record reached the RecordAccumulator and a Future was returned - nothing about the broker, replicas, or the callback is guaranteed at that point.",
-    "cloze_answer": null,
-    "options": [
-      "Broker has already stored the record",
-      "Record is inside the RecordAccumulator",
-      "Replicas have acknowledged the record",
-      "The callback has already executed"
-    ],
-    "correctIndex": 3
-  },
-  {
-    "id": "kafka-ch06-s06-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 6 (Interview Prep)",
-    "topic": "Interview Questions",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What can happen if the application crashes immediately after producer.send(record)?",
-    "answer": null,
-    "notes": "At the instant of the crash, the record typically exists only in the RecordAccumulator - RAM, not the broker.",
-    "cloze_answer": null,
-    "options": [
-      "The broker will still receive the record because send() already succeeded",
-      "The record may be lost because it was only in the producer's memory",
-      "Kafka automatically recovers the record from disk on restart",
-      "The consumer will retry fetching the missing record"
     ],
     "correctIndex": 2
   },
@@ -23409,25 +23333,6 @@
       "Many small requests for better throughput",
       "Optimizing for throughput across millions of messages",
       "Reducing network latency"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "id": "kafka-ch06-s09-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 6 (Interview Prep)",
-    "topic": "What's Coming Next",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Why does Kafka append records to the RecordAccumulator instead of sending them directly to the broker?",
-    "answer": null,
-    "notes": "Kafka batches on purpose to trade a little latency for far higher throughput. The RecordAccumulator accumulates records before they're sent to the broker.",
-    "cloze_answer": null,
-    "options": [
-      "For better performance and higher throughput",
-      "To ensure idempotence and retries",
-      "To allow for batch processing and reduce latency",
-      "To enable compression and encryption"
     ],
     "correctIndex": 2
   },
