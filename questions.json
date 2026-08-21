@@ -22577,25 +22577,6 @@
     "correctIndex": 1
   },
   {
-    "id": "kafka-ch04-s01-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 4 (Interview Prep)",
-    "topic": "The Problem",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What happens to key-to-partition mapping after increasing the number of partitions?",
-    "answer": null,
-    "notes": "The increased partitions affect key-to-partition mapping, but it may not be immediately apparent.",
-    "cloze_answer": null,
-    "options": [
-      "It remains unaffected",
-      "It is re-mapped to ensure ordering guarantees",
-      "It is re-computed to handle the increased load",
-      "Nothing, Kafka just has more partitions now"
-    ],
-    "correctIndex": 3
-  },
-  {
     "id": "kafka-ch04-s01-mcq2",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 4 (Interview Prep)",
@@ -22786,25 +22767,6 @@
     "correctIndex": 2
   },
   {
-    "id": "kafka-ch04-s07-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 4 (Interview Prep)",
-    "topic": "Production Guidance",
-    "label": null,
-    "type": "mcq",
-    "prompt": "When increasing a keyed topic's partitions, what is the biggest risk introduced?",
-    "answer": null,
-    "notes": "The text explicitly states that the topic will silently lose messages written before the change, making this the correct answer.",
-    "cloze_answer": null,
-    "options": [
-      "The topic's replication factor is automatically reduced",
-      "Existing consumers can no longer deserialize new messages",
-      "The topic will silently lose messages written before the change",
-      "Per-key ordering can silently break across the change boundary"
-    ],
-    "correctIndex": 2
-  },
-  {
     "id": "kafka-ch04-s07-mcq2",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 4 (Interview Prep)",
@@ -22858,25 +22820,6 @@
       "Because the partition count change is retroactive",
       "Because the partition count change is not retroactive, and existing keys' mappings are fixed",
       "Because the topic is deleted and recreated"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "id": "kafka-ch04-s09-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 4 (Interview Prep)",
-    "topic": "What's Coming Next",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What does Kafka promise about message order, precisely, and where does that promise stop?",
-    "answer": null,
-    "notes": "Kafka promises ordering guarantees per-partition and across partitions, as stated precisely",
-    "cloze_answer": null,
-    "options": [
-      "per-partition ordering only, no guarantee across partitions",
-      "ordering guarantees only across partitions, not within",
-      "ordering guarantees for both per-partition and across partitions",
-      "no ordering guarantees, only best-effort delivery"
     ],
     "correctIndex": 2
   },
