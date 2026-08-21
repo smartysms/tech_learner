@@ -46,10 +46,12 @@
         <span id="cram-exit-btn" class="tag tag-cram" hidden>Exit Cram</span>
         <span id="combo-indicator" class="tag tag-combo" hidden></span>
         <span id="card-subject" class="tag tag-subject"></span>
+        <span id="card-difficulty" class="tag" hidden></span>
         <span id="card-block" class="tag"></span>
         <span id="card-topic" class="tag"></span>
         <span id="card-label" class="tag"></span>
       </div>
+      <div id="card-tags" class="card-tags-row" hidden></div>
       <p id="card-prompt"></p>
 
       <button id="show-answer-btn">Show Answer</button>
@@ -62,6 +64,15 @@
 
       <div id="mcq-options-block" hidden>
         <div id="mcq-options-list"></div>
+      </div>
+
+      <div id="match-block" hidden>
+        <p class="match-instructions">Drag each item on the right onto its match on the left.</p>
+        <div id="match-container">
+          <div id="match-left-col"></div>
+          <div id="match-right-col"></div>
+        </div>
+        <button id="match-check-btn" hidden>Check Matches</button>
       </div>
 
       <div id="answer" hidden>

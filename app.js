@@ -15,6 +15,8 @@ let flowsBackStack = [];
 let sessionCombo = 0;
 let unlockedAchievements = new Set();
 let selectedMcqIndex = null;
+let matchState = null; // { pairs, placements: Map(rightText -> leftText), checked }
+let activeDrag = null; // { chipEl, pointerId, offsetX, offsetY }
 
 function loadState() {
   try {
@@ -547,6 +549,23 @@ function renderCurrentCard() {
     labelEl.hidden = true;
   }
 
+  const difficultyEl = document.getElementById("card-difficulty");
+  if (card.difficulty) {
+    difficultyEl.textContent = card.difficulty;
+    difficultyEl.className = `tag tag-difficulty tag-difficulty-${card.difficulty}`;
+    difficultyEl.hidden = false;
+  } else {
+    difficultyEl.hidden = true;
+  }
+
+  const tagsRow = document.getElementById("card-tags");
+  if (Array.isArray(card.tags) && card.tags.length > 0) {
+    tagsRow.innerHTML = card.tags.map((t) => `<span class="tag tag-topic">${t}</span>`).join("");
+    tagsRow.hidden = false;
+  } else {
+    tagsRow.hidden = true;
+  }
+
   document.getElementById("card-sql").hidden = !card.answer;
   document.querySelector("#card-sql code").textContent = card.answer || "";
   document.getElementById("card-notes").textContent = card.notes || "";
@@ -557,7 +576,9 @@ function renderCurrentCard() {
   document.getElementById("cloze-answer-input").disabled = false;
   document.getElementById("check-cloze-btn").disabled = false;
   document.getElementById("mcq-options-block").hidden = true;
+  document.getElementById("match-block").hidden = true;
   selectedMcqIndex = null;
+  matchState = null;
 
   const hasOptions = Array.isArray(card.options) && card.options.length > 0;
 
@@ -566,6 +587,11 @@ function renderCurrentCard() {
     document.getElementById("show-answer-btn").hidden = true;
     document.getElementById("cloze-input-block").hidden = true;
     renderMcqOptions(card);
+  } else if (card.type === "match") {
+    document.getElementById("card-prompt").textContent = card.prompt;
+    document.getElementById("show-answer-btn").hidden = true;
+    document.getElementById("cloze-input-block").hidden = true;
+    renderMatchCard(card);
   } else if (card.type === "cloze" && hasOptions) {
     document.getElementById("card-prompt").textContent = card.prompt.replace("{{blank}}", "_____");
     document.getElementById("show-answer-btn").hidden = true;
@@ -664,6 +690,137 @@ function handleMcqSelect(card, index) {
     if (i === index && !isCorrect) btn.classList.add("mcq-incorrect");
   });
 
+  document.getElementById("answer").hidden = false;
+}
+
+// --- Match (drag-and-drop): pair each left item with its right item ---
+// Uses Pointer Events (not the HTML5 native drag-and-drop API, which has
+// unreliable touch support) so the same code handles touch/mouse/pen
+// uniformly - a chip follows the pointer via position:fixed while dragging,
+// and drops onto whichever .match-dropzone is under the release point.
+
+function renderMatchCard(card) {
+  const block = document.getElementById("match-block");
+  const leftCol = document.getElementById("match-left-col");
+  const rightCol = document.getElementById("match-right-col");
+  const checkBtn = document.getElementById("match-check-btn");
+  leftCol.innerHTML = "";
+  rightCol.innerHTML = "";
+  block.hidden = false;
+  checkBtn.hidden = true;
+  checkBtn.disabled = false;
+
+  matchState = { pairs: card.pairs, placements: new Map(), checked: false };
+
+  for (const pair of card.pairs) {
+    const zone = document.createElement("div");
+    zone.className = "match-dropzone";
+    zone.dataset.left = pair.left;
+    zone.innerHTML = `<span class="match-dropzone-label">${pair.left}</span><span class="match-dropzone-slot"></span>`;
+    leftCol.appendChild(zone);
+  }
+
+  const shuffledRights = shuffle(card.pairs.map((p) => p.right));
+  for (const rightText of shuffledRights) {
+    rightCol.appendChild(createMatchChip(rightText));
+  }
+}
+
+function createMatchChip(rightText) {
+  const chip = document.createElement("div");
+  chip.className = "match-chip";
+  chip.textContent = rightText;
+  chip.dataset.right = rightText;
+  chip.addEventListener("pointerdown", onMatchChipPointerDown);
+  return chip;
+}
+
+// Document-level move/up listeners (registered once in init(), never
+// per-drag) rather than setPointerCapture()+element-scoped listeners: capture
+// silently breaks in some browsers when the captured element gets styled/
+// reparented mid-drag, which left pointerup never arriving. Listening on
+// document and gating on the activeDrag/pointerId guard below is the more
+// robust, standard pattern and has no such failure mode.
+function onMatchChipPointerDown(e) {
+  if (matchState.checked) return;
+  const chip = e.currentTarget;
+  const rect = chip.getBoundingClientRect();
+  activeDrag = {
+    chipEl: chip,
+    pointerId: e.pointerId,
+    offsetX: e.clientX - rect.left,
+    offsetY: e.clientY - rect.top,
+  };
+  chip.classList.add("match-chip-dragging");
+  chip.style.width = `${rect.width}px`;
+  chip.style.left = `${rect.left}px`;
+  chip.style.top = `${rect.top}px`;
+}
+
+function onMatchChipPointerMove(e) {
+  if (!activeDrag || e.pointerId !== activeDrag.pointerId) return;
+  const { chipEl, offsetX, offsetY } = activeDrag;
+  chipEl.style.left = `${e.clientX - offsetX}px`;
+  chipEl.style.top = `${e.clientY - offsetY}px`;
+
+  document.querySelectorAll(".match-dropzone-over").forEach((z) => z.classList.remove("match-dropzone-over"));
+  chipEl.hidden = true;
+  const under = document.elementFromPoint(e.clientX, e.clientY);
+  chipEl.hidden = false;
+  const zone = under && under.closest(".match-dropzone");
+  if (zone) zone.classList.add("match-dropzone-over");
+}
+
+function onMatchChipPointerUp(e) {
+  if (!activeDrag || e.pointerId !== activeDrag.pointerId) return;
+  const { chipEl } = activeDrag;
+  chipEl.classList.remove("match-chip-dragging");
+  chipEl.style.left = "";
+  chipEl.style.top = "";
+  chipEl.style.width = "";
+
+  document.querySelectorAll(".match-dropzone-over").forEach((z) => z.classList.remove("match-dropzone-over"));
+  chipEl.hidden = true;
+  const under = document.elementFromPoint(e.clientX, e.clientY);
+  chipEl.hidden = false;
+  const zone = under && under.closest(".match-dropzone");
+  activeDrag = null;
+
+  // Unplace this chip from wherever it currently sits (a previous dropzone,
+  // or nowhere) before placing it at the new location.
+  for (const [left, right] of matchState.placements) {
+    if (right === chipEl.dataset.right) matchState.placements.delete(left);
+  }
+
+  if (zone) {
+    const slot = zone.querySelector(".match-dropzone-slot");
+    const existingChip = slot.querySelector(".match-chip");
+    if (existingChip) document.getElementById("match-right-col").appendChild(existingChip);
+    slot.appendChild(chipEl);
+    matchState.placements.set(zone.dataset.left, chipEl.dataset.right);
+  } else {
+    document.getElementById("match-right-col").appendChild(chipEl);
+  }
+
+  const checkBtn = document.getElementById("match-check-btn");
+  checkBtn.hidden = matchState.placements.size !== matchState.pairs.length;
+}
+
+function checkMatches() {
+  matchState.checked = true;
+  for (const pair of matchState.pairs) {
+    const zone = document.querySelector(`.match-dropzone[data-left="${CSS.escape(pair.left)}"]`);
+    const chip = zone.querySelector(".match-chip");
+    zone.classList.add(chip && chip.dataset.right === pair.right ? "match-dropzone-correct" : "match-dropzone-incorrect");
+    if (!chip || chip.dataset.right !== pair.right) {
+      const reveal = document.createElement("span");
+      reveal.className = "match-dropzone-reveal";
+      reveal.textContent = `Correct: ${pair.right}`;
+      zone.appendChild(reveal);
+    }
+  }
+  document.querySelectorAll(".match-chip").forEach((c) => (c.style.touchAction = "none"));
+  document.getElementById("match-check-btn").hidden = true;
   document.getElementById("answer").hidden = false;
 }
 
@@ -795,6 +952,10 @@ function init() {
 
   document.getElementById("show-answer-btn").addEventListener("click", handleShowAnswer);
   document.getElementById("check-cloze-btn").addEventListener("click", handleCheckCloze);
+  document.getElementById("match-check-btn").addEventListener("click", checkMatches);
+  document.addEventListener("pointermove", onMatchChipPointerMove);
+  document.addEventListener("pointerup", onMatchChipPointerUp);
+  document.addEventListener("pointercancel", onMatchChipPointerUp);
   document.getElementById("cloze-answer-input").addEventListener("keydown", (e) => {
     if (e.key === "Enter" && !e.target.disabled) handleCheckCloze();
   });

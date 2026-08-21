@@ -495,6 +495,143 @@ pre#card-sql {
   background: color-mix(in srgb, var(--again) 15%, var(--bg));
 }
 
+/* --- Difficulty tag + freeform topic tags row --- */
+
+.tag-difficulty {
+  color: #fff;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.tag-difficulty-easy {
+  background: var(--easy);
+  border-color: var(--easy);
+}
+
+.tag-difficulty-medium {
+  background: var(--hard);
+  border-color: var(--hard);
+}
+
+.tag-difficulty-hard {
+  background: var(--again);
+  border-color: var(--again);
+}
+
+.card-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: -0.35rem 0 0.75rem;
+}
+
+.tag-topic {
+  font-size: 0.7rem;
+  color: var(--muted);
+  background: var(--bg);
+}
+
+/* --- Match (drag-and-drop): left column of fixed drop zones, right column
+   of draggable chips. See app.js's "Match (drag-and-drop)" section for the
+   Pointer Events implementation. --- */
+
+.match-instructions {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 0 0 0.75rem;
+}
+
+#match-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+#match-left-col,
+#match-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.match-dropzone {
+  border: 2px dashed var(--border);
+  border-radius: 10px;
+  padding: 0.5rem;
+  min-height: 52px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.match-dropzone-label {
+  font-size: 0.85rem;
+  color: var(--fg);
+  font-weight: 600;
+}
+
+.match-dropzone-slot {
+  display: flex;
+  min-height: 36px;
+}
+
+.match-dropzone-slot .match-chip {
+  width: 100%;
+}
+
+.match-dropzone-over {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, var(--bg));
+}
+
+.match-dropzone-correct {
+  border-style: solid;
+  border-color: var(--easy);
+  background: color-mix(in srgb, var(--easy) 12%, var(--bg));
+}
+
+.match-dropzone-incorrect {
+  border-style: solid;
+  border-color: var(--again);
+  background: color-mix(in srgb, var(--again) 12%, var(--bg));
+}
+
+.match-dropzone-reveal {
+  font-size: 0.8rem;
+  color: var(--again);
+}
+
+.match-chip {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.9rem;
+  text-align: center;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.match-chip-dragging {
+  position: fixed;
+  z-index: 1000;
+  cursor: grabbing;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+#match-check-btn {
+  width: 100%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1rem;
+}
+
 /* --- Card transition + tap feedback (see conversation: Duolingo research) --- */
 
 @keyframes card-enter {
