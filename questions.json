@@ -35723,5 +35723,917 @@
       "Only Oracle and Postgres"
     ],
     "correctIndex": 2
+  },
+  {
+    "id": "python_decorators-ch01-s01-mcq1",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 1 (Interview Prep)",
+    "topic": "Why Decorators Exist (The DRY Problem)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the main problem with manually wrapping each of 500 functions with 'Before' and 'After' logic?",
+    "answer": null,
+    "notes": "Code duplication, violating the DRY principle",
+    "cloze_answer": null,
+    "options": [
+      "Python cannot call the wrapper repeatedly",
+      "You would have to manually write the 'Before' and 'After' logic around every function",
+      "The wrapper can only call one function",
+      "Functions cannot call other functions"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "python_decorators-ch01-s01-mcq2",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 1 (Interview Prep)",
+    "topic": "Why Decorators Exist (The DRY Problem)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the main benefit of using a decorator to add shared behavior to multiple functions?",
+    "answer": null,
+    "notes": "Write the extra behavior once and apply it to multiple functions",
+    "cloze_answer": null,
+    "options": [
+      "It allows you to write the extra behavior exactly once and apply it to multiple functions",
+      "It forces you to repeat the same logic around every function",
+      "It limits the number of functions you can decorate",
+      "It makes the code harder to read"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "python_decorators-ch01-s02-mcq1",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 1 (Interview Prep)",
+    "topic": "What Decorators Are Built On (First-Class Functions)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What are decorators in Python fundamentally built upon?",
+    "answer": null,
+    "notes": "Decorators rely on functions being first-class objects, which allows them to be passed around like any other value. This enables decorator syntax (@decorator) to work.",
+    "cloze_answer": null,
+    "options": [
+      "Classes",
+      "Loops",
+      "Functions being first-class objects",
+      "Inheritance"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "python_decorators-ch01-s03-mcq1",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 1 (Interview Prep)",
+    "topic": "Closures Capture Variables, Not Values",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does a closure capture in Python?",
+    "answer": null,
+    "notes": "Closures capture the reference to a variable, not its value. This allows the closure to access the variable's current value even if it changes.",
+    "cloze_answer": null,
+    "options": [
+      "The value of a variable",
+      "The reference to a variable",
+      "A snapshot of the variable's value at creation time",
+      "The name of the variable"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "python_decorators-ch01-s03-mcq2",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 1 (Interview Prep)",
+    "topic": "Closures Capture Variables, Not Values",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What happens to the variable x when you reassign its value inside the outer function?",
+    "answer": null,
+    "notes": "The closure captures a reference to x, not its value at creation time. When x is reassigned before the closure is called, the closure looks up the CURRENT value of x and sees the new one - this is why the naive \"closures capture the value at definition time\" mental model is wrong.",
+    "cloze_answer": null,
+    "options": [
+      "The closure created earlier stops working",
+      "The variable x is updated in all scopes",
+      "The variable x remains unaffected",
+      "The closure sees the reassigned value, since it looks up x by reference at call time, not a frozen copy"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "id": "python_decorators-ch01-s04-mcq1",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 1 (Interview Prep)",
+    "topic": "The Classic Interview Trap - Loops and Late Binding",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What will be printed when the functions in the funcs list are called?",
+    "answer": null,
+    "notes": "Each closure captures the same variable i, which holds the last assigned value 2.",
+    "cloze_answer": null,
+    "options": [
+      "0 1 2",
+      "2 2 2",
+      "3 3 3",
+      "It raises an exception."
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "python_decorators-ch01-s04-mcq2",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 1 (Interview Prep)",
+    "topic": "The Classic Interview Trap - Loops and Late Binding",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why do all three functions print the same value?",
+    "answer": null,
+    "notes": "The closures capture the same variable i, which holds the last assigned value 2.",
+    "cloze_answer": null,
+    "options": [
+      "Because each function froze its own value of i",
+      "Because the loop's exit condition increments i one more time past the last valid value",
+      "Because all three closures capture the same variable i",
+      "Because one of the functions prints something else entirely"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "python_decorators-ch01-s05-mcq1",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 1 (Interview Prep)",
+    "topic": "Fixing Late Binding (The Default-Argument Trick)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What determines the value of the default argument in a Python function?",
+    "answer": null,
+    "notes": "Default argument values are evaluated ONCE, at function-definition time, not at call time.",
+    "cloze_answer": null,
+    "options": [
+      "The value is evaluated at call time",
+      "The value is evaluated at function-definition time",
+      "The value is a shared reference to the loop variable",
+      "The value is captured by the variable itself"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "python_decorators-ch01-s05-mcq2",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 1 (Interview Prep)",
+    "topic": "Fixing Late Binding (The Default-Argument Trick)",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does a Python closure capture?",
+    "answer": null,
+    "notes": "A Python closure captures the variable (by reference), not the value - this is called late binding.",
+    "cloze_answer": null,
+    "options": [
+      "The value of the variable",
+      "The variable itself",
+      "The value or the variable",
+      "The variable by reference"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "id": "python_decorators-ch01-s06-mcq1",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 1 (Interview Prep)",
+    "topic": "Chapter 1 Revision Sheet",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why do decorators exist in Python?",
+    "answer": null,
+    "notes": "Decorators exist to write shared behavior once and apply it to many functions. The other options are all incorrect.",
+    "cloze_answer": null,
+    "options": [
+      "To manually wrap every function",
+      "To write shared behavior once and apply it to many functions",
+      "To make closures more efficient",
+      "To improve code readability"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "python_decorators-ch01-s06-mcq2",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 1 (Interview Prep)",
+    "topic": "Chapter 1 Revision Sheet",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What happens when a function defined in a loop references the loop variable?",
+    "answer": null,
+    "notes": "The function sees the loop variable's final value when called, not the value at each iteration. This is because the variable-not-value behavior is called late binding.",
+    "cloze_answer": null,
+    "options": [
+      "Each function gets its own private captured value",
+      "The function sees the loop variable's value at the time of function definition",
+      "The function sees the loop variable's final value when called",
+      "None of the above"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "python_decorators-ch01-s07-mcq1",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 1 (Interview Prep)",
+    "topic": "What's Missing, and What Comes Next",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the primary purpose of decorators in Python?",
+    "answer": null,
+    "notes": "Decorators exist to avoid rewriting the same before/after logic around many functions",
+    "cloze_answer": null,
+    "options": [
+      "To provide a way to modify function behavior",
+      "To improve code readability",
+      "To avoid rewriting before/after logic around many functions",
+      "To implement asynchronous programming"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "python_decorators-ch01-s07-mcq2",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 1 (Interview Prep)",
+    "topic": "What's Missing, and What Comes Next",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What happens to the captured variables in a closure?",
+    "answer": null,
+    "notes": "Closures capture the enclosing variable, not a snapshot of its value",
+    "cloze_answer": null,
+    "options": [
+      "They are immutable by default",
+      "They are mutable by default",
+      "They capture a snapshot of the variable's value at the time of creation",
+      "They capture the enclosing variable's final value"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "id": "python_decorators-ch02-s01-mcq1",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 2 (Interview Prep)",
+    "topic": "The @ Syntax Is Just Sugar",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does Python internally convert the @decorator above into?",
+    "answer": null,
+    "notes": "@decorator above a function is pure syntactic sugar for hello = decorator(hello), executed immediately after the function is defined. Calling hello() afterward is a separate, later action - not part of the rewrite itself.",
+    "cloze_answer": null,
+    "options": [
+      "hello = decorator(hello) then hello()",
+      "decorator(hello) then hello()",
+      "hello() then decorator(hello)",
+      "hello = decorator(hello)"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "id": "python_decorators-ch02-s01-mcq2",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 2 (Interview Prep)",
+    "topic": "The @ Syntax Is Just Sugar",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What happens to the name 'hello' after the decorator is applied?",
+    "answer": null,
+    "notes": "The decorator does not modify the original function in place - it returns some callable (typically a wrapper), and the original name hello gets rebound to whatever was returned, not to the decorator function itself.",
+    "cloze_answer": null,
+    "options": [
+      "The name is removed",
+      "The name is rebound to the original function",
+      "The name is rebound to whatever the decorator returns (the wrapper function)",
+      "The name remains unchanged"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "python_decorators-ch02-s02-mcq1",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 2 (Interview Prep)",
+    "topic": "Import Time vs Runtime",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What are the two distinct phases of importing a module containing decorators?",
+    "answer": null,
+    "notes": "During Phase 1, Python executes all top-level statements, including every def, class, @decorator application, and top-level print(), in the order they appear. Phase 2 occurs when you later actually CALL the decorated name.",
+    "cloze_answer": null,
+    "options": [
+      "Import/Definition time and Runtime",
+      "Definition time only",
+      "Runtime only",
+      "Only when you call the decorated name"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "python_decorators-ch02-s02-mcq2",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 2 (Interview Prep)",
+    "topic": "Import Time vs Runtime",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the order of execution for the top-level print statements in the example?",
+    "answer": null,
+    "notes": "Python reads the file top to bottom; defining decorator prints nothing yet. Python reaches @decorator above hello; this immediately executes decorator(hello), which prints 'Decorating: hello' right then (NOT when hello() is later called), then returns wrapper, rebinding hello.",
+    "cloze_answer": null,
+    "options": [
+      "Program Started, Decorating, Wrapper, Hello/Bye",
+      "Wrapper, Hello/Bye, Decorating, Program Started",
+      "Decorating, Program Started, Wrapper, Hello/Bye",
+      "Program Started, Hello/Bye, Decorating, Wrapper"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "python_decorators-ch02-s03-mcq1",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 2 (Interview Prep)",
+    "topic": "Return Values Flow Through the Wrapper",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the output when print(hello()) is executed?",
+    "answer": null,
+    "notes": "Decorating hello prints at IMPORT time (when @decorator runs). Before/Hello/After/100 all happen later at RUNTIME when print(hello()) actually calls wrapper(). So the order is: Decorating hello, Before, Hello, After, 100.",
+    "cloze_answer": null,
+    "options": [
+      "Before / Decorating hello / Hello / After / 100",
+      "Decorating hello / Before / Hello / After / 100",
+      "Decorating hello / Hello / Before / After / 100",
+      "Decorating hello / Before / Hello / 100 / After"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "python_decorators-ch02-s04-mcq1",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 2 (Interview Prep)",
+    "topic": "Why Simple Wrappers Break On Arguments",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What happens when the original `add` function is decorated and called as `add(10, 20)`?",
+    "answer": null,
+    "notes": "because the wrapper doesn't take an argument",
+    "cloze_answer": null,
+    "options": [
+      "Prints: Before / After / 30",
+      "Prints: Before / 30 / After",
+      "It raises a TypeError.",
+      "It prints None."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "python_decorators-ch02-s04-mcq2",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 2 (Interview Prep)",
+    "topic": "Why Simple Wrappers Break On Arguments",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the key to writing a correct decorator?",
+    "answer": null,
+    "notes": "preserving whichever the original function actually does",
+    "cloze_answer": null,
+    "options": [
+      "Preserving the original function's return value",
+      "Printing the result inside the wrapper",
+      "Raising an exception if the original function returns None",
+      "Ignoring the original function's return value"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "python_decorators-ch02-s05-mcq1",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 2 (Interview Prep)",
+    "topic": "Chapter 2 Revision Sheet",
+    "label": null,
+    "type": "mcq",
+    "prompt": "At what time is decorator application executed?",
+    "answer": null,
+    "notes": "The decorator doesn't modify the original function in place - it returns some callable, and the original name gets rebound to whatever was returned.",
+    "cloze_answer": null,
+    "options": [
+      "When the decorated function is called",
+      "During import/definition time",
+      "At runtime, when the module loads",
+      "At the end of the program"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "python_decorators-ch02-s05-mcq2",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 2 (Interview Prep)",
+    "topic": "Chapter 2 Revision Sheet",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What happens if a wrapper doesn't explicitly capture and return the original function's return value?",
+    "answer": null,
+    "notes": "A wrapper MUST explicitly capture and return the original function's return value (result = func(...); return result) or the caller silently gets None instead of the real result.",
+    "cloze_answer": null,
+    "options": [
+      "The caller gets the real result",
+      "The caller silently gets None instead of the real result",
+      "The wrapper breaks",
+      "The decorator is redefined"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "python_decorators-ch02-s06-mcq1",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 2 (Interview Prep)",
+    "topic": "What's Missing, and What Comes Next",
+    "label": null,
+    "type": "mcq",
+    "prompt": "When does the wrapper's own body run in a decorator?",
+    "answer": null,
+    "notes": "Decorator APPLICATION (decorator(func) creating and returning wrapper) happens once at import/definition time. The WRAPPER's own body, however, only executes later, each time the now-rebound name is actually called - i.e. on every function call.",
+    "cloze_answer": null,
+    "options": [
+      "On every function call",
+      "At startup",
+      "On import/definition time",
+      "At application order time"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "python_decorators-ch02-s06-mcq2",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 2 (Interview Prep)",
+    "topic": "What's Missing, and What Comes Next",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Why does a wrapper written as `def wrapper(*args, **kwargs): forwarding to func(*args, **kwargs)` allow a decorator to work on any function signature?",
+    "answer": null,
+    "notes": "def wrapper(*args, **kwargs) collects any positional/keyword arguments into args/kwargs and forwards them straight through via func(*args, **kwargs) - that is what lets one wrapper signature work for hello(), login(username, password), or any other function. Capturing/returning the return value (result = func(...); return result) is a separate, unrelated concern.",
+    "cloze_answer": null,
+    "options": [
+      "Because it raises TypeError on argument mismatch",
+      "Because *args/**kwargs accepts any number of positional/keyword arguments and forwards them unchanged to func(*args, **kwargs), so wrapper's own signature never restricts what can be called through it",
+      "Because it only runs on startup",
+      "Because it's syntactic sugar"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "python_decorators-ch03-s01-mcq1",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 3 (Interview Prep)",
+    "topic": "Without @wraps - What Breaks",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does the wrapper hide?",
+    "answer": null,
+    "notes": "The wrapper hides the original function's identity, which includes its name and docstring.",
+    "cloze_answer": null,
+    "options": [
+      "The original function's name",
+      "The original function's docstring",
+      "The original function's identity",
+      "The original function's return value"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "python_decorators-ch03-s01-mcq2",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 3 (Interview Prep)",
+    "topic": "Without @wraps - What Breaks",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What do the print statements output without running the code?",
+    "answer": null,
+    "notes": "greet is rebound to wrapper (Chapter 2), so any metadata inspected on greet is actually wrapper's own: wrapper's __name__ is the literal string 'wrapper', and wrapper's __doc__ is None since it was never given a docstring. Nothing here raises - both are valid attributes on any function object.",
+    "cloze_answer": null,
+    "options": [
+      "wrapper / This greets the user.",
+      "It raises an exception.",
+      "wrapper / None",
+      "It prints the original function's name and docstring."
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "python_decorators-ch03-s02-mcq1",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 3 (Interview Prep)",
+    "topic": "What functools.wraps Actually Copies",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does functools.wraps(func) actually copy from the original function?",
+    "answer": null,
+    "notes": "Metadata attributes get overwritten with copies of the original function's metadata.",
+    "cloze_answer": null,
+    "options": [
+      "The original function's code",
+      "The original function's metadata",
+      "The original function's execution path",
+      "The original function's return value"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "python_decorators-ch03-s02-mcq2",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 3 (Interview Prep)",
+    "topic": "What functools.wraps Actually Copies",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What happens to the original function's metadata when using @wraps(func) without the equivalent code?",
+    "answer": null,
+    "notes": "The original function's metadata is lost, and any introspection tools would see the wrapper function's metadata instead.",
+    "cloze_answer": null,
+    "options": [
+      "It is completely lost",
+      "It is copied to the wrapper function",
+      "It remains unchanged",
+      "It is replaced with the wrapper function's metadata"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "python_decorators-ch03-s03-mcq1",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 3 (Interview Prep)",
+    "topic": "The __wrapped__ Pointer",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What do the two print statements print?",
+    "answer": null,
+    "notes": "The __wrapped__ pointer points from the wrapper to the original function, so both print statements print 'greet'.",
+    "cloze_answer": null,
+    "options": [
+      "greet / wrapper",
+      "wrapper / wrapper",
+      "greet / greet",
+      "None of the above"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "python_decorators-ch03-s03-mcq2",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 3 (Interview Prep)",
+    "topic": "The __wrapped__ Pointer",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does the __wrapped__ pointer point from?",
+    "answer": null,
+    "notes": "The __wrapped__ pointer points from the wrapper to the original function, not the other way around.",
+    "cloze_answer": null,
+    "options": [
+      "The wrapper to the original function",
+      "The original function to the wrapper",
+      "The decorator to the wrapper",
+      "The wrapper to itself"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "python_decorators-ch03-s04-mcq1",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 3 (Interview Prep)",
+    "topic": "Stacked Decorators & the __wrapped__ Chain",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does `print(hello.__wrapped__.__name__)` print?",
+    "answer": null,
+    "notes": "The correct answer is 'hello' because the __wrapped__ chain follows W1's pointer to W1's __name__ which is 'hello'.",
+    "cloze_answer": null,
+    "options": [
+      "hello",
+      "wrapper",
+      "Raises an exception",
+      "Depends on the Python version"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "python_decorators-ch03-s05-mcq1",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 3 (Interview Prep)",
+    "topic": "Chapter 3 Revision Sheet",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What happens to the original function's metadata when using a decorator without @wraps?",
+    "answer": null,
+    "notes": "Without @wraps, the decorated name only exposes wrapper's own generic metadata (name literally \"wrapper\", no docstring) - the original function's real metadata is not accessible through it anymore, since nothing points back to the original (no __wrapped__ either).",
+    "cloze_answer": null,
+    "options": [
+      "It remains unchanged",
+      "It is exposed to the caller",
+      "It is not accessible",
+      "It is duplicated"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "python_decorators-ch03-s05-mcq2",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 3 (Interview Prep)",
+    "topic": "Chapter 3 Revision Sheet",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What does @wraps do to the wrapper?",
+    "answer": null,
+    "notes": "It copies the __name__, __doc__, __module__, and __annotations__ from the original function onto the wrapper, and sets the wrapper's __wrapped__ attribute.",
+    "cloze_answer": null,
+    "options": [
+      "Copies the original function's metadata onto the wrapper",
+      "Sets the wrapper's __wrapped__ attribute",
+      "Both of the above",
+      "Neither of the above"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "python_decorators-ch03-s06-mcq1",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 3 (Interview Prep)",
+    "topic": "What's Missing, and What Comes Next",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the purpose of functools.wraps?",
+    "answer": null,
+    "notes": "functools.wraps copies __name__/__doc__/__module__/__annotations__ from func onto the wrapper and sets wrapper.__wrapped__ = func",
+    "cloze_answer": null,
+    "options": [
+      "To apply decorators in a top-to-bottom order",
+      "To copy metadata from the original function to the wrapper",
+      "To prevent the original function's identity from being hidden",
+      "To implement class-based decorators"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "python_decorators-ch03-s06-mcq2",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 3 (Interview Prep)",
+    "topic": "What's Missing, and What Comes Next",
+    "label": null,
+    "type": "mcq",
+    "prompt": "In what order do decorators apply?",
+    "answer": null,
+    "notes": "Decorators apply bottom-to-top, so each __wrapped__ hop only unwraps one layer",
+    "cloze_answer": null,
+    "options": [
+      "Top-to-bottom",
+      "Bottom-to-top",
+      "Randomly",
+      "Only when invoked"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "python_decorators-ch04-s01-mcq1",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 4 (Interview Prep)",
+    "topic": "From One Call To Two",
+    "label": null,
+    "type": "mcq",
+    "prompt": "At the moment Python executes retry(3), does the hello function already exist?",
+    "answer": null,
+    "notes": "The user's first answer was A - Yes, reasoning that hello 'is passed as argument to the retry decorator.' The correct answer is B - No.",
+    "cloze_answer": null,
+    "options": [
+      "Yes",
+      "No",
+      "It depends",
+      "Not a function"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "python_decorators-ch04-s01-mcq2",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 4 (Interview Prep)",
+    "topic": "From One Call To Two",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What would happen if you pass a parameter to a plain decorator?",
+    "answer": null,
+    "notes": "A plain decorator is a single function call, it doesn't support parameters.",
+    "cloze_answer": null,
+    "options": [
+      "It would return a new function",
+      "It would print the parameter",
+      "It would raise an error",
+      "Nothing would happen"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "python_decorators-ch04-s02-mcq1",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 4 (Interview Prep)",
+    "topic": "Does hello Exist When retry(3) Runs?",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the only input available to pass into @retry(3) when it's executed?",
+    "answer": null,
+    "notes": "At the moment @retry(3) executes, hello has not been created yet (Python has not reached def hello(): below it) - the only thing available to pass into retry() is the literal integer 3.",
+    "cloze_answer": null,
+    "options": [
+      "def hello():",
+      "3",
+      "the hello function object",
+      "the wrapper function"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "python_decorators-ch04-s02-mcq2",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 4 (Interview Prep)",
+    "topic": "Does hello Exist When retry(3) Runs?",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the correct three-step order of events for @retry(3) applied to def hello():?",
+    "answer": null,
+    "notes": "Matches the chapter's own timeline exactly: @retry(3) executes first (only 3 is available, hello doesn't exist yet) and returns the decorator; then def hello(): creates the function object; then decorator(hello) is called now that hello exists.",
+    "cloze_answer": null,
+    "options": [
+      "retry(3) runs and returns the decorator, then def hello(): creates the function object, then decorator(hello) is called",
+      "def hello(): creates the function object, then retry(3) runs, then decorator(hello) is called",
+      "decorator(hello) is called, then retry(3) runs, then def hello(): creates the function object",
+      "retry(3) and def hello(): run simultaneously, then decorator(hello) is called"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "python_decorators-ch04-s03-mcq1",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 4 (Interview Prep)",
+    "topic": "Before \"decorator called\" Prints",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Before 'decorator called' is printed, does the hello function object already exist?",
+    "answer": null,
+    "notes": "The confusion was between two different events: decorator(hello) has not been CALLED yet at that point, true - but hello the function OBJECT was already created earlier, the moment Python executed def hello(): . Not-yet-called and not-yet-created are not the same thing.",
+    "cloze_answer": null,
+    "options": [
+      "Yes",
+      "No",
+      "This is not specified in the chapter",
+      "This is a function-specific behavior"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "python_decorators-ch04-s04-mcq1",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 4 (Interview Prep)",
+    "topic": "The Official Desugaring",
+    "label": null,
+    "type": "mcq",
+    "prompt": "When Python encounters a parameterized decorated function definition, what does it do first?",
+    "answer": null,
+    "notes": "This is equivalent to the desugared model, where the factory call happens first.",
+    "cloze_answer": null,
+    "options": [
+      "It executes the source code top to bottom as separate statements",
+      "It performs a fixed, equivalent sequence",
+      "It raises an error",
+      "It creates a new function object"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "python_decorators-ch04-s04-mcq2",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 4 (Interview Prep)",
+    "topic": "The Official Desugaring",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the equivalent sequence performed by Python when it sees a parameterized decorated function definition?",
+    "answer": null,
+    "notes": "The official desugaring is three ordered steps: Step 1 _temp_decorator = retry(3) (the factory call, first); Step 2 def hello(): (the function object is created); Step 3 hello = _temp_decorator(hello) (the real decorator call). Omitting the factory call as a first step is the mistake this question tests for.",
+    "cloze_answer": null,
+    "options": [
+      "The real decorator call, followed by the creation of the function object",
+      "The factory call, followed by the creation of the function object, and then the real decorator call",
+      "The creation of the function object, followed by the real decorator call",
+      "The creation of the function object, followed by the factory call, and then the real decorator call"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "python_decorators-ch04-s05-mcq1",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 4 (Interview Prep)",
+    "topic": "Applying It",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the purpose of the `symmetric` flag in the cache decorator?",
+    "answer": null,
+    "notes": "The `symmetric` flag is used to canonicalize the function arguments before building the cache key, ensuring that functions with commutative properties can share cache entries.",
+    "cloze_answer": null,
+    "options": [
+      "to optimize cache hits",
+      "to ensure commutativity of the decorated function",
+      "to prevent cache misses",
+      "to cache function arguments"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "python_decorators-ch04-s05-mcq2",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 4 (Interview Prep)",
+    "topic": "Applying It",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the impact of setting `symmetric=True` in the `add` function?",
+    "answer": null,
+    "notes": "Setting `symmetric=True` enables the cache to share entries for function calls with commutative properties, such as `add(3, 4)` and `add(4, 3)`.",
+    "cloze_answer": null,
+    "options": [
+      "it disables the cache",
+      "it enables the cache",
+      "it makes the function commutative",
+      "it makes the function non-commutative"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "python_decorators-ch04-s06-mcq1",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 4 (Interview Prep)",
+    "topic": "Chapter 4 Revision Sheet",
+    "label": null,
+    "type": "mcq",
+    "prompt": "When using parameterized decorators, how many levels of nested functions are required?",
+    "answer": null,
+    "notes": "Parameterized decorators need three levels of nested functions - factory(args) returns decorator(func), which returns wrapper(*args, **kwargs).",
+    "cloze_answer": null,
+    "options": [
+      "One",
+      "Two",
+      "Three",
+      "Four"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "python_decorators-ch04-s06-mcq2",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 4 (Interview Prep)",
+    "topic": "Chapter 4 Revision Sheet",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What is the correct order of events when using the @retry(3) decorator with a function like def hello():?",
+    "answer": null,
+    "notes": "By the time decorator(hello) is called, hello already exists as a function object, and it's only then that the decorator prints anything inside itself.",
+    "cloze_answer": null,
+    "options": [
+      "hello() is called, then retry(3)",
+      "retry(3) is executed, then hello() is called",
+      "The @ syntax directly calls the retry decorator",
+      "retry(3) runs first and returns the actual decorator, then that decorator runs on hello"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "id": "python_decorators-ch04-s07-mcq1",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 4 (Interview Prep)",
+    "topic": "What's Missing, and What Comes Next",
+    "label": null,
+    "type": "mcq",
+    "prompt": "Which of the following has ALREADY been resolved by this point in the series (i.e. is NOT still on the open roadmap)?",
+    "answer": null,
+    "notes": "functools.wraps and __wrapped__ were fully covered in Chapter 3. Stacked-decorator call-time order, class-based __call__ decorators, and production patterns beyond the cache example are all explicitly still open per this chapter's own roadmap list - so those three cannot be a single unique answer to \"what remains open\", this question instead asks for the one already-resolved item.",
+    "cloze_answer": null,
+    "options": [
+      "Stacked decorators' CALL-TIME execution order",
+      "Class-based decorators using __call__",
+      "functools.wraps and the __wrapped__ pointer",
+      "Production patterns beyond this chapter's cache example"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "python_decorators-ch04-s07-mcq2",
+    "subject": "Python Decorators Handbook",
+    "block": "Python Decorators Handbook — Chapter 4 (Interview Prep)",
+    "topic": "What's Missing, and What Comes Next",
+    "label": null,
+    "type": "mcq",
+    "prompt": "What happens when using @retry(3)?",
+    "answer": null,
+    "notes": "The @retry(3) decorator runs first, before the function exists, and returns the real decorator.",
+    "cloze_answer": null,
+    "options": [
+      "The decorator is called once",
+      "The decorator is called twice",
+      "The decorator is not called at all",
+      "The decorator is called before the function definition"
+    ],
+    "correctIndex": 1
   }
 ]
