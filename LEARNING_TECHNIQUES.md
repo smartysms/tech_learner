@@ -110,14 +110,58 @@ diagramming tool:
   embeddings for the generation pipeline).
 - It builds and runs (`vite build`/`dev`, has a `dist/`) — not vaporware.
 
-**Decision**: adopt narrowly. Build a new exporter in `notes_ingest` (e.g.
-`notes_ingest/mindmap_export.py`) that generates a starter `MindMap`-shaped
-JSON per chapter/subject from chunk metadata, for the user to open/edit in
-the *existing* `mind_map_project` app — purely for the understanding/
-organizing use case, not routed through its SRS. No changes needed inside
-`mind_map_project` itself (its importer already handles well-formed
-`MindMap` JSON). Not built yet — scoping deferred pending decision on
-priority vs. the subject pipeline backlog.
+**Decision**: adopted narrowly, built and piloted 2026-08-21. Implemented as
+`notes_ingest/mindmap_export.py` — plain **Markdown** output (not hand-built
+JSON): `mind_map_project` already has a Markdown importer that turns
+headings/nested bullets into a tree, so a subject/chapter/section hierarchy
+maps directly onto simple bullet nesting with zero new code needed inside
+`mind_map_project` itself. Two output types per subject, written to
+`notes_ingest/data/mindmaps/<subject>/`:
+1. **Outline maps** (one per chapter) — subject+chapter as heading, section
+   titles as bullets. Pure structure from existing Chroma metadata, no LLM
+   call needed.
+2. **Process flow maps** — per user request, refined scope: content
+   describing an actual sequential procedure (e.g. "how a producer sends a
+   message") gets its own separate, focused map rather than being flattened
+   into the generic outline. Detected via one new Ollama call per chunk
+   (`ProcessExtraction`, deliberately kept as its own isolated script/prompt
+   rather than extending `generate.py`, to avoid touching a file the
+   concurrent card-generation pipeline was actively editing). A strictly-
+   nested bullet chain (each step one level deeper than the last) imports as
+   a straight-line flow of connected nodes — no new node/edge type needed.
+
+Piloted on Kafka ch1 (outline) and the Producer Reference doc (process
+detection correctly found the `ProduceRequest` flow, 9 steps, coherent order)
+— both produced clean, correctly-structured Markdown. Not yet run across the
+full library (deliberately — avoids Ollama contention with the concurrent
+Docker/Decorators card-generation batch job).
+
+## P.A.O. system (Person-Action-Object) — researched 2026-08-21, REJECTED
+
+**How it works**: a competitive-memory technique for encoding *arbitrary
+symbol sequences* (digits, playing cards) — every 2-digit number 00-99 gets a
+fixed, pre-memorized Person-Action-Object image, and long sequences are
+encoded by chaining these images. It is not a general conceptual-learning
+technique; the entire evidence base (e.g. speed-card world records improving
+from ~2min to 12.74s) is for arbitrary, meaningless symbols, not semantic
+technical content.
+
+**The specific angle investigated and ruled out**: whether PAO's three-part
+structure naturally fits our new process-flow content, since a step like
+"producer serializes record" already has a Person/Action/Object shape. This
+turned out to be a coincidence of surface grammar, not a real technique
+transfer — PAO's mechanism is binding *arbitrary, meaningless* symbols to a
+*fixed, pre-rehearsed* image so they become memorable at all. "Producer
+serializes record" is already meaningful; it doesn't need arbitrary imagery
+grafted on, it needs testing (cloze/recall, already built) or structural
+understanding (mind maps, already being built). Forcing PAO onto it solves a
+problem this content doesn't have.
+
+**Why not built**: same root problem as Loci/Peg (self-generated imagery
+matters; doesn't scale to thousands of facts), plus PAO specifically requires
+a fixed lookup table built for arbitrary symbols 00-99 that has no natural
+mapping onto open-ended technical content — an even worse structural fit
+than Loci or Peg, not a workaround for either. Nothing deferred.
 
 **Flagged, not decided**: the workspace now has **two independent SRS
 implementations** — this app's `srs.js`/`app.js`, and `mind_map_project`'s
