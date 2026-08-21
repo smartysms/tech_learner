@@ -27194,25 +27194,6 @@
     "correctIndex": 0
   },
   {
-    "id": "kafka-ch15-s01-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 15 (Interview Prep)",
-    "topic": "The Problem",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Why would a producer write records to 5 different partitions living on 3 different brokers?",
-    "answer": null,
-    "notes": "The producer writes to multiple partitions to ensure data is replicated across brokers, increasing durability.",
-    "cloze_answer": null,
-    "options": [
-      "To distribute the load across brokers",
-      "To ensure data is replicated across brokers",
-      "To handle high-throughput",
-      "To increase durability"
-    ],
-    "correctIndex": 1
-  },
-  {
     "id": "kafka-ch15-s02-mcq1",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 15 (Interview Prep)",
@@ -27403,25 +27384,6 @@
     "correctIndex": 1
   },
   {
-    "id": "kafka-ch15-s07-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 15 (Interview Prep)",
-    "topic": "The Broader Pattern",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is the characteristic that the Broader Pattern shares with other distributed systems?",
-    "answer": null,
-    "notes": "The correct answer is 'Participants execute work'. This is the characteristic that the Broader Pattern shares with other distributed systems, such as Two-Phase Commit, XA Transactions, Sagas with an orchestrator, ZooKeeper leader election, and Raft leader coordination.",
-    "cloze_answer": null,
-    "options": [
-      "Participants execute work",
-      "A coordinator decides the final outcome",
-      "Both participants and coordinators execute work",
-      "Neither participants nor coordinators execute work"
-    ],
-    "correctIndex": 0
-  },
-  {
     "id": "kafka-ch15-s08-mcq1",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 15 (Interview Prep)",
@@ -27555,44 +27517,6 @@
     "correctIndex": 2
   },
   {
-    "id": "kafka-ch15-s12-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 15 (Interview Prep)",
-    "topic": "__transaction_state",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Why does Kafka store transaction metadata in its own internal topic, __transaction_state?",
-    "answer": null,
-    "notes": "This stores the necessary information for Kafka to manage transactions, including the producer ID, partition information, and current transaction state.",
-    "cloze_answer": null,
-    "options": [
-      "to allow for easier debugging",
-      "to store business records",
-      "to keep track of producer IDs and partition information",
-      "to reduce storage overhead"
-    ],
-    "correctIndex": 3
-  },
-  {
-    "id": "kafka-ch15-s12-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 15 (Interview Prep)",
-    "topic": "__transaction_state",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What does Kafka's __transaction_state store?",
-    "answer": null,
-    "notes": "This stores the necessary information for Kafka to manage transactions, including the producer ID, partition information, and current transaction state.",
-    "cloze_answer": null,
-    "options": [
-      "consumer offsets",
-      "transactional IDs and partition information",
-      "producer Epochs and current transaction state",
-      "business records"
-    ],
-    "correctIndex": 3
-  },
-  {
     "id": "kafka-ch15-s13-mcq1",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 15 (Interview Prep)",
@@ -27612,25 +27536,6 @@
     "correctIndex": 0
   },
   {
-    "id": "kafka-ch15-s13-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 15 (Interview Prep)",
-    "topic": "The Coordinator Is Just A Partition Leader",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Why does Kafka reuse the existing partitioned-log architecture for transactions?",
-    "answer": null,
-    "notes": "The correct answer is to avoid creating a new distributed coordinator service. The other options are all incorrect because they describe different reasons for reusing the existing architecture.",
-    "cloze_answer": null,
-    "options": [
-      "to avoid creating a new distributed coordinator service",
-      "to make transactions more reliable",
-      "to improve consumer group coordination",
-      "to reduce memory usage"
-    ],
-    "correctIndex": 1
-  },
-  {
     "id": "kafka-ch15-s14-mcq1",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 15 (Interview Prep)",
@@ -27648,25 +27553,6 @@
       "It is duplicated across the brokers"
     ],
     "correctIndex": 1
-  },
-  {
-    "id": "kafka-ch15-s14-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 15 (Interview Prep)",
-    "topic": "Why This Scales",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is the purpose of hashing in horizontal load distribution?",
-    "answer": null,
-    "notes": "The text states that hashing spreads the load across every partition and broker",
-    "cloze_answer": null,
-    "options": [
-      "To reduce the number of transactions",
-      "To spread the load across every partition and broker",
-      "To increase the number of transactions",
-      "To concentrate the load on one node"
-    ],
-    "correctIndex": 2
   },
   {
     "id": "kafka-ch15-s15-mcq1",
@@ -27703,25 +27589,6 @@
       "Because the leader of the metadata partition crashed",
       "Because the leader of the metadata partition changed",
       "Because the transaction coordinator is elected anew"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "id": "kafka-ch15-s16-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 15 (Interview Prep)",
-    "topic": "The Full Startup Flow",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is the purpose of hashing the transactional.id in the Kafka producer's startup flow?",
-    "answer": null,
-    "notes": "This step is used to create a unique identifier for the producer. The other options are not accurate.",
-    "cloze_answer": null,
-    "options": [
-      "To generate a random partition key",
-      "To determine the leader broker",
-      "To create a unique identifier for the producer",
-      "To initialize transactions"
     ],
     "correctIndex": 2
   },
@@ -27764,25 +27631,6 @@
     "correctIndex": 0
   },
   {
-    "id": "kafka-ch15-s17-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 15 (Interview Prep)",
-    "topic": "The Full Architecture So Far",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is the destination of transaction metadata in Kafka?",
-    "answer": null,
-    "notes": "Transaction metadata is specifically stored in the __transaction_state",
-    "cloze_answer": null,
-    "options": [
-      "Application topics",
-      "__transaction_state",
-      "Kafka brokers",
-      "Cluster nodes"
-    ],
-    "correctIndex": 2
-  },
-  {
     "id": "kafka-ch15-s18-mcq1",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 15 (Interview Prep)",
@@ -27819,25 +27667,6 @@
       "The system crashes"
     ],
     "correctIndex": 2
-  },
-  {
-    "id": "kafka-ch15-s19-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 15 (Interview Prep)",
-    "topic": "Producer Epoch",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Why does Kafka not allocate a brand-new Producer PID when the same transactional.id restarts?",
-    "answer": null,
-    "notes": "Keeping the same PID preserves the producer's transactional identity and existing transaction state, while the higher epoch fences older producer instances.",
-    "cloze_answer": null,
-    "options": [
-      "To simplify ownership transfer and correctness",
-      "To improve fencing of older producer instances",
-      "To reduce the number of API calls to the coordinator",
-      "To create a new transactional identity"
-    ],
-    "correctIndex": 1
   },
   {
     "id": "kafka-ch15-s19-mcq2",
@@ -27895,25 +27724,6 @@
       "To guarantee the correctness of transaction commit"
     ],
     "correctIndex": 1
-  },
-  {
-    "id": "kafka-ch15-s21-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 15 (Interview Prep)",
-    "topic": "The First send()",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Why does Kafka track transaction participants explicitly, rather than relying on implicit discovery?",
-    "answer": null,
-    "notes": "Kafka tracks transaction participants explicitly to ensure the coordinator knows which partition leaders need a commit marker.",
-    "cloze_answer": null,
-    "options": [
-      "To reduce the risk of losing transaction data",
-      "To ensure the coordinator is aware of all participating partition leaders",
-      "To improve the producer's fault tolerance",
-      "To guarantee the correctness of transaction commit"
-    ],
-    "correctIndex": 2
   },
   {
     "id": "kafka-ch15-s22-mcq1",
@@ -28201,44 +28011,6 @@
     "correctIndex": 3
   },
   {
-    "id": "kafka-ch15-s32-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 15 (Interview Prep)",
-    "topic": "The Complete read_committed Fetch Pipeline",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is the FIRST transaction-related check the broker performs when handling a FetchRequest with Isolation Level = READ_COMMITTED?",
-    "answer": null,
-    "notes": "The correct answer is the first transaction-related check because it decides how much of the log is even eligible to be read, which is the core idea of the Isolation Level = READ_COMMITTED.",
-    "cloze_answer": null,
-    "options": [
-      "Compute the Last Stable Offset (LSO)",
-      "Read the entire log segment",
-      "Check the Aborted Transaction Index",
-      "Skip control batches"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "id": "kafka-ch15-s33-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 15 (Interview Prep)",
-    "topic": "Why Kafka Stops, Instead Of Skipping Ahead",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Why does a read_committed consumer receive only up to the last stable offset (LSO) in this scenario?",
-    "answer": null,
-    "notes": "Kafka doesn't jump over the open transaction to hand back the later, already-resolved records - it simply stops at the LSO and returns nothing past it.",
-    "cloze_answer": null,
-    "options": [
-      "Kafka jumps over the open transaction to hand back the later, already-resolved records",
-      "Kafka stops at the LSO and returns nothing past it",
-      "Kafka returns all records, including the open transaction",
-      "Kafka skips the uncertain part and returns the already-resolved records"
-    ],
-    "correctIndex": 2
-  },
-  {
     "id": "kafka-ch15-s33-mcq2",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 15 (Interview Prep)",
@@ -28256,82 +28028,6 @@
       "Because the consumer is not configured to skip transactions"
     ],
     "correctIndex": 0
-  },
-  {
-    "id": "kafka-ch15-s34-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 15 (Interview Prep)",
-    "topic": "LSO Recap And A Question Still Open",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is the primary purpose of the LSO (Lowwatermark Offset)?",
-    "answer": null,
-    "notes": "The correct answer is Improve compression, which is explicitly stated in the text. The other options are incorrect because they are not the primary purpose of the LSO.",
-    "cloze_answer": null,
-    "options": [
-      "Reduce log size",
-      "Prevent consumers from reading beyond unresolved transactions",
-      "Improve compression",
-      "Store committed offsets"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "id": "kafka-ch15-s34-mcq2",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 15 (Interview Prep)",
-    "topic": "LSO Recap And A Question Still Open",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What happens when a read_committed consumer is present with an ongoing transaction?",
-    "answer": null,
-    "notes": "The correct answer is Neither consumer can read transactional records, which is stated in the text. The other options are incorrect because they do not accurately describe the behavior of a read_committed consumer with an ongoing transaction.",
-    "cloze_answer": null,
-    "options": [
-      "Both consumers stop at the LSO",
-      "read_uncommitted ignores the LSO and can read records from ongoing transactions",
-      "read_committed ignores the LSO",
-      "Neither consumer can read transactional records"
-    ],
-    "correctIndex": 3
-  },
-  {
-    "id": "kafka-ch15-s34-mcq3",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 15 (Interview Prep)",
-    "topic": "LSO Recap And A Question Still Open",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is the highest possible offset for a read_committed consumer given the values LEO = 500, HW = 490, LSO = 470?",
-    "answer": null,
-    "notes": "The correct answer is 500, which is explicitly stated in the text. The other options are incorrect because they do not accurately describe the highest possible offset for a read_committed consumer.",
-    "cloze_answer": null,
-    "options": [
-      "500",
-      "490",
-      "470",
-      "It depends on the producer configuration"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "id": "kafka-ch15-s35-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 15 (Interview Prep)",
-    "topic": "LEO vs High Watermark vs Last Stable Offset",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Which statement is correct?",
-    "answer": null,
-    "notes": "read_committed reads until the LSO (220), while read_uncommitted reads until the HW (240)",
-    "cloze_answer": null,
-    "options": [
-      "A read_uncommitted consumer can read up to 250",
-      "A read_committed consumer can read up to 240",
-      "read_committed reads up to 220, read_uncommitted reads up to 240",
-      "Both consumers can read up to 220"
-    ],
-    "correctIndex": 3
   },
   {
     "id": "kafka-ch15-s36-mcq1",
@@ -28353,25 +28049,6 @@
     "correctIndex": 1
   },
   {
-    "id": "kafka-ch15-s37-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 15 (Interview Prep)",
-    "topic": "Inside The Broker: Class Names To Component Layers",
-    "label": null,
-    "type": "mcq",
-    "prompt": "What is SocketServer's primary responsibility?",
-    "answer": null,
-    "notes": "C. SocketServer is purely the network layer - it knows nothing about partitions, offsets, or transactions. It just receives bytes and hands them off.",
-    "cloze_answer": null,
-    "options": [
-      "Replicate partitions",
-      "Receive Kafka protocol requests over TCP and hand them to request handler threads",
-      "Validate consumer offsets",
-      "Read records from disk"
-    ],
-    "correctIndex": 2
-  },
-  {
     "id": "kafka-ch15-s37-mcq2",
     "subject": "Kafka Deep Dive",
     "block": "Kafka Deep Dive — Chapter 15 (Interview Prep)",
@@ -28387,25 +28064,6 @@
       "KafkaApis",
       "UnifiedLog",
       "LogSegment"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "id": "kafka-ch15-s38-mcq1",
-    "subject": "Kafka Deep Dive",
-    "block": "Kafka Deep Dive — Chapter 15 (Interview Prep)",
-    "topic": "The Broker Read Path: Bridge To Consumer",
-    "label": null,
-    "type": "mcq",
-    "prompt": "Which step in the broker's read path comes after understanding the FetchRequest?",
-    "answer": null,
-    "notes": "The broker applies visibility rules after reading the log, bound by hardware for read_uncommitted or LSO for read_committed.",
-    "cloze_answer": null,
-    "options": [
-      "Read the log",
-      "Apply visibility rules",
-      "Build the FetchResponse",
-      "Send it back to the consumer"
     ],
     "correctIndex": 1
   },
